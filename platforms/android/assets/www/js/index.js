@@ -16,7 +16,12 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+"use strict";
+
+var count = 0;
+
 var app = {
+    
     // Application Constructor
     initialize: function() {
         document.addEventListener('deviceready', this.onDeviceReady.bind(this), false);
@@ -28,6 +33,16 @@ var app = {
     // 'pause', 'resume', etc.
     onDeviceReady: function() {
         this.receivedEvent('deviceready');
+        this.addTestButtonClickListener.bind(this);
+    },
+
+    addTestButtonClickListener: function() {
+        document.getElementById("test-button").addEventListener('click', function(e) {
+            const element = document.getElementById('counter');
+            document.getElementById('counter').value = "fam";
+            // const prevValue = element.value.parseInt();
+            // document.getElementById('counter').value = ++prevValue.toString();
+        });
     },
 
     // Update DOM on a Received Event

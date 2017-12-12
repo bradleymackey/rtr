@@ -16,7 +16,14 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+"use strict";
+
+
+
 var app = {
+
+    counter: 0,
+    
     // Application Constructor
     initialize: function() {
         document.addEventListener('deviceready', this.onDeviceReady.bind(this), false);
@@ -27,7 +34,16 @@ var app = {
     // Bind any cordova events here. Common events are:
     // 'pause', 'resume', etc.
     onDeviceReady: function() {
+        alert('device is ready');
         this.receivedEvent('deviceready');
+        this.addTestButtonClickListener();
+    },
+
+    addTestButtonClickListener: function() {
+        document.getElementById("test-button").addEventListener('click', function(e) {
+            app.counter++;
+            document.getElementById("counter").innerHTML = app.counter.toString();
+        }, false);
     },
 
     // Update DOM on a Received Event
