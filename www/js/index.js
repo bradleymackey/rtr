@@ -36,9 +36,11 @@ var app = {
     onDeviceReady: function() {
         alert('device is ready');
         this.receivedEvent('deviceready');
+        // add listeners inside `onDeviceReady`
         this.addTestButtonClickListener();
     },
 
+    // just a test for the moment
     addTestButtonClickListener: function() {
         document.getElementById("test-button").addEventListener('click', function(e) {
             app.counter++;
