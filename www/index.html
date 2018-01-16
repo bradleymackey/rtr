@@ -46,6 +46,21 @@
             <button id="test-button">Click Me</button>
         </div> -->
 
+        <div id="map">
+
+        </div>
+
+        <div id="news">
+
+        </div>
+
+        <div id="events">
+
+        </div>
+
+        <div id="info">
+
+        </div>
 
 
 
@@ -53,7 +68,7 @@
 
         <!-- TAB BAR -->
         <div class="tabbar">
-            <a href="#home" class="active">
+            <a onclick="app.showMap();" class="active">
                 <div class="tab-component">
                     <div>
                         <img class="tab-image" src="img/place.png" alt="map">
@@ -61,7 +76,7 @@
                     <div>Map</div>
                 </div>
             </a>
-            <a href="#news">
+            <a onclick="app.showNews();">
                 <div class="tab-component">
                     <div>
                         <img class="tab-image" src="img/place.png" alt="map">
@@ -69,7 +84,7 @@
                     <div>News</div>
                 </div>
             </a>
-            <a href="#events">
+            <a onClick="app.showEvents();">
                 <div class="tab-component">
                     <div>
                         <img class="tab-image" src="img/place.png" alt="map">
@@ -77,7 +92,7 @@
                     <div>Events</div>
                 </div>
             </a>
-            <a href="#info">
+            <a onclick="app.showInfo();">
                 <div class="tab-component">
                     <div>
                         <img class="tab-image" src="img/place.png" alt="map">

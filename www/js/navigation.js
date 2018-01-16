@@ -46,6 +46,8 @@ var app = {
             // document.getElementById("counter").innerHTML = app.counter.toString();
             window.location.replace("https://google.com");
         }, false);
+
+        document.getElementById("")
     },
 
     // Update DOM on a Received Event
@@ -58,6 +60,10 @@ var app = {
         receivedElement.setAttribute('style', 'display:block;');
 
         console.log('Received Event: ' + id);
+    },
+
+    showMap: function() {
+        let map = document.getElementById();
     }
 };
 
