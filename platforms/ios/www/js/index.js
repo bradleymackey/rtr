@@ -16,9 +16,8 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+
 "use strict";
-
-
 
 var app = {
 
@@ -36,13 +35,16 @@ var app = {
     onDeviceReady: function() {
         alert('device is ready');
         this.receivedEvent('deviceready');
+        // add listeners inside `onDeviceReady`
         this.addTestButtonClickListener();
     },
 
+    // just a test for the moment
     addTestButtonClickListener: function() {
         document.getElementById("test-button").addEventListener('click', function(e) {
-            app.counter++;
-            document.getElementById("counter").innerHTML = app.counter.toString();
+            // app.counter++;
+            // document.getElementById("counter").innerHTML = app.counter.toString();
+            window.location.replace("https://google.com");
         }, false);
     },
 

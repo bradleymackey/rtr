@@ -1,0 +1,35 @@
+
+/* pin the tab bar to the bottom and style it */
+.tabbar {
+    background-color: #0c2340;
+    overflow: hidden;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Style the links inside the tab bar */
+.tabbar a {
+    margin: 0px;
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 10px;
+    text-decoration: none;
+    width: 25%;
+    font-size: 1em;
+}
+
+/* Add a color to the active/current link */
+.tabbar a.active {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.tab-image {
+    width: 33%;
+    height: 33%;
+    padding: 5px;
+}
