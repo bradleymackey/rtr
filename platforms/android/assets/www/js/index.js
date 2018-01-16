@@ -16,11 +16,12 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+
 "use strict";
 
-var count = 0;
-
 var app = {
+
+    counter: 0,
     
     // Application Constructor
     initialize: function() {
@@ -32,17 +33,19 @@ var app = {
     // Bind any cordova events here. Common events are:
     // 'pause', 'resume', etc.
     onDeviceReady: function() {
+        alert('device is ready');
         this.receivedEvent('deviceready');
-        this.addTestButtonClickListener.bind(this);
+        // add listeners inside `onDeviceReady`
+        this.addTestButtonClickListener();
     },
 
+    // just a test for the moment
     addTestButtonClickListener: function() {
         document.getElementById("test-button").addEventListener('click', function(e) {
-            const element = document.getElementById('counter');
-            document.getElementById('counter').value = "fam";
-            // const prevValue = element.value.parseInt();
-            // document.getElementById('counter').value = ++prevValue.toString();
-        });
+            // app.counter++;
+            // document.getElementById("counter").innerHTML = app.counter.toString();
+            window.location.replace("https://google.com");
+        }, false);
     },
 
     // Update DOM on a Received Event

@@ -42,8 +42,9 @@ var app = {
     // just a test for the moment
     addTestButtonClickListener: function() {
         document.getElementById("test-button").addEventListener('click', function(e) {
-            app.counter++;
-            document.getElementById("counter").innerHTML = app.counter.toString();
+            // app.counter++;
+            // document.getElementById("counter").innerHTML = app.counter.toString();
+            window.location.replace("https://google.com");
         }, false);
     },
 
