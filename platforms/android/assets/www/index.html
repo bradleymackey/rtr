@@ -37,21 +37,38 @@
         <title>RTR</title>
     </head>
     <body>
-        <!-- <div class="app">
-            <h1 id="counter" class="blink">0</h1>
+        <div class="app">
             <div id="deviceready" class="blink">
                 <p class="event listening">Connecting to Device</p>
                 <p class="event received">Device is Ready</p>
             </div>
             <button id="test-button">Click Me</button>
-        </div> -->
+        </div>
 
-        <div id="map" style="display:none;">
-            map
+        <div id="map" style="display:block;">
+            map<br>
+            map<br>
+            map<br>
+            map<br>
+            map<br>
+            map<br>
+            map<br>
+            map<br>
+
+            map<br>
+            map<br>
         </div>
 
         <div id="news" style="display:none;">
-            news
+            news<br>
+            news<br>
+            news<br>
+            news<br>
+            news<br>
+            news<br>
+            news<br>
+            news<br>
+            news<br>
         </div>
 
         <div id="events" style="display:none;">
@@ -61,11 +78,10 @@
         <div id="info" style="display:none;">
             info
         </div>
-
-
+        
         <!-- TAB BAR -->
         <div class="tabbar">
-            <a id="tab-map" onclick="" class="active">
+            <a id="show-map" class="active">
                 <div class="tab-component">
                     <div>
                         <img class="tab-image" src="img/place.png" alt="map">
@@ -73,7 +89,7 @@
                     <div>Map</div>
                 </div>
             </a>
-            <a id="tab-news">
+            <a id="show-news">
                 <div class="tab-component">
                     <div>
                         <img class="tab-image" src="img/place.png" alt="map">
@@ -81,7 +97,7 @@
                     <div>News</div>
                 </div>
             </a>
-            <a id="tab-events">
+            <a id="show-events">
                 <div class="tab-component">
                     <div>
                         <img class="tab-image" src="img/place.png" alt="map">
@@ -89,7 +105,7 @@
                     <div>Events</div>
                 </div>
             </a>
-            <a id="tab-info">
+            <a id="show-info">
                 <div class="tab-component">
                     <div>
                         <img class="tab-image" src="img/place.png" alt="map">
@@ -98,7 +114,9 @@
                 </div>
             </a>
         </div>
+        
         <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/jquery-3.2.1.js"></script>
         <script type="text/javascript" src="js/navigation.js"></script>
     </body>
 </html>

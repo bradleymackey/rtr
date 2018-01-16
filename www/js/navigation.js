@@ -23,11 +23,6 @@ var app = {
 
     counter: 0,
 
-    map: document.getElementById("map"),
-    news: document.getElementById("news"),
-    events: document.getElementById("events"),
-    info: document.getElementById("info"),
-    
     // Application Constructor
     initialize: function() {
         document.addEventListener('deviceready', this.onDeviceReady.bind(this), false);
@@ -38,25 +33,64 @@ var app = {
     // Bind any cordova events here. Common events are:
     // 'pause', 'resume', etc.
     onDeviceReady: function() {
-        alert('device is ready');
         this.receivedEvent('deviceready');
         // add listeners inside `onDeviceReady`
         this.addButtonListeners();
-        this.showMap();
+
+        alert("device ready ");
     },
 
     // just a test for the moment
     addButtonListeners: function() {
-        document.getElementById("test-button").addEventListener('click', function(e) {
-            // app.counter++;
-            // document.getElementById("counter").innerHTML = app.counter.toString();
-            window.location.replace("https://google.com");
-        }, false);
+        alert("add listeners");
 
-        document.getElementById("tab-map").addEventListener("click", app.showMap(e), false);
-        document.getElementById("tab-news").addEventListener("click", app.showNews(e), false);
-        document.getElementById("tab-events").addEventListener("click", app.showEvents(e), false);
-        document.getElementById("tab-info").addEventListener("click", app.showMap(e), false);
+        $("#show-map").on("touchend",function() {
+            $("#map").show();
+            $("#news").hide();
+            $("#events").hide();
+            $("#info").hide();
+            $("#show-map").addClass("active");
+            $("#show-news").removeClass("active");
+            $("#show-events").removeClass("active");
+            $("#show-info").removeClass("active");
+            return false;
+        })
+
+        $("#show-news").click(function() {
+            $("#map").hide();
+            $("#news").show();
+            $("#events").hide();
+            $("#info").hide();
+            $("#show-news").addClass("active");
+            $("#show-map").removeClass("active");
+            $("#show-events").removeClass("active");
+            $("#show-info").removeClass("active");
+            return false;
+        });
+
+        $("#show-events").click(function() {
+            $("#map").hide();
+            $("#news").hide();
+            $("#events").show();
+            $("#info").hide();
+            $("#show-events").addClass("active");
+            $("#show-news").removeClass("active");
+            $("#show-map").removeClass("active");
+            $("#show-info").removeClass("active");
+            return false;
+        });
+
+        $("#show-info").click(function() {
+            $("#map").hide();
+            $("#news").hide();
+            $("#events").hide();
+            $("#info").show();
+            $("#show-info").addClass("active");
+            $("#show-news").removeClass("active");
+            $("#show-events").removeClass("active");
+            $("#show-map").removeClass("active");
+            return false;
+        });
     },
 
     // Update DOM on a Received Event
@@ -71,37 +105,6 @@ var app = {
         console.log('Received Event: ' + id);
     },
 
-    showMap: function(e) {
-        app.map.setAttribute('style', 'display:block;');
-        app.news.setAttribute('style', 'display:none;');
-        app.events.setAttribute('style', 'display:none;');
-        app.info.setAttribute('style', 'display:none;');
-        return false;
-    },
-
-    showNews: function(e) {
-        app.map.setAttribute('style', 'display:none;');
-        app.news.setAttribute('style', 'display:block;');
-        app.events.setAttribute('style', 'display:none;');
-        app.info.setAttribute('style', 'display:none;');
-        return false;
-    },
-
-    showEvents: function(e) {
-        app.map.setAttribute('style', 'display:none;');
-        app.news.setAttribute('style', 'display:none;');
-        app.events.setAttribute('style', 'display:block;');
-        app.info.setAttribute('style', 'display:none;');
-        return false;
-    },
-
-    showInfo: function(e) {
-        app.map.setAttribute('style', 'display:none;');
-        app.news.setAttribute('style', 'display:none;');
-        app.events.setAttribute('style', 'display:none;');
-        app.info.setAttribute('style', 'display:block;');
-        return false;
-    }
 };
 
 app.initialize();
