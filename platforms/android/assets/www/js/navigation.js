@@ -53,10 +53,10 @@ var app = {
             window.location.replace("https://google.com");
         }, false);
 
-        document.getElementById("tab-map").addEventListener("click", app.showMap(), false);
-        document.getElementById("tab-news").addEventListener("click", app.showNews(), false);
-        document.getElementById("tab-events").addEventListener("click", app.showEvents(), false);
-        document.getElementById("tab-info").addEventListener("click", app.showMap(), false);
+        document.getElementById("tab-map").addEventListener("click", app.showMap(e), false);
+        document.getElementById("tab-news").addEventListener("click", app.showNews(e), false);
+        document.getElementById("tab-events").addEventListener("click", app.showEvents(e), false);
+        document.getElementById("tab-info").addEventListener("click", app.showMap(e), false);
     },
 
     // Update DOM on a Received Event
