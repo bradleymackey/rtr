@@ -22,6 +22,11 @@
 var app = {
 
     counter: 0,
+
+    map: document.getElementById("map"),
+    news: document.getElementById("news"),
+    events: document.getElementById("events"),
+    info: document.getElementById("info"),
     
     // Application Constructor
     initialize: function() {
@@ -36,18 +41,22 @@ var app = {
         alert('device is ready');
         this.receivedEvent('deviceready');
         // add listeners inside `onDeviceReady`
-        this.addTestButtonClickListener();
+        this.addButtonListeners();
+        this.showMap();
     },
 
     // just a test for the moment
-    addTestButtonClickListener: function() {
+    addButtonListeners: function() {
         document.getElementById("test-button").addEventListener('click', function(e) {
             // app.counter++;
             // document.getElementById("counter").innerHTML = app.counter.toString();
             window.location.replace("https://google.com");
         }, false);
 
-        document.getElementById("")
+        document.getElementById("tab-map").addEventListener("click", app.showMap(), false);
+        document.getElementById("tab-news").addEventListener("click", app.showNews(), false);
+        document.getElementById("tab-events").addEventListener("click", app.showEvents(), false);
+        document.getElementById("tab-info").addEventListener("click", app.showMap(), false);
     },
 
     // Update DOM on a Received Event
@@ -62,8 +71,36 @@ var app = {
         console.log('Received Event: ' + id);
     },
 
-    showMap: function() {
-        let map = document.getElementById();
+    showMap: function(e) {
+        app.map.setAttribute('style', 'display:block;');
+        app.news.setAttribute('style', 'display:none;');
+        app.events.setAttribute('style', 'display:none;');
+        app.info.setAttribute('style', 'display:none;');
+        return false;
+    },
+
+    showNews: function(e) {
+        app.map.setAttribute('style', 'display:none;');
+        app.news.setAttribute('style', 'display:block;');
+        app.events.setAttribute('style', 'display:none;');
+        app.info.setAttribute('style', 'display:none;');
+        return false;
+    },
+
+    showEvents: function(e) {
+        app.map.setAttribute('style', 'display:none;');
+        app.news.setAttribute('style', 'display:none;');
+        app.events.setAttribute('style', 'display:block;');
+        app.info.setAttribute('style', 'display:none;');
+        return false;
+    },
+
+    showInfo: function(e) {
+        app.map.setAttribute('style', 'display:none;');
+        app.news.setAttribute('style', 'display:none;');
+        app.events.setAttribute('style', 'display:none;');
+        app.info.setAttribute('style', 'display:block;');
+        return false;
     }
 };
 
