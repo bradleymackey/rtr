@@ -9,7 +9,23 @@
   "installed_plugins": {
     "cordova-plugin-whitelist": {
       "PACKAGE_NAME": "com.riverteesredisocovered.rtr"
+    },
+    "cordova-plugin-googlemaps": {
+      "API_KEY_FOR_IOS": "AIzaSyAwfqJ2hmh-droBfQv8HdOehGaK7b5f7pI",
+      "LOCATION_WHEN_IN_USE_DESCRIPTION": "Show your location on the map",
+      "LOCATION_ALWAYS_USAGE_DESCRIPTION": "Trace your location on the map",
+      "PACKAGE_NAME": "com.riverteesredisocovered.rtr"
+    },
+    "cordova-plugin-statusbar": {
+      "PACKAGE_NAME": "com.riverteesredisocovered.rtr"
+    },
+    "cordova-plugin-navigationbar": {
+      "PACKAGE_NAME": "com.riverteesredisocovered.rtr"
     }
   },
-  "dependent_plugins": {}
+  "dependent_plugins": {
+    "com.googlemaps.ios": {
+      "PACKAGE_NAME": "com.riverteesredisocovered.rtr"
+    }
+  }
 }

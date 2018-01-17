@@ -9,6 +9,16 @@
   "installed_plugins": {
     "cordova-plugin-whitelist": {
       "PACKAGE_NAME": "io.cordova.hellocordova"
+    },
+    "cordova-plugin-googlemaps": {
+      "API_KEY_FOR_ANDROID": "AIzaSyBXlLMNod0_gzaym2omdhDT8emcH7XGYms",
+      "PACKAGE_NAME": "com.riverteesredisocovered.rtr"
+    },
+    "cordova-plugin-statusbar": {
+      "PACKAGE_NAME": "com.riverteesredisocovered.rtr"
+    },
+    "cordova-plugin-navigationbar": {
+      "PACKAGE_NAME": "com.riverteesredisocovered.rtr"
     }
   },
   "dependent_plugins": {}

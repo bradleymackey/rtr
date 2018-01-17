@@ -12,11 +12,23 @@
   "dependencies": {
     "cordova-android": "^6.3.0",
     "cordova-ios": "^4.5.4",
+    "cordova-plugin-googlemaps": "^2.1.1",
+    "cordova-plugin-googlemaps-sdk": "git+https://github.com/mapsplugin/cordova-plugin-googlemaps-sdk.git",
+    "cordova-plugin-navigationbar": "^1.0.31",
+    "cordova-plugin-statusbar": "^2.4.1",
     "cordova-plugin-whitelist": "^1.3.3"
   },
   "cordova": {
     "plugins": {
-      "cordova-plugin-whitelist": {}
+      "cordova-plugin-whitelist": {},
+      "cordova-plugin-googlemaps": {
+        "API_KEY_FOR_ANDROID": "AIzaSyBXlLMNod0_gzaym2omdhDT8emcH7XGYms",
+        "API_KEY_FOR_IOS": "AIzaSyAwfqJ2hmh-droBfQv8HdOehGaK7b5f7pI",
+        "LOCATION_WHEN_IN_USE_DESCRIPTION": "Show your location on the map.",
+        "LOCATION_ALWAYS_USAGE_DESCRIPTION": "Show your location on the map."
+      },
+      "cordova-plugin-statusbar": {},
+      "cordova-plugin-navigationbar": {}
     },
     "platforms": [
       "android",

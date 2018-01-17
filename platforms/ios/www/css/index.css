@@ -31,11 +31,8 @@ body {
     margin:0px;
     padding:0px;
     text-transform:none;
+    font-family: Arial, sans-serif;
     width:100%; 
-}
-
-.content {
-    margin: 5px;
 }
 
 /* Landscape layout (with min-width) */
