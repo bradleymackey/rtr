@@ -13,8 +13,6 @@ function onDeviceReady() {
 	window.navigationbar.setUp(autoHideNavigationBar);
 }
 
-
-
 $("#map-icon").click(function() {
     tabItemSelected($("#map-icon"),$("#map"));
     updateTitle("Map");
