@@ -37,51 +37,29 @@
         <title>RTR</title>
     </head>
     <body>
-        <div class="app">
-            <div id="deviceready" class="blink">
-                <p class="event listening">Connecting to Device</p>
-                <p class="event received">Device is Ready</p>
+        <div class="content">
+            
+            <div id="map" class="app-section" style="display:block;">
+                    <iframe src="https://www.google.com/maps/d/embed?mid=1COvH61CdGQ-sosb-NeShtpq759k"></iframe>
             </div>
-            <button id="test-button">Click Me</button>
+    
+            <div id="news" class="app-section" style="display:none;">
+                <h1>news</h1>
+            </div>
+    
+            <div id="events" class="app-section" style="display:none;">
+                events
+            </div>
+    
+            <div id="info" class="app-section" style="display:none;">
+                info
+            </div>
         </div>
-
-        <div id="map" style="display:block;">
-            map<br>
-            map<br>
-            map<br>
-            map<br>
-            map<br>
-            map<br>
-            map<br>
-            map<br>
-
-            map<br>
-            map<br>
-        </div>
-
-        <div id="news" style="display:none;">
-            news<br>
-            news<br>
-            news<br>
-            news<br>
-            news<br>
-            news<br>
-            news<br>
-            news<br>
-            news<br>
-        </div>
-
-        <div id="events" style="display:none;">
-            events
-        </div>
-
-        <div id="info" style="display:none;">
-            info
-        </div>
+        
         
         <!-- TAB BAR -->
         <div class="tabbar">
-            <a id="show-map" class="active">
+            <a id="map-icon" class="active tab-icon">
                 <div class="tab-component">
                     <div>
                         <img class="tab-image" src="img/place.png" alt="map">
@@ -89,7 +67,7 @@
                     <div>Map</div>
                 </div>
             </a>
-            <a id="show-news">
+            <a id="news-icon" class="tab-icon">
                 <div class="tab-component">
                     <div>
                         <img class="tab-image" src="img/place.png" alt="map">
@@ -97,7 +75,7 @@
                     <div>News</div>
                 </div>
             </a>
-            <a id="show-events">
+            <a id="events-icon" class="tab-icon">
                 <div class="tab-component">
                     <div>
                         <img class="tab-image" src="img/place.png" alt="map">
@@ -105,7 +83,7 @@
                     <div>Events</div>
                 </div>
             </a>
-            <a id="show-info">
+            <a id="info-icon" class="tab-icon">
                 <div class="tab-component">
                     <div>
                         <img class="tab-image" src="img/place.png" alt="map">

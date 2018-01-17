@@ -1,110 +1,38 @@
 /*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
+ * Manages the naivgation bar and the display of elements.
  */
 
 "use strict";
 
-var app = {
+document.addEventListener('deviceready', onDeviceReady, false);
 
-    counter: 0,
+function onDeviceReady() {
+    // ready to use device APIs
+}
 
-    // Application Constructor
-    initialize: function() {
-        document.addEventListener('deviceready', this.onDeviceReady.bind(this), false);
-    },
+$("#map-icon").click(function() {
+    tabItemSelected($("#map-icon"),$("#map"));
+    return false;
+});
 
-    // deviceready Event Handler
-    //
-    // Bind any cordova events here. Common events are:
-    // 'pause', 'resume', etc.
-    onDeviceReady: function() {
-        this.receivedEvent('deviceready');
-        // add listeners inside `onDeviceReady`
-        this.addButtonListeners();
+$("#news-icon").click(function() {
+    tabItemSelected($("#news-icon"),$("#news"));
+    return false;
+});
 
-        alert("device ready ");
-    },
+$("#events-icon").click(function() {
+    tabItemSelected($("#events-icon"),$("#events"));
+    return false;
+});
 
-    // just a test for the moment
-    addButtonListeners: function() {
-        alert("add listeners");
+$("#info-icon").click(function() {
+    tabItemSelected($("#info-icon"),$("#info"));
+    return false;
+});
 
-        $("#show-map").on("touchend",function() {
-            $("#map").show();
-            $("#news").hide();
-            $("#events").hide();
-            $("#info").hide();
-            $("#show-map").addClass("active");
-            $("#show-news").removeClass("active");
-            $("#show-events").removeClass("active");
-            $("#show-info").removeClass("active");
-            return false;
-        })
-
-        $("#show-news").click(function() {
-            $("#map").hide();
-            $("#news").show();
-            $("#events").hide();
-            $("#info").hide();
-            $("#show-news").addClass("active");
-            $("#show-map").removeClass("active");
-            $("#show-events").removeClass("active");
-            $("#show-info").removeClass("active");
-            return false;
-        });
-
-        $("#show-events").click(function() {
-            $("#map").hide();
-            $("#news").hide();
-            $("#events").show();
-            $("#info").hide();
-            $("#show-events").addClass("active");
-            $("#show-news").removeClass("active");
-            $("#show-map").removeClass("active");
-            $("#show-info").removeClass("active");
-            return false;
-        });
-
-        $("#show-info").click(function() {
-            $("#map").hide();
-            $("#news").hide();
-            $("#events").hide();
-            $("#info").show();
-            $("#show-info").addClass("active");
-            $("#show-news").removeClass("active");
-            $("#show-events").removeClass("active");
-            $("#show-map").removeClass("active");
-            return false;
-        });
-    },
-
-    // Update DOM on a Received Event
-    receivedEvent: function(id) {
-        var parentElement = document.getElementById(id);
-        var listeningElement = parentElement.querySelector('.listening');
-        var receivedElement = parentElement.querySelector('.received');
-
-        listeningElement.setAttribute('style', 'display:none;');
-        receivedElement.setAttribute('style', 'display:block;');
-
-        console.log('Received Event: ' + id);
-    },
-
-};
-
-app.initialize();
+function tabItemSelected($tabItem,$section) {
+    $(".app-section").hide();
+    $section.show();
+    $(".tab-icon").removeClass("active");
+    $tabItem.addClass("active");
+}
