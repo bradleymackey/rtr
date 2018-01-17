@@ -1,0 +1,31 @@
+
+/*
+Sizes and styles content items (news articles and events).
+These values have been carefully chosen, please don't change.
+*/
+
+.content-item {
+    margin: 20px 0px;
+    padding: 5px;
+    min-height: 40px;
+    width: 94%;
+    align-content: center;
+}
+
+.content-item img {
+    /* image aspect fill behaviour */
+    width: 100%;
+    object-fit: cover;
+    max-height: 100px;
+    text-align: center;
+}
+
+.content-item h2 {
+    font-weight: bold;
+    margin: 5px 15px 3px;
+}
+
+.content-item p.detail {
+    color: gray;
+    margin: 0px 15px;
+}
