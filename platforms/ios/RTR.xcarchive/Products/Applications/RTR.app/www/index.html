@@ -32,9 +32,9 @@
         <meta name="format-detection" content="telephone=no">
         <meta name="msapplication-tap-highlight" content="no">
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
-        <link rel="stylesheet" type="text/css" href="css/index.css">
         <link rel="stylesheet" type="text/css" href="css/tabbar.css">
         <link rel="stylesheet" type="text/css" href="css/home.css">
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
         <title>RTR</title>
     </head>
     
@@ -48,11 +48,14 @@
 
         <!-- CONTENT -->
         <div class="content">
+
+            <!-- MAP GOES HERE -->
             <div id="map" class="app-section" style="display:block;">
                 <iframe src="https://www.google.com/maps/d/embed?mid=1COvH61CdGQ-sosb-NeShtpq759k" style="width:94%;height:600px;"></iframe>
                 <div id="map-canvas"></div>
             </div>
     
+            <!-- NEWS GOES HERE -->
             <div id="news" class="app-section" style="display:none;">
                 <div class="content-item">
                     <img src="img/demo.jpg" alt="image">
@@ -71,6 +74,7 @@
                 </div>
             </div>
     
+            <!-- EVENTS GO HERE -->
             <div id="events" class="app-section" style="display:none;">
                 <div class="content-item">
                     <img src="img/demo.jpg" alt="image">
@@ -89,6 +93,7 @@
                 </div>
             </div>
     
+            <!-- INFO SECTION GOES HERE -->
             <div id="info" class="app-section" style="display:none;">
                 info
             </div>
@@ -100,7 +105,7 @@
             <a id="map-icon" class="active tab-icon">
                 <div class="tab-component">
                     <div>
-                        <img class="tab-image" src="img/place.png" alt="map">
+                        <img class="tab-image" src="img/mapIcon.png" alt="map">
                     </div>
                     <div>Map</div>
                 </div>
@@ -108,7 +113,7 @@
             <a id="news-icon" class="tab-icon">
                 <div class="tab-component">
                     <div>
-                        <img class="tab-image" src="img/place.png" alt="map">
+                        <img class="tab-image" src="img/newsIcon.png" alt="map">
                     </div>
                     <div>News</div>
                 </div>
@@ -116,7 +121,7 @@
             <a id="events-icon" class="tab-icon">
                 <div class="tab-component">
                     <div>
-                        <img class="tab-image" src="img/place.png" alt="map">
+                        <img class="tab-image" src="img/eventsIcon.png" alt="map">
                     </div>
                     <div>Events</div>
                 </div>
@@ -124,7 +129,7 @@
             <a id="info-icon" class="tab-icon">
                 <div class="tab-component">
                     <div>
-                        <img class="tab-image" src="img/place.png" alt="map">
+                        <img class="tab-image" src="img/infoIcon.png" alt="map">
                     </div>
                     <div>Info</div>
                 </div>
@@ -135,5 +140,6 @@
         <script type="text/javascript" src="js/jquery-3.2.1.js"></script>
         <script type="text/javascript" src="js/navigation.js"></script>
         <script type="text/javascript" src="js/map.js"></script>
+        <script type="text/javascript" src="js/bootstrap.bundle.js"></script>
     </body>
 </html>

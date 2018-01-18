@@ -12,15 +12,7 @@ function onDeviceReady() {
 
 $("#map-icon").click(function() {
     tabItemSelected($("#map-icon"),$("#map"));
-    updateTitle("");
-    $("#topnav-title").append(`
-            <div class="input-group">
-                <span class="input-group-btn">
-        <button class="btn btn-search" type="button"><i class="glyphicon glyphicon-search"></i></button>
-      </span>
-                <input type="text" class="form-control" placeholder="Search Map...">
-            </div>`
-    );
+    updateTitle("Map");
     return false;
 });
 
@@ -29,10 +21,7 @@ $("#news-icon").click(function() {
     updateTitle("");
     $("#topnav-title").append(`
             <div class="input-group">
-                <span class="input-group-btn">
-        <button class="btn btn-search" type="button"><i class="glyphicon glyphicon-search"></i></button>
-      </span>
-                <input type="text" class="form-control" placeholder="Search News...">
+                <input type="text" class="form-control" placeholder="Search News">
             </div>`
     );
     return false;
@@ -43,9 +32,6 @@ $("#events-icon").click(function() {
     updateTitle("");
     $("#topnav-title").append(`
             <div class="input-group">
-                <span class="input-group-btn">
-        <button class="btn btn-search" type="button"><i class="glyphicon glyphicon-search"></i></button>
-      </span>
                 <input type="text" class="form-control" placeholder="Search Events...">
             </div>`
     );
@@ -54,7 +40,7 @@ $("#events-icon").click(function() {
 
 $("#info-icon").click(function() {
     tabItemSelected($("#info-icon"),$("#info"));
-    updateTitle("Info");
+    updateTitle("Information");
     return false;
 });
 

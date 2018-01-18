@@ -21,10 +21,7 @@ $("#news-icon").click(function() {
     updateTitle("");
     $("#topnav-title").append(`
             <div class="input-group">
-                <span class="input-group-btn">
-        <button class="btn btn-search" type="button"><i class="glyphicon glyphicon-search"></i></button>
-      </span>
-                <input type="text" class="form-control" placeholder="Search News...">
+                <input type="text" class="form-control" placeholder="Search News">
             </div>`
     );
     return false;
@@ -35,10 +32,7 @@ $("#events-icon").click(function() {
     updateTitle("");
     $("#topnav-title").append(`
             <div class="input-group">
-                <span class="input-group-btn">
-        <button class="btn btn-search" type="button"><i class="glyphicon glyphicon-search"></i></button>
-      </span>
-                <input type="text" class="form-control" placeholder="Search Events...">
+                <input type="text" class="form-control" placeholder="Search Events">
             </div>`
     );
     return false;

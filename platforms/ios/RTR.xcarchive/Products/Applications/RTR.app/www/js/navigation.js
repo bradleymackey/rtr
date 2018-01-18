@@ -18,19 +18,29 @@ $("#map-icon").click(function() {
 
 $("#news-icon").click(function() {
     tabItemSelected($("#news-icon"),$("#news"));
-    updateTitle("News");
+    updateTitle("");
+    $("#topnav-title").append(`
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="Search News">
+            </div>`
+    );
     return false;
 });
 
 $("#events-icon").click(function() {
     tabItemSelected($("#events-icon"),$("#events"));
-    updateTitle("Events");
+    updateTitle("");
+    $("#topnav-title").append(`
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="Search Events...">
+            </div>`
+    );
     return false;
 });
 
 $("#info-icon").click(function() {
     tabItemSelected($("#info-icon"),$("#info"));
-    updateTitle("Info");
+    updateTitle("Information");
     return false;
 });
 
