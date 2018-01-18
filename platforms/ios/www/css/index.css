@@ -89,3 +89,21 @@ h1 {
     animation:fade 1000ms infinite;
     -webkit-animation:fade 1000ms infinite;
 }
+
+/*style the rtr logo in info*/
+.jumbotron{
+    min-height: 120px;
+    background-color: #0c2340;
+    background-image: url("../img/rtrInfoCover.png");
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.infOptions{
+    background-color: white;
+    height: 100px;
+}
+
+#info{
+    /*background-color: white;*/
+}

@@ -11,20 +11,14 @@ function onDeviceReady() {
 }
 
 $("#map-icon").click(function() {
+    $(".content").css({"margin-top": "3em"});
     tabItemSelected($("#map-icon"),$("#map"));
-    updateTitle("");
-    $("#topnav-title").append(`
-            <div class="input-group">
-                <span class="input-group-btn">
-        <button class="btn btn-search" type="button"><i class="glyphicon glyphicon-search"></i></button>
-      </span>
-                <input type="text" class="form-control" placeholder="Search Map...">
-            </div>`
-    );
+    updateTitle("Map");
     return false;
 });
 
 $("#news-icon").click(function() {
+    $(".content").css({"margin-top": "3em"});
     tabItemSelected($("#news-icon"),$("#news"));
     updateTitle("");
     $("#topnav-title").append(`
@@ -39,6 +33,7 @@ $("#news-icon").click(function() {
 });
 
 $("#events-icon").click(function() {
+    $(".content").css({"margin-top": "3em"});
     tabItemSelected($("#events-icon"),$("#events"));
     updateTitle("");
     $("#topnav-title").append(`
@@ -53,8 +48,10 @@ $("#events-icon").click(function() {
 });
 
 $("#info-icon").click(function() {
+    //changes margin so that there isnt a space between navbar and logo
+    $(".content").css({"margin-top": "2.5em"});
     tabItemSelected($("#info-icon"),$("#info"));
-    updateTitle("Info");
+    updateTitle("Information");
     return false;
 });
 
