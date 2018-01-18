@@ -4,20 +4,26 @@
 
  "use strict";
 
- var map;
+ document.addEventListener("DOMContentLoaded", function(event) {
+    mapboxgl.accessToken = 'pk.eyJ1IjoiYnJhZGxleW1hY2tleSIsImEiOiJjamNraW14eXYzanZzMzNwZ2UyNW9ua2tzIn0.4YBdPgKnDN5XFdVVMeo4LQ';
+    var map = new mapboxgl.Map({
+        container: 'map-layer',
+        style: 'mapbox://styles/bradleymackey/cjckjuujz01qh2spiu3lh87uu'
+    });
+    // Add geolocate control to the map.
+    map.addControl(new mapboxgl.GeolocateControl({
+        positionOptions: {
+            enableHighAccuracy: true
+        },
+        trackUserLocation: true
+    }));
+  });
 
- document.addEventListener('deviceready', odr, false);
+// do not adjust values
+  $(window).on("resize", function () { 
+    $("#map-layer").height($(window).height()-$(".tabbar").height()-50); 
+    map.invalidateSize(); 
+}).trigger("resize");
 
- function odr() {
-    var div = document.getElementById("map-canvas");
-    // Initialize the map view
-    map = plugin.google.maps.Map.getMap(div);
-    // Wait until the map is ready status.
-    map.addEventListener(plugin.google.maps.event.MAP_READY, onMapReady);
- }
-
- function onMapReady() {
-
- }
 
  

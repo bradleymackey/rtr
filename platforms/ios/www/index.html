@@ -28,19 +28,17 @@
             * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
                 * Enable inline JS: add 'unsafe-inline' to default-src
         -->
-        <meta http-equiv="Content-Security-Policy" content="script-src * 'unsafe-eval'; child-src *; connect-src * 'unsafe-eval'; object-src 'self'; style-src * 'unsafe-inline';">
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self' *; img-src * 'self' data: blob: ; script-src * 'self' 'unsafe-eval'; child-src * 'self' blob:; connect-src * 'unsafe-eval'; object-src 'self'; style-src * 'unsafe-inline';">
         <meta name="format-detection" content="telephone=no">
         <meta name="msapplication-tap-highlight" content="no">
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
-
-        <!-- Bootstrap links -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
-        <link rel="stylesheet" type="text/css" href="css/index.css">
         <link rel="stylesheet" type="text/css" href="css/tabbar.css">
         <link rel="stylesheet" type="text/css" href="css/home.css">
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+        <!-- <script src='js/mapbox-gl.js'></script>
+        <link href='css/mapbox-gl.css' rel='stylesheet' /> -->
+        <script src='https://api.mapbox.com/mapbox-gl-js/v0.42.0/mapbox-gl.js'></script>
+        <link href='https://api.mapbox.com/mapbox-gl-js/v0.42.0/mapbox-gl.css' rel='stylesheet' />
         <title>RTR</title>
     </head>
     
@@ -54,11 +52,13 @@
 
         <!-- CONTENT -->
         <div class="content">
+
+            <!-- MAP GOES HERE -->
             <div id="map" class="app-section" style="display:block;">
-                <iframe src="https://www.google.com/maps/d/embed?mid=1COvH61CdGQ-sosb-NeShtpq759k" style="width:94%;height:600px;"></iframe>
-                <div id="map-canvas"></div>
+                <div id='map-layer'></div>
             </div>
     
+            <!-- NEWS GOES HERE -->
             <div id="news" class="app-section" style="display:none;">
                 <div class="content-item">
                     <img src="img/demo.jpg" alt="image">
@@ -77,6 +77,7 @@
                 </div>
             </div>
     
+            <!-- EVENTS GO HERE -->
             <div id="events" class="app-section" style="display:none;">
                 <div class="content-item">
                     <img src="img/demo.jpg" alt="image">
@@ -94,6 +95,11 @@
                     <p class="detail">Some Event Description</p>
                 </div>
             </div>
+<<<<<<< HEAD
+=======
+    
+            <!-- INFO SECTION GOES HERE -->
+>>>>>>> e2851ed8e054116b5d4061904c27b8e5028ac662
             <div id="info" class="app-section" style="display:none;">
                 <div class="jumbotron"></div>
                 <div class="container">
@@ -162,5 +168,6 @@
         <script type="text/javascript" src="js/jquery-3.2.1.js"></script>
         <script type="text/javascript" src="js/navigation.js"></script>
         <script type="text/javascript" src="js/map.js"></script>
+        <script type="text/javascript" src="js/bootstrap.bundle.js"></script>
     </body>
 </html>

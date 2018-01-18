@@ -8,9 +8,6 @@ document.addEventListener('deviceready', onDeviceReady, false);
 
 function onDeviceReady() {
     // ready to use device APIs
-    alert("device ready");
-    var autoHideNavigationBar = false;
-	window.navigationbar.setUp(autoHideNavigationBar);
 }
 
 $("#map-icon").click(function() {
@@ -21,26 +18,38 @@ $("#map-icon").click(function() {
 
 $("#news-icon").click(function() {
     tabItemSelected($("#news-icon"),$("#news"));
-    updateTitle("News");
+    updateTitle("");
+    $("#topnav-title").append(`
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="Search News">
+            </div>`
+    );
     return false;
 });
 
 $("#events-icon").click(function() {
     tabItemSelected($("#events-icon"),$("#events"));
-    updateTitle("Events");
+    updateTitle("");
+    $("#topnav-title").append(`
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="Search Events">
+            </div>`
+    );
     return false;
 });
 
 $("#info-icon").click(function() {
     tabItemSelected($("#info-icon"),$("#info"));
-    updateTitle("Info");
+    updateTitle("Information");
     return false;
 });
 
+// update the top title of the navigation bar when a new section is selected
 function updateTitle(titleText) {
     $("#topnav-title").text(titleText);
 }
 
+// when a tab item is selected, hide all current tab items and then only show the currently selected one
 function tabItemSelected($tabItem,$section) {
     $(".app-section").hide();
     $section.show();
