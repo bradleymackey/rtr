@@ -13,7 +13,6 @@
     // Initialize the map view
     map = plugin.google.maps.Map.getMap(div);
     // Wait until the map is ready status.
-    alert(map);
     map.addEventListener(plugin.google.maps.event.MAP_READY, onMapReady);
  }
 

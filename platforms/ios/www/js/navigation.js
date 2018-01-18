@@ -8,9 +8,6 @@ document.addEventListener('deviceready', onDeviceReady, false);
 
 function onDeviceReady() {
     // ready to use device APIs
-    alert("device ready");
-    var autoHideNavigationBar = false;
-	window.navigationbar.setUp(autoHideNavigationBar);
 }
 
 $("#map-icon").click(function() {
@@ -37,10 +34,12 @@ $("#info-icon").click(function() {
     return false;
 });
 
+// update the top title of the navigation bar when a new section is selected
 function updateTitle(titleText) {
     $("#topnav-title").text(titleText);
 }
 
+// when a tab item is selected, hide all current tab items and then only show the currently selected one
 function tabItemSelected($tabItem,$section) {
     $(".app-section").hide();
     $section.show();
