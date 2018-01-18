@@ -86,11 +86,11 @@
 		</data>
 		<key>Assets.car</key>
 		<data>
-		NrcpaGMFq70u744WjUk7jArj71Q=
+		IUCSMvMn5qPPPAvmaLZZgY2ceIU=
 		</data>
 		<key>CDVLaunchScreen.storyboardc/01J-lp-oVM-view-Ze5-6b-2t3.nib</key>
 		<data>
-		tZjQ+WHNawE0kQoDS9HSdH1gmTE=
+		w0MFRDVSxo81tKKrmsHPXkID59E=
 		</data>
 		<key>CDVLaunchScreen.storyboardc/Info.plist</key>
 		<data>
@@ -98,7 +98,7 @@
 		</data>
 		<key>CDVLaunchScreen.storyboardc/UIViewController-01J-lp-oVM.nib</key>
 		<data>
-		9R4BSY3Csqt/OH21l9FMXGHywws=
+		GoKFsFoMINnVzUTVYzcu2O2/wh8=
 		</data>
 		<key>GoogleMaps.bundle/GMSCacheStorage.momd/Storage.mom</key>
 		<data>
@@ -780,15 +780,15 @@
 		</data>
 		<key>Launch.storyboardc/LvT-gJ-THs-view-aUJ-7N-Li2.nib</key>
 		<data>
-		U8f3yIhbHHhTWj7GBdqrxHDmEfs=
+		qMRLBDXXx0reulbu3xliJq/vp0c=
 		</data>
 		<key>Launch.storyboardc/UIViewController-LvT-gJ-THs.nib</key>
 		<data>
-		hMhxi2NtScQ1NMyn/9RDa102LyA=
+		aJYgLOSoBbzJsWyEfKDi4sI7hyA=
 		</data>
 		<key>MainViewController.nib</key>
 		<data>
-		4TOkKEuiG8kemWdqxhuWE73cu1E=
+		nyY87mZM7hnPKvEypPjexAFMJew=
 		</data>
 		<key>PkgInfo</key>
 		<data>
@@ -836,7 +836,7 @@
 		</data>
 		<key>www/css/home.css</key>
 		<data>
-		NKMovMPuO816EwOsnHXAxi7JEwI=
+		bPc+w+VRDdUfqGg/YKXjQlw7uo4=
 		</data>
 		<key>www/css/mapbox-gl.css</key>
 		<data>
@@ -844,7 +844,7 @@
 		</data>
 		<key>www/css/tabbar.css</key>
 		<data>
-		Ct2XCJ3+4JJof3aIuBTUj1VrSFQ=
+		IO6+8cjXCY5ihvNUxnhGrqigl5M=
 		</data>
 		<key>www/img/demo.jpg</key>
 		<data>
@@ -900,7 +900,7 @@
 		</data>
 		<key>www/index.html</key>
 		<data>
-		VeipDzcb35aRmx6kTKahI8u5MRE=
+		2ZNpS/qmDO7uR05IXnrj7hFz0ZE=
 		</data>
 		<key>www/js/bootstrap.bundle.js</key>
 		<data>
@@ -912,7 +912,7 @@
 		</data>
 		<key>www/js/map.js</key>
 		<data>
-		ySAWb0/iYreLvzxO9M4nTtfeNuo=
+		Cn8+kOpOK/EXdPtaO3VAPzXmq5I=
 		</data>
 		<key>www/js/mapbox-gl.js</key>
 		<data>
@@ -1285,22 +1285,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			NrcpaGMFq70u744WjUk7jArj71Q=
+			IUCSMvMn5qPPPAvmaLZZgY2ceIU=
 			</data>
 			<key>hash2</key>
 			<data>
-			4U2pmy9DChx3iKNKG+/7JTmEP/gX+tm+ULqx+v8NY1g=
+			AX2TpUv6+Xa0ymG0bWVQwFXX29s7ADUWcocklymPK0M=
 			</data>
 		</dict>
 		<key>CDVLaunchScreen.storyboardc/01J-lp-oVM-view-Ze5-6b-2t3.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			tZjQ+WHNawE0kQoDS9HSdH1gmTE=
+			w0MFRDVSxo81tKKrmsHPXkID59E=
 			</data>
 			<key>hash2</key>
 			<data>
-			W/wAr2F4YJN91o0hleWctXta3ri8+KD6JY2ZT0CdB14=
+			UFBMybJF/uUn7zsLL8mExxfXgrnajr4Jh1P8F/W7LcY=
 			</data>
 		</dict>
 		<key>CDVLaunchScreen.storyboardc/Info.plist</key>
@@ -1318,11 +1318,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			9R4BSY3Csqt/OH21l9FMXGHywws=
+			GoKFsFoMINnVzUTVYzcu2O2/wh8=
 			</data>
 			<key>hash2</key>
 			<data>
-			tKVntTt7r12/lNN9PLH4Yl7BbSNh8dEn8a3mfwJqlHI=
+			VU2F0yKvEVu3tI6poNv/O7cquFYGuYGsH2QqBYl3PZY=
 			</data>
 		</dict>
 		<key>GoogleMaps.bundle/GMSCacheStorage.momd/Storage.mom</key>
@@ -2642,33 +2642,33 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			U8f3yIhbHHhTWj7GBdqrxHDmEfs=
+			qMRLBDXXx0reulbu3xliJq/vp0c=
 			</data>
 			<key>hash2</key>
 			<data>
-			b2LjCisrXzD+Dq9eK57UCX7/Qt7FVIFhTYKBPHDlpo8=
+			E4y7qwjnk/Qo1lwH/u8YbSTbzoekiWrxe9BMG/lutbs=
 			</data>
 		</dict>
 		<key>Launch.storyboardc/UIViewController-LvT-gJ-THs.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			hMhxi2NtScQ1NMyn/9RDa102LyA=
+			aJYgLOSoBbzJsWyEfKDi4sI7hyA=
 			</data>
 			<key>hash2</key>
 			<data>
-			XfSSCs5VMJKQKq8lv68mK4rbbOKTDh5YLVkFSEBPZKQ=
+			Bqh22ZlR9XV6QdhrxuSbXOxszai0pkmb7lYLBlOj5CY=
 			</data>
 		</dict>
 		<key>MainViewController.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			4TOkKEuiG8kemWdqxhuWE73cu1E=
+			nyY87mZM7hnPKvEypPjexAFMJew=
 			</data>
 			<key>hash2</key>
 			<data>
-			eokG2ee5no3Rh1kst7VjcG0xECdG54KlIseuke4smYE=
+			DpUbxKvh48ig3VQY5YGV0iQUn3at72e2oXnS/HZalLA=
 			</data>
 		</dict>
 		<key>archived-expanded-entitlements.xcent</key>
@@ -2785,11 +2785,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			NKMovMPuO816EwOsnHXAxi7JEwI=
+			bPc+w+VRDdUfqGg/YKXjQlw7uo4=
 			</data>
 			<key>hash2</key>
 			<data>
-			ZLvinqnKr6EqbJHeQfU9UERFscjMZFIGBMJteAeRZW8=
+			lgFVTKNP9/tfE2Ae4Cb7uDcMfzfhCwCmEsNUMiXNd9c=
 			</data>
 		</dict>
 		<key>www/css/mapbox-gl.css</key>
@@ -2807,11 +2807,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			Ct2XCJ3+4JJof3aIuBTUj1VrSFQ=
+			IO6+8cjXCY5ihvNUxnhGrqigl5M=
 			</data>
 			<key>hash2</key>
 			<data>
-			Ly64I9ROxzO2s3rHEeAxjWgt+FKDA7dueu+tcH77OoI=
+			1Zv9N79FqYGkcsppyw2atK0jO4/XSFzoLsOLZuhvHYs=
 			</data>
 		</dict>
 		<key>www/img/demo.jpg</key>
@@ -2961,11 +2961,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			VeipDzcb35aRmx6kTKahI8u5MRE=
+			2ZNpS/qmDO7uR05IXnrj7hFz0ZE=
 			</data>
 			<key>hash2</key>
 			<data>
-			hsXX9aDwmFTJqw1GrTI4U+b9XhNfRCX944r7j0Mp/aY=
+			g30M0PsmHA9ND4V2LTcnQp4+GK2e4h5LLTRY1pkx56Y=
 			</data>
 		</dict>
 		<key>www/js/bootstrap.bundle.js</key>
@@ -2994,11 +2994,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			ySAWb0/iYreLvzxO9M4nTtfeNuo=
+			Cn8+kOpOK/EXdPtaO3VAPzXmq5I=
 			</data>
 			<key>hash2</key>
 			<data>
-			JQFTWP1/2nfKMJVAtnTINBYGpR2l4H/LpxVUWRY0na4=
+			40XP86ZNKlYsO/mjS43Rrb2vdkKIVAy1vNWXV8fuBc4=
 			</data>
 		</dict>
 		<key>www/js/mapbox-gl.js</key>

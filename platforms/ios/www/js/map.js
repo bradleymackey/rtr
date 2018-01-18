@@ -19,3 +19,11 @@
     }));
   });
 
+// do not adjust values
+  $(window).on("resize", function () { 
+    $("#map-layer").height($(window).height()-$(".tabbar").height()-50); 
+    map.invalidateSize(); 
+}).trigger("resize");
+
+
+ 
