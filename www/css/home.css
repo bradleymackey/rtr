@@ -98,7 +98,6 @@ h1 {
 /*style the rtr logo in info*/
 .jumbotron{
     min-height: 120px;
-    background-color: #0c2340;
     background-image: url("../img/rtrInfoCover.png");
     background-repeat: no-repeat;
     background-position: center;
@@ -106,9 +105,5 @@ h1 {
 
 .infOptions{
     background-color: white;
-    height: 100px;
-}
-
-#info{
-    /*background-color: white;*/
+    height: 120px;
 }

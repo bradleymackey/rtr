@@ -18,7 +18,7 @@ $("#map-icon").click(function() {
 });
 
 $("#news-icon").click(function() {
-    $(".content").css({"margin-top": "3em"});
+    $(".content").css({"margin-top": "3.0 em"});
     tabItemSelected($("#news-icon"),$("#news"));
     updateTitle("");
     $("#topnav-title").append(`
@@ -30,7 +30,7 @@ $("#news-icon").click(function() {
 });
 
 $("#events-icon").click(function() {
-    $(".content").css({"margin-top": "3em"});
+    $(".content").css({"margin-top": "3.0 em"});
     tabItemSelected($("#events-icon"),$("#events"));
     updateTitle("");
     $("#topnav-title").append(`
@@ -43,7 +43,7 @@ $("#events-icon").click(function() {
 
 $("#info-icon").click(function() {
     //changes margin so that there isnt a space between navbar and logo
-    $(".content").css({"margin-top": "2.5em"});
+    $(".content").css({"margin-top": "4.3 em"});
     tabItemSelected($("#info-icon"),$("#info"));
     updateTitle("Information");
     return false;
