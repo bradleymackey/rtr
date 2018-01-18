@@ -32,7 +32,7 @@ $("#events-icon").click(function() {
     updateTitle("");
     $("#topnav-title").append(`
             <div class="input-group">
-                <input type="text" class="form-control" placeholder="Search Events...">
+                <input type="text" class="form-control" placeholder="Search Events">
             </div>`
     );
     return false;

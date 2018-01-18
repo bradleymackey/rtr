@@ -74,4 +74,7 @@
     <preference name="webviewbounce" value="true" />
     <preference name="UIWebViewBounce" value="true" />
     <preference name="DisallowOverscroll" value="true" />
+    <feature name="Geolocation">
+        <param name="android-package" value="org.apache.cordova.geolocation.Geolocation" />
+    </feature>
 </widget>

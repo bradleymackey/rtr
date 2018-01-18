@@ -12,6 +12,7 @@
   "dependencies": {
     "cordova-android": "^6.4.0",
     "cordova-ios": "^4.5.4",
+    "cordova-plugin-geolocation": "^4.0.1",
     "cordova-plugin-googlemaps": "^2.1.1",
     "cordova-plugin-googlemaps-sdk": "git+https://github.com/mapsplugin/cordova-plugin-googlemaps-sdk.git",
     "cordova-plugin-navigationbar": "^1.0.31",
@@ -28,7 +29,10 @@
         "LOCATION_ALWAYS_USAGE_DESCRIPTION": "Show your location on the map."
       },
       "cordova-plugin-statusbar": {},
-      "cordova-plugin-navigationbar": {}
+      "cordova-plugin-navigationbar": {},
+      "cordova-plugin-geolocation": {
+        "GEOLOCATION_USAGE_DESCRIPTION": "Allow to see your location on the map."
+      }
     },
     "platforms": [
       "android",
