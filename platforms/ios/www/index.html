@@ -28,13 +28,19 @@
             * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
                 * Enable inline JS: add 'unsafe-inline' to default-src
         -->
-        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
+        <meta http-equiv="Content-Security-Policy" content="script-src * 'unsafe-eval'; child-src *; connect-src * 'unsafe-eval'; object-src 'self'; style-src * 'unsafe-inline';">
         <meta name="format-detection" content="telephone=no">
         <meta name="msapplication-tap-highlight" content="no">
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+
+        <!-- Bootstrap links -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
         <link rel="stylesheet" type="text/css" href="css/index.css">
         <link rel="stylesheet" type="text/css" href="css/tabbar.css">
-        
+        <link rel="stylesheet" type="text/css" href="css/home.css">
         <title>RTR</title>
     </head>
     
@@ -49,184 +55,48 @@
         <!-- CONTENT -->
         <div class="content">
             <div id="map" class="app-section" style="display:block;">
+                <iframe src="https://www.google.com/maps/d/embed?mid=1COvH61CdGQ-sosb-NeShtpq759k" style="width:94%;height:600px;"></iframe>
                 <div id="map-canvas"></div>
             </div>
     
             <div id="news" class="app-section" style="display:none;">
-                <div class="news-article">
-                    <p>Some Article</p>
-                    <p>Some Article Description</p>
+                <div class="content-item">
+                    <img src="img/demo.jpg" alt="image">
+                    <h2>Some Article</h2>
+                    <p class="detail">Some Article Description</p>
                 </div>
-                <div class="news-article">
-                    <p>Some Article</p>
-                    <p>Some Article Description</p>
+                <div class="content-item">
+                    <img src="img/demo.jpg" alt="image">
+                    <h2>Some Article</h2>
+                    <p class="detail">Some Article Description</p>
                 </div>
-                <div class="news-article">
-                    <p>Some Article</p>
-                    <p>Some Article Description</p>
+                <div class="content-item">
+                    <img src="img/demo.jpg" alt="image">
+                    <h2>Some Article</h2>
+                    <p class="detail">Some Article Description</p>
                 </div>
-                <div class="news-article">
-                    <p>Some Article</p>
-                    <p>Some Article Description</p>
-                </div>
-                <div class="news-article">
-                    <p>Some Article</p>
-                    <p>Some Article Description</p>
-                </div>
-                <div class="news-article">
-                    <p>Some Article</p>
-                    <p>Some Article Description</p>
-                </div>
-                <div class="news-article">
-                    <p>Some Article</p>
-                    <p>Some Article Description</p>
-                </div>
-                <div class="news-article">
-                    <p>Some Article</p>
-                    <p>Some Article Description</p>
-                </div>
-                <div class="news-article">
-                    <p>Some Article</p>
-                    <p>Some Article Description</p>
-                </div>
-                <div class="news-article">
-                        <p>Some Article</p>
-                        <p>Some Article Description</p>
-                    </div>
-                    <div class="news-article">
-                        <p>Some Article</p>
-                        <p>Some Article Description</p>
-                    </div>
-                    <div class="news-article">
-                        <p>Some Article</p>
-                        <p>Some Article Description</p>
-                    </div>
-                    <div class="news-article">
-                        <p>Some Article</p>
-                        <p>Some Article Description</p>
-                    </div>
-                    <div class="news-article">
-                        <p>Some Article</p>
-                        <p>Some Article Description</p>
-                    </div>
             </div>
     
             <div id="events" class="app-section" style="display:none;">
-                    <div class="news-article">
-                            <p>Some Article</p>
-                            <p>Some Article Description</p>
-                        </div>
-                        <div class="news-article">
-                            <p>Some Article</p>
-                            <p>Some Article Description</p>
-                        </div>
-                        <div class="news-article">
-                            <p>Some Article</p>
-                            <p>Some Article Description</p>
-                        </div>
-                        <div class="news-article">
-                            <p>Some Article</p>
-                            <p>Some Article Description</p>
-                        </div>
-                        <div class="news-article">
-                            <p>Some Article</p>
-                            <p>Some Article Description</p>
-                        </div>
-                        <div class="news-article">
-                            <p>Some Article</p>
-                            <p>Some Article Description</p>
-                        </div>
-                        <div class="news-article">
-                            <p>Some Article</p>
-                            <p>Some Article Description</p>
-                        </div>
-                        <div class="news-article">
-                            <p>Some Article</p>
-                            <p>Some Article Description</p>
-                        </div>
-                        <div class="news-article">
-                            <p>Some Article</p>
-                            <p>Some Article Description</p>
-                        </div>
-                        <div class="news-article">
-                                <p>Some Article</p>
-                                <p>Some Article Description</p>
-                            </div>
-                            <div class="news-article">
-                                <p>Some Article</p>
-                                <p>Some Article Description</p>
-                            </div>
-                            <div class="news-article">
-                                <p>Some Article</p>
-                                <p>Some Article Description</p>
-                            </div>
-                            <div class="news-article">
-                                <p>Some Article</p>
-                                <p>Some Article Description</p>
-                            </div>
-                            <div class="news-article">
-                                <p>Some Article</p>
-                                <p>Some Article Description</p>
-                            </div>
+                <div class="content-item">
+                    <img src="img/demo.jpg" alt="image">
+                    <h2>Some Event</h2>
+                    <p class="detail">Some Event Description</p>
+                </div>
+                <div class="content-item">
+                    <img src="img/demo.jpg" alt="image">
+                    <h2>Some Event</h2>
+                    <p class="detail">Some Event Description</p>
+                </div>
+                <div class="content-item">
+                    <img src="img/demo.jpg" alt="image">
+                    <h2>Some Event</h2>
+                    <p class="detail">Some Event Description</p>
+                </div>
             </div>
     
             <div id="info" class="app-section" style="display:none;">
-                    <div class="news-article">
-                            <p>Some Article</p>
-                            <p>Some Article Description</p>
-                        </div>
-                        <div class="news-article">
-                            <p>Some Article</p>
-                            <p>Some Article Description</p>
-                        </div>
-                        <div class="news-article">
-                            <p>Some Article</p>
-                            <p>Some Article Description</p>
-                        </div>
-                        <div class="news-article">
-                            <p>Some Article</p>
-                            <p>Some Article Description</p>
-                        </div>
-                        <div class="news-article">
-                            <p>Some Article</p>
-                            <p>Some Article Description</p>
-                        </div>
-                        <div class="news-article">
-                            <p>Some Article</p>
-                            <p>Some Article Description</p>
-                        </div>
-                        <div class="news-article">
-                            <p>Some Article</p>
-                            <p>Some Article Description</p>
-                        </div>
-                        <div class="news-article">
-                            <p>Some Article</p>
-                            <p>Some Article Description</p>
-                        </div>
-                        <div class="news-article">
-                            <p>Some Article</p>
-                            <p>Some Article Description</p>
-                        </div>
-                        <div class="news-article">
-                                <p>Some Article</p>
-                                <p>Some Article Description</p>
-                            </div>
-                            <div class="news-article">
-                                <p>Some Article</p>
-                                <p>Some Article Description</p>
-                            </div>
-                            <div class="news-article">
-                                <p>Some Article</p>
-                                <p>Some Article Description</p>
-                            </div>
-                            <div class="news-article">
-                                <p>Some Article</p>
-                                <p>Some Article Description</p>
-                            </div>
-                            <div class="news-article">
-                                <p>Some Article</p>
-                                <p>Some Article Description</p>
-                            </div>
+                info
             </div>
         </div>
         
@@ -236,7 +106,7 @@
             <a id="map-icon" class="active tab-icon">
                 <div class="tab-component">
                     <div>
-                        <img class="tab-image" src="img/place.png" alt="map">
+                        <img class="tab-image" src="img/mapIcon.png" alt="map">
                     </div>
                     <div>Map</div>
                 </div>
@@ -244,7 +114,7 @@
             <a id="news-icon" class="tab-icon">
                 <div class="tab-component">
                     <div>
-                        <img class="tab-image" src="img/place.png" alt="map">
+                        <img class="tab-image" src="img/newsIcon.png" alt="map">
                     </div>
                     <div>News</div>
                 </div>
@@ -252,7 +122,7 @@
             <a id="events-icon" class="tab-icon">
                 <div class="tab-component">
                     <div>
-                        <img class="tab-image" src="img/place.png" alt="map">
+                        <img class="tab-image" src="img/eventsIcon.png" alt="map">
                     </div>
                     <div>Events</div>
                 </div>
@@ -260,7 +130,7 @@
             <a id="info-icon" class="tab-icon">
                 <div class="tab-component">
                     <div>
-                        <img class="tab-image" src="img/place.png" alt="map">
+                        <img class="tab-image" src="img/infoIcon.png" alt="map">
                     </div>
                     <div>Info</div>
                 </div>
