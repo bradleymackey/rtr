@@ -93,13 +93,11 @@ h1 {
 .blink {
     animation:fade 1000ms infinite;
     -webkit-animation:fade 1000ms infinite;
-<<<<<<< HEAD:platforms/ios/www/css/index.css
 }
 
 /*style the rtr logo in info*/
 .jumbotron{
     min-height: 120px;
-    background-color: #0c2340;
     background-image: url("../img/rtrInfoCover.png");
     background-repeat: no-repeat;
     background-position: center;
@@ -107,11 +105,5 @@ h1 {
 
 .infOptions{
     background-color: white;
-    height: 100px;
-}
-
-#info{
-    /*background-color: white;*/
-=======
->>>>>>> e2851ed8e054116b5d4061904c27b8e5028ac662:platforms/ios/RTR.xcarchive/Products/Applications/RTR.app/www/css/home.css
+    height: 120px;
 }

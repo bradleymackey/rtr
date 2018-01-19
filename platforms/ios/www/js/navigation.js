@@ -44,8 +44,36 @@ $("#events-icon").click(function() {
 $("#info-icon").click(function() {
     //changes margin so that there isnt a space between navbar and logo
     $(".content").css({"margin-top": "4.3 em"});
+    $(".info-section").hide();
+    $(".info_main").show();
     tabItemSelected($("#info-icon"),$("#info"));
     updateTitle("Information");
+    return false;
+});
+
+$("#infoToVisions").click(function() {
+    //changes margin so that there isnt a space between navbar and logo
+    $(".container").hide();
+    $("#visions-aims").show();
+    updateTitle("Visions and Aims");
+    return false;
+});
+
+$("#infoToVolunteer").click(function() {
+    //changes margin so that there isnt a space between navbar and logo
+    $(".info_main").hide();
+    $("#volunteer-ops").show();
+    $(".info_images").hide();
+    updateTitle("Volunteer Opportunities");
+    return false;
+});
+
+$("#infoToLeaflets").click(function() {
+    //changes margin so that there isnt a space between navbar and logo
+    $(".info_main").hide();
+    $("#leaflets").show();
+    $(".info_images").hide();
+    updateTitle("Leaflets");
     return false;
 });
 
