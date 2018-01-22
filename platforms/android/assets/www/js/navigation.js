@@ -11,26 +11,41 @@ function onDeviceReady() {
 }
 
 $("#map-icon").click(function() {
+    $(".content").css({"margin-top": "3em"});
     tabItemSelected($("#map-icon"),$("#map"));
     updateTitle("Map");
     return false;
 });
 
 $("#news-icon").click(function() {
+    $(".content").css({"margin-top": "3.0 em"});
     tabItemSelected($("#news-icon"),$("#news"));
-    updateTitle("News");
+    updateTitle("");
+    $("#topnav-title").append(`
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="Search News">
+            </div>`
+    );
     return false;
 });
 
 $("#events-icon").click(function() {
+    $(".content").css({"margin-top": "3.0 em"});
     tabItemSelected($("#events-icon"),$("#events"));
-    updateTitle("Events");
+    updateTitle("");
+    $("#topnav-title").append(`
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="Search Events">
+            </div>`
+    );
     return false;
 });
 
 $("#info-icon").click(function() {
+    //changes margin so that there isnt a space between navbar and logo
+    $(".content").css({"margin-top": "4.3 em"});
     tabItemSelected($("#info-icon"),$("#info"));
-    updateTitle("Info");
+    updateTitle("Information");
     return false;
 });
 
