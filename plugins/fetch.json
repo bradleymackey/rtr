@@ -51,5 +51,13 @@
     "variables": {
       "GEOLOCATION_USAGE_DESCRIPTION": "Allow to see your location on the map."
     }
+  },
+  "phonegap-plugin-push": {
+    "source": {
+      "type": "registry",
+      "id": "phonegap-plugin-push@2.1.2"
+    },
+    "is_top_level": true,
+    "variables": {}
   }
 }

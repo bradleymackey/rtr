@@ -217,6 +217,14 @@ module.exports = [
     "clobbers": [
       "navigator.geolocation"
     ]
+  },
+  {
+    "id": "phonegap-plugin-push.PushNotification",
+    "file": "plugins/phonegap-plugin-push/www/push.js",
+    "pluginId": "phonegap-plugin-push",
+    "clobbers": [
+      "PushNotification"
+    ]
   }
 ];
 module.exports.metadata = 
@@ -227,7 +235,8 @@ module.exports.metadata =
   "cordova-plugin-googlemaps": "2.1.1",
   "cordova-plugin-statusbar": "2.4.1",
   "cordova-plugin-navigationbar": "1.0.31",
-  "cordova-plugin-geolocation": "4.0.1"
+  "cordova-plugin-geolocation": "4.0.1",
+  "phonegap-plugin-push": "2.1.2"
 };
 // BOTTOM OF METADATA
 });

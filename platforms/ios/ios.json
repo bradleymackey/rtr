@@ -71,6 +71,10 @@
             {
               "xml": "<feature name=\"Geolocation\"><param name=\"ios-package\" value=\"CDVLocation\" /></feature>",
               "count": 1
+            },
+            {
+              "xml": "<feature name=\"PushNotification\"><param name=\"ios-package\" value=\"PushPlugin\" /></feature>",
+              "count": 1
             }
           ]
         }
@@ -106,6 +110,32 @@
               "xml": "<array><dict><key>CFBundleTypeRole</key><string>Editor</string><key>CFBundleURLName</key><string>com.riverteesredisocovered.rtr</string><key>CFBundleURLSchemes</key><array><string>com.riverteesredisocovered.rtr</string></array></dict></array>",
               "count": 1
             }
+          ],
+          "UIBackgroundModes": [
+            {
+              "xml": "<array><string>remote-notification</string></array>",
+              "count": 1
+            }
+          ]
+        }
+      },
+      "*-Debug.plist": {
+        "parents": {
+          "aps-environment": [
+            {
+              "xml": "<string>development</string>",
+              "count": 1
+            }
+          ]
+        }
+      },
+      "*-Release.plist": {
+        "parents": {
+          "aps-environment": [
+            {
+              "xml": "<string>production</string>",
+              "count": 1
+            }
           ]
         }
       }
@@ -131,6 +161,9 @@
       "PACKAGE_NAME": "com.riverteesredisocovered.rtr"
     },
     "cordova-plugin-geolocation": {
+      "PACKAGE_NAME": "com.riverteesredisocovered.rtr"
+    },
+    "phonegap-plugin-push": {
       "PACKAGE_NAME": "com.riverteesredisocovered.rtr"
     }
   },
@@ -353,6 +386,14 @@
       "clobbers": [
         "navigator.geolocation"
       ]
+    },
+    {
+      "id": "phonegap-plugin-push.PushNotification",
+      "file": "plugins/phonegap-plugin-push/www/push.js",
+      "pluginId": "phonegap-plugin-push",
+      "clobbers": [
+        "PushNotification"
+      ]
     }
   ],
   "plugin_metadata": {
@@ -361,6 +402,7 @@
     "cordova-plugin-googlemaps": "2.1.1",
     "cordova-plugin-statusbar": "2.4.1",
     "cordova-plugin-navigationbar": "1.0.31",
-    "cordova-plugin-geolocation": "4.0.1"
+    "cordova-plugin-geolocation": "4.0.1",
+    "phonegap-plugin-push": "2.1.2"
   }
 }
