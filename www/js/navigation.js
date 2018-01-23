@@ -77,6 +77,16 @@ $("#infoToLeaflets").click(function() {
     return false;
 });
 
+//show event detail
+$("#eventToDetail").click(function() {
+    //changes margin so that there isnt a space between navbar and logo
+    $(".events_main").hide();
+    $("#event_detail").show();
+    updateTitle("Event Detail");
+    return false;
+});
+
+
 // update the top title of the navigation bar when a new section is selected
 function updateTitle(titleText) {
     $("#topnav-title").text(titleText);
