@@ -26,6 +26,8 @@ $("#news-icon").click(function() {
                 <input type="text" class="form-control" placeholder="Search News">
             </div>`
     );
+    $(".content-item").show();
+    $("#news-article").hide();
     return false;
 });
 
@@ -75,6 +77,12 @@ $("#infoToLeaflets").click(function() {
     $(".info_images").hide();
     updateTitle("Leaflets");
     return false;
+});
+
+$("#news .content-item").click(function(){
+    $(".content-item").hide();
+    $("#news-article").show();
+    updateTitle("Some Article");
 });
 
 // update the top title of the navigation bar when a new section is selected
