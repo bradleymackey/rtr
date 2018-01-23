@@ -26,11 +26,15 @@ $("#news-icon").click(function() {
                 <input type="text" class="form-control" placeholder="Search News">
             </div>`
     );
+    $(".content-item").show();
+    $("#news-article").hide();
     return false;
 });
 
 $("#events-icon").click(function() {
     $(".content").css({"margin-top": "3.0 em"});
+    $(".event-section").hide();
+    $(".events_main").show();
     tabItemSelected($("#events-icon"),$("#events"));
     updateTitle("");
     $("#topnav-title").append(`
@@ -75,6 +79,21 @@ $("#infoToLeaflets").click(function() {
     $(".info_images").hide();
     updateTitle("Leaflets");
     return false;
+});
+
+//show event detail
+$("#events .content-item").click(function() {
+    //changes margin so that there isnt a space between navbar and logo
+    $(".events_main").hide();
+    $("#event_detail").show();
+    updateTitle("Event Detail");
+    return false;
+});
+
+$("#news .content-item").click(function(){
+    $(".content-item").hide();
+    $("#news-article").show();
+    updateTitle("Some Article");
 });
 
 // update the top title of the navigation bar when a new section is selected
