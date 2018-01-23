@@ -26,6 +26,8 @@ $("#news-icon").click(function() {
                 <input type="text" class="form-control" placeholder="Search News">
             </div>`
     );
+    $(".content-item").show();
+    $("#news-article").hide();
     return false;
 });
 
@@ -77,6 +79,7 @@ $("#infoToLeaflets").click(function() {
     return false;
 });
 
+<<<<<<< HEAD
 //show event detail
 $("#eventToDetail").click(function() {
     //changes margin so that there isnt a space between navbar and logo
@@ -87,6 +90,14 @@ $("#eventToDetail").click(function() {
 });
 
 
+=======
+$("#news .content-item").click(function(){
+    $(".content-item").hide();
+    $("#news-article").show();
+    updateTitle("Some Article");
+});
+
+>>>>>>> 94ac41202e48eeddf63c8eadc8fca60df4a306d5
 // update the top title of the navigation bar when a new section is selected
 function updateTitle(titleText) {
     $("#topnav-title").text(titleText);
