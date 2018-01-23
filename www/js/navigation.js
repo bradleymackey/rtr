@@ -33,6 +33,8 @@ $("#news-icon").click(function() {
 
 $("#events-icon").click(function() {
     $(".content").css({"margin-top": "3.0 em"});
+    $(".event-section").hide();
+    $(".events_main").show();
     tabItemSelected($("#events-icon"),$("#events"));
     updateTitle("");
     $("#topnav-title").append(`
@@ -80,7 +82,7 @@ $("#infoToLeaflets").click(function() {
 });
 
 //show event detail
-$("#eventToDetail").click(function() {
+$("#events .content-item").click(function() {
     //changes margin so that there isnt a space between navbar and logo
     $(".events_main").hide();
     $("#event_detail").show();
