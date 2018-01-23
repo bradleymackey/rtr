@@ -79,6 +79,15 @@ $("#infoToLeaflets").click(function() {
     return false;
 });
 
+//show event detail
+$("#eventToDetail").click(function() {
+    //changes margin so that there isnt a space between navbar and logo
+    $(".events_main").hide();
+    $("#event_detail").show();
+    updateTitle("Event Detail");
+    return false;
+});
+
 $("#news .content-item").click(function(){
     $(".content-item").hide();
     $("#news-article").show();
