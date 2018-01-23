@@ -112,6 +112,10 @@ h1 {
     background-color: #bbc1cc;
 }
 
+.content-item:active{
+    background-color: #bbc1cc;
+}
+
 .news-section img{
     /* image aspect fill behaviour */
     width: 100%;
