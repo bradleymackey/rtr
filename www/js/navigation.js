@@ -42,6 +42,8 @@ $("#events-icon").click(function() {
                 <input type="text" class="form-control" placeholder="Search Events">
             </div>`
     );
+    $(".content-item").show();
+    $("#event_detail").hide();
     return false;
 });
 
