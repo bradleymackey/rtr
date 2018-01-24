@@ -11,6 +11,7 @@ function onDeviceReady() {
 }
 
 $("#map-icon").click(function() {
+    // hide content, because the map requires a different layout
     $(".content").css("display", "none");
     tabItemSelected($("#map-icon"),$("#map"));
     updateTitle("Map");

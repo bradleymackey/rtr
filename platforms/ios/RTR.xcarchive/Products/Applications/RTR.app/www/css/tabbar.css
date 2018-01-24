@@ -26,6 +26,11 @@
     transform: translate3d(0,0,0);
 }
 
+#topnav-title {
+    /* force gpu acceleration to prevent iOS glitch */
+    transform: translate3d(0,0,0);
+}
+
 #map {
     position: static;
     margin-top: 3.0em;
@@ -86,6 +91,11 @@
     width: 25px;
     height: 25px;
     padding: 4px;
+    /* force gpu acceleration to prevent iOS glitch */
+    transform: translate3d(0,0,0);
+}
+
+.tab-label {
     /* force gpu acceleration to prevent iOS glitch */
     transform: translate3d(0,0,0);
 }
