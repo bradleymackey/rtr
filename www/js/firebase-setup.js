@@ -44,20 +44,20 @@ document.addEventListener('deviceready', function(event) {
     });
 }, false);
 
-// const messaging = firebase.messaging();
-// messaging.requestPermission()
-// .then(function() {
-//     console.log("have permission");
-//     return messaging.getToken();
-// })
-// .then(function(token) {
-//     console.log(token);
-//     subscribeTokenToTopic(token,'events',config);
-//     subscribeTokenToTopic(token, 'news',config);
-// })
-// .catch(function(err) {
-//     console.log("error");
-// });
+const messaging = firebase.messaging();
+messaging.requestPermission()
+.then(function() {
+    console.log("have permission");
+    return messaging.getToken();
+})
+.then(function(token) {
+    console.log(token);
+    subscribeTokenToTopic(token,'events',config);
+    subscribeTokenToTopic(token, 'news',config);
+})
+.catch(function(err) {
+    console.log("error");
+});
 
 function subscribeTokenToTopic(token, topic,configuration) {
     fetch('https://iid.googleapis.com/iid/v1/'+token+'/rel/topics/'+topic, {
