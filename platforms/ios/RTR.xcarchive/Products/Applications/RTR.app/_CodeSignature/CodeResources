@@ -94,11 +94,11 @@
 		</data>
 		<key>Assets.car</key>
 		<data>
-		TxZ6sBkmlRPCa6ZKkdVMau02mTo=
+		I/x2YkkwIKwHcxLJHvyqVysAhyA=
 		</data>
 		<key>CDVLaunchScreen.storyboardc/01J-lp-oVM-view-Ze5-6b-2t3.nib</key>
 		<data>
-		yR9NLi0tf1OEAnStia4p4LlXDDA=
+		OtchEo2FRmGtT2LZDzED1vLRw/s=
 		</data>
 		<key>CDVLaunchScreen.storyboardc/Info.plist</key>
 		<data>
@@ -106,7 +106,7 @@
 		</data>
 		<key>CDVLaunchScreen.storyboardc/UIViewController-01J-lp-oVM.nib</key>
 		<data>
-		PkNUm/mQgbRi4SAN0IprydK2vqw=
+		akorKqUPVvq4YDOLrw3EB9pyPAE=
 		</data>
 		<key>Info.plist</key>
 		<data>
@@ -118,15 +118,15 @@
 		</data>
 		<key>Launch.storyboardc/LvT-gJ-THs-view-aUJ-7N-Li2.nib</key>
 		<data>
-		f9uuBwcVR3sgF0w9XFflg3dG590=
+		24l/revd9bScBqOLTmEtKGyaAp8=
 		</data>
 		<key>Launch.storyboardc/UIViewController-LvT-gJ-THs.nib</key>
 		<data>
-		L9COO9vK68KLmSBHSopUbz1dM3g=
+		toFRcLOQCSkvQpQSsnRuOrcE/Mc=
 		</data>
 		<key>MainViewController.nib</key>
 		<data>
-		5GSwiWaKfQNWRSbuRMFUmly4LnE=
+		lldgMDLvc9kkXhURCz1jodztvV0=
 		</data>
 		<key>PkgInfo</key>
 		<data>
@@ -186,7 +186,7 @@
 		</data>
 		<key>www/css/tabbar.css</key>
 		<data>
-		e4JdZxZOsx7D703tu2w6cSbyrQk=
+		Ti2qR6rKSu5TlmljPWyIxMGhoF0=
 		</data>
 		<key>www/img/demo.jpg</key>
 		<data>
@@ -258,7 +258,7 @@
 		</data>
 		<key>www/index.html</key>
 		<data>
-		qKMVqwh42j4x2qqVYRvguO1Eq7c=
+		yduNUOeHMqu6q3n2awCLebn7heM=
 		</data>
 		<key>www/js/bootstrap.bundle.js</key>
 		<data>
@@ -282,7 +282,7 @@
 		</data>
 		<key>www/js/navigation.js</key>
 		<data>
-		5udsuDllAAjbqNm8g9uUa6YPtRk=
+		06mxqS3xxm7TLP2/+mPQqRXKnd8=
 		</data>
 		<key>www/plugins/cordova-plugin-geolocation/www/Coordinates.js</key>
 		<data>
@@ -561,22 +561,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			TxZ6sBkmlRPCa6ZKkdVMau02mTo=
+			I/x2YkkwIKwHcxLJHvyqVysAhyA=
 			</data>
 			<key>hash2</key>
 			<data>
-			XNLys0ulDzMFZxZm6FmIM21g4nkEeq92KG6Pb62eNos=
+			VqGC5gHaOLe+yhISPbTZ8qJ21HjTAUv0xSgPeqNxBjA=
 			</data>
 		</dict>
 		<key>CDVLaunchScreen.storyboardc/01J-lp-oVM-view-Ze5-6b-2t3.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			yR9NLi0tf1OEAnStia4p4LlXDDA=
+			OtchEo2FRmGtT2LZDzED1vLRw/s=
 			</data>
 			<key>hash2</key>
 			<data>
-			lmZIEdn2Vcj9CMFfTcUBDpBglISujiTadMTbTFAWT/M=
+			CnvHP86hvF9uGggpU6utkIwj7kXxogaDHmusgg+/Z1A=
 			</data>
 		</dict>
 		<key>CDVLaunchScreen.storyboardc/Info.plist</key>
@@ -594,11 +594,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			PkNUm/mQgbRi4SAN0IprydK2vqw=
+			akorKqUPVvq4YDOLrw3EB9pyPAE=
 			</data>
 			<key>hash2</key>
 			<data>
-			+0el/nX91rf1D+D4KEysju9EXnF/Hueq5jiTZifjpwc=
+			NpRAFkfcm7mDD3SFeIMS2yGthjQ0ZtC7QHiNkL6C0Bw=
 			</data>
 		</dict>
 		<key>Launch.storyboardc/Info.plist</key>
@@ -616,33 +616,33 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			f9uuBwcVR3sgF0w9XFflg3dG590=
+			24l/revd9bScBqOLTmEtKGyaAp8=
 			</data>
 			<key>hash2</key>
 			<data>
-			rQDmGrWT6rvtu8PuJoLOSBM1t+F21BUjEBUhCBJFNJY=
+			uemHt52Jvvw36+mDf2x5Dx5P4UcWE0xrAn/xrHHvN8I=
 			</data>
 		</dict>
 		<key>Launch.storyboardc/UIViewController-LvT-gJ-THs.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			L9COO9vK68KLmSBHSopUbz1dM3g=
+			toFRcLOQCSkvQpQSsnRuOrcE/Mc=
 			</data>
 			<key>hash2</key>
 			<data>
-			anW5QNuC7D7st0lMVjt3Ny7DTDnrwrvilzTpiyobmro=
+			FT/rfKIiqCzcatHNcvtTS6KPOtWsb+wmewnZkUnImr4=
 			</data>
 		</dict>
 		<key>MainViewController.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			5GSwiWaKfQNWRSbuRMFUmly4LnE=
+			lldgMDLvc9kkXhURCz1jodztvV0=
 			</data>
 			<key>hash2</key>
 			<data>
-			t6wCCpQ2r1+CfI6dbYZqfp+xAP4D+ItYvtL2EwdKVPc=
+			YQ7VhmAk4dmSmN2dqbymvGxFPqvu7Hp0qxlNGm93g+U=
 			</data>
 		</dict>
 		<key>archived-expanded-entitlements.xcent</key>
@@ -792,11 +792,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			e4JdZxZOsx7D703tu2w6cSbyrQk=
+			Ti2qR6rKSu5TlmljPWyIxMGhoF0=
 			</data>
 			<key>hash2</key>
 			<data>
-			E9rmh1HiSjQiodwlFLANXwqk/2RICz03gsEQx7guhLM=
+			dye5Zkn1q1ePddKa9hG8Q3Owl+WMBPQ3VqGcFoSS52g=
 			</data>
 		</dict>
 		<key>www/img/demo.jpg</key>
@@ -990,11 +990,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			qKMVqwh42j4x2qqVYRvguO1Eq7c=
+			yduNUOeHMqu6q3n2awCLebn7heM=
 			</data>
 			<key>hash2</key>
 			<data>
-			CwyM0evDbbfdGgOm2m3fIVi+zYFpCydqE9yF4oHqGdA=
+			w4dUAQthZUn/LH8lKxtpHjQVNrvcXJDG50ie5aT6nF8=
 			</data>
 		</dict>
 		<key>www/js/bootstrap.bundle.js</key>
@@ -1056,11 +1056,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			5udsuDllAAjbqNm8g9uUa6YPtRk=
+			06mxqS3xxm7TLP2/+mPQqRXKnd8=
 			</data>
 			<key>hash2</key>
 			<data>
-			0FkRk0vo2ZkMu3SPyUlJWL1An+pVv7crZ7UC1359aDw=
+			twPL60wcRv/6XZsEZX8gwvHnzGtyeli0vGeC4wPoOtc=
 			</data>
 		</dict>
 		<key>www/plugins/cordova-plugin-geolocation/www/Coordinates.js</key>

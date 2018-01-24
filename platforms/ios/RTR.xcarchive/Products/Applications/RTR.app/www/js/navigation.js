@@ -11,13 +11,15 @@ function onDeviceReady() {
 }
 
 $("#map-icon").click(function() {
-    $(".content").css({"margin-top": "3em"});
+    $(".content").css("display", "none");
     tabItemSelected($("#map-icon"),$("#map"));
     updateTitle("Map");
     return false;
 });
 
 $("#news-icon").click(function() {
+    // display content again (because map hides it)
+    $(".content").css("display", "block");
     $(".content").css({"margin-top": "3.0 em"});
     tabItemSelected($("#news-icon"),$("#news"));
     updateTitle("");
@@ -32,6 +34,8 @@ $("#news-icon").click(function() {
 });
 
 $("#events-icon").click(function() {
+    // display content again (because map hides it)
+    $(".content").css("display", "block");
     $(".content").css({"margin-top": "3.0 em"});
     $(".event-section").hide();
     $(".events_main").show();
@@ -48,6 +52,8 @@ $("#events-icon").click(function() {
 });
 
 $("#info-icon").click(function() {
+    // display content again (because map hides it)
+    $(".content").css("display", "block");
     //changes margin so that there isnt a space between navbar and logo
     $(".content").css({"margin-top": "4.3 em"});
     $(".info-section").hide();
