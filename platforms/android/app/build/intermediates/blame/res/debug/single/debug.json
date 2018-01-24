@@ -1,35 +1,35 @@
 [
     {
-        "merged": "/Users/bradleymackey/Development/projects/rtr/platforms/android/app/build/intermediates/res/merged/debug/layout-v16_notification_template_custom_big.xml.flat",
-        "source": "/Users/bradleymackey/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/95556b2a015222e59dd624fc40b2fee3/res/layout-v16/notification_template_custom_big.xml"
-    },
-    {
         "merged": "/Users/bradleymackey/Development/projects/rtr/platforms/android/app/build/intermediates/res/merged/debug/layout_notification_template_big_media.xml.flat",
         "source": "/Users/bradleymackey/.gradle/caches/transforms-1/files-1.1/support-media-compat-26.1.0.aar/fe1533e3535305520443786e2944458c/res/layout/notification_template_big_media.xml"
     },
     {
-        "merged": "/Users/bradleymackey/Development/projects/rtr/platforms/android/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_googleg_standard_color_18.png.flat",
-        "source": "/Users/bradleymackey/.gradle/caches/transforms-1/files-1.1/play-services-base-11.0.1.aar/0b86f7a56fa14c4bc363c8d0cfc114c1/res/drawable-hdpi-v4/googleg_standard_color_18.png"
-    },
-    {
-        "merged": "/Users/bradleymackey/Development/projects/rtr/platforms/android/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_notification_bg_low_pressed.9.png.flat",
-        "source": "/Users/bradleymackey/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/95556b2a015222e59dd624fc40b2fee3/res/drawable-hdpi-v4/notification_bg_low_pressed.9.png"
+        "merged": "/Users/bradleymackey/Development/projects/rtr/platforms/android/app/build/intermediates/res/merged/debug/layout-v16_notification_template_custom_big.xml.flat",
+        "source": "/Users/bradleymackey/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/95556b2a015222e59dd624fc40b2fee3/res/layout-v16/notification_template_custom_big.xml"
     },
     {
         "merged": "/Users/bradleymackey/Development/projects/rtr/platforms/android/app/build/intermediates/res/merged/debug/drawable_notification_bg.xml.flat",
         "source": "/Users/bradleymackey/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/95556b2a015222e59dd624fc40b2fee3/res/drawable/notification_bg.xml"
     },
     {
+        "merged": "/Users/bradleymackey/Development/projects/rtr/platforms/android/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_notification_bg_low_pressed.9.png.flat",
+        "source": "/Users/bradleymackey/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/95556b2a015222e59dd624fc40b2fee3/res/drawable-hdpi-v4/notification_bg_low_pressed.9.png"
+    },
+    {
+        "merged": "/Users/bradleymackey/Development/projects/rtr/platforms/android/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_googleg_standard_color_18.png.flat",
+        "source": "/Users/bradleymackey/.gradle/caches/transforms-1/files-1.1/play-services-base-11.0.1.aar/0b86f7a56fa14c4bc363c8d0cfc114c1/res/drawable-hdpi-v4/googleg_standard_color_18.png"
+    },
+    {
         "merged": "/Users/bradleymackey/Development/projects/rtr/platforms/android/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_notify_panel_notification_icon_bg.png.flat",
         "source": "/Users/bradleymackey/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/95556b2a015222e59dd624fc40b2fee3/res/drawable-xhdpi-v4/notify_panel_notification_icon_bg.png"
     },
     {
-        "merged": "/Users/bradleymackey/Development/projects/rtr/platforms/android/app/build/intermediates/res/merged/debug/layout_dummy_infowindow.xml.flat",
-        "source": "/Users/bradleymackey/Development/projects/rtr/platforms/android/app/src/main/res/layout/dummy_infowindow.xml"
-    },
-    {
         "merged": "/Users/bradleymackey/Development/projects/rtr/platforms/android/app/build/intermediates/res/merged/debug/drawable_notification_tile_bg.xml.flat",
         "source": "/Users/bradleymackey/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/95556b2a015222e59dd624fc40b2fee3/res/drawable/notification_tile_bg.xml"
+    },
+    {
+        "merged": "/Users/bradleymackey/Development/projects/rtr/platforms/android/app/build/intermediates/res/merged/debug/layout_dummy_infowindow.xml.flat",
+        "source": "/Users/bradleymackey/Development/projects/rtr/platforms/android/app/src/main/res/layout/dummy_infowindow.xml"
     },
     {
         "merged": "/Users/bradleymackey/Development/projects/rtr/platforms/android/app/build/intermediates/res/merged/debug/drawable-port-xxhdpi_screen.png.flat",

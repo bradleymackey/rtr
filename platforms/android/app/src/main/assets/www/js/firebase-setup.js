@@ -12,24 +12,30 @@ firebase.initializeApp(config);
 document.addEventListener('deviceready', function(event) {
     const push = PushNotification.init({
         android: {
+            topics: ['events', 'news']
         },
         ios: {
             alert: true,
             badge: true,
             sound: true,
-            clearBadge: true
+            clearBadge: true,
+            fcmSandbox:true,
+            topics: ['events', 'news']
         }
     });
-    push.subscribe('events', () => {
-        console.log('success');
-    }, (e) => {
-        console.log('error:', e);
-        alert('error',e);
-    });
-    push.subscribe('news', () => {
-        console.log('success');
-    }, (e) => {
-        console.log('error:', e);
+    push.on('registration', (data) => {
+        console.log(data.registrationId);
+        console.log(data.registrationType);
+        // push.subscribe('events', () => {
+        //     console.log('success');
+        // }, (e) => {
+        //     console.error('subscribe error:', e);
+        // });
+        // push.subscribe('news', () => {
+        //     console.log('success');
+        // }, (e) => {
+        //     console.error('subcribe error:', e);
+        // });
     });
     push.clearAllNotifications(() => {
         console.log('success');
@@ -53,18 +59,18 @@ document.addEventListener('deviceready', function(event) {
 //     console.log("error");
 // });
 
-// function subscribeTokenToTopic(token, topic,configuration) {
-//     fetch('https://iid.googleapis.com/iid/v1/'+token+'/rel/topics/'+topic, {
-//       method: 'POST',
-//       headers: new Headers({
-//         'Authorization': 'key='+configuration.apiKey
-//       })
-//     }).then(response => {
-//       if (response.status < 200 || response.status >= 400) {
-//         throw 'Error subscribing to topic: '+response.status + ' - ' + response.text();
-//       }
-//       console.log('Subscribed to "'+topic+'"');
-//     }).catch(error => {
-//       console.error(error);
-//     })
-// }
+function subscribeTokenToTopic(token, topic,configuration) {
+    fetch('https://iid.googleapis.com/iid/v1/'+token+'/rel/topics/'+topic, {
+      method: 'POST',
+      headers: new Headers({
+        'Authorization': 'key='+configuration.apiKey
+      })
+    }).then(response => {
+      if (response.status < 200 || response.status >= 400) {
+        throw 'Error subscribing to topic: '+response.status + ' - ' + response.text();
+      }
+      console.log('Subscribed to "'+topic+'"');
+    }).catch(error => {
+      console.error(error);
+    })
+}

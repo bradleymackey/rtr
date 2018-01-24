@@ -94,11 +94,11 @@
 		</data>
 		<key>Assets.car</key>
 		<data>
-		cIyWo9mFEIDpwTy23aeYPQKGsWs=
+		zFQOPG5iu/IO00n1QI+R//tu3WQ=
 		</data>
 		<key>CDVLaunchScreen.storyboardc/01J-lp-oVM-view-Ze5-6b-2t3.nib</key>
 		<data>
-		x3p/pqZfcu770PuGLeoXx8bsPxw=
+		GQWA4WGrsR7ZWFsq+CVulHqeFQs=
 		</data>
 		<key>CDVLaunchScreen.storyboardc/Info.plist</key>
 		<data>
@@ -106,7 +106,7 @@
 		</data>
 		<key>CDVLaunchScreen.storyboardc/UIViewController-01J-lp-oVM.nib</key>
 		<data>
-		wge+wd8Zk8OKQLpn6HXZsc0cbJo=
+		8CQCv9oZLBuVmpDOC4AWVHIkgS4=
 		</data>
 		<key>GoogleMaps.bundle/GMSCacheStorage.momd/Storage.mom</key>
 		<data>
@@ -778,10 +778,6 @@
 		<data>
 		Kj6ixJMHtndv37xT7AFZAQBgKic=
 		</data>
-		<key>GoogleService-Info.plist</key>
-		<data>
-		ysVtBT9gxHoFvI9SmQubNZVMqTI=
-		</data>
 		<key>Info.plist</key>
 		<data>
 		BXBksjvyuj+Q58J2I0ZTrc7UJ/I=
@@ -792,15 +788,15 @@
 		</data>
 		<key>Launch.storyboardc/LvT-gJ-THs-view-aUJ-7N-Li2.nib</key>
 		<data>
-		bA4RpJy7xRnCQyflFQxgSC2WbOg=
+		kFfB6/gOdp4E7v9RXKKrySXCRzM=
 		</data>
 		<key>Launch.storyboardc/UIViewController-LvT-gJ-THs.nib</key>
 		<data>
-		HWMNtHv7IwcfE8k8G+4HrnmYa4k=
+		EVVfWqyJkFmkQ1nF/zA678M7tKQ=
 		</data>
 		<key>MainViewController.nib</key>
 		<data>
-		6PYcKk5pUPJBqrwnBTRYELCgcqw=
+		IOsDh7zedbPrfJhvnOxJRpgsl40=
 		</data>
 		<key>PkgInfo</key>
 		<data>
@@ -932,7 +928,7 @@
 		</data>
 		<key>www/index.html</key>
 		<data>
-		PHiuAiskdTI6Pab47yWbiAMmT9s=
+		X/rVqNaqYi8LBVIOeo9uBSwyoPA=
 		</data>
 		<key>www/js/bootstrap.bundle.js</key>
 		<data>
@@ -940,7 +936,7 @@
 		</data>
 		<key>www/js/firebase-setup.js</key>
 		<data>
-		Hm9cJ95wb3Mb/0t1yzEAPFsoYJ0=
+		W6u+y1v5ewUEzZb39DFmvIjxzzc=
 		</data>
 		<key>www/js/jquery-3.2.1.js</key>
 		<data>
@@ -1347,22 +1343,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			cIyWo9mFEIDpwTy23aeYPQKGsWs=
+			zFQOPG5iu/IO00n1QI+R//tu3WQ=
 			</data>
 			<key>hash2</key>
 			<data>
-			0Dgxq8a/AOtDkuTxnyU/N9gZFKTTtOQ5E+YzWfCxW3o=
+			I3Md3/lh+PuwQXFFmk3cDOIZspIk1a6EVY8NW8R87iI=
 			</data>
 		</dict>
 		<key>CDVLaunchScreen.storyboardc/01J-lp-oVM-view-Ze5-6b-2t3.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			x3p/pqZfcu770PuGLeoXx8bsPxw=
+			GQWA4WGrsR7ZWFsq+CVulHqeFQs=
 			</data>
 			<key>hash2</key>
 			<data>
-			yOM/uLgin6YVS0QCEa8XRu3oFy3k35fqv/8sVNadHYE=
+			NW54bKIiEMWVYCrszytc34YqVAjBQszANNImBlcJ/7U=
 			</data>
 		</dict>
 		<key>CDVLaunchScreen.storyboardc/Info.plist</key>
@@ -1380,11 +1376,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			wge+wd8Zk8OKQLpn6HXZsc0cbJo=
+			8CQCv9oZLBuVmpDOC4AWVHIkgS4=
 			</data>
 			<key>hash2</key>
 			<data>
-			kUTE0ryaV46M1NCJenJ4bmjEchDbAz7LFLgTonncRvA=
+			i2pofZzy/5AHEkKrnASNizlYH+6so1Nv7Io475ej5TI=
 			</data>
 		</dict>
 		<key>GoogleMaps.bundle/GMSCacheStorage.momd/Storage.mom</key>
@@ -2689,17 +2685,6 @@
 			DXQ4sOleVe+NnnezsCMWzD636T2Fz10D/+kZS6n5w8M=
 			</data>
 		</dict>
-		<key>GoogleService-Info.plist</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			ysVtBT9gxHoFvI9SmQubNZVMqTI=
-			</data>
-			<key>hash2</key>
-			<data>
-			iMfqXrZxf25shbZ1Hu8Y2iOIIIHcb6UEbCFsiyZe1vU=
-			</data>
-		</dict>
 		<key>Launch.storyboardc/Info.plist</key>
 		<dict>
 			<key>hash</key>
@@ -2715,33 +2700,33 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			bA4RpJy7xRnCQyflFQxgSC2WbOg=
+			kFfB6/gOdp4E7v9RXKKrySXCRzM=
 			</data>
 			<key>hash2</key>
 			<data>
-			r8XDhuSpLmHMFKEgiFjeEYp5FbYdD+46yr7lR6eVKgQ=
+			+cVKEEwC4h885Hnk7+bDjC4Iw+m7hrzaEQ4DluWXAm4=
 			</data>
 		</dict>
 		<key>Launch.storyboardc/UIViewController-LvT-gJ-THs.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			HWMNtHv7IwcfE8k8G+4HrnmYa4k=
+			EVVfWqyJkFmkQ1nF/zA678M7tKQ=
 			</data>
 			<key>hash2</key>
 			<data>
-			xeHuyVu1XOeFC3lscO8rg1V/CdgwSlc3zKLIO7HWZYE=
+			9tiRlCbR9Vc/1/2IOGSGN5tobDkvAXKz0ymXZ6Nabiw=
 			</data>
 		</dict>
 		<key>MainViewController.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			6PYcKk5pUPJBqrwnBTRYELCgcqw=
+			IOsDh7zedbPrfJhvnOxJRpgsl40=
 			</data>
 			<key>hash2</key>
 			<data>
-			McVYqflJ/+UcJkkuJW69MuMBR4+3Dezw2cjumtvnhkU=
+			XKoE3bsYXIhFMefvRY+mkiOgw09YNeLf5tfkTzpCJ7Y=
 			</data>
 		</dict>
 		<key>archived-expanded-entitlements.xcent</key>
@@ -3089,11 +3074,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			PHiuAiskdTI6Pab47yWbiAMmT9s=
+			X/rVqNaqYi8LBVIOeo9uBSwyoPA=
 			</data>
 			<key>hash2</key>
 			<data>
-			uC+z3CkLeK8M9cidQ/49h9Ccp9zZYJRpOx12ZuDFNyA=
+			UDsdgC2Xcp/kEbLXeOXwN5zhloI6YoUFfonziuuQV2I=
 			</data>
 		</dict>
 		<key>www/js/bootstrap.bundle.js</key>
@@ -3111,11 +3096,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			Hm9cJ95wb3Mb/0t1yzEAPFsoYJ0=
+			W6u+y1v5ewUEzZb39DFmvIjxzzc=
 			</data>
 			<key>hash2</key>
 			<data>
-			vg0N4g2bQzC2IQew1wVDmZJ1/I4PIO5ff+JAD5Vpv0c=
+			lQmaDzViSfdYgG/Ac6t6urLUlGFRViAvHjlvm5FP49k=
 			</data>
 		</dict>
 		<key>www/js/jquery-3.2.1.js</key>

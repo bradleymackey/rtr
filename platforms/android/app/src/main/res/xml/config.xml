@@ -63,7 +63,6 @@
         River Tees Rediscovered
     </author>
     <content src="index.html" />
-    <access origin="*" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
     <allow-intent href="tel:*" />
@@ -71,6 +70,8 @@
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
     <allow-navigation href="*" />
+    <allow-intent href="*" />
+    <access origin="*" />
     <allow-intent href="market:*" />
     <resource-file src="res/google-services.json" target="app/google-services.json" />
     <icon density="ldpi" src="res/android/Icon-36.png" />

@@ -138,6 +138,16 @@
             }
           ]
         }
+      },
+      "*/Entitlements-Debug.plist": {
+        "parents": {
+          "aps-environment": []
+        }
+      },
+      "*/Entitlements-Release.plist": {
+        "parents": {
+          "aps-environment": []
+        }
       }
     }
   },
