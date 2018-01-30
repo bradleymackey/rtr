@@ -27,6 +27,10 @@
             {
               "xml": "<feature name=\"PushNotification\"><param name=\"ios-package\" value=\"PushPlugin\" /></feature>",
               "count": 1
+            },
+            {
+              "xml": "<feature name=\"RequestLocationAccuracy\"><param name=\"ios-package\" value=\"RequestLocationAccuracy\" /></feature>",
+              "count": 1
             }
           ]
         }
@@ -93,6 +97,9 @@
     },
     "phonegap-plugin-push": {
       "PACKAGE_NAME": "com.riverteesredisocovered.rtr"
+    },
+    "cordova-plugin-request-location-accuracy": {
+      "PACKAGE_NAME": "com.riverteesredisocovered.rtr"
     }
   },
   "dependent_plugins": {},
@@ -152,6 +159,14 @@
       "clobbers": [
         "PushNotification"
       ]
+    },
+    {
+      "id": "cordova-plugin-request-location-accuracy.RequestLocationAccuracy",
+      "file": "plugins/cordova-plugin-request-location-accuracy/www/ios/RequestLocationAccuracy.js",
+      "pluginId": "cordova-plugin-request-location-accuracy",
+      "clobbers": [
+        "cordova.plugins.locationAccuracy"
+      ]
     }
   ],
   "plugin_metadata": {
@@ -159,6 +174,7 @@
     "cordova-plugin-statusbar": "2.4.1",
     "cordova-plugin-navigationbar": "1.0.31",
     "cordova-plugin-geolocation": "4.0.1",
-    "phonegap-plugin-push": "2.1.2"
+    "phonegap-plugin-push": "2.1.2",
+    "cordova-plugin-request-location-accuracy": "2.2.2"
   }
 }

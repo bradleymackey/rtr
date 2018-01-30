@@ -20,6 +20,7 @@
 		9793955D200FA368009E7068 /* Launch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9793955C200FA368009E7068 /* Launch.storyboard */; };
 		F088DDC65ACF4FDAB48D21CE /* AppDelegate+notification.m in Sources */ = {isa = PBXBuildFile; fileRef = 317B18E028B44DCDAD7310B8 /* AppDelegate+notification.m */; };
 		03AE7D535D714EFC9535CB45 /* PushPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 019FCB5EBCA54C5F9E5875F3 /* PushPlugin.m */; };
+		8A6727FBFE874D24ADA5FB6A /* RequestLocationAccuracy.m in Sources */ = {isa = PBXBuildFile; fileRef = F64449B2FD8047A793788AFA /* RequestLocationAccuracy.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +82,8 @@
 		019FCB5EBCA54C5F9E5875F3 /* PushPlugin.m */ = {isa = PBXFileReference; name = "PushPlugin.m"; path = "phonegap-plugin-push/PushPlugin.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
 		85B5BD3D276941CE9AFD508C /* AppDelegate+notification.h */ = {isa = PBXFileReference; name = "AppDelegate+notification.h"; path = "phonegap-plugin-push/AppDelegate+notification.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
 		BE3B3C9BD6144AA1BE8B94DD /* PushPlugin.h */ = {isa = PBXFileReference; name = "PushPlugin.h"; path = "phonegap-plugin-push/PushPlugin.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		F64449B2FD8047A793788AFA /* RequestLocationAccuracy.m */ = {isa = PBXFileReference; name = "RequestLocationAccuracy.m"; path = "cordova-plugin-request-location-accuracy/RequestLocationAccuracy.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
+		9E1778134CB84EB1834485D9 /* RequestLocationAccuracy.h */ = {isa = PBXFileReference; name = "RequestLocationAccuracy.h"; path = "cordova-plugin-request-location-accuracy/RequestLocationAccuracy.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -202,6 +205,8 @@
 				019FCB5EBCA54C5F9E5875F3 /* PushPlugin.m */,
 				85B5BD3D276941CE9AFD508C /* AppDelegate+notification.h */,
 				BE3B3C9BD6144AA1BE8B94DD /* PushPlugin.h */,
+				F64449B2FD8047A793788AFA /* RequestLocationAccuracy.m */,
+				9E1778134CB84EB1834485D9 /* RequestLocationAccuracy.h */,
 			);
 			name = Plugins;
 			path = RTR/Plugins;
@@ -400,6 +405,7 @@
 				2640E703CD3C42EEA17803CC /* CDVLocation.m in Sources */,
 				F088DDC65ACF4FDAB48D21CE /* AppDelegate+notification.m in Sources */,
 				03AE7D535D714EFC9535CB45 /* PushPlugin.m in Sources */,
+				8A6727FBFE874D24ADA5FB6A /* RequestLocationAccuracy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
