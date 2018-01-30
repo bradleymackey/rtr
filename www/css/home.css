@@ -110,20 +110,28 @@ h1 {
     background-image: url("../img/rtrInfoCover.png");
     background-repeat: no-repeat;
     background-position: center;
+    /* force gpu acceleration to prevent iOS glitch */
+    transform: translate3d(0,0,0);
 }
 
 .infOptions{
     background-color: white;
     height: 120px;
     border-bottom: 1px solid black;
+    /* force gpu acceleration to prevent iOS glitch */
+    transform: translate3d(0,0,0);
 }
 
 .infOptions:active{
     background-color: #bbc1cc;
+    /* force gpu acceleration to prevent iOS glitch */
+    transform: translate3d(0,0,0);
 }
 
 .content-item:active{
     background-color: #bbc1cc;
+    /* force gpu acceleration to prevent iOS glitch */
+    transform: translate3d(0,0,0);
 }
 
 .news-section img{
@@ -132,14 +140,20 @@ h1 {
     object-fit: cover;
     max-height: 150px;
     text-align: center;
+    /* force gpu acceleration to prevent iOS glitch */
+    transform: translate3d(0,0,0);
 }
 
 .event_b {
   background-color: #2DCCD3;
   color: white;
   border-radius: 10px;
+  /* force gpu acceleration to prevent iOS glitch */
+  transform: translate3d(0,0,0);
 }
 
 .icon {
   width: 25px;
+  /* force gpu acceleration to prevent iOS glitch */
+  transform: translate3d(0,0,0);
 }

@@ -8,6 +8,9 @@ document.addEventListener('deviceready', onDeviceReady, false);
 
 function onDeviceReady() {
     // ready to use device APIs
+    navigator.geolocation.getCurrentPosition(function() {
+        console.log("success");
+    });
 }
 
 $("#map-icon").click(function() {

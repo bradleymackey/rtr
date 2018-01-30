@@ -73,10 +73,6 @@ h1 {
     display:none;
 }
 
-.event_b {
-    background-color: #4CAF50;
-}
-
 @keyframes fade {
     from { opacity: 1.0; }
     50% { opacity: 0.2; }
