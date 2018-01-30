@@ -157,3 +157,16 @@ h1 {
   /* force gpu acceleration to prevent iOS glitch */
   transform: translate3d(0,0,0);
 }
+
+#volunteer-signup img{
+    /* image aspect fill behaviour */
+    width: 100%;
+    object-fit: cover;
+    max-height: 100px;
+    text-align: center;
+}
+
+.centre{
+    margin-left: auto;
+    margin-right: auto;
+}
