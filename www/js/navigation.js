@@ -140,7 +140,26 @@ function displayNewsContentItem(){
 }
 
 document.addEventListener("backbutton", function(){
-    alert("Back button pressed.");
+    switch(currentPage){
+        case 1:
+        case 2:
+            displayMap();
+            break;
+        case 4:
+            displayNews();
+            break;
+        case 6:
+            displayEvents();
+            break;
+        case 8:
+        case 9:
+        case 10:
+        case 11:
+            displayInfo();
+            break;
+        case 12:
+            displayLeaflets();
+    }
 });
 
 // update the top title of the navigation bar when a new section is selected
