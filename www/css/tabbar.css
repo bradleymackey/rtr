@@ -104,3 +104,13 @@
     position:relative;
     width: 100%;
 }
+
+.tab-component {
+    /* force gpu acceleration to prevent iOS glitch */
+    transform: translate3d(0,0,0);
+}
+
+.tab-icon {
+    /* force gpu acceleration to prevent iOS glitch */
+    transform: translate3d(0,0,0);
+}

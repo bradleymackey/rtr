@@ -61,6 +61,8 @@ h1 {
     font-size:12px;
     margin:0px 30px;
     padding:2px 0px;
+    /* force gpu acceleration to prevent iOS glitch */
+    transform: translate3d(0,0,0);
 }
 
 .event.listening {
@@ -71,10 +73,7 @@ h1 {
 .event.received {
     background-color:#4B946A;
     display:none;
-}
 
-.event_b {
-    background-color: #4CAF50;
 }
 
 @keyframes fade {
