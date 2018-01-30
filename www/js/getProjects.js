@@ -3,17 +3,13 @@
 firebase.database().ref("/projects").orderByChild("title").once('value').then(function(snapshot) {
 
     const data = snapshot.val();
-    console.log(data);
-    console.log(map);
 
     // early exit if there is no data
-    if (data === null || data === undefined) {
-        return;
-    }
+    if (data === null || data === undefined) { return; }
 
     const geojson = {
         type: "FeatureCollection",
-        features: []
+        features: [] // we will add the projects here
     };
 
     $.each(data, function(i) {
@@ -46,8 +42,18 @@ firebase.database().ref("/projects").orderByChild("title").once('value').then(fu
         el.style.height = marker.properties.icon_size[1] + 'px';
 
         el.addEventListener('click', function() {
+            // set the current page for the android back button
+            currentPage = 1;
+            $("#topnav-title").text("Project");
             // just an alert for now
-            window.alert(marker.properties.description);
+            let newHtml = '';
+            newHtml += '<h1>' + marker.properties.title + '</h1>';
+            newHtml += '<p>' + marker.properties.description + '</p>';
+            $(".app-section").hide();
+            $(".content").css("display", "block");
+            $("#project-detail").show();
+            $("#project-detail").empty();
+            $("#project-detail").html(newHtml);
         });
 
         // add marker to map

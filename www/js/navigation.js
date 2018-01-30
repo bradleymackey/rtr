@@ -42,6 +42,7 @@ function displayMap(){
     $(".content").css("display", "none");
     tabItemSelected($("#map-icon"),$("#map"));
     updateTitle("Map");
+    updateMapSize();
     currentPage = 0;
     return false;
 }
