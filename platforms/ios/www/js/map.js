@@ -4,12 +4,14 @@
 
  "use strict";
 
-  document.addEventListener("deviceready", function(event) {
+ var map;
+
+ document.addEventListener("DOMContentLoaded", function(event) {
     mapboxgl.accessToken = 'pk.eyJ1IjoiYnJhZGxleW1hY2tleSIsImEiOiJjamNraW14eXYzanZzMzNwZ2UyNW9ua2tzIn0.4YBdPgKnDN5XFdVVMeo4LQ';
     navigator.geolocation.getCurrentPosition(function(position) {
-        alert(position.coords);
+       // alert(position.coords);
     });
-    var map = new mapboxgl.Map({
+    map = new mapboxgl.Map({
         container: 'map-layer',
         style: 'mapbox://styles/bradleymackey/cjckjuujz01qh2spiu3lh87uu'
     });
@@ -20,6 +22,9 @@
         },
         trackUserLocation: true
     }));
+ });
+
+  document.addEventListener("deviceready", function(event) {
     cordova.plugins.locationAccuracy.canRequest(function(canRequest){
         if(canRequest){
             cordova.plugins.locationAccuracy.request(function(){
@@ -42,15 +47,18 @@
   }, false);
 // do not adjust values
   $(window).on("resize", function () { 
+    updateMapSize();
+}).trigger("resize");
+
+function updateMapSize() {
     var div = document.createElement('div');
     div.style.paddingTop = 'env(safe-area-inset-top)';
     div.style.paddingBottom = 'env(safe-area-inset-bottom)';
     document.body.appendChild(div);
     const calculatedPadding =  parseInt(window.getComputedStyle(div).paddingTop) + parseInt(window.getComputedStyle(div).paddingBottom);
     $("#map-layer").height($(window).height()-$(".topnav").height()-$(".tabbar").height()-calculatedPadding);
-    //map.invalidateSize(); 
+    map.invalidateSize(); 
     document.body.removeChild(div);
-}).trigger("resize");
-
+}
 
  

@@ -176,6 +176,8 @@ document.addEventListener("backbutton", function(){
 // update the top title of the navigation bar when a new section is selected
 function updateTitle(titleText) {
     $("#topnav-title").text(titleText);
+    // if we are changing the title, we are likley changing page, so scroll to top
+    window.scrollTo(0, 0);
 }
 
 // when a tab item is selected, hide all current tab items and then only show the currently selected one
