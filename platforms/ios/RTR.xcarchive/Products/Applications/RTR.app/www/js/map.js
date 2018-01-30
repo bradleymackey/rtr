@@ -32,7 +32,7 @@
     document.body.appendChild(div);
     const calculatedPadding =  parseInt(window.getComputedStyle(div).paddingTop) + parseInt(window.getComputedStyle(div).paddingBottom);
     $("#map-layer").height($(window).height()-$(".topnav").height()-$(".tabbar").height()-calculatedPadding);
-    map.invalidateSize(); 
+    //map.invalidateSize(); 
     document.body.removeChild(div);
 }).trigger("resize");
 
