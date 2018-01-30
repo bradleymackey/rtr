@@ -35,6 +35,8 @@ $("#events .content-item").click(displayEventContentItem);
 
 $("#news .content-item").click(displayNewsContentItem);
 
+$("#volunteer-ops .content-item").click(displayVolunteerSignup);
+
 function displayMap(){
     // hide content, because the map requires a different layout
     $(".content").css("display", "none");
@@ -109,6 +111,14 @@ function displayVolunteer(){
     $(".info_images").hide();
     updateTitle("Volunteer Opportunities");
     currentPage = 9;
+    return false;
+}
+
+function displayVolunteerSignup(){
+    $("#volunteer-ops").hide();
+    $("#volunteer-signup").show();
+    updateTitle("Volunteer sign up");
+    currentPage = 10;
     return false;
 }
 
