@@ -6,10 +6,6 @@
 
 
  document.addEventListener("DOMContentLoaded", function(event) {
-    
- });
-
-  document.addEventListener("deviceready", function(event) {
     mapboxgl.accessToken = 'pk.eyJ1IjoiYnJhZGxleW1hY2tleSIsImEiOiJjamNraW14eXYzanZzMzNwZ2UyNW9ua2tzIn0.4YBdPgKnDN5XFdVVMeo4LQ';
     navigator.geolocation.getCurrentPosition(function(position) {
         alert(position.coords);
@@ -25,6 +21,9 @@
         },
         trackUserLocation: true
     }));
+ });
+
+  document.addEventListener("deviceready", function(event) {
     cordova.plugins.locationAccuracy.canRequest(function(canRequest){
         if(canRequest){
             cordova.plugins.locationAccuracy.request(function(){
