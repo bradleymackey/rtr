@@ -13,8 +13,6 @@
     transform: translate3d(0,0,0);
 }
 
-/*this comment is unnecesary and shouldn't exist - if you're reading this, please delete it*/
-
 /* Style the titles inside the top navigation bar */
 .topnav h1 {
     float: center;
