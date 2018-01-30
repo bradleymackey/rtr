@@ -115,6 +115,7 @@ h1 {
 .infOptions{
     background-color: white;
     height: 120px;
+    border-bottom: 1px solid black;
 }
 
 .infOptions:active{
