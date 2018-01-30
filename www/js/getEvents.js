@@ -20,12 +20,12 @@ firebase.database().ref("/events").orderByChild("title").once('value').then(func
       console.log(f);
       $('#events_main').empty();
       $('#events_main').html(f);
-      $('h2').click(function() {
-        event.preventDefault();
-        var eid = $(this).attr("title");
-        console.log(eid);
+//      $('h2').click(function() {
+  //      event.preventDefault();
+    //    var eid = $(this).attr("title");
+      //  console.log(eid);
       //  $('div#'+eid).toggle();
-      }
+    //  }
   });
 
 /*
