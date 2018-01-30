@@ -4,13 +4,14 @@
 
  "use strict";
 
+ var map;
 
  document.addEventListener("DOMContentLoaded", function(event) {
     mapboxgl.accessToken = 'pk.eyJ1IjoiYnJhZGxleW1hY2tleSIsImEiOiJjamNraW14eXYzanZzMzNwZ2UyNW9ua2tzIn0.4YBdPgKnDN5XFdVVMeo4LQ';
     navigator.geolocation.getCurrentPosition(function(position) {
         alert(position.coords);
     });
-    var map = new mapboxgl.Map({
+    map = new mapboxgl.Map({
         container: 'map-layer',
         style: 'mapbox://styles/bradleymackey/cjckjuujz01qh2spiu3lh87uu'
     });
