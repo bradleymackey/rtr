@@ -4,21 +4,47 @@
 
 "use strict";
 
+//stores current page for back button.
+var currentPage = 0;
+
 document.addEventListener('deviceready', onDeviceReady, false);
 
 function onDeviceReady() {
     // ready to use device APIs
+    navigator.geolocation.getCurrentPosition(function() {
+        console.log("success");
+    });
 }
 
-$("#map-icon").click(function() {
+$("#map-icon").click(displayMap);
+
+$("#news-icon").click(displayNews);
+
+$("#events-icon").click(displayEvents);
+
+$("#info-icon").click(displayInfo);
+
+$("#infoToVisions").click(displayVisions);
+
+$("#infoToVolunteer").click(displayVolunteer);
+
+$("#infoToLeaflets").click(displayLeaflets);
+
+//show event detail
+$("#events .content-item").click(displayEventContentItem);
+
+$("#news .content-item").click(displayNewsContentItem);
+
+function displayMap(){
     // hide content, because the map requires a different layout
     $(".content").css("display", "none");
     tabItemSelected($("#map-icon"),$("#map"));
     updateTitle("Map");
+    currentPage = 0;
     return false;
-});
+}
 
-$("#news-icon").click(function() {
+function displayNews(){
     // display content again (because map hides it)
     $(".content").css("display", "block");
     $(".content").css({"margin-top": "3.0 em"});
@@ -31,10 +57,11 @@ $("#news-icon").click(function() {
     );
     $(".content-item").show();
     $("#news-article").hide();
+    currentPage = 3;
     return false;
-});
+}
 
-$("#events-icon").click(function() {
+function displayEvents(){
     // display content again (because map hides it)
     $(".content").css("display", "block");
     $(".content").css({"margin-top": "3.0 em"});
@@ -49,10 +76,11 @@ $("#events-icon").click(function() {
     );
     $(".content-item").show();
     $("#event_detail").hide();
+    currentPage = 5;
     return false;
-});
+}
 
-$("#info-icon").click(function() {
+function displayInfo(){
     // display content again (because map hides it)
     $(".content").css("display", "block");
     //changes margin so that there isnt a space between navbar and logo
@@ -61,48 +89,58 @@ $("#info-icon").click(function() {
     $(".info_main").show();
     tabItemSelected($("#info-icon"),$("#info"));
     updateTitle("Information");
+    currentPage = 7;
     return false;
-});
+}
 
-$("#infoToVisions").click(function() {
+function displayVisions(){
     //changes margin so that there isnt a space between navbar and logo
     $(".container").hide();
     $("#visions-aims").show();
     updateTitle("Visions and Aims");
+    currentPage = 8;
     return false;
-});
+}
 
-$("#infoToVolunteer").click(function() {
+function displayVolunteer(){
     //changes margin so that there isnt a space between navbar and logo
     $(".info_main").hide();
     $("#volunteer-ops").show();
     $(".info_images").hide();
     updateTitle("Volunteer Opportunities");
+    currentPage = 9;
     return false;
-});
+}
 
-$("#infoToLeaflets").click(function() {
+function displayLeaflets(){
     //changes margin so that there isnt a space between navbar and logo
     $(".info_main").hide();
     $("#leaflets").show();
     $(".info_images").hide();
     updateTitle("Leaflets");
+    currentPage = 10;
     return false;
-});
+}
 
-//show event detail
-$("#events .content-item").click(function() {
+function displayEventContentItem(){
     //changes margin so that there isnt a space between navbar and logo
     $(".events_main").hide();
     $("#event_detail").show();
     updateTitle("Event Detail");
+    currentPage = 6;
     return false;
-});
+}
 
-$("#news .content-item").click(function(){
+function displayNewsContentItem(){
     $(".content-item").hide();
     $("#news-article").show();
     updateTitle("Some Article");
+    currentPage = 4;
+    return false;
+}
+
+document.addEventListener("backbutton", function(){
+    alert("Back button pressed.");
 });
 
 // update the top title of the navigation bar when a new section is selected
