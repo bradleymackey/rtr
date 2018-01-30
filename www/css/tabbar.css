@@ -81,7 +81,7 @@
 
 /* Add a color to the active/current link */
 .tabbar a.active {
-    background-color: #4CAF50;
+    background-color: #2DCCD3;
     color: white;
     /* force gpu acceleration to prevent iOS glitch */
     transform: translate3d(0,0,0);
