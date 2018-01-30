@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "24690165291",
+    "firebase_url": "https://river-tees-rediscovered.firebaseio.com",
+    "project_id": "river-tees-rediscovered",
+    "storage_bucket": "river-tees-rediscovered.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:24690165291:android:aa442b6eb8eea520",
+        "android_client_info": {
+          "package_name": "com.riverteesredisocovered.rtr"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "24690165291-jvo2hkq9df0hlpaflrpjrp6qa387iboa.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBNTgZkouRWFPkxd-I9hhjxvas4CCW8qnQ"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

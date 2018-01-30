@@ -32,7 +32,7 @@ body {
     padding:0px;
     text-transform:none;
     font-family: Arial, sans-serif;
-    width:100%; 
+    width:100%;
 }
 
 /* Landscape layout (with min-width) */
@@ -73,20 +73,23 @@ h1 {
     display:none;
 }
 
+.event_b {
+    background-color: #4CAF50;
+}
+
 @keyframes fade {
     from { opacity: 1.0; }
     50% { opacity: 0.2; }
     to { opacity: 1.0; }
 }
- 
+
 @-webkit-keyframes fade {
     from { opacity: 1.0; }
     50% { opacity: 0.2; }
     to { opacity: 1.0; }
 }
- 
+
 .blink {
     animation:fade 1000ms infinite;
     -webkit-animation:fade 1000ms infinite;
 }
-

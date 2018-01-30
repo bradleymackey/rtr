@@ -7,22 +7,26 @@
     "files": {}
   },
   "installed_plugins": {
-    "cordova-plugin-whitelist": {
-      "PACKAGE_NAME": "io.cordova.hellocordova"
-    },
-    "cordova-plugin-googlemaps": {
-      "API_KEY_FOR_ANDROID": "AIzaSyBXlLMNod0_gzaym2omdhDT8emcH7XGYms",
-      "PACKAGE_NAME": "com.riverteesredisocovered.rtr"
-    },
-    "cordova-plugin-statusbar": {
+    "cordova-plugin-geolocation": {
       "PACKAGE_NAME": "com.riverteesredisocovered.rtr"
     },
     "cordova-plugin-navigationbar": {
       "PACKAGE_NAME": "com.riverteesredisocovered.rtr"
     },
-    "cordova-plugin-geolocation": {
+    "cordova-plugin-statusbar": {
+      "PACKAGE_NAME": "com.riverteesredisocovered.rtr"
+    },
+    "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "com.riverteesredisocovered.rtr"
+    },
+    "phonegap-plugin-push": {
+      "FCM_VERSION": "11.0.1",
       "PACKAGE_NAME": "com.riverteesredisocovered.rtr"
     }
   },
-  "dependent_plugins": {}
+  "dependent_plugins": {
+    "com.googlemaps.ios": {
+      "PACKAGE_NAME": "com.riverteesredisocovered.rtr"
+    }
+  }
 }

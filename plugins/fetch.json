@@ -7,17 +7,6 @@
     "is_top_level": true,
     "variables": {}
   },
-  "cordova-plugin-googlemaps": {
-    "source": {
-      "type": "registry",
-      "id": "cordova-plugin-googlemaps@^2.1.1"
-    },
-    "is_top_level": true,
-    "variables": {
-      "API_KEY_FOR_ANDROID": "AIzaSyBXlLMNod0_gzaym2omdhDT8emcH7XGYms",
-      "API_KEY_FOR_IOS": "AIzaSyAwfqJ2hmh-droBfQv8HdOehGaK7b5f7pI"
-    }
-  },
   "com.googlemaps.ios": {
     "source": {
       "type": "registry",
@@ -51,5 +40,21 @@
     "variables": {
       "GEOLOCATION_USAGE_DESCRIPTION": "Allow to see your location on the map."
     }
+  },
+  "cordova-support-google-services": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-support-google-services@~1.0.0"
+    },
+    "is_top_level": false,
+    "variables": {}
+  },
+  "phonegap-plugin-push": {
+    "source": {
+      "type": "registry",
+      "id": "phonegap-plugin-push@2.1.2"
+    },
+    "is_top_level": true,
+    "variables": {}
   }
 }
