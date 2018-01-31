@@ -31,6 +31,18 @@
     transform: translate3d(0,0,0);
 }
 
+#backbutton{
+    position: relative;
+    padding: 10px 13px 7px;
+    /*transform: translate(0%, -50%);*/
+    float: left;
+    height: 45px;
+}
+
+#backbutton:active{
+    background-color: red;
+}
+
 #map {
     position: static;
     margin-top: 3.0em;
