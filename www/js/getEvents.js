@@ -4,8 +4,6 @@
 
 firebase.database().ref("/events").orderByChild("title").once('value').then(function(snapshot) {
     var event = (snapshot.val()) || 'nothing';
-    console.log(event);
-    console.log('hello');
   //  $("#ev_title").html(event.birdsEvent.title);
   //  $("#ev_img").html(event.birdsEvent.image);
   //  $("#ev_content").hmtl(event.birdsEvent.content);
@@ -14,18 +12,31 @@ firebase.database().ref("/events").orderByChild("title").once('value').then(func
       var f = '';
       $.each(data, function(i){
             f+= "<div id="+i+"><img src="+data[i].image+" alt='image'>"
-            f+= "<h2 class='list'>"+data[i].title+"</h2>"
+            f+= "<h2 class='list' id="+i+">"+data[i].title+"</h2>"
             f+= "<p class='detail'>"+data[i].content+"</p></br></div>"
       });
-      console.log(f);
       $('#events_main').empty();
       $('#events_main').html(f);
-//      $('h2').click(function() {
-  //      event.preventDefault();
-    //    var eid = $(this).attr("title");
-      //  console.log(eid);
+      var r = '';
+      $("#events .content-item").click(displayEventContentItem);
+      $('h2').click(function(){
+        var eid = $(this).attr("id");
+        console.log(eid);
+        data = 'event.'+eid;
+        console.log(data);
+        console.log(event.birdsEvent);
+        r+= '<img src='+data.image+' alt="image" style="width:100%;"><div style="padding: 15px;">'
+        r+= '<h1 style="color: #2dccd3; text-align: left;">'+data.title+'</h1>'
+        r+=  '<p class="detail">'+data.content+'</p> <h2>Event Details</h2>'
+        r+= '<p><img class="icon" src="img/where-icon.png"><b> WHERE</b></br>'+data.location_1+'</br>'+data.location_2+'</p>'
+        r+= '<button type="button" class="event_b">VIEW ON MAP</button> <hr>'
+        r+=  '<p><img class="icon" src="img/when-icon.png"><b> WHEN</b></br>DATE</br> End: 31st January, 2018 at 3:00pm</p>'
+        r+=  '<button type="button" class="event_b">ADD TO CALENDAR</button></div>'
       //  $('div#'+eid).toggle();
-    //  }
+    });
+    $('#event_detail').empty();
+    $('#event_detail').html(r);
+
   });
 
 /*
