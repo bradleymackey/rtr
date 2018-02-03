@@ -22,6 +22,9 @@
     "phonegap-plugin-push": {
       "FCM_VERSION": "11.0.1",
       "PACKAGE_NAME": "com.riverteesredisocovered.rtr"
+    },
+    "cordova-plugin-request-location-accuracy": {
+      "PACKAGE_NAME": "com.riverteesredisocovered.rtr"
     }
   },
   "dependent_plugins": {

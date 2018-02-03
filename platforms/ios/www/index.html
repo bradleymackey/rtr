@@ -37,6 +37,8 @@
         <link rel="stylesheet" type="text/css" href="css/home.css">
         <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
         <link rel="stylesheet" type="text/css" href="css/colours.css">
+        <link rel="stylesheet" type="text/css" href="css/map-support.css">
+
 
         <!-- <script src='js/mapbox-gl.js'></script>
         <link href='css/mapbox-gl.css' rel='stylesheet' /> -->
@@ -61,6 +63,9 @@
         <!-- CONTENT -->
         <div class="content" style="display:none;">
 
+            <div id="project-detail" class="app-section" style="display:none;">
+            </div>
+
             <!-- NEWS GOES HERE -->
             <div id="news" class="app-section" style="display:none;">
                 <div class="content-item">
@@ -79,6 +84,7 @@
                     <p class="detail">Some Article Description</p>
                 </div>
 
+
                 <!-- -->
                 <div id="news-article" class="news-section" style="display:none">
                     <img src="img/demo.jpg" alt="image">
@@ -95,8 +101,11 @@
 
             <!-- EVENTS GO HERE -->
             <div id="events" class="app-section" style="display:none;">
-              <div class="events_main">
-                <div class="content-item">
+              <div id="events_main">
+                <p>Loading Events...</p>
+                <!--div class="content-item">
+                <div>
+                <!div class="content-item">
                     <img src="img/demo.jpg" alt="image">
                     <h2 class="list">Some Event</h2>
                     <p class="detail">Some Event Description</p>
@@ -105,12 +114,7 @@
                     <img src="img/demo.jpg" alt="image">
                     <h2 class="list">Some Event</h2>
                     <p class="detail">Some Event Description</p>
-                </div>
-                <div class="content-item">
-                    <img src="img/demo.jpg" alt="image">
-                    <h2 class="list">Some Event</h2>
-                    <p class="detail">Some Event Description</p>
-                </div>
+                </div--->
               </div>
 
                 <div id="event_detail" class="event-section" style="display:none; width:100%;">
@@ -181,6 +185,19 @@
                           <h2>Some Project</h2>
                           <p class="detail">Opportunity Details</p>
                       </div>
+                    </div>
+                    <div id="volunteer-signup" class="info-section" style="display:none;">
+                        <img src="img/demo.jpg" alt="image">
+                        <h1>Description</h1>
+                        <p>textextext</p>
+                        <h1>Sign up</h1>
+                        <form id="volunteer-form">
+                            <input type="text" name="firstname" placeholder="First name" class="centre"><br>
+                            <input type="text" name="lastname" placeholder="Last name" class="centre"><br>
+                            <input type="text" name="email" placeholder="Email" class="centre"><br>
+                            <textarea name="comment" form="volunteer-form" rows="5" class="centre"></textarea><br>
+                            <input type="submit" value="Submit">
+                        </form>
                     </div>
                     <div id="leaflets" class="info-section" style="display:none;">
                           </br>
@@ -267,12 +284,12 @@
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/jquery-3.2.1.js"></script>
         <script type="text/javascript" src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script>
+        <script type="text/javascript" src="js/map.js"></script>
         <script type="text/javascript" src="js/firebase-setup.js"></script>
+        <script type="text/javascript" src="js/navigation.js"></script>
         <script type="text/javascript" src="js/getArticles.js"></script>
         <script type="text/javascript" src="js/getEvents.js"></script>
         <script type="text/javascript" src="js/getProjects.js"></script>
-        <script type="text/javascript" src="js/navigation.js"></script>
-        <script type="text/javascript" src="js/map.js"></script>
         <script type="text/javascript" src="js/bootstrap.bundle.js"></script>
     </body>
 </html>

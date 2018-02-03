@@ -18,7 +18,7 @@
     float: center;
     color: #f2f2f2;
     text-align: center;
-    padding: 10px 13px;
+    padding: 10px 13px 7px;
     text-decoration: none;
     font-size: 1.2em;
     font-weight: bold;
@@ -103,4 +103,14 @@
 .fix {
     position:relative;
     width: 100%;
+}
+
+.tab-component {
+    /* force gpu acceleration to prevent iOS glitch */
+    transform: translate3d(0,0,0);
+}
+
+.tab-icon {
+    /* force gpu acceleration to prevent iOS glitch */
+    transform: translate3d(0,0,0);
 }

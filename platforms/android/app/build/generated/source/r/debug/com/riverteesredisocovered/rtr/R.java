@@ -389,22 +389,21 @@ public final class R {
     public static final int status_bar_notification_info_maxnum=0x7f070002;
   }
   public static final class layout {
-    public static final int dummy_infowindow=0x7f080000;
-    public static final int notification_action=0x7f080001;
-    public static final int notification_action_tombstone=0x7f080002;
-    public static final int notification_media_action=0x7f080003;
-    public static final int notification_media_cancel_action=0x7f080004;
-    public static final int notification_template_big_media=0x7f080005;
-    public static final int notification_template_big_media_custom=0x7f080006;
-    public static final int notification_template_big_media_narrow=0x7f080007;
-    public static final int notification_template_big_media_narrow_custom=0x7f080008;
-    public static final int notification_template_custom_big=0x7f080009;
-    public static final int notification_template_icon_group=0x7f08000a;
-    public static final int notification_template_lines_media=0x7f08000b;
-    public static final int notification_template_media=0x7f08000c;
-    public static final int notification_template_media_custom=0x7f08000d;
-    public static final int notification_template_part_chronometer=0x7f08000e;
-    public static final int notification_template_part_time=0x7f08000f;
+    public static final int notification_action=0x7f080000;
+    public static final int notification_action_tombstone=0x7f080001;
+    public static final int notification_media_action=0x7f080002;
+    public static final int notification_media_cancel_action=0x7f080003;
+    public static final int notification_template_big_media=0x7f080004;
+    public static final int notification_template_big_media_custom=0x7f080005;
+    public static final int notification_template_big_media_narrow=0x7f080006;
+    public static final int notification_template_big_media_narrow_custom=0x7f080007;
+    public static final int notification_template_custom_big=0x7f080008;
+    public static final int notification_template_icon_group=0x7f080009;
+    public static final int notification_template_lines_media=0x7f08000a;
+    public static final int notification_template_media=0x7f08000b;
+    public static final int notification_template_media_custom=0x7f08000c;
+    public static final int notification_template_part_chronometer=0x7f08000d;
+    public static final int notification_template_part_time=0x7f08000e;
   }
   public static final class mipmap {
     public static final int icon=0x7f090000;

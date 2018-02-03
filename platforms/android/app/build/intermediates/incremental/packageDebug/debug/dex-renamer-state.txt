@@ -1,4 +1,4 @@
-#Wed Jan 24 14:10:18 GMT 2018
+#Tue Jan 30 23:10:17 GMT 2018
 base.0=/Users/bradleymackey/Development/projects/rtr/platforms/android/app/build/intermediates/transforms/dexMerger/debug/0
 renamed.1=classes2.dex
 renamed.0=classes.dex

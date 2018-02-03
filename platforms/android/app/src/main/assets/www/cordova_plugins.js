@@ -37,6 +37,14 @@ module.exports = [
     "clobbers": [
       "PushNotification"
     ]
+  },
+  {
+    "id": "cordova-plugin-request-location-accuracy.RequestLocationAccuracy",
+    "file": "plugins/cordova-plugin-request-location-accuracy/www/android/RequestLocationAccuracy.js",
+    "pluginId": "cordova-plugin-request-location-accuracy",
+    "clobbers": [
+      "cordova.plugins.locationAccuracy"
+    ]
   }
 ];
 module.exports.metadata = 
@@ -47,7 +55,8 @@ module.exports.metadata =
   "cordova-plugin-navigationbar": "1.0.31",
   "cordova-plugin-statusbar": "2.4.1",
   "cordova-plugin-whitelist": "1.3.3",
-  "phonegap-plugin-push": "2.1.2"
+  "phonegap-plugin-push": "2.1.2",
+  "cordova-plugin-request-location-accuracy": "2.2.2"
 };
 // BOTTOM OF METADATA
 });

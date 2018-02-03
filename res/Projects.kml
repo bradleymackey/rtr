@@ -1,0 +1,834 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>Projects</name>
+    <Style id="icon-1507-7CB342-normal">
+      <IconStyle>
+        <color>ff42b37c</color>
+        <scale>1</scale>
+        <Icon>
+          <href>http://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+    </Style>
+    <Style id="icon-1507-7CB342-highlight">
+      <IconStyle>
+        <color>ff42b37c</color>
+        <scale>1</scale>
+        <Icon>
+          <href>http://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>1</scale>
+      </LabelStyle>
+    </Style>
+    <StyleMap id="icon-1507-7CB342">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#icon-1507-7CB342-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#icon-1507-7CB342-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="icon-1509-E65100-normal">
+      <IconStyle>
+        <color>ff0051e6</color>
+        <scale>1</scale>
+        <Icon>
+          <href>http://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+    </Style>
+    <Style id="icon-1509-E65100-highlight">
+      <IconStyle>
+        <color>ff0051e6</color>
+        <scale>1</scale>
+        <Icon>
+          <href>http://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>1</scale>
+      </LabelStyle>
+    </Style>
+    <StyleMap id="icon-1509-E65100">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#icon-1509-E65100-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#icon-1509-E65100-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="icon-1548-FBC02D-nodesc-normal">
+      <IconStyle>
+        <color>ff2dc0fb</color>
+        <scale>1</scale>
+        <Icon>
+          <href>http://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+      <BalloonStyle>
+        <text><![CDATA[<h3>$[name]</h3>]]></text>
+      </BalloonStyle>
+    </Style>
+    <Style id="icon-1548-FBC02D-nodesc-highlight">
+      <IconStyle>
+        <color>ff2dc0fb</color>
+        <scale>1</scale>
+        <Icon>
+          <href>http://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>1</scale>
+      </LabelStyle>
+      <BalloonStyle>
+        <text><![CDATA[<h3>$[name]</h3>]]></text>
+      </BalloonStyle>
+    </Style>
+    <StyleMap id="icon-1548-FBC02D-nodesc">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#icon-1548-FBC02D-nodesc-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#icon-1548-FBC02D-nodesc-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="icon-1573-0288D1-normal">
+      <IconStyle>
+        <color>ffd18802</color>
+        <scale>1</scale>
+        <Icon>
+          <href>http://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+    </Style>
+    <Style id="icon-1573-0288D1-highlight">
+      <IconStyle>
+        <color>ffd18802</color>
+        <scale>1</scale>
+        <Icon>
+          <href>http://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>1</scale>
+      </LabelStyle>
+    </Style>
+    <StyleMap id="icon-1573-0288D1">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#icon-1573-0288D1-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#icon-1573-0288D1-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="icon-1582-7CB342-normal">
+      <IconStyle>
+        <color>ff42b37c</color>
+        <scale>1</scale>
+        <Icon>
+          <href>http://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+    </Style>
+    <Style id="icon-1582-7CB342-highlight">
+      <IconStyle>
+        <color>ff42b37c</color>
+        <scale>1</scale>
+        <Icon>
+          <href>http://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>1</scale>
+      </LabelStyle>
+    </Style>
+    <StyleMap id="icon-1582-7CB342">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#icon-1582-7CB342-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#icon-1582-7CB342-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="icon-1595-0288D1-normal">
+      <IconStyle>
+        <color>ffd18802</color>
+        <scale>1</scale>
+        <Icon>
+          <href>http://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+    </Style>
+    <Style id="icon-1595-0288D1-highlight">
+      <IconStyle>
+        <color>ffd18802</color>
+        <scale>1</scale>
+        <Icon>
+          <href>http://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>1</scale>
+      </LabelStyle>
+    </Style>
+    <StyleMap id="icon-1595-0288D1">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#icon-1595-0288D1-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#icon-1595-0288D1-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="icon-1598-E65100-normal">
+      <IconStyle>
+        <color>ff0051e6</color>
+        <scale>1</scale>
+        <Icon>
+          <href>http://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+    </Style>
+    <Style id="icon-1598-E65100-highlight">
+      <IconStyle>
+        <color>ff0051e6</color>
+        <scale>1</scale>
+        <Icon>
+          <href>http://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>1</scale>
+      </LabelStyle>
+    </Style>
+    <StyleMap id="icon-1598-E65100">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#icon-1598-E65100-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#icon-1598-E65100-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="icon-1599-E65100-normal">
+      <IconStyle>
+        <color>ff0051e6</color>
+        <scale>1</scale>
+        <Icon>
+          <href>http://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+    </Style>
+    <Style id="icon-1599-E65100-highlight">
+      <IconStyle>
+        <color>ff0051e6</color>
+        <scale>1</scale>
+        <Icon>
+          <href>http://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>1</scale>
+      </LabelStyle>
+    </Style>
+    <StyleMap id="icon-1599-E65100">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#icon-1599-E65100-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#icon-1599-E65100-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="icon-1650-0288D1-normal">
+      <IconStyle>
+        <color>ffd18802</color>
+        <scale>1</scale>
+        <Icon>
+          <href>http://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+    </Style>
+    <Style id="icon-1650-0288D1-highlight">
+      <IconStyle>
+        <color>ffd18802</color>
+        <scale>1</scale>
+        <Icon>
+          <href>http://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>1</scale>
+      </LabelStyle>
+    </Style>
+    <StyleMap id="icon-1650-0288D1">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#icon-1650-0288D1-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#icon-1650-0288D1-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="icon-1720-E65100-normal">
+      <IconStyle>
+        <color>ff0051e6</color>
+        <scale>1</scale>
+        <Icon>
+          <href>http://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+    </Style>
+    <Style id="icon-1720-E65100-highlight">
+      <IconStyle>
+        <color>ff0051e6</color>
+        <scale>1</scale>
+        <Icon>
+          <href>http://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>1</scale>
+      </LabelStyle>
+    </Style>
+    <StyleMap id="icon-1720-E65100">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#icon-1720-E65100-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#icon-1720-E65100-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="icon-1751-7CB342-normal">
+      <IconStyle>
+        <color>ff42b37c</color>
+        <scale>1</scale>
+        <Icon>
+          <href>http://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+    </Style>
+    <Style id="icon-1751-7CB342-highlight">
+      <IconStyle>
+        <color>ff42b37c</color>
+        <scale>1</scale>
+        <Icon>
+          <href>http://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>1</scale>
+      </LabelStyle>
+    </Style>
+    <StyleMap id="icon-1751-7CB342">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#icon-1751-7CB342-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#icon-1751-7CB342-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="icon-1789-7CB342-normal">
+      <IconStyle>
+        <color>ff42b37c</color>
+        <scale>1</scale>
+        <Icon>
+          <href>http://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+    </Style>
+    <Style id="icon-1789-7CB342-highlight">
+      <IconStyle>
+        <color>ff42b37c</color>
+        <scale>1</scale>
+        <Icon>
+          <href>http://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>1</scale>
+      </LabelStyle>
+    </Style>
+    <StyleMap id="icon-1789-7CB342">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#icon-1789-7CB342-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#icon-1789-7CB342-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="icon-1802-E65100-normal">
+      <IconStyle>
+        <color>ff0051e6</color>
+        <scale>1</scale>
+        <Icon>
+          <href>http://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+    </Style>
+    <Style id="icon-1802-E65100-highlight">
+      <IconStyle>
+        <color>ff0051e6</color>
+        <scale>1</scale>
+        <Icon>
+          <href>http://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>1</scale>
+      </LabelStyle>
+    </Style>
+    <StyleMap id="icon-1802-E65100">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#icon-1802-E65100-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#icon-1802-E65100-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="icon-1855-E65100-normal">
+      <IconStyle>
+        <color>ff0051e6</color>
+        <scale>1</scale>
+        <Icon>
+          <href>http://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+    </Style>
+    <Style id="icon-1855-E65100-highlight">
+      <IconStyle>
+        <color>ff0051e6</color>
+        <scale>1</scale>
+        <Icon>
+          <href>http://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>1</scale>
+      </LabelStyle>
+    </Style>
+    <StyleMap id="icon-1855-E65100">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#icon-1855-E65100-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#icon-1855-E65100-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="icon-1874-7CB342-normal">
+      <IconStyle>
+        <color>ff42b37c</color>
+        <scale>1</scale>
+        <Icon>
+          <href>http://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+    </Style>
+    <Style id="icon-1874-7CB342-highlight">
+      <IconStyle>
+        <color>ff42b37c</color>
+        <scale>1</scale>
+        <Icon>
+          <href>http://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>1</scale>
+      </LabelStyle>
+    </Style>
+    <StyleMap id="icon-1874-7CB342">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#icon-1874-7CB342-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#icon-1874-7CB342-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="icon-1886-7CB342-normal">
+      <IconStyle>
+        <color>ff42b37c</color>
+        <scale>1</scale>
+        <Icon>
+          <href>http://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+    </Style>
+    <Style id="icon-1886-7CB342-highlight">
+      <IconStyle>
+        <color>ff42b37c</color>
+        <scale>1</scale>
+        <Icon>
+          <href>http://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>1</scale>
+      </LabelStyle>
+    </Style>
+    <StyleMap id="icon-1886-7CB342">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#icon-1886-7CB342-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#icon-1886-7CB342-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="icon-1887-7CB342-normal">
+      <IconStyle>
+        <color>ff42b37c</color>
+        <scale>1</scale>
+        <Icon>
+          <href>http://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+    </Style>
+    <Style id="icon-1887-7CB342-highlight">
+      <IconStyle>
+        <color>ff42b37c</color>
+        <scale>1</scale>
+        <Icon>
+          <href>http://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>1</scale>
+      </LabelStyle>
+    </Style>
+    <StyleMap id="icon-1887-7CB342">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#icon-1887-7CB342-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#icon-1887-7CB342-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Placemark>
+      <name>Wings of the Tees</name>
+      <description><![CDATA[<img src="https://lh6.googleusercontent.com/ZfMqQA3ZJFwpZPIVhK44bYAb2M4Y58KtAv-yW2udzGX2W6Ywh1COWf4Hj2FFRLpjCYFYBqccpMTkg-IqL14dcCkE84WuC6K3FM6t5fdWrlA6EIWEBBzge-OIHShq66c" height="200" width="auto" /><br><br>Wings of the Tees celebrates the fabulous wildlife of the River Tees (birds, bats, dragon and damselflies). We aim to increase awareness, understanding and appreciation of the ‘Winged Wildlife’ of the River Tees Corridor with a series of fun activities such as talks, walks and workshops.<br><br>For more information, visit: http://groundworknec.rit.org.uk/wings-of-the-trees]]></description>
+      <styleUrl>#icon-1789-7CB342</styleUrl>
+      <ExtendedData>
+        <Data name="gx_media_links">
+          <value>https://lh6.googleusercontent.com/ZfMqQA3ZJFwpZPIVhK44bYAb2M4Y58KtAv-yW2udzGX2W6Ywh1COWf4Hj2FFRLpjCYFYBqccpMTkg-IqL14dcCkE84WuC6K3FM6t5fdWrlA6EIWEBBzge-OIHShq66c</value>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -1.4994621,54.4787156,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Teesmouth Little Terns</name>
+      <description><![CDATA[<img src="https://lh4.googleusercontent.com/I3qxYmcTi-aeUg92tS_ESnAsQSFs4EWzTIK3Vsx2SEBbsQvz7xxeT82fCjoEChNeeb2pzJNPYzOIkPTFvVBeEN08Vq0I1c8LwSWeOc1X3CQYyNt_6V_mjTpBzp8Jj7qJ_Q" height="200" width="auto" /><br><br>A shelter and viewing area close to the colony will be created so that visitors to South Gare will be able to find out more about Little Terns without disturbing them and a web cam will be installed to monitor the site.<br><br>For more information, visit: http://groundworknec.rit.org.uk/teesmouth-little-terns]]></description>
+      <styleUrl>#icon-1874-7CB342</styleUrl>
+      <ExtendedData>
+        <Data name="gx_media_links">
+          <value>https://lh4.googleusercontent.com/I3qxYmcTi-aeUg92tS_ESnAsQSFs4EWzTIK3Vsx2SEBbsQvz7xxeT82fCjoEChNeeb2pzJNPYzOIkPTFvVBeEN08Vq0I1c8LwSWeOc1X3CQYyNt_6V_mjTpBzp8Jj7qJ_Q</value>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -1.1631775,54.5971301,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Tees Cottage Pumping Station</name>
+      <description><![CDATA[<img src="https://lh3.googleusercontent.com/5AbqjwRzMiKEkwAE9G3R_l5K1vEnnKGNX7LJ1v_lZkMiAPDQS8VCUre_sJ_0Tsb4Q8T-aJC1clpp9ALWJHNbkQ0C83bOUnZlDMPYin6-uyZs2AuzkQiK7CccIcTMvoHTtA" height="200" width="auto" /><br><br>From 1849 the Tees Cottage Pumping Station revolutionised water supply in Darlington and Teesside by offering cleaner, piped water to inhabitants who had previously relied on wells and rainwater tubs. It is the only remaining example of the three types of power used for water extraction; steam, gas and electric.<br><br>For more information http://groundworknec.rit.org.uk/tees-cottage-pumping-station]]></description>
+      <styleUrl>#icon-1598-E65100</styleUrl>
+      <ExtendedData>
+        <Data name="gx_media_links">
+          <value>https://lh3.googleusercontent.com/5AbqjwRzMiKEkwAE9G3R_l5K1vEnnKGNX7LJ1v_lZkMiAPDQS8VCUre_sJ_0Tsb4Q8T-aJC1clpp9ALWJHNbkQ0C83bOUnZlDMPYin6-uyZs2AuzkQiK7CccIcTMvoHTtA</value>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -1.6029954,54.5197364,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>RTR Office</name>
+      <styleUrl>#icon-1548-FBC02D-nodesc</styleUrl>
+      <Point>
+        <coordinates>
+          -1.286087,54.5639509,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Tees Heritage Park</name>
+      <description><![CDATA[<img src="https://lh6.googleusercontent.com/pkX1RCfl-WZrEJ7khRLQURDlo588BJpU58xy7gEaeBORsV0lCdDd3xgEJD80yvOFVsPdATPRb2FMhhFkT2G3rv44dCCpFReW5Q-TktXa7i-2b6BJXOCsa77o9FR5jHzlxA" height="200" width="auto" /><br><br>The Tees Heritage Park is 2,000 acres of green spaces along the River Tees rich in the history, landscape and wildlife of the area. The Tees Heritage Park concept developed as a direct result of community concerns to protect what open space remained and to benefit from it. <br><br>For more information, visit: <br>http://groundworknec.rit.org.uk/tees-heritage-park]]></description>
+      <styleUrl>#icon-1720-E65100</styleUrl>
+      <ExtendedData>
+        <Data name="gx_media_links">
+          <value>https://lh6.googleusercontent.com/pkX1RCfl-WZrEJ7khRLQURDlo588BJpU58xy7gEaeBORsV0lCdDd3xgEJD80yvOFVsPdATPRb2FMhhFkT2G3rv44dCCpFReW5Q-TktXa7i-2b6BJXOCsa77o9FR5jHzlxA</value>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -1.3377894,54.5329734,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Spirit of Place</name>
+      <description><![CDATA[<img src="https://lh3.googleusercontent.com/8lOZYRGSpJGWmO5MlavFTYgyYzTIhDJbi4G8I9pYzQLY9pH5O954WtaVNSQaeokKSLEuLzVYeWKkUlGcHU96CeMD-GF-rQ1pHxMaSef7P4Bq3G0mvibhtT64La9EG3t7xQ" height="200" width="auto" /><br><br>Spirit of Place will offer free activities focusing on traditional crafts and skills, including: training opportunities; community experiences; outreach activities; and workshop demonstrations.<br><br>For more information, visit: http://groundworknec.rit.org.uk/spirit-of-place]]></description>
+      <styleUrl>#icon-1802-E65100</styleUrl>
+      <ExtendedData>
+        <Data name="gx_media_links">
+          <value>https://lh3.googleusercontent.com/8lOZYRGSpJGWmO5MlavFTYgyYzTIhDJbi4G8I9pYzQLY9pH5O954WtaVNSQaeokKSLEuLzVYeWKkUlGcHU96CeMD-GF-rQ1pHxMaSef7P4Bq3G0mvibhtT64La9EG3t7xQ</value>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -1.3364149,54.5367955,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Complementary ActiviTees</name>
+      <description><![CDATA[<img src="https://lh3.googleusercontent.com/B_40NzoejAzkALAxrxYEHSadc7huz7kXeHuffzE3sybkcmdQcEEJcGi2D5hN7E5SGrZph-XYjjqculUvZdrwEfDZJNtWg6a70p5Kd5dHyjK4CTyRKNmGzTHCx68UPIo" height="200" width="auto" /><br><br>Using art to bring our natural, built and social heritage to life, our Complementary ActiviTees programme has been designed to inspire a deeper connection with our diverse heritage.<br><br>A wide range of events and activities will reconnect visitors with the Tees in an imaginative and memorable way.<br><br>For more information, visit:<br>http://groundworknec.rit.org.uk/complementary-activitees]]></description>
+      <styleUrl>#icon-1509-E65100</styleUrl>
+      <ExtendedData>
+        <Data name="gx_media_links">
+          <value>https://lh3.googleusercontent.com/B_40NzoejAzkALAxrxYEHSadc7huz7kXeHuffzE3sybkcmdQcEEJcGi2D5hN7E5SGrZph-XYjjqculUvZdrwEfDZJNtWg6a70p5Kd5dHyjK4CTyRKNmGzTHCx68UPIo</value>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -1.2926531,54.5638265,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Green Shoots</name>
+      <description><![CDATA[<img src="https://lh4.googleusercontent.com/25qWvL7wO-2I3KemvAHf76ds5DqnZmKMXH7NqkYRal9-uogaC7iZdCjo0HkbYKeF-8BdaVwLzcDZt6U0DVRwR2nwWd5_J8virVkRcKJ3CqTlLy_BjIQBSUej8EpQQZTv" height="200" width="auto" /><br><br>The project will work with local communities to embrace local industry and encourage wildlife by interpreting our industrial and natural heritage, through a range of habitat improvements designed to create green corridors for wildlife and by creating recreational and seating areas between Greater Eston and the River Tees.<br><br><br>For more information, visit:<br>http://groundworknec.rit.org.uk/green-shoots]]></description>
+      <styleUrl>#icon-1886-7CB342</styleUrl>
+      <ExtendedData>
+        <Data name="gx_media_links">
+          <value>https://lh4.googleusercontent.com/25qWvL7wO-2I3KemvAHf76ds5DqnZmKMXH7NqkYRal9-uogaC7iZdCjo0HkbYKeF-8BdaVwLzcDZt6U0DVRwR2nwWd5_J8virVkRcKJ3CqTlLy_BjIQBSUej8EpQQZTv</value>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -1.1745071,54.5874825,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Redcar Wildlife</name>
+      <description><![CDATA[<img src="https://lh3.googleusercontent.com/NrJZ3VCLPuNBc3Yslz4FaPbAQXQ1Jko5-1R2Bj6yd9s_tqdq2TdsLV8p4lYcDsK3K3_mmgAfwsQt8mlTu_4Q7PTvMqmUeLWsfMTFnE0Y4bq5IsuQgl7eUnXy9h2v554Q" height="200" width="auto" /><br><br>Redcar Wildlife celebrates the links between our natural and industrial heritage, inviting visitors to rediscover the heritage on their doorstep by improving access to the area, and making homes for wildlife.<br><br>We will connect communities in Redcar, Warrenby and South Bank with the Teesdale Way and their local Nature reserves improving footpaths, providing interpretation and creating recreational areas.<br><br>For more information, visit:<br>http://groundworknec.rit.org.uk/redcar-wildlife]]></description>
+      <styleUrl>#icon-1507-7CB342</styleUrl>
+      <ExtendedData>
+        <Data name="gx_media_links">
+          <value>https://lh3.googleusercontent.com/NrJZ3VCLPuNBc3Yslz4FaPbAQXQ1Jko5-1R2Bj6yd9s_tqdq2TdsLV8p4lYcDsK3K3_mmgAfwsQt8mlTu_4Q7PTvMqmUeLWsfMTFnE0Y4bq5IsuQgl7eUnXy9h2v554Q</value>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -1.1262705,54.6233508,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Rediscovering Skills</name>
+      <description><![CDATA[<img src="https://lh5.googleusercontent.com/sb3TJhdekcr2fJCY0yvpRU0ZpuOOQl2Ul2RUh3S0mRtQ58m75jrVWHYmxOGdQI4y1dERvFtUY3blh13AwsfX5bHgKdI8f5PTmM0jAfA6wvxEouku9zvgdaXli_C-Mjk" height="200" width="auto" /><br><br>The scheme will provide opportunities in Environmental Conservation and will increase training opportunities in local heritage skills, whilst also focusing on the conservation of built and natural heritage.<br><br>For more information, visit:<br>http://groundworknec.rit.org.uk/rediscovering-skills]]></description>
+      <styleUrl>#icon-1855-E65100</styleUrl>
+      <ExtendedData>
+        <Data name="gx_media_links">
+          <value>https://lh5.googleusercontent.com/sb3TJhdekcr2fJCY0yvpRU0ZpuOOQl2Ul2RUh3S0mRtQ58m75jrVWHYmxOGdQI4y1dERvFtUY3blh13AwsfX5bHgKdI8f5PTmM0jAfA6wvxEouku9zvgdaXli_C-Mjk</value>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -1.2847573,54.5592968,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Honey Pots and Education Spaces</name>
+      <description><![CDATA[Everyone is welcome to support the honey pot sites through a range of conservation activities including; identification, recording, promotion and habitat improvements. <br><br>For more information, visit:<br>http://groundworknec.rit.org.uk/honey-pots-educational-spaces]]></description>
+      <styleUrl>#icon-1582-7CB342</styleUrl>
+      <Point>
+        <coordinates>
+          -1.0978603,54.6177105,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Alien Invaders</name>
+      <description><![CDATA[<img src="https://lh5.googleusercontent.com/DsrCvU1pJJ7LilK1vI4q1K-I8QPVkdFufbF1TRx-bbLE6jp1r7P4MEDD8QrxWmUUqYrkCF2zKG1s-LeVICe8a2lqlQETEhTvMl86BTG-tqIc_kODZM6QAhtErkukKD3V0g" height="200" width="auto" /><br><br>Tees Alien Invaders will train and equip volunteer groups throughout the project area, enabling them to tackle Invasive Non Native Species (INNS) such as Giant Hogweed, Himalayan Balsam and American Signal Crayfish in their locality in the future.<br><br>For more information, visit:<br>http://groundworknec.rit.org.uk/alien-invaders]]></description>
+      <styleUrl>#icon-1751-7CB342</styleUrl>
+      <ExtendedData>
+        <Data name="gx_media_links">
+          <value>https://lh5.googleusercontent.com/DsrCvU1pJJ7LilK1vI4q1K-I8QPVkdFufbF1TRx-bbLE6jp1r7P4MEDD8QrxWmUUqYrkCF2zKG1s-LeVICe8a2lqlQETEhTvMl86BTG-tqIc_kODZM6QAhtErkukKD3V0g</value>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -1.4635849,54.4558696,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>River Lab</name>
+      <description><![CDATA[<img src="https://lh4.googleusercontent.com/YtBigSftxqC62YCg2L2MgvOTRKctRWWTjQaNvJXlO6lqSNJhi4iwA591F9pwPPoI5ddmAKRaXBskOmrkUgQVK7RY_IRM22fDLMtsXLwJjEfb0XWGOqGaPuo_PUZV-Otx" height="200" width="auto" /><br><br>River Lab encourages local communities and local schools to take an active interest and pride in their local rivers and becks and creatively explore the environmental concerns of our waterways. Activities include investigations of the historic timeline of becks, their potential and community aspirations, training and volunteering.<br><br>For more information, visit:<br>http://groundworknec.rit.org.uk/river-lab]]></description>
+      <styleUrl>#icon-1573-0288D1</styleUrl>
+      <ExtendedData>
+        <Data name="gx_media_links">
+          <value>https://lh4.googleusercontent.com/YtBigSftxqC62YCg2L2MgvOTRKctRWWTjQaNvJXlO6lqSNJhi4iwA591F9pwPPoI5ddmAKRaXBskOmrkUgQVK7RY_IRM22fDLMtsXLwJjEfb0XWGOqGaPuo_PUZV-Otx</value>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -1.5582669,54.51491,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Guided Walks</name>
+      <description><![CDATA[<img src="https://lh6.googleusercontent.com/lctsqlORwcsLwzLluHg1RFYo-LuTuvkbYZUEdBh283S4eZon85VqFTPUuWiDdbXcDhFhmr0w1gCSFe3GHUAj8iRjxkVgEh2CBP1XtbThBUTI0IvswyVjOwxywB-2F3y8" height="200" width="auto" /><br><br>There will be a wide range of walks from fun family friendly routes to guided tours of archaeological sites. All walks will engage people in our fantastic natural, industrial and social heritage with a variety of routes and topics.<br><br>For more information, visit:<br>http://groundworknec.rit.org.uk/guided-walks ]]></description>
+      <styleUrl>#icon-1595-0288D1</styleUrl>
+      <ExtendedData>
+        <Data name="gx_media_links">
+          <value>https://lh6.googleusercontent.com/lctsqlORwcsLwzLluHg1RFYo-LuTuvkbYZUEdBh283S4eZon85VqFTPUuWiDdbXcDhFhmr0w1gCSFe3GHUAj8iRjxkVgEh2CBP1XtbThBUTI0IvswyVjOwxywB-2F3y8</value>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -1.3548374,54.5079279,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Community Archaeology</name>
+      <description><![CDATA[<img src="https://lh3.googleusercontent.com/eP6eoL9mU9dHH0PxRw23Jhr8BotJVmZYlIfe55N6ee-_cLnS_63ZfqCf7wJ1a6N5yxCknXMMDyk6QV62dsHvvecnvadNeADqd4BuHSsjG7UWZ3g8Z40NkK0WUELRGb8" height="200" width="auto" /><br><br>Projects will explore Prehistoric activity along the river; interpret and investigate the Roman Occupation of the area; examine medieval saltworking; record the buildings in the villages and look at the impact of industry and the First and Second World Wars on the River Tees.<br><br>At the heart of each project will be the relationship of communities and sites on the River Tees and how that relationship changed over time.<br><br>For more information, visit:<br>http://groundworknec.rit.org.uk/community-archaeology]]></description>
+      <styleUrl>#icon-1599-E65100</styleUrl>
+      <ExtendedData>
+        <Data name="gx_media_links">
+          <value>https://lh3.googleusercontent.com/eP6eoL9mU9dHH0PxRw23Jhr8BotJVmZYlIfe55N6ee-_cLnS_63ZfqCf7wJ1a6N5yxCknXMMDyk6QV62dsHvvecnvadNeADqd4BuHSsjG7UWZ3g8Z40NkK0WUELRGb8</value>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -1.6726685,54.5369698,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Green ActiviTees</name>
+      <description><![CDATA[<img src="https://lh4.googleusercontent.com/aJjX39c0Inw2u-atKwjkpbB4X2-1B7TSPwc5haiw5a1sBZL90bPjD9l3_6-a8DrwY4nbfGpIqbD8SEPokZ1KFDd8pKGwGTbgmaQS-Wy-nn6Bix0eJwuowkjrdEv2pirIEA" height="200" width="auto" /><br><br>Join us at one of our many volunteer sessions or sign up as a regular Tees Volunteer to help with practical tasks, get hands on and have an impact on your local environment.<br><br>We have lots of activities to chose from including: seed collecting & tree planting; footpath improvements; wildlife surveys; woodland management; and vegetation clearance. Green ActiviTees will also provide educational sessions, environmental crafts, traditional trades and regular training.<br><br>For more information, visit:<br>http://groundworknec.rit.org.uk/green-activities]]></description>
+      <styleUrl>#icon-1887-7CB342</styleUrl>
+      <ExtendedData>
+        <Data name="gx_media_links">
+          <value>https://lh4.googleusercontent.com/aJjX39c0Inw2u-atKwjkpbB4X2-1B7TSPwc5haiw5a1sBZL90bPjD9l3_6-a8DrwY4nbfGpIqbD8SEPokZ1KFDd8pKGwGTbgmaQS-Wy-nn6Bix0eJwuowkjrdEv2pirIEA</value>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -1.2637711,54.5683797,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Community ActiviTees</name>
+      <description><![CDATA[<img src="https://lh4.googleusercontent.com/YkHRrYmf0OGtYLF_rIPm1T-LmDAjyrjA7lbvMn3tjaWVRTLwsojchWw3-E_6eIg4hrbHZFY72OG9Y3-lFIOrTfz2U15pTrZUCIA4mYDm1Jr6XSma4kKqVgHGCRf_l88" height="200" width="auto" /><br><br>Fun, free and informative, events and activities, throughout the Tees Valley and Darlington focusing on our fantastic natural, built and social heritage. Community ActiviTees will offer events and activities around the following themes: education; museums; oral histories; food heritage; and community engagement.<br><br>For more information, visit:<br>http://groundworknec.rit.org.uk/community-activitees]]></description>
+      <styleUrl>#icon-1650-0288D1</styleUrl>
+      <ExtendedData>
+        <Data name="gx_media_links">
+          <value>https://lh4.googleusercontent.com/YkHRrYmf0OGtYLF_rIPm1T-LmDAjyrjA7lbvMn3tjaWVRTLwsojchWw3-E_6eIg4hrbHZFY72OG9Y3-lFIOrTfz2U15pTrZUCIA4mYDm1Jr6XSma4kKqVgHGCRf_l88</value>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -1.3235092,54.5354759,0
+        </coordinates>
+      </Point>
+    </Placemark>
+  </Document>
+</kml>

@@ -1,5 +1,4 @@
 
-// `database` is already scoped
 // data is returned in a value listener
 
 firebase.database().ref("/events").orderByChild("title").once('value').then(function(snapshot) {
