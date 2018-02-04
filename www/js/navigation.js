@@ -71,7 +71,7 @@ function displayEvents(){
     $(".content").css("display", "block");
     $(".content").css({"margin-top": "3.0 em"});
     $(".event-section").hide();
-    $(".events_main").show();
+    $("#events_main").show();
     tabItemSelected($("#events-icon"),$("#events"));
     updateTitle("");
     $("#backbutton").hide();
@@ -184,7 +184,7 @@ function backButtonPressed(){
 }
 
 document.addEventListener("backbutton", function(){
-   backButtonPressed(); 
+   backButtonPressed();
 });
 
 // update the top title of the navigation bar when a new section is selected
