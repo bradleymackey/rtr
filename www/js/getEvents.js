@@ -2,6 +2,7 @@
 // data is returned in a value listener
 
 firebase.database().ref("/events").orderByChild("title").once('value').then(function(snapshot) {
+    $('#event_detail').empty();
     var event = (snapshot.val()) || 'nothing';
   //  $("#ev_title").html(event.birdsEvent.title);
   //  $("#ev_img").html(event.birdsEvent.image);
@@ -17,8 +18,8 @@ firebase.database().ref("/events").orderByChild("title").once('value').then(func
       $('#events_main').empty();
       $('#events_main').html(f);
       var r = '';
-      $("#events.content-item").click(displayEventContentItem);
-      $('h2').click(function(){
+    //  $("#events.content-item").click(displayEventContentItem);
+      $('#events.h2').click(function(){
         var eid = $(this).attr("id");
         ev = event[eid];
         r+= '<img src='+ev.image+' alt="image" style="width:100%;"><div style="padding: 15px;">'
@@ -29,9 +30,10 @@ firebase.database().ref("/events").orderByChild("title").once('value').then(func
         r+=  '<p><img class="icon" style="width:25px;" src="img/when-icon.png"><b> WHEN</b></br>DATE</br> End: 31st January, 2018 at 3:00pm</p>'
         r+=  '<button type="button" class="event_b">ADD TO CALENDAR</button></div>'
         $('#events_main').hide();
-        $('#event_detail').empty();
-        $('#event_detail').show();
+  //      $('#').empty();
         $('#event_detail').html(r);
+        $('#event_detail').show();
+
     });
 
 
