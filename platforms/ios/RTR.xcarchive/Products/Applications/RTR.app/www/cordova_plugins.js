@@ -221,6 +221,14 @@ module.exports = [
     "clobbers": [
       "navigator.geolocation"
     ]
+  },
+  {
+    "id": "cordova-plugin-firebase.FirebasePlugin",
+    "file": "plugins/cordova-plugin-firebase/www/firebase.js",
+    "pluginId": "cordova-plugin-firebase",
+    "clobbers": [
+      "FirebasePlugin"
+    ]
   }
 ];
 module.exports.metadata = 
@@ -231,7 +239,8 @@ module.exports.metadata =
   "cordova-plugin-statusbar": "2.4.1",
   "cordova-plugin-whitelist": "1.3.3",
   "cordova-support-google-services": "1.0.0",
-  "cordova-plugin-geolocation": "4.0.1"
+  "cordova-plugin-geolocation": "4.0.1",
+  "cordova-plugin-firebase": "0.1.25"
 };
 // BOTTOM OF METADATA
 });
