@@ -121,4 +121,8 @@
     <preference name="fullscreen" value="false" />
     <preference name="webviewbounce" value="true" />
     <preference name="UIWebViewBounce" value="true" />
+    <feature name="FirebasePlugin">
+        <param name="ios-package" value="FirebasePlugin" />
+        <param name="onload" value="true" />
+    </feature>
 </widget>

@@ -92,6 +92,7 @@ ext {
 }
 
 // PLUGIN GRADLE EXTENSIONS START
+apply from: "cordova-plugin-firebase/rtr-build.gradle"
 apply from: "cordova-support-google-services/rtr-build.gradle"
 // PLUGIN GRADLE EXTENSIONS END
 
@@ -253,6 +254,12 @@ dependencies {
     implementation fileTree(dir: 'libs', include: '*.jar')
     // SUB-PROJECT DEPENDENCIES START
     implementation(project(path: "CordovaLib"))
+    compile "com.google.gms:google-services:3.1.0"
+    compile "com.google.android.gms:play-services-tagmanager:11.8.0"
+    compile "com.google.firebase:firebase-core:11.8.0"
+    compile "com.google.firebase:firebase-messaging:11.8.0"
+    compile "com.google.firebase:firebase-crash:11.8.0"
+    compile "com.google.firebase:firebase-config:11.8.0"
     compile "com.google.android.gms:play-services-maps:11.8.0"
     compile "com.google.android.gms:play-services-location:11.8.0"
     // SUB-PROJECT DEPENDENCIES END

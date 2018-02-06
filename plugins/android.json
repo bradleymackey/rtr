@@ -7,6 +7,9 @@
     "files": {}
   },
   "installed_plugins": {
+    "cordova-plugin-firebase": {
+      "PACKAGE_NAME": "com.riverteesredisocovered.rtr"
+    },
     "cordova-plugin-geolocation": {
       "PACKAGE_NAME": "com.riverteesredisocovered.rtr"
     },

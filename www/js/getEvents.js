@@ -30,7 +30,6 @@ firebase.database().ref("/events").orderByChild("title").once('value').then(func
         $('#event_detail').empty();
         $('#event_detail').html(r);
         $('#event_detail').show();
-
     });
 
   });
