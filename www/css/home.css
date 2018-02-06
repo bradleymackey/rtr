@@ -132,7 +132,13 @@ h1 {
     transform: translate3d(0,0,0);
 }
 
-.content-item:active{
+.news_item:active{
+    background-color: #bbc1cc;
+    /* force gpu acceleration to prevent iOS glitch */
+    transform: translate3d(0,0,0);
+}
+
+.event_item:active{
     background-color: #bbc1cc;
     /* force gpu acceleration to prevent iOS glitch */
     transform: translate3d(0,0,0);
