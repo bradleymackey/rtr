@@ -8,23 +8,23 @@
 
  document.addEventListener("DOMContentLoaded", function(event) {
     mapboxgl.accessToken = 'pk.eyJ1IjoiYnJhZGxleW1hY2tleSIsImEiOiJjamNraW14eXYzanZzMzNwZ2UyNW9ua2tzIn0.4YBdPgKnDN5XFdVVMeo4LQ';
-    navigator.geolocation.getCurrentPosition(function(position) {
-       // alert(position.coords);
-    });
     map = new mapboxgl.Map({
         container: 'map-layer',
         style: 'mapbox://styles/bradleymackey/cjckjuujz01qh2spiu3lh87uu'
     });
-    // Add geolocate control to the map.
+ });
+
+  document.addEventListener("deviceready", function(event) {
+    navigator.geolocation.getCurrentPosition(function(position) {
+        // alert(position.coords);
+     });
+      // Add geolocate control to the map.
     map.addControl(new mapboxgl.GeolocateControl({
         positionOptions: {
             enableHighAccuracy: true
         },
         trackUserLocation: true
     }));
- });
-
-  document.addEventListener("deviceready", function(event) {
     cordova.plugins.locationAccuracy.canRequest(function(canRequest){
         if(canRequest){
             cordova.plugins.locationAccuracy.request(function(){
