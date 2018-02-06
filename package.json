@@ -13,6 +13,7 @@
     "android-versions": "^1.2.2",
     "cordova-android": "^6.4.0",
     "cordova-ios": "^4.5.4",
+    "cordova-plugin-firebase": "^0.1.25",
     "cordova-plugin-geolocation": "^4.0.1",
     "cordova-plugin-googlemaps": "^2.2.2",
     "cordova-plugin-googlemaps-sdk": "git+https://github.com/mapsplugin/cordova-plugin-googlemaps-sdk.git",
@@ -34,7 +35,8 @@
       "cordova-plugin-statusbar": {},
       "cordova-plugin-geolocation": {
         "GEOLOCATION_USAGE_DESCRIPTION": "Allow to see your location on the map."
-      }
+      },
+      "cordova-plugin-firebase": {}
     },
     "platforms": [
       "ios",

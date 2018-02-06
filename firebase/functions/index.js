@@ -8,10 +8,10 @@ const admin = require('firebase-admin');
 admin.initializeApp(functions.config().firebase);
 
 exports.notifyVolunteer = functions.database.ref('volunteers/{newVolunteer}').onCreate(event => {
-    const event_snapshot = event.data;
-    const first_name = event_snapshot.child('first_name').val();
-    const last_name = event_snapshot.child('last_name').val();
-    const for_event = event_snapshot.child('related_to').val();
+    const event_snapshot = event.data.val();
+    const first_name = event_snapshot.first_name;
+    const last_name = event_snapshot.last_name;
+    const for_event = event_snapshot.related_to;
     const payload = {
         notification: {
           title: 'Volunteer Request',
@@ -24,8 +24,8 @@ exports.notifyVolunteer = functions.database.ref('volunteers/{newVolunteer}').on
 });
 
 exports.notifyEvent = functions.database.ref('events/{newEvent}').onCreate(event => {
-    const event_snapshot = event.data;
-    const event_title = event_snapshot.child('title').val();
+    const event_snapshot = event.data.val();
+    const event_title = event_snapshot.title;
     const payload = {
         notification: {
             title: 'New Event',
@@ -42,8 +42,8 @@ exports.notifyEvent = functions.database.ref('events/{newEvent}').onCreate(event
 });
 
 exports.notifyNews = functions.database.ref('news/{newArticle}').onCreate(event => {
-    const event_snapshot = event.data;
-    const article_title = event_snapshot.child('title').val();
+    const event_snapshot = event.data.val();
+    const article_title = event_snapshot.title;
     const payload = {
         notification: {
             title: 'New Article',

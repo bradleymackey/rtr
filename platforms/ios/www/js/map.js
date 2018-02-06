@@ -12,19 +12,20 @@
         container: 'map-layer',
         style: 'mapbox://styles/bradleymackey/cjckjuujz01qh2spiu3lh87uu'
     });
+    // Add geolocate control to the map.
+    map.addControl(new mapboxgl.GeolocateControl({
+    positionOptions: {
+        enableHighAccuracy: true
+    },
+    trackUserLocation: true
+}));
  });
 
   document.addEventListener("deviceready", function(event) {
     navigator.geolocation.getCurrentPosition(function(position) {
         console.log("getting position")
      });
-      // Add geolocate control to the map.
-    map.addControl(new mapboxgl.GeolocateControl({
-        positionOptions: {
-            enableHighAccuracy: true
-        },
-        trackUserLocation: true
-    }));
+    
   }, false);
 // do not adjust values
   $(window).on("resize", function () { 

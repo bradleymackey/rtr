@@ -9,12 +9,9 @@ var config = {
 };
 firebase.initializeApp(config);
 
-
 document.addEventListener('deviceready', function(event) {
-    // FCMPlugin.getToken(function(token){
-    //     alert(token);
-    // });
-    // FCMPlugin.subscribeToTopic('news');
-    // FCMPlugin.subscribeToTopic('events');
+    window.FirebasePlugin.grantPermission();
+    window.FirebasePlugin.subscribe("news");
+    window.FirebasePlugin.subscribe("events");
 }, false);
 

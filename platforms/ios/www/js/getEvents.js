@@ -19,6 +19,7 @@ firebase.database().ref("/events").orderByChild("title").once('value').then(func
       $('.event_item').click(function(){
         var eid = $(this).attr("id");
         ev = event[eid];
+        updateTitle(ev.title);
         r+= '<img src='+ev.image+' alt="image" style="width:100%;"><div style="padding: 15px;">'
         r+= '<h1 style="color: #2dccd3; text-align: left;">'+ev.title+'</h1>'
         r+=  '<p class="detail">'+ev.content+'</p> <h2>Event Details</h2>'
@@ -30,7 +31,6 @@ firebase.database().ref("/events").orderByChild("title").once('value').then(func
         $('#event_detail').empty();
         $('#event_detail').html(r);
         $('#event_detail').show();
-
     });
 
   });

@@ -70,6 +70,7 @@
     <plugin name="cordova-plugin-geolocation" spec="^4.0.1">
         <variable name="GEOLOCATION_USAGE_DESCRIPTION" value="Allow to see your location on the map." />
     </plugin>
+    <plugin name="cordova-plugin-firebase" spec="^0.1.25" />
     <engine name="ios" spec="^4.5.4" />
     <engine name="android" spec="^6.4.0" />
 </widget>
