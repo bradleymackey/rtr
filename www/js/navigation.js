@@ -41,8 +41,14 @@ function displayMap(){
     // hide content, because the map requires a different layout
     $(".content").css("display", "none");
     tabItemSelected($("#map-icon"),$("#map"));
-    updateTitle("Map");
-    $("#backbutton").hide();
+    updateTitle("");
+    $("#topnav-title").append(`
+      <div class="input-group">
+        <input type="text" class="form-control" placeholder="Search Map"style="height:34px">
+      </div>`
+    );
+    hideBackButton();
+    //$("#backbutton").hide();
     updateMapSize();
     currentPage = 0;
     return false;
@@ -54,12 +60,12 @@ function displayNews(){
     $(".content").css({"margin-top": "3.0 em"});
     tabItemSelected($("#news-icon"),$("#news"));
     updateTitle("");
-    $("#backbutton").hide();
     $("#topnav-title").append(`
             <div class="input-group">
                 <input type="text" class="form-control" placeholder="Search News" style="height:34px">
             </div>`
     );
+    hideBackButton();
     $(".content-item").show();
     $("#news-article").empty();
     $("#news-article").hide();
@@ -75,12 +81,12 @@ function displayEvents(){
     $("#events_main").show();
     tabItemSelected($("#events-icon"),$("#events"));
     updateTitle("");
-    $("#backbutton").hide();
     $("#topnav-title").append(`
             <div class="input-group">
               <input type="text" class="form-control" placeholder="Search Events" style="height:34px">
             </div>`
     );
+    hideBackButton();
     $(".content-item").show();
     $("#event_detail").hide();
     currentPage = 5;
@@ -96,7 +102,7 @@ function displayInfo(){
     $(".info_main").show();
     tabItemSelected($("#info-icon"),$("#info"));
     updateTitle("Information");
-    $("#backbutton").hide();
+    hideBackButton();
     currentPage = 7;
     return false;
 }
@@ -106,7 +112,7 @@ function displayVisions(){
     $(".container").hide();
     $("#visions-aims").show();
     updateTitle("Visions and Aims");
-    $("#backbutton").show();
+    showBackButton();
     currentPage = 8;
     return false;
 }
@@ -117,7 +123,7 @@ function displayVolunteer(){
     $("#volunteer-ops").show();
     $(".info_images").hide();
     updateTitle("Volunteer Opportunities");
-    $("#backbutton").show();
+    showBackButton();
     currentPage = 9;
     return false;
 }
@@ -126,7 +132,7 @@ function displayVolunteerSignup(){
     $("#volunteer-ops").hide();
     $("#volunteer-signup").show();
     updateTitle("Volunteer sign up");
-    $("#backbutton").show();
+    showBackButton();
     currentPage = 10;
     return false;
 }
@@ -137,7 +143,7 @@ function displayLeaflets(){
     $("#leaflets").show();
     $(".info_images").hide();
     updateTitle("Leaflets");
-    $("#backbutton").show();
+    showBackButton();
     currentPage = 10;
     return false;
 }
@@ -145,9 +151,9 @@ function displayLeaflets(){
 function displayEventContentItem(){
     //changes margin so that there isnt a space between navbar and logo
     $(".events_main").hide();
-    $("#backbutton").show();
     $("#event_detail").show();
     updateTitle("Event Detail");
+    showBackButton();
     currentPage = 6;
     return false;
 }
@@ -161,6 +167,16 @@ function displayNewsContentItem(){
     currentPage = 4;
     return false;
 }*/
+
+function showBackButton(){
+  $("#backbutton").show();
+  $("#topnav-title").css({"padding-left":"90px"});
+}
+
+function hideBackButton(){
+  $("#backbutton").hide();
+  $("#topnav-title").css({"padding-left":"13px"});
+}
 
 function backButtonPressed(){
     updateMapSize();
