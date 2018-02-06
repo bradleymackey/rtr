@@ -68,6 +68,13 @@
         <variable name="FCM_VERSION" value="11.0.1" />
     </plugin>
     <plugin name="cordova-plugin-request-location-accuracy" spec="^2.2.2" />
+    <plugin name="cordova-plugin-googlemaps" spec="^2.2.2">
+        <variable name="API_KEY_FOR_ANDROID" value="AIzaSyCYGusGkn_i0_wZDCnmg8KmIjJ70p85TD4" />
+        <variable name="API_KEY_FOR_IOS" value="AIzaSyC2ef0SnZDNm9dAYYDZ5014rmBqydtQEFQ" />
+        <variable name="PLAY_SERVICES_VERSION" value="11.0.1" />
+        <variable name="LOCATION_WHEN_IN_USE_DESCRIPTION" value="Allow location to see your location on the map" />
+        <variable name="LOCATION_ALWAYS_USAGE_DESCRIPTION" value="Allow location to see your location on the map" />
+    </plugin>
     <engine name="ios" spec="^4.5.4" />
     <engine name="android" spec="^7.0.0" />
 </widget>
