@@ -47,8 +47,8 @@ firebase.database().ref("/projects").orderByChild("title").once('value').then(fu
             $("#topnav-title").text("Project");
             // just an alert for now
             let newHtml = '';
-            newHtml += '<h1>' + marker.properties.title + '</h1>';
-            newHtml += '<p>' + marker.properties.description + '</p>';
+            newHtml += '<h1 class="standard-inset">' + marker.properties.title + '</h1>';
+            newHtml += '<p class="standard-inset">' + marker.properties.description + '</p>';
             $(".app-section").hide();
             $(".content").css("display", "block");
             $("#project-detail").show();

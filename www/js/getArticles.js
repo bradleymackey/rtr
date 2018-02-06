@@ -20,10 +20,10 @@ firebase.database().ref("/news").orderByChild("title").once('value').then(functi
       var eid = $(this).attr("id");
       article = dat[eid];
       r+= "<div><img src="+article.image_1+" alt='image'>"
-      r+= "<h2 class='list'>"+article.title+"</h2>"
-      r+= "<p class='detail'>"+article.content_1+"</p>"
-      r+= "<img src="+article.image_2+" alt='image'><p class='detail'>"+article.content_2+"</p>"
-      r+= "<img src="+article.image_3+" alt='image'><p class='detail'>"+article.content_3+"</p></br></div>"
+      r+= "<h2 class='list standard-inset'>"+article.title+"</h2>"
+      r+= "<p class='detail standard-inset'>"+article.content_1+"</p>"
+      r+= "<img src="+article.image_2+" alt='image'><p class='detail standard-inset'>"+article.content_2+"</p>"
+      r+= "<img src="+article.image_3+" alt='image'><p class='detail standard-inset'>"+article.content_3+"</p></br></div>"
       $('#news_main').hide();
       updateTitle(article.title);
       $('#news-article').empty();

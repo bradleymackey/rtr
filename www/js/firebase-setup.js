@@ -10,7 +10,9 @@ var config = {
 firebase.initializeApp(config);
 
 document.addEventListener('deviceready', function(event) {
+    // ask for notification permission on iOS
     window.FirebasePlugin.grantPermission();
+    // subscribe to the news and events channels to get notifications about them
     window.FirebasePlugin.subscribe("news");
     window.FirebasePlugin.subscribe("events");
 }, false);
