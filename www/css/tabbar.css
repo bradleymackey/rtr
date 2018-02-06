@@ -26,6 +26,11 @@
     transform: translate3d(0,0,0);
 }
 
+.form-control {
+    /* force gpu acceleration to prevent iOS glitch */
+    transform: translate3d(0,0,0);
+}
+
 #topnav-title {
     /* force gpu acceleration to prevent iOS glitch */
     transform: translate3d(0,0,0);

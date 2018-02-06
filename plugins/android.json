@@ -25,6 +25,11 @@
     },
     "cordova-plugin-request-location-accuracy": {
       "PACKAGE_NAME": "com.riverteesredisocovered.rtr"
+    },
+    "cordova-plugin-googlemaps": {
+      "API_KEY_FOR_ANDROID": "AIzaSyCYGusGkn_i0_wZDCnmg8KmIjJ70p85TD4",
+      "PLAY_SERVICES_VERSION": "11.0.1",
+      "PACKAGE_NAME": "com.riverteesredisocovered.rtr"
     }
   },
   "dependent_plugins": {
