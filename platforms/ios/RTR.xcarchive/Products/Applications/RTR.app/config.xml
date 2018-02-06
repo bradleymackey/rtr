@@ -19,18 +19,8 @@
         <param name="ios-package" value="CDVGestureHandler" />
         <param name="onload" value="true" />
     </feature>
-    <feature name="StatusBar">
-        <param name="ios-package" value="CDVStatusBar" />
-        <param name="onload" value="true" />
-    </feature>
-    <feature name="Geolocation">
-        <param name="ios-package" value="CDVLocation" />
-    </feature>
-    <feature name="PushNotification">
-        <param name="ios-package" value="PushPlugin" />
-    </feature>
-    <feature name="RequestLocationAccuracy">
-        <param name="ios-package" value="RequestLocationAccuracy" />
+    <feature name="FCMPlugin">
+        <param name="ios-package" value="FCMPlugin" />
     </feature>
     <feature name="CordovaGoogleMaps">
         <param name="ios-package" value="CordovaGoogleMaps" />
@@ -72,6 +62,10 @@
     </feature>
     <feature name="MarkerCluster">
         <param name="ios-package" value="PluginMarkerCluster" />
+    </feature>
+    <feature name="StatusBar">
+        <param name="ios-package" value="CDVStatusBar" />
+        <param name="onload" value="true" />
     </feature>
     <name>RTR</name>
     <description>

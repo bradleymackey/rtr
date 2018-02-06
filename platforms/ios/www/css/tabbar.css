@@ -7,7 +7,9 @@
     top: 0;
     left: 0;
     right: 0;
+    z-index: 1;
     width: 100%;
+    /* extra padding (iPhone X only) */
     padding-top: env(safe-area-inset-top);
     /* force gpu acceleration to prevent iOS glitch */
     transform: translate3d(0,0,0);

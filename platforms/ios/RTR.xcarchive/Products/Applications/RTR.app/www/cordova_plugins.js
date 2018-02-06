@@ -1,67 +1,11 @@
 cordova.define('cordova/plugin_list', function(require, exports, module) {
 module.exports = [
   {
-    "id": "cordova-plugin-statusbar.statusbar",
-    "file": "plugins/cordova-plugin-statusbar/www/statusbar.js",
-    "pluginId": "cordova-plugin-statusbar",
+    "id": "cordova-plugin-fcm.FCMPlugin",
+    "file": "plugins/cordova-plugin-fcm/www/FCMPlugin.js",
+    "pluginId": "cordova-plugin-fcm",
     "clobbers": [
-      "window.StatusBar"
-    ]
-  },
-  {
-    "id": "cordova-plugin-navigationbar.navigationbar",
-    "file": "plugins/cordova-plugin-navigationbar/www/navigationbar.js",
-    "pluginId": "cordova-plugin-navigationbar",
-    "clobbers": [
-      "window.navigationbar"
-    ]
-  },
-  {
-    "id": "cordova-plugin-geolocation.Coordinates",
-    "file": "plugins/cordova-plugin-geolocation/www/Coordinates.js",
-    "pluginId": "cordova-plugin-geolocation",
-    "clobbers": [
-      "Coordinates"
-    ]
-  },
-  {
-    "id": "cordova-plugin-geolocation.PositionError",
-    "file": "plugins/cordova-plugin-geolocation/www/PositionError.js",
-    "pluginId": "cordova-plugin-geolocation",
-    "clobbers": [
-      "PositionError"
-    ]
-  },
-  {
-    "id": "cordova-plugin-geolocation.Position",
-    "file": "plugins/cordova-plugin-geolocation/www/Position.js",
-    "pluginId": "cordova-plugin-geolocation",
-    "clobbers": [
-      "Position"
-    ]
-  },
-  {
-    "id": "cordova-plugin-geolocation.geolocation",
-    "file": "plugins/cordova-plugin-geolocation/www/geolocation.js",
-    "pluginId": "cordova-plugin-geolocation",
-    "clobbers": [
-      "navigator.geolocation"
-    ]
-  },
-  {
-    "id": "phonegap-plugin-push.PushNotification",
-    "file": "plugins/phonegap-plugin-push/www/push.js",
-    "pluginId": "phonegap-plugin-push",
-    "clobbers": [
-      "PushNotification"
-    ]
-  },
-  {
-    "id": "cordova-plugin-request-location-accuracy.RequestLocationAccuracy",
-    "file": "plugins/cordova-plugin-request-location-accuracy/www/ios/RequestLocationAccuracy.js",
-    "pluginId": "cordova-plugin-request-location-accuracy",
-    "clobbers": [
-      "cordova.plugins.locationAccuracy"
+      "FCMPlugin"
     ]
   },
   {
@@ -245,19 +189,25 @@ module.exports = [
     "clobbers": [
       "plugin.google.maps"
     ]
+  },
+  {
+    "id": "cordova-plugin-statusbar.statusbar",
+    "file": "plugins/cordova-plugin-statusbar/www/statusbar.js",
+    "pluginId": "cordova-plugin-statusbar",
+    "clobbers": [
+      "window.StatusBar"
+    ]
   }
 ];
 module.exports.metadata = 
 // TOP OF METADATA
 {
-  "cordova-plugin-whitelist": "1.3.3",
-  "cordova-plugin-statusbar": "2.4.1",
-  "cordova-plugin-navigationbar": "1.0.31",
-  "cordova-plugin-geolocation": "4.0.1",
-  "phonegap-plugin-push": "2.1.2",
-  "cordova-plugin-request-location-accuracy": "2.2.2",
   "com.googlemaps.ios": "2.5.0",
-  "cordova-plugin-googlemaps": "2.2.2"
+  "cordova-plugin-fcm": "2.1.2",
+  "cordova-plugin-googlemaps": "2.2.2",
+  "cordova-plugin-statusbar": "2.4.1",
+  "cordova-plugin-whitelist": "1.3.3",
+  "cordova-support-google-services": "1.0.0"
 };
 // BOTTOM OF METADATA
 });

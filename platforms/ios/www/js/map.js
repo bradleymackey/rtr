@@ -15,9 +15,9 @@
  });
 
   document.addEventListener("deviceready", function(event) {
-    navigator.geolocation.getCurrentPosition(function(position) {
-        // alert(position.coords);
-     });
+    // navigator.geolocation.getCurrentPosition(function(position) {
+    //     // alert(position.coords);
+    //  });
       // Add geolocate control to the map.
     map.addControl(new mapboxgl.GeolocateControl({
         positionOptions: {

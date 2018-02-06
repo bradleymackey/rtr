@@ -11,37 +11,10 @@ firebase.initializeApp(config);
 
 
 document.addEventListener('deviceready', function(event) {
-    const push = PushNotification.init({
-        android: {
-            topics: ['events', 'news']
-        },
-        ios: {
-            alert: true,
-            badge: true,
-            sound: true,
-            clearBadge: true,
-            fcmSandbox:true,
-            topics: ['events', 'news']
-        }
+    FCMPlugin.getToken(function(token){
+        alert(token);
     });
-    push.on('registration', (data) => {
-        console.log(data.registrationId);
-        console.log(data.registrationType);
-    });
-    push.clearAllNotifications(() => {
-        console.log('success');
-    }, () => {
-        console.log('error');
-    });
-    push.subscribe('events', () => {
-        console.log('success');
-    }, (e) => {
-        console.error('subscribe error:', e);
-    });
-    push.subscribe('news', () => {
-        console.log('success');
-    }, (e) => {
-        console.error('subcribe error:', e);
-    });
+    FCMPlugin.subscribeToTopic('news');
+    FCMPlugin.subscribeToTopic('events');
 }, false);
 

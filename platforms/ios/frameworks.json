@@ -1,7 +1,7 @@
 {
-    "CoreLocation.framework": 3,
     "Accelerate.framework": 1,
     "CoreData.framework": 1,
+    "CoreLocation.framework": 2,
     "CoreTelephony.framework": 1,
     "CoreText.framework": 1,
     "GLKit.framework": 1,
