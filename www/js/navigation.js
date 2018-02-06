@@ -163,6 +163,7 @@ function displayNewsContentItem(){
 }*/
 
 function backButtonPressed(){
+    updateMapSize();
     switch(currentPage){
         case 1:
         case 2:
