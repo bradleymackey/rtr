@@ -33,7 +33,7 @@ $("#infoToLeaflets").click(displayLeaflets);
 //show event detail
 $("#events .content-item").click(displayEventContentItem);
 
-$("#news .content-item").click(displayNewsContentItem);
+//$("#news .content-item").click(displayNewsContentItem);
 
 $("#volunteer-ops .content-item").click(displayVolunteerSignup);
 
@@ -151,6 +151,7 @@ function displayEventContentItem(){
     return false;
 }
 
+/*
 function displayNewsContentItem(){
     $("#backbutton").show();
     $(".content-item").hide();
@@ -158,7 +159,7 @@ function displayNewsContentItem(){
     updateTitle("Some Article");
     currentPage = 4;
     return false;
-}
+}*/
 
 function backButtonPressed(){
     switch(currentPage){
