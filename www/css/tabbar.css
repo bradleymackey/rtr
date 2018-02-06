@@ -11,6 +11,7 @@
     width: 100%;
     /* extra padding (iPhone X only) */
     padding-top: env(safe-area-inset-top);
+    height: 48px;
     /* force gpu acceleration to prevent iOS glitch */
     transform: translate3d(0,0,0);
 }
@@ -20,7 +21,7 @@
     float: center;
     color: #f2f2f2;
     text-align: center;
-    padding: 10px 13px 7px;
+    padding: 7px 13px 7px;
     text-decoration: none;
     font-size: 1.2em;
     font-weight: bold;
@@ -52,7 +53,7 @@
 
 #map {
     position: static;
-    margin-top: 3.0em;
+    margin-top: 48px;
     padding-top: env(safe-area-inset-top);
     margin-bottom: 0;
     padding-bottom: 0;
@@ -61,7 +62,7 @@
 .content {
     /* do not change values, this ensures proper display between the navigation bar and tab bar */
     position: static;
-    margin-top: 3.0em;
+    margin-top: 48px;
     margin-bottom: 3.2em;
     padding-top: env(safe-area-inset-top);
     padding-bottom: env(safe-area-inset-bottom);
