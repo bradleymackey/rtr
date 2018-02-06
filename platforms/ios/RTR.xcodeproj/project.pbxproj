@@ -57,6 +57,7 @@
 		F97E7622E0BF46C183A14AB0 /* UIImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = E227B273F22549ACBCB19166 /* UIImageCache.m */; };
 		FE23C75369334813A9E5268B /* GoogleMaps.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 62BBA13F7340471D9FEFBA13 /* GoogleMaps.bundle */; };
 		D6B6AFF2D92E4588B7071006 /* CDVLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DEEDB6A99A847F7BAFCDD25 /* CDVLocation.m */; };
+		916A154E04734CF5B750696B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BAB1E79556B34041883082F5 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -176,6 +177,7 @@
 		FF7E65DD5A854F369A801295 /* MyPluginScrollView.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = MyPluginScrollView.h; path = "cordova-plugin-googlemaps/MyPluginScrollView.h"; sourceTree = "<group>"; };
 		4DEEDB6A99A847F7BAFCDD25 /* CDVLocation.m */ = {isa = PBXFileReference; name = "CDVLocation.m"; path = "cordova-plugin-geolocation/CDVLocation.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
 		A661BCCF563D43CBAF436F69 /* CDVLocation.h */ = {isa = PBXFileReference; name = "CDVLocation.h"; path = "cordova-plugin-geolocation/CDVLocation.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		BAB1E79556B34041883082F5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; name = "GoogleService-Info.plist"; path = "res/GoogleService-Info.plist"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = text.plist.xml; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -264,6 +266,7 @@
 				6AFF5BF81D6E424B00AB3073 /* CDVLaunchScreen.storyboard */,
 				970557E82029D894001311CB /* NewLaunch.storyboard */,
 				62BBA13F7340471D9FEFBA13 /* GoogleMaps.bundle */,
+				BAB1E79556B34041883082F5 /* GoogleService-Info.plist */,
 			);
 			name = Resources;
 			path = RTR/Resources;
@@ -466,6 +469,7 @@
 				970557E92029D894001311CB /* NewLaunch.storyboard in Resources */,
 				6AFF5BF91D6E424B00AB3073 /* CDVLaunchScreen.storyboard in Resources */,
 				FE23C75369334813A9E5268B /* GoogleMaps.bundle in Resources */,
+				916A154E04734CF5B750696B /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

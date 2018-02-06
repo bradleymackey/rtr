@@ -19,9 +19,6 @@
         <param name="ios-package" value="CDVGestureHandler" />
         <param name="onload" value="true" />
     </feature>
-    <feature name="FCMPlugin">
-        <param name="ios-package" value="FCMPlugin" />
-    </feature>
     <feature name="CordovaGoogleMaps">
         <param name="ios-package" value="CordovaGoogleMaps" />
         <param name="onload" value="true" />
@@ -66,6 +63,9 @@
     <feature name="StatusBar">
         <param name="ios-package" value="CDVStatusBar" />
         <param name="onload" value="true" />
+    </feature>
+    <feature name="Geolocation">
+        <param name="ios-package" value="CDVLocation" />
     </feature>
     <name>RTR</name>
     <description>

@@ -11,10 +11,10 @@ firebase.initializeApp(config);
 
 
 document.addEventListener('deviceready', function(event) {
-    FCMPlugin.getToken(function(token){
-        alert(token);
-    });
-    FCMPlugin.subscribeToTopic('news');
-    FCMPlugin.subscribeToTopic('events');
+    // FCMPlugin.getToken(function(token){
+    //     alert(token);
+    // });
+    // FCMPlugin.subscribeToTopic('news');
+    // FCMPlugin.subscribeToTopic('events');
 }, false);
 
