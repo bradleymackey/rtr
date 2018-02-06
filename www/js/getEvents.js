@@ -2,13 +2,9 @@
 // data is returned in a value listener
 
 firebase.database().ref("/events").orderByChild("title").once('value').then(function(snapshot) {
-    $('#event_detail').empty();
     var event = (snapshot.val()) || 'nothing';
-  //  $("#ev_title").html(event.birdsEvent.title);
-  //  $("#ev_img").html(event.birdsEvent.image);
-  //  $("#ev_content").hmtl(event.birdsEvent.content);
-
       data = event;
+      //main events list
       var f = '';
       $.each(data, function(i){
             f+= "<div id="+i+" class='event_item'><img src="+data[i].image+" alt='image'>"
@@ -17,6 +13,8 @@ firebase.database().ref("/events").orderByChild("title").once('value').then(func
       });
       $('#events_main').empty();
       $('#events_main').html(f);
+
+      //event detail
       var r = '';
       $('.event_item').click(function(){
         var eid = $(this).attr("id");
@@ -35,16 +33,4 @@ firebase.database().ref("/events").orderByChild("title").once('value').then(func
 
     });
 
-
   });
-
-/*
-  $('#result').empty();
-  $('#result').html(result);
-  $('.info').hide();
-  $('h2').click(function() {
-    event.preventDefault();
-    var eid = $(this).attr("id");
-    $('div#'+eid).toggle();
-  });
-}*/
