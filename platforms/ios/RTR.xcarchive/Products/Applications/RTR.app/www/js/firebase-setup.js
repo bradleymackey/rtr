@@ -9,8 +9,8 @@ var config = {
 };
 firebase.initializeApp(config);
 
-
 document.addEventListener('deviceready', function(event) {
+    window.FirebasePlugin.grantPermission();
     window.FirebasePlugin.subscribe("news");
     window.FirebasePlugin.subscribe("events");
 }, false);

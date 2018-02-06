@@ -4,11 +4,15 @@
     background-color: #0c2340;
     overflow: hidden;
     position: fixed;
-    height: 48px;
+    /* DO NOT PUT A HEIGHT CONSTRAINT HERE */
     top: 0;
+    /* DO NOT PUT A HEIGHT CONSTRAINT HERE */
     left: 0;
+    /* DO NOT PUT A HEIGHT CONSTRAINT HERE */
     right: 0;
+    /* DO NOT PUT A HEIGHT CONSTRAINT HERE */
     z-index: 1;
+    /* DO NOT PUT A HEIGHT CONSTRAINT HERE */
     width: 100%;
     /* extra padding (iPhone X only) */
     padding-top: env(safe-area-inset-top);
