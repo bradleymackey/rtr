@@ -57,7 +57,7 @@ function displayNews(){
     $("#backbutton").hide();
     $("#topnav-title").append(`
             <div class="input-group">
-                <input type="text" class="form-control" placeholder="Search News">
+                <input type="text" class="form-control" placeholder="Search News" style="height:34px">
             </div>`
     );
     $(".content-item").show();
@@ -77,7 +77,7 @@ function displayEvents(){
     $("#backbutton").hide();
     $("#topnav-title").append(`
             <div class="input-group">
-                <input type="text" class="form-control" placeholder="Search Events">
+              <input type="text" class="form-control" placeholder="Search Events" style="height:34px">
             </div>`
     );
     $(".content-item").show();
