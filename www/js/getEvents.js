@@ -20,6 +20,8 @@ firebase.database().ref("/events").orderByChild("title").once('value').then(func
         var eid = $(this).attr("id");
         ev = event[eid];
         updateTitle(ev.title);
+        //back button
+        $("#topnav-title").prepend('<img id="backbutton" src="img/backbutton.png" alt="back">');
         r+= '<img src='+ev.image+' alt="image" style="width:100%;"><div style="padding: 15px;">'
         r+= '<h1 style="color: #2dccd3; text-align: left;">'+ev.title+'</h1>'
         r+=  '<p class="detail">'+ev.content+'</p> <h2>Event Details</h2>'

@@ -26,6 +26,8 @@ firebase.database().ref("/news").orderByChild("title").once('value').then(functi
       r+= "<img src="+article.image_3+" alt='image'><p class='detail'>"+article.content_3+"</p></br></div>"
       $('#news_main').hide();
       updateTitle(article.title);
+      //back button
+      $("#topnav-title").prepend('<img id="backbutton" src="img/backbutton.png" alt="back">');
       $('#news-article').empty();
       $('#news-article').html(r);
       $('#news-article').show();
