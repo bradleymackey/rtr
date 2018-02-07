@@ -41,6 +41,7 @@ $("#volunteer-ops .content-item").click(displayVolunteerSignup);
 
 $("#backbutton").click(backButtonPressed);
 
+
 function displayMap(){
     // hide content, because the map requires a different layout
     $(".content").css("display", "none");
@@ -52,7 +53,6 @@ function displayMap(){
       </div>`
     );
     hideBackButton();
-    //$("#backbutton").hide();
     updateMapSize();
     currentPage = 0;
     return false;
@@ -195,10 +195,12 @@ function hideBackButton(){
   $("#topnav-title").css({"padding-left":"13px"});
 }
 
-function backButtonPressed(){
-    aler("bbp");
+function backButtonPressed() {
+    alert("bbp");
+    console.log("back button pressed");
     updateMapSize();
     switch(currentPage){
+        case 0:
         case 1:
         case 2:
             displayMap();
@@ -221,6 +223,8 @@ function backButtonPressed(){
         case 99:
             displayPhotos();
             break;
+        default:
+        break;
     }
 }
 

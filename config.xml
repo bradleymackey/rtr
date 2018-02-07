@@ -73,4 +73,8 @@
     <plugin name="cordova-plugin-firebase" spec="^0.1.25" />
     <engine name="ios" spec="^4.5.4" />
     <engine name="android" spec="^6.4.0" />
+    <plugin name="cordova-plugin-camera" spec="^4.0.2">
+        <variable name="CAMERA_USAGE_DESCRIPTION" value="Allow camera access to share photos with others in the app." />
+        <variable name="PHOTOLIBRARY_USAGE_DESCRIPTION" value="Allow photo library acess to share photos with others in the app." />
+    </plugin>
 </widget>

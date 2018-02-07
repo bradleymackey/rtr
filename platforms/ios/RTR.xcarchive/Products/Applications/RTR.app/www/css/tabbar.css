@@ -43,7 +43,7 @@
     transform: translate3d(0,0,0);
 }
 
-#backbutton{
+#backbutton {
     position: relative;
     padding: 10px 13px 7px;
     /*transform: translate(0%, -50%);*/
@@ -51,7 +51,7 @@
     height: 30px;
 }
 
-#backbutton:active{
+#backbutton:active {
     background-color: red;
 }
 
