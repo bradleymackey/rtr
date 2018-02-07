@@ -38,7 +38,9 @@ function updateMapSize() {
     div.style.paddingBottom = 'env(safe-area-inset-bottom)';
     document.body.appendChild(div);
     const calculatedPadding =  parseInt(window.getComputedStyle(div).paddingTop) + parseInt(window.getComputedStyle(div).paddingBottom);
-    $("#map-layer").height($(window).height()-$(".topnav").height()-$(".tabbar").height()-calculatedPadding);
+    const topNavHeight = $(".topnav").height();
+    $("#map-layer").height($(window).height()-topNavHeight-$(".tabbar").height()-calculatedPadding);
+    $("#map-layer").css("margin-top",topNavHeight);
     map.invalidateSize(); 
     document.body.removeChild(div);
 }

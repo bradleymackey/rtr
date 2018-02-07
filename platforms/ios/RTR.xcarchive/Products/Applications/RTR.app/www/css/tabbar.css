@@ -57,8 +57,8 @@
 
 #map {
     position: static;
-    margin-top: 48px;
     padding-top: env(safe-area-inset-top);
+    /* DO NOT SPECIFY MARGIN TOP OR BOTTOM HERE, IT WILL BE SET DYNAMICALLY WHEN THE MAP IS SIZED */
     margin-bottom: 0;
     padding-bottom: 0;
 }
