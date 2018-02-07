@@ -1,6 +1,11 @@
 
 
-firebase.database().ref("/projects").orderByChild("title").once('value').then(function(snapshot) {
+
+
+
+    
+    
+function projectsCallback(snapshot) {
 
     const data = snapshot.val();
 
@@ -49,7 +54,7 @@ firebase.database().ref("/projects").orderByChild("title").once('value').then(fu
             // just an alert for now
             let newHtml = '';
             if (marker.properties.image !== null && marker.properties.image !== undefined) {
-                newHtml += '<img src="' + marker.properties.image + '" style="height:auto;max-height:140px;width:100%;overflow:hidden;">';
+                newHtml += '<img src="' + marker.properties.image + '">';
             }
             newHtml += '<h1 class="standard-inset">' + marker.properties.title + '</h1>';
             newHtml += '<p class="standard-inset">' + marker.properties.description + '</p>';
@@ -65,4 +70,4 @@ firebase.database().ref("/projects").orderByChild("title").once('value').then(fu
             .setLngLat(marker.geometry.coordinates)
             .addTo(map);
     });
-});
+}

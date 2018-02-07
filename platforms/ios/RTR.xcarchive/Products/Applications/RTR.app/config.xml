@@ -108,7 +108,6 @@
     <icon height="167" src="res/ios/Icon-167.png" width="167" />
     <preference name="AllowInlineMediaPlayback" value="false" />
     <preference name="BackupWebStorage" value="cloud" />
-    <preference name="DisallowOverscroll" value="true" />
     <preference name="EnableViewportScale" value="false" />
     <preference name="KeyboardDisplayRequiresUserAction" value="true" />
     <preference name="MediaPlaybackRequiresUserAction" value="false" />
@@ -125,4 +124,5 @@
     <preference name="fullscreen" value="false" />
     <preference name="webviewbounce" value="true" />
     <preference name="UIWebViewBounce" value="true" />
+    <preference name="DisallowOverscroll" value="false" />
 </widget>

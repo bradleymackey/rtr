@@ -81,7 +81,7 @@ function displayNews(){
             </div>`
     );
     hideBackButton();
-    $(".content-item").show();
+    $("#news_main").show();
     $("#news-article").empty();
     $("#news-article").hide();
     currentPage = 3;
@@ -102,7 +102,7 @@ function displayEvents(){
             </div>`
     );
     hideBackButton();
-    $(".content-item").show();
+    $("#events_main").show();
     $("#event_detail").hide();
     currentPage = 5;
     return false;

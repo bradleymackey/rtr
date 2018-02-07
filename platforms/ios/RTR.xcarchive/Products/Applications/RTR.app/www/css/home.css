@@ -13,6 +13,12 @@ B6ADA5 (gray)
 7BA7BC (medium blue)
 */
 
+#error {
+    height: 60%;
+    padding-top: 80px;
+    text-align: center;
+}
+
 #map-layer {
     position: relative;
     top: 0;
@@ -138,22 +144,25 @@ h1 {
     transform: translate3d(0,0,0);
 }
 
-.event_item img{
-    width: 100%;
-}
-
-.event_item:active{
-    background-color: #bbc1cc;
-    /* force gpu acceleration to prevent iOS glitch */
-    transform: translate3d(0,0,0);
-}
-
-.news-section img{
-    /* image aspect fill behaviour */
+.news_item img {
+    /* correct image layout for news articles */
+    margin-left: 0px;
+    margin-right: 0px;
     width: 100%;
     object-fit: cover;
     max-height: 150px;
     text-align: center;
+}
+
+.event_item img {
+    width: 100%;
+    object-fit: cover;
+    max-height: 250px;
+    text-align: center;
+}
+
+.event_item:active{
+    background-color: #bbc1cc;
     /* force gpu acceleration to prevent iOS glitch */
     transform: translate3d(0,0,0);
 }
@@ -183,4 +192,19 @@ h1 {
 .centre {
     margin-left: auto;
     margin-right: auto;
+}
+
+.standard-inset {
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+.nice-content-layout img {
+    /* correct image behaviour for project detail */
+    width: 100%;
+    object-fit: cover;
+    max-height: 300px;
+    text-align: center;
 }
