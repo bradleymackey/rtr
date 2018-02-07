@@ -148,7 +148,7 @@ h1 {
     transform: translate3d(0,0,0);
 }
 
-.news-section img{
+.news-section img {
     /* image aspect fill behaviour */
     width: 100%;
     object-fit: cover;
@@ -190,4 +190,11 @@ h1 {
     margin-right: 20px;
     margin-top: 8px;
     margin-bottom: 8px;
+}
+
+#project-detail img {
+    /* correct image behaviour for project detail */
+    width: 100%;
+    object-fit: cover;
+    max-height: 300px;
 }

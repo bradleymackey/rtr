@@ -21,9 +21,15 @@ firebase.database().ref("/news").orderByChild("title").once('value').then(functi
       article = dat[eid];
       r+= "<div><img src="+article.image_1+" alt='image'>"
       r+= "<h2 class='list standard-inset'>"+article.title+"</h2>"
-      r+= "<p class='detail standard-inset'>"+article.content_1+"</p>"
-      r+= "<img src="+article.image_2+" alt='image'><p class='detail standard-inset'>"+article.content_2+"</p>"
-      r+= "<img src="+article.image_3+" alt='image'><p class='detail standard-inset'>"+article.content_3+"</p></br></div>"
+      r+= "<p class='detail standard-inset'>"+(article.content_1 || "")+"</p>"
+      if (article.image_2 !== undefined) {
+        r+= "<img src="+article.image_2+" alt='image'>";
+      }
+      r+="<p class='detail standard-inset'>"+(article.content_2 || "")+"</p>"
+      if (article.image_3 !== undefined) {
+        r+= "<img src="+article.image_3+" alt='image'>";
+      }
+      r+="<p class='detail standard-inset'>"+(article.content_3 || "")+"</p></br></div>";
       $('#news_main').hide();
       updateTitle(article.title);
       //back button
