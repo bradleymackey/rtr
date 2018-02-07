@@ -42,7 +42,7 @@ $("#volunteer-ops .content-item").click(displayVolunteerSignup);
 $("#backbutton").click(backButtonPressed);
 
 
-function displayMap(){
+function displayMap() {
     // hide content, because the map requires a different layout
     $(".content").css("display", "none");
     tabItemSelected($("#map-icon"),$("#map"));
@@ -66,12 +66,6 @@ function displayPhotos() {
     hideBackButton();
     $(".content-item").show();
     currentPage = 99;
-
-
-    navigator.camera.getPicture(onPhotoURISuccess, onFail, { quality: 50,
-        destinationType: destinationType.FILE_URI,
-        sourceType: source });
-
     return false;
 }
 

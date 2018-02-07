@@ -79,5 +79,9 @@
       <string>UIInterfaceOrientationPortrait</string>
       <string>UIInterfaceOrientationPortraitUpsideDown</string>
     </array>
+    <key>NSCameraUsageDescription</key>
+    <string>Allow to share photos with others.</string>
+    <key>NSPhotoLibraryUsageDescription</key>
+    <string>Allow to share photos with others.</string>
   </dict>
 </plist>

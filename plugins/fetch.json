@@ -67,6 +67,9 @@
       "id": "cordova-plugin-camera@4.0.2"
     },
     "is_top_level": true,
-    "variables": {}
+    "variables": {
+      "CAMERA_USAGE_DESCRIPTION": "Allow to share images in the app.",
+      "PHOTOLIBRARY_USAGE_DESCRIPTION": "Allow to share images in the app."
+    }
   }
 }

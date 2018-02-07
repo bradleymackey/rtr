@@ -38,7 +38,10 @@
         "GEOLOCATION_USAGE_DESCRIPTION": "Allow to see your location on the map."
       },
       "cordova-plugin-firebase": {},
-      "cordova-plugin-camera": {}
+      "cordova-plugin-camera": {
+        "CAMERA_USAGE_DESCRIPTION": "Allow to share images in the app.",
+        "PHOTOLIBRARY_USAGE_DESCRIPTION": "Allow to share images in the app."
+      }
     },
     "platforms": [
       "ios",

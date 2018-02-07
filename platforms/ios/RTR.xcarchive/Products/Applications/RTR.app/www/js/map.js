@@ -6,7 +6,7 @@
 
  var map;
 
- document.addEventListener("DOMContentLoaded", function(event) {
+document.addEventListener("DOMContentLoaded", function(event) {
     mapboxgl.accessToken = 'pk.eyJ1IjoiYnJhZGxleW1hY2tleSIsImEiOiJjamNraW14eXYzanZzMzNwZ2UyNW9ua2tzIn0.4YBdPgKnDN5XFdVVMeo4LQ';
     map = new mapboxgl.Map({
         container: 'map-layer',
@@ -14,12 +14,12 @@
     });
     // Add geolocate control to the map.
     map.addControl(new mapboxgl.GeolocateControl({
-    positionOptions: {
-        enableHighAccuracy: true
-    },
-    trackUserLocation: true
-}));
- });
+        positionOptions: {
+            enableHighAccuracy: true
+        },
+        trackUserLocation: true
+    }));
+});
 
   document.addEventListener("deviceready", function(event) {
     navigator.geolocation.getCurrentPosition(function(position) {
