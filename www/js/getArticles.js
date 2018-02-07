@@ -4,6 +4,14 @@
 firebase.database().ref("/news").orderByChild("title").once('value').then(function(snapshot) {
     const articles = snapshot.val();
 
+    // if we cannot get the news articles from the database for some reason, display an error message to the user
+    if (articles === undefined) {
+      let errorMessage = "<h1>Error!</h1>" + "<p>Could not load content, please try again later.</p>";
+      $('#news_main').empty();
+      $('#news_main').html(errorMessage);
+      return;
+    }
+
     // MAIN NEWS LIST WITH THE LIST OF ARTICLES
     let articleInList = '';
     $.each(articles, function(i){
