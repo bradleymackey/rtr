@@ -9,6 +9,8 @@ var config = {
 };
 firebase.initializeApp(config);
 
+// sign in the user annoymously, THEN make the requests for all the data
+// this is because the database policy now requires users to be logged in to access the data, so they have to be logged in first
 firebase.auth().signInAnonymously().then(function(user) {
     if (user) {
         firebase.database().ref("/projects").orderByChild("title").once('value').then(projectsCallback);
@@ -23,14 +25,16 @@ firebase.auth().signInAnonymously().then(function(user) {
     }
 })
 .catch(function(error) {
-    // Handle Errors here.
-    let errorCode = error.code;
-    let errorMessage = error.message;
-    // ...
-    console.error("auth error " + errorCode + " " + errorMessage);
+    console.error("AUTH ERROR " + errorCode + " " + errorMessage);
+    let errorMessage = "<div id=\"error\" class=\"standard-inset\" style=\"text-align:center;\"><h1 style=\"text-align:center;\">Error!</h1>" + "<p> Please try again later. " + error.message + "</p></div>";
+    $('#events_main').empty();
+    $('#events_main').html(errorMessage);
+    $('#news_main').empty();
+    $('#news_main').html(errorMessage);
 });
 
-
+// once the device is ready, subscribe the the relevant notification topics
+// notifications are sent via FCM - Firebase Cloud Messaging
 document.addEventListener('deviceready', function(event) {
     // ask for notification permission on iOS
     window.FirebasePlugin.grantPermission();
