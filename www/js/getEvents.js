@@ -3,8 +3,7 @@
 
 firebase.database().ref("/events").orderByChild("title").once('value').then(function(snapshot) {
 
-     const events = undefined;
-
+     const events = snapshot.val();
 
      // if we cannot get the events from the database for some reason, display an error message to the user
      if (events === undefined) {
@@ -14,7 +13,7 @@ firebase.database().ref("/events").orderByChild("title").once('value').then(func
       return;
     }
 
-      //main events list
+      // MAIN LIST OF EVENTS
       let eventInList = '';
       $.each(events, function(i){
             eventInList+= "<div id="+i+" class='event_item'><img src="+events[i].image+" alt='image'>"
