@@ -18,6 +18,8 @@ function onDeviceReady() {
 
 $("#map-icon").click(displayMap);
 
+$("#photos-icon").click(displayPhotos);
+
 $("#news-icon").click(displayNews);
 
 $("#events-icon").click(displayEvents);
@@ -53,6 +55,17 @@ function displayMap(){
     //$("#backbutton").hide();
     updateMapSize();
     currentPage = 0;
+    return false;
+}
+
+function displayPhotos() {
+    $(".content").css("display", "block");
+    $(".content").css({"margin-top": "3.0 em"});
+    tabItemSelected($("#photos-icon"),$("#photos"));
+    updateTitle("Photos");
+    hideBackButton();
+    $(".content-item").show();
+    currentPage = 99;
     return false;
 }
 
@@ -156,12 +169,8 @@ function displayEventContentItem(){
     $(".events_main").hide();
     $("#event_detail").show();
     updateTitle("Event Detail");
-<<<<<<< HEAD
     //back button
     $("#topnav-title").prepend('<img id="backbutton" src="img/backbutton.png" alt="back">');
-=======
-    showBackButton();
->>>>>>> 66b901243ee480fc568ec89f22f8acb32609d9f7
     currentPage = 6;
     return false;
 }*/
@@ -208,6 +217,10 @@ function backButtonPressed(){
             break;
         case 12:
             displayLeaflets();
+            break;
+        case 99:
+            displayPhotos();
+            break;
     }
 }
 

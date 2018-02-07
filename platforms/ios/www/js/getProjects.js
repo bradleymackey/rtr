@@ -19,6 +19,7 @@ firebase.database().ref("/projects").orderByChild("title").once('value').then(fu
                 title: data[i].title,
                 description: data[i].description,
                 more_info: data[i].more_info,
+                image: data[i].image,
                 tag: data[i].tag,
                 icon_size: [34,34]
             },
@@ -47,8 +48,11 @@ firebase.database().ref("/projects").orderByChild("title").once('value').then(fu
             $("#topnav-title").text("Project");
             // just an alert for now
             let newHtml = '';
-            newHtml += '<h1>' + marker.properties.title + '</h1>';
-            newHtml += '<p>' + marker.properties.description + '</p>';
+            if (marker.properties.image !== null && marker.properties.image !== undefined) {
+                newHtml += '<img src="' + marker.properties.image + '" style="height:auto;max-height:140px;width:100%;overflow:hidden;">';
+            }
+            newHtml += '<h1 class="standard-inset">' + marker.properties.title + '</h1>';
+            newHtml += '<p class="standard-inset">' + marker.properties.description + '</p>';
             $(".app-section").hide();
             $(".content").css("display", "block");
             $("#project-detail").show();

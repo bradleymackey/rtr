@@ -18,6 +18,8 @@ function onDeviceReady() {
 
 $("#map-icon").click(displayMap);
 
+$("#photos-icon").click(displayPhotos);
+
 $("#news-icon").click(displayNews);
 
 $("#events-icon").click(displayEvents);
@@ -37,6 +39,8 @@ $("#events .content-item").click(displayEventContentItem);
 
 $("#volunteer-ops .content-item").click(displayVolunteerSignup);
 
+$("#backbutton").click(backButtonPressed);
+
 function displayMap(){
     // hide content, because the map requires a different layout
     $(".content").css("display", "none");
@@ -51,6 +55,17 @@ function displayMap(){
     //$("#backbutton").hide();
     updateMapSize();
     currentPage = 0;
+    return false;
+}
+
+function displayPhotos() {
+    $(".content").css("display", "block");
+    $(".content").css({"margin-top": "3.0 em"});
+    tabItemSelected($("#photos-icon"),$("#photos"));
+    updateTitle("Photos");
+    hideBackButton();
+    $(".content-item").show();
+    currentPage = 99;
     return false;
 }
 
@@ -148,15 +163,17 @@ function displayLeaflets(){
     return false;
 }
 
+/*
 function displayEventContentItem(){
     //changes margin so that there isnt a space between navbar and logo
     $(".events_main").hide();
     $("#event_detail").show();
     updateTitle("Event Detail");
-    showBackButton();
+    //back button
+    $("#topnav-title").prepend('<img id="backbutton" src="img/backbutton.png" alt="back">');
     currentPage = 6;
     return false;
-}
+}*/
 
 /*
 function displayNewsContentItem(){
@@ -179,6 +196,7 @@ function hideBackButton(){
 }
 
 function backButtonPressed(){
+    aler("bbp");
     updateMapSize();
     switch(currentPage){
         case 1:
@@ -199,6 +217,10 @@ function backButtonPressed(){
             break;
         case 12:
             displayLeaflets();
+            break;
+        case 99:
+            displayPhotos();
+            break;
     }
 }
 

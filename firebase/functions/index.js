@@ -1,3 +1,6 @@
+// Firebase Functions for River Tees Rediscovered
+// Created by Team 2
+
 "use strict";
 
 // functions
@@ -18,6 +21,7 @@ exports.notifyVolunteer = functions.database.ref('volunteers/{newVolunteer}').on
           body: `${first_name} ${last_name} volunteered for ${for_event}`,
         }
       };
+      // return the promise so that we do not exit the function too early
     return admin.messaging().sendToTopic('admin', payload).catch(error => {
         console.log(`error sending volunteer notification: ${error}`);
     });
@@ -36,6 +40,7 @@ exports.notifyEvent = functions.database.ref('events/{newEvent}').onCreate(event
     const options = {
         timeToLive: 60 * 60 * 24 * 7
     };
+    // return the promise so that we do not exit the function too early
     return admin.messaging().sendToTopic('events', payload, options).catch(error => {
         console.log(`error sending events notification: ${error}`);
     });
@@ -50,6 +55,7 @@ exports.notifyNews = functions.database.ref('news/{newArticle}').onCreate(event 
             body: `${article_title}`
         }
     };
+    // return the promise so that we do not exit the function too early
     return admin.messaging().sendToTopic('news', payload).catch(error => {
         console.log(`error sending news notification: ${error}`);
     });
