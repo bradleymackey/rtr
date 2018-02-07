@@ -6,7 +6,7 @@ firebase.database().ref("/news").orderByChild("title").once('value').then(functi
 
     // if we cannot get the news articles from the database for some reason, display an error message to the user
     if (articles === undefined) {
-      let errorMessage = "<h1>Error!</h1>" + "<p>Could not load content, please try again later.</p>";
+      let errorMessage = "<div id=\"error\" class=\"standard-inset\" style=\"text-align:center;\"><h1 style=\"text-align:center;\">Error!</h1>" + "<p>Could not load content, please try again later.</p></div>";
       $('#news_main').empty();
       $('#news_main').html(errorMessage);
       return;

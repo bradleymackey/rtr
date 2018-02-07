@@ -13,6 +13,11 @@ B6ADA5 (gray)
 7BA7BC (medium blue)
 */
 
+#error {
+    height: 60%;
+    padding-top: 80px;
+}
+
 #map-layer {
     position: relative;
     top: 0;
