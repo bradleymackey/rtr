@@ -77,6 +77,10 @@
 		BD04D0678D9B43A6BAC1DAEF /* CDVCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = 753CAD2A59974510BE55F89A /* CDVCamera.m */; };
 		0BC749636FE14226A7ECB22E /* CDVJpegHeaderWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 223F029FB5944F20BD94C86A /* CDVJpegHeaderWriter.m */; };
 		22B67108006A44E283F48490 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96E587C10F6F428D8EF343A0 /* AVFoundation.framework */; };
+		51D2AD25A50E44A8968DC4C1 /* CDVWKWebViewEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BB4C97530DA4B94962E55DC /* CDVWKWebViewEngine.m */; };
+		342F811227774A3484EA8DC0 /* CDVWKWebViewUIDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FE7364AD422443F5BCDCDBF6 /* CDVWKWebViewUIDelegate.m */; };
+		92E1F14059764BED87A06DB8 /* CDVWKProcessPoolFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 70C478F9A641414DB5570D14 /* CDVWKProcessPoolFactory.m */; };
+		127D480F84BC46B585DE6DAD /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80C77BFB147A4093A3F5E0D1 /* WebKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -223,6 +227,13 @@
 		FA57347330E04AAA99E751D3 /* CDVJpegHeaderWriter.h */ = {isa = PBXFileReference; name = "CDVJpegHeaderWriter.h"; path = "cordova-plugin-camera/CDVJpegHeaderWriter.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
 		F78797A7D4F54D6DBE74285D /* CDVExif.h */ = {isa = PBXFileReference; name = "CDVExif.h"; path = "cordova-plugin-camera/CDVExif.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
 		96E587C10F6F428D8EF343A0 /* AVFoundation.framework */ = {isa = PBXFileReference; name = "AVFoundation.framework"; path = "System/Library/Frameworks/AVFoundation.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
+		6BB4C97530DA4B94962E55DC /* CDVWKWebViewEngine.m */ = {isa = PBXFileReference; name = "CDVWKWebViewEngine.m"; path = "cordova-plugin-wkwebview-engine/CDVWKWebViewEngine.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
+		FE7364AD422443F5BCDCDBF6 /* CDVWKWebViewUIDelegate.m */ = {isa = PBXFileReference; name = "CDVWKWebViewUIDelegate.m"; path = "cordova-plugin-wkwebview-engine/CDVWKWebViewUIDelegate.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
+		70C478F9A641414DB5570D14 /* CDVWKProcessPoolFactory.m */ = {isa = PBXFileReference; name = "CDVWKProcessPoolFactory.m"; path = "cordova-plugin-wkwebview-engine/CDVWKProcessPoolFactory.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
+		2CA88619BD024FDE9486427D /* CDVWKWebViewEngine.h */ = {isa = PBXFileReference; name = "CDVWKWebViewEngine.h"; path = "cordova-plugin-wkwebview-engine/CDVWKWebViewEngine.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		A3257521795E4F7D81056040 /* CDVWKWebViewUIDelegate.h */ = {isa = PBXFileReference; name = "CDVWKWebViewUIDelegate.h"; path = "cordova-plugin-wkwebview-engine/CDVWKWebViewUIDelegate.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		9C574BEA1D8E49538A58DE01 /* CDVWKProcessPoolFactory.h */ = {isa = PBXFileReference; name = "CDVWKProcessPoolFactory.h"; path = "cordova-plugin-wkwebview-engine/CDVWKProcessPoolFactory.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		80C77BFB147A4093A3F5E0D1 /* WebKit.framework */ = {isa = PBXFileReference; name = "WebKit.framework"; path = "System/Library/Frameworks/WebKit.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -260,6 +271,7 @@
 				2A7182ABD7D04FABA563585E /* FirebaseAuth.framework in Frameworks */,
 				C49078C6BCD4485CBDCC267F /* GTMSessionFetcher.framework in Frameworks */,
 				22B67108006A44E283F48490 /* AVFoundation.framework in Frameworks */,
+				127D480F84BC46B585DE6DAD /* WebKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -363,6 +375,7 @@
 				32FB804BEFE14818AF706566 /* FirebaseAuth.framework */,
 				527F434DFAB34A2F952A1E11 /* GTMSessionFetcher.framework */,
 				96E587C10F6F428D8EF343A0 /* AVFoundation.framework */,
+				80C77BFB147A4093A3F5E0D1 /* WebKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -455,6 +468,12 @@
 				014C22755917458AA74000FC /* CDVCamera.h */,
 				FA57347330E04AAA99E751D3 /* CDVJpegHeaderWriter.h */,
 				F78797A7D4F54D6DBE74285D /* CDVExif.h */,
+				6BB4C97530DA4B94962E55DC /* CDVWKWebViewEngine.m */,
+				FE7364AD422443F5BCDCDBF6 /* CDVWKWebViewUIDelegate.m */,
+				70C478F9A641414DB5570D14 /* CDVWKProcessPoolFactory.m */,
+				2CA88619BD024FDE9486427D /* CDVWKWebViewEngine.h */,
+				A3257521795E4F7D81056040 /* CDVWKWebViewUIDelegate.h */,
+				9C574BEA1D8E49538A58DE01 /* CDVWKProcessPoolFactory.h */,
 			);
 			name = Plugins;
 			path = RTR/Plugins;
@@ -617,6 +636,9 @@
 				172F290B54584F3E80D1FBFC /* UIImage+CropScaleOrientation.m in Sources */,
 				BD04D0678D9B43A6BAC1DAEF /* CDVCamera.m in Sources */,
 				0BC749636FE14226A7ECB22E /* CDVJpegHeaderWriter.m in Sources */,
+				51D2AD25A50E44A8968DC4C1 /* CDVWKWebViewEngine.m in Sources */,
+				342F811227774A3484EA8DC0 /* CDVWKWebViewUIDelegate.m in Sources */,
+				92E1F14059764BED87A06DB8 /* CDVWKProcessPoolFactory.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

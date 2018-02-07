@@ -12,5 +12,6 @@
     "QuartzCore.framework": 1,
     "SystemConfiguration.framework": 1,
     "UIKit.framework": 1,
-    "AVFoundation.framework": 1
+    "AVFoundation.framework": 1,
+    "WebKit.framework": 1
 }

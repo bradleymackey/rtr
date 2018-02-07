@@ -71,5 +71,13 @@
       "CAMERA_USAGE_DESCRIPTION": "Allow to share images in the app.",
       "PHOTOLIBRARY_USAGE_DESCRIPTION": "Allow to share images in the app."
     }
+  },
+  "cordova-plugin-wkwebview-engine": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-wkwebview-engine"
+    },
+    "is_top_level": true,
+    "variables": {}
   }
 }
