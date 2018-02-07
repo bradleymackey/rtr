@@ -27,22 +27,3 @@ document.addEventListener("DOMContentLoaded", function(event) {
      });
     
   }, false);
-// do not adjust values
-  $(window).on("resize", function () { 
-    updateMapSize();
-}).trigger("resize");
-
-function updateMapSize() {
-    var div = document.createElement('div');
-    div.style.paddingTop = 'env(safe-area-inset-top)';
-    div.style.paddingBottom = 'env(safe-area-inset-bottom)';
-    document.body.appendChild(div);
-    const calculatedPadding =  parseInt(window.getComputedStyle(div).paddingTop) + parseInt(window.getComputedStyle(div).paddingBottom);
-    const topNavHeight = $(".topnav").height();
-    $("#map-layer").height($(window).height()-topNavHeight-$(".tabbar").height()-calculatedPadding);
-    $("#map-layer").css("margin-top",topNavHeight);
-    document.body.removeChild(div);
-    //map.invalidateSize();
-}
-
- 

@@ -114,6 +114,7 @@
     <icon height="167" src="res/ios/Icon-167.png" width="167" />
     <preference name="AllowInlineMediaPlayback" value="false" />
     <preference name="BackupWebStorage" value="cloud" />
+    <preference name="DisallowOverscroll" value="false" />
     <preference name="EnableViewportScale" value="false" />
     <preference name="KeyboardDisplayRequiresUserAction" value="true" />
     <preference name="MediaPlaybackRequiresUserAction" value="false" />
@@ -129,8 +130,6 @@
     <preference name="StatusBarStyle" value="lightcontent" />
     <preference name="StatusBarOverlaysWebView" value="true" />
     <preference name="fullscreen" value="false" />
-    <preference name="webviewbounce" value="true" />
-    <preference name="UIWebViewBounce" value="true" />
-    <preference name="DisallowOverscroll" value="false" />
+    <preference name="WebViewBounce" value="true" />
     <preference name="CordovaWebViewEngine" value="CDVWKWebViewEngine" />
 </widget>

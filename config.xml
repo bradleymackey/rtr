@@ -13,9 +13,7 @@
     <preference name="StatusBarStyle" value="lightcontent" />
     <preference name="StatusBarOverlaysWebView" value="true" />
     <preference name="fullscreen" value="false" />
-    <preference name="webviewbounce" value="true" />
-    <preference name="UIWebViewBounce" value="true" />
-    <preference name="DisallowOverscroll" value="false" />
+    <preference name="WebViewBounce" value="true" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
     <allow-intent href="tel:*" />
