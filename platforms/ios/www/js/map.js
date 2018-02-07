@@ -41,8 +41,8 @@ function updateMapSize() {
     const topNavHeight = $(".topnav").height();
     $("#map-layer").height($(window).height()-topNavHeight-$(".tabbar").height()-calculatedPadding);
     $("#map-layer").css("margin-top",topNavHeight);
-    map.invalidateSize(); 
     document.body.removeChild(div);
+    //map.invalidateSize();
 }
 
  

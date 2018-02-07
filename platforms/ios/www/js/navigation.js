@@ -66,6 +66,12 @@ function displayPhotos() {
     hideBackButton();
     $(".content-item").show();
     currentPage = 99;
+
+
+    navigator.camera.getPicture(onPhotoURISuccess, onFail, { quality: 50,
+        destinationType: destinationType.FILE_URI,
+        sourceType: source });
+
     return false;
 }
 
