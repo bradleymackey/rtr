@@ -1,7 +1,7 @@
 
 // data is returned in a value listener
-
-firebase.database().ref("/news").orderByChild("title").once('value').then(function(snapshot) {
+  
+function articlesCallback(snapshot) {
     const articles = snapshot.val();
 
     // if we cannot get the news articles from the database for some reason, display an error message to the user
@@ -46,4 +46,4 @@ firebase.database().ref("/news").orderByChild("title").once('value').then(functi
       $('#news-article').show();
   });
   
-});
+}

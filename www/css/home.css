@@ -16,6 +16,7 @@ B6ADA5 (gray)
 #error {
     height: 60%;
     padding-top: 80px;
+    text-align: center;
 }
 
 #map-layer {

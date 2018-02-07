@@ -1,7 +1,7 @@
 
 // data is returned in a value listener
-
-firebase.database().ref("/events").orderByChild("title").once('value').then(function(snapshot) {
+  
+function eventsCallback(snapshot) {
 
      const events = snapshot.val();
 
@@ -46,4 +46,4 @@ firebase.database().ref("/events").orderByChild("title").once('value').then(func
         $('#event_detail').show();
     });
 
-  });
+  }

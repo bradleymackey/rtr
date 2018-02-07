@@ -1,6 +1,11 @@
 
 
-firebase.database().ref("/projects").orderByChild("title").once('value').then(function(snapshot) {
+
+
+
+    
+    
+function projectsCallback(snapshot) {
 
     const data = snapshot.val();
 
@@ -65,4 +70,4 @@ firebase.database().ref("/projects").orderByChild("title").once('value').then(fu
             .setLngLat(marker.geometry.coordinates)
             .addTo(map);
     });
-});
+}
