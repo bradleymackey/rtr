@@ -61,8 +61,8 @@ function displayNews(){
             </div>`
     );
     $(".content-item").show();
-    $("#news-article").empty();
     $("#news-article").hide();
+    $("#news-article").empty();
     currentPage = 3;
     return false;
 }
