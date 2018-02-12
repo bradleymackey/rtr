@@ -80,13 +80,13 @@ function displayNews(){
                 <input type="text" class="form-control" placeholder="Search News" style="height:34px">
             </div>`
     );
-<<<<<<< HEAD
+
     $(".content-item").show();
-=======
+
     hideBackButton();
     $("#news_main").show();
     $("#news-article").empty();
->>>>>>> 6c6ea502c379b1a00acf79b658d95e08bbba3715
+
     $("#news-article").hide();
     $("#news-article").empty();
     currentPage = 3;
