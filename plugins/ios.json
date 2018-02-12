@@ -7,33 +7,36 @@
     "files": {}
   },
   "installed_plugins": {
-    "cordova-plugin-whitelist": {
-      "PACKAGE_NAME": "com.riverteesredisocovered.rtr"
-    },
-    "cordova-plugin-statusbar": {
-      "PACKAGE_NAME": "com.riverteesredisocovered.rtr"
-    },
-    "cordova-plugin-navigationbar": {
-      "PACKAGE_NAME": "com.riverteesredisocovered.rtr"
-    },
-    "cordova-plugin-geolocation": {
-      "PACKAGE_NAME": "com.riverteesredisocovered.rtr"
-    },
-    "phonegap-plugin-push": {
-      "PACKAGE_NAME": "com.riverteesredisocovered.rtr"
-    },
-    "cordova-plugin-request-location-accuracy": {
-      "PACKAGE_NAME": "com.riverteesredisocovered.rtr"
-    },
     "cordova-plugin-googlemaps": {
       "API_KEY_FOR_IOS": "AIzaSyC2ef0SnZDNm9dAYYDZ5014rmBqydtQEFQ",
       "LOCATION_WHEN_IN_USE_DESCRIPTION": "Allow location to see your location on the map",
       "LOCATION_ALWAYS_USAGE_DESCRIPTION": "Allow location to see your location on the map",
       "PACKAGE_NAME": "com.riverteesredisocovered.rtr"
+    },
+    "cordova-plugin-statusbar": {
+      "PACKAGE_NAME": "com.riverteesredisocovered.rtr"
+    },
+    "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "com.riverteesredisocovered.rtr"
+    },
+    "cordova-plugin-geolocation": {
+      "PACKAGE_NAME": "com.riverteesredisocovered.rtr"
+    },
+    "cordova-plugin-firebase": {
+      "PACKAGE_NAME": "com.riverteesredisocovered.rtr"
+    },
+    "cordova-plugin-camera": {
+      "PACKAGE_NAME": "com.riverteesredisocovered.rtr"
+    },
+    "cordova-plugin-wkwebview-engine": {
+      "PACKAGE_NAME": "com.riverteesredisocovered.rtr"
     }
   },
   "dependent_plugins": {
     "com.googlemaps.ios": {
+      "PACKAGE_NAME": "com.riverteesredisocovered.rtr"
+    },
+    "cordova-support-google-services": {
       "PACKAGE_NAME": "com.riverteesredisocovered.rtr"
     }
   }

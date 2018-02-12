@@ -51,8 +51,14 @@
         <header>
             <!-- NAVIGATION BAR -->
             <div class="topnav">
-                <img id="backbutton" src="img/backbutton.png" alt="image">
-                <h1 id="topnav-title">Map</h1>
+                <a id="backbutton" style="display: none;">
+                    <img id="backbutton-image" src="img/backbutton.png" alt="image">
+                </a>
+                <h1 id="topnav-title">
+                  <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Search Map">
+                  </div>
+                </h1>
             </div>
         </header>
 
@@ -64,17 +70,27 @@
         <!-- CONTENT -->
         <div class="content" style="display:none;">
 
-            <div id="project-detail" class="app-section" style="display:none;">
+            <div id="project-detail" class="app-section nice-content-layout" style="display:none;">
+            </div>
+
+
+            <div id="photos" class="app-section" style="display:none;">
+                <button type="button" id="photo-button">Camera</button>
+                <button type="button" id="photo-library-button">Photo Library</button>
+                <img id="user-image" alt="image">
             </div>
 
             <!-- NEWS GOES HERE -->
             <div id="news" class="app-section" style="display:none;">
-                <div id="news_main" class="content-item">
+                <div id="news_main">
+                    <div id="error" class="standard-inset" style="text-align:center;">
+                        <h1 style="text-align:center;">Loading...</h1>
+                        <p>Please wait one second.</p>
+                    </div>
                 </div>
 
-
                 <!-- -->
-                <div id="news-article" class="news-section" style="display:none">
+                <div id="news-article" class="nice-content-layout" style="display:none">
                 </div>
 
             </div>
@@ -82,9 +98,13 @@
             <!-- EVENTS GO HERE -->
             <div id="events" class="app-section" style="display:none;">
               <div id="events_main">
+                    <div id="error" class="standard-inset" style="text-align:center;">
+                        <h1 style="text-align:center;">Loading...</h1>
+                        <p>Please wait one second.</p>
+                    </div>
               </div>
-              <div id="event_detail" class="content-item">
-                </div>
+              <div id="event_detail" class="nice-content-layout">
+              </div>
             </div>
 
             <!-- INFO SECTION GOES HERE -->
@@ -208,6 +228,14 @@
                     <div class="tab-label">Map</div>
                 </div>
             </a>
+            <a id="photos-icon" class="tab-icon">
+                <div class="tab-component">
+                    <div>
+                        <img class="tab-image" src="img/mapIcon.png" alt="map">
+                    </div>
+                    <div class="tab-label">Photos</div>
+                </div>
+            </a>
             <a id="news-icon" class="tab-icon">
                 <div class="tab-component">
                     <div>
@@ -243,6 +271,7 @@
         <script type="text/javascript" src="js/getArticles.js"></script>
         <script type="text/javascript" src="js/getEvents.js"></script>
         <script type="text/javascript" src="js/getProjects.js"></script>
+        <script type="text/javascript" src="js/camera.js"></script>
         <script type="text/javascript" src="js/bootstrap.bundle.js"></script>
     </body>
 </html>

@@ -1,19 +1,41 @@
 {
+  "_args": [
+    [
+      {
+        "raw": "cordova-plugin-statusbar@2.4.1",
+        "scope": null,
+        "escapedName": "cordova-plugin-statusbar",
+        "name": "cordova-plugin-statusbar",
+        "rawSpec": "2.4.1",
+        "spec": "2.4.1",
+        "type": "version"
+      },
+      "/Users/bradleymackey/Development/projects/rtr"
+    ]
+  ],
   "_from": "cordova-plugin-statusbar@2.4.1",
   "_id": "cordova-plugin-statusbar@2.4.1",
-  "_inBundle": false,
-  "_integrity": "sha1-IiYop4qlTTTUySeZACDQo7rOVUU=",
+  "_inCache": true,
   "_location": "/cordova-plugin-statusbar",
+  "_nodeVersion": "8.2.1",
+  "_npmOperationalInternal": {
+    "host": "s3://npm-registry-packages",
+    "tmp": "tmp/cordova-plugin-statusbar-2.4.1.tgz_1514690818610_0.9176097090821713"
+  },
+  "_npmUser": {
+    "name": "macdonst",
+    "email": "simon.macdonald@gmail.com"
+  },
+  "_npmVersion": "4.6.1",
   "_phantomChildren": {},
   "_requested": {
-    "type": "version",
-    "registry": true,
     "raw": "cordova-plugin-statusbar@2.4.1",
-    "name": "cordova-plugin-statusbar",
+    "scope": null,
     "escapedName": "cordova-plugin-statusbar",
+    "name": "cordova-plugin-statusbar",
     "rawSpec": "2.4.1",
-    "saveSpec": null,
-    "fetchSpec": "2.4.1"
+    "spec": "2.4.1",
+    "type": "version"
   },
   "_requiredBy": [
     "#USER",
@@ -21,6 +43,7 @@
   ],
   "_resolved": "https://registry.npmjs.org/cordova-plugin-statusbar/-/cordova-plugin-statusbar-2.4.1.tgz",
   "_shasum": "222628a78aa54d34d4c927990020d0a3bace5545",
+  "_shrinkwrap": null,
   "_spec": "cordova-plugin-statusbar@2.4.1",
   "_where": "/Users/bradleymackey/Development/projects/rtr",
   "author": {
@@ -29,7 +52,6 @@
   "bugs": {
     "url": "https://issues.apache.org/jira/browse/CB"
   },
-  "bundleDependencies": false,
   "cordova": {
     "id": "cordova-plugin-statusbar",
     "platforms": [
@@ -40,10 +62,15 @@
       "windows"
     ]
   },
-  "deprecated": false,
+  "dependencies": {},
   "description": "Cordova StatusBar Plugin",
   "devDependencies": {
     "jshint": "^2.6.0"
+  },
+  "directories": {},
+  "dist": {
+    "shasum": "222628a78aa54d34d4c927990020d0a3bace5545",
+    "tarball": "https://registry.npmjs.org/cordova-plugin-statusbar/-/cordova-plugin-statusbar-2.4.1.tgz"
   },
   "engines": {
     "cordovaDependencies": {
@@ -67,7 +94,43 @@
     "cordova-windows"
   ],
   "license": "Apache-2.0",
+  "maintainers": [
+    {
+      "name": "macdonst",
+      "email": "simon.macdonald@gmail.com"
+    },
+    {
+      "name": "bowserj",
+      "email": "bowserj@apache.org"
+    },
+    {
+      "name": "purplecabbage",
+      "email": "purplecabbage@gmail.com"
+    },
+    {
+      "name": "filmaj",
+      "email": "maj.fil@gmail.com"
+    },
+    {
+      "name": "shazron",
+      "email": "shazron@gmail.com"
+    },
+    {
+      "name": "csantanapr",
+      "email": "csantana23@gmail.com"
+    },
+    {
+      "name": "kotikov.vladimir",
+      "email": "kotikov.vladimir@gmail.com"
+    },
+    {
+      "name": "stevegill",
+      "email": "stevengill97@gmail.com"
+    }
+  ],
   "name": "cordova-plugin-statusbar",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/apache/cordova-plugin-statusbar.git"

@@ -24,52 +24,6 @@
     <string>1.0.0</string>
     <key>CFBundleSignature</key>
     <string>????</string>
-    <key>CFBundleVersion</key>
-    <string>1.0.0</string>
-    <key>LSApplicationQueriesSchemes</key>
-    <array>
-      <string>googlechromes</string>
-      <string>comgooglemaps</string>
-    </array>
-    <key>LSRequiresIPhoneOS</key>
-    <true/>
-    <key>NSAppTransportSecurity</key>
-    <dict>
-      <key>NSAllowsArbitraryLoads</key>
-      <true/>
-    </dict>
-    <key>NSMainNibFile</key>
-    <string/>
-    <key>NSMainNibFile~ipad</key>
-    <string/>
-    <key>UILaunchStoryboardName</key>
-    <string>Launch</string>
-    <key>UIRequiresFullScreen</key>
-    <true/>
-    <key>UISupportedInterfaceOrientations</key>
-    <array>
-      <string>UIInterfaceOrientationPortrait</string>
-      <string>UIInterfaceOrientationPortraitUpsideDown</string>
-    </array>
-    <key>UISupportedInterfaceOrientations~ipad</key>
-    <array>
-      <string>UIInterfaceOrientationPortrait</string>
-      <string>UIInterfaceOrientationPortraitUpsideDown</string>
-    </array>
-    <key>UIInterfaceOrientation</key>
-    <array>
-      <string>UIInterfaceOrientationPortrait</string>
-    </array>
-    <key>UIBackgroundModes</key>
-    <array>
-      <string>remote-notification</string>
-    </array>
-    <key>Google Maps API Key</key>
-    <string>AIzaSyC2ef0SnZDNm9dAYYDZ5014rmBqydtQEFQ</string>
-    <key>NSLocationWhenInUseUsageDescription</key>
-    <string>Allow location to see your location on the map</string>
-    <key>NSLocationAlwaysUsageDescription</key>
-    <string>Allow location to see your location on the map</string>
     <key>CFBundleURLTypes</key>
     <array>
       <dict>
@@ -83,5 +37,51 @@
         </array>
       </dict>
     </array>
+    <key>CFBundleVersion</key>
+    <string>1.0.0</string>
+    <key>Google Maps API Key</key>
+    <string>AIzaSyC2ef0SnZDNm9dAYYDZ5014rmBqydtQEFQ</string>
+    <key>LSApplicationQueriesSchemes</key>
+    <array>
+      <string>googlechromes</string>
+      <string>comgooglemaps</string>
+    </array>
+    <key>LSRequiresIPhoneOS</key>
+    <true/>
+    <key>NSAppTransportSecurity</key>
+    <dict>
+      <key>NSAllowsArbitraryLoads</key>
+      <true/>
+    </dict>
+    <key>NSLocationAlwaysUsageDescription</key>
+    <string>Allow location to see your location on the map</string>
+    <key>NSLocationWhenInUseUsageDescription</key>
+    <string>Allow location to see your location on the map</string>
+    <key>NSMainNibFile</key>
+    <string/>
+    <key>NSMainNibFile~ipad</key>
+    <string/>
+    <key>UIInterfaceOrientation</key>
+    <array>
+      <string>UIInterfaceOrientationPortrait</string>
+    </array>
+    <key>UILaunchStoryboardName</key>
+    <string>NewLaunch</string>
+    <key>UIRequiresFullScreen</key>
+    <true/>
+    <key>UISupportedInterfaceOrientations</key>
+    <array>
+      <string>UIInterfaceOrientationPortrait</string>
+      <string>UIInterfaceOrientationPortraitUpsideDown</string>
+    </array>
+    <key>UISupportedInterfaceOrientations~ipad</key>
+    <array>
+      <string>UIInterfaceOrientationPortrait</string>
+      <string>UIInterfaceOrientationPortraitUpsideDown</string>
+    </array>
+    <key>NSCameraUsageDescription</key>
+    <string>Allow to share photos with others.</string>
+    <key>NSPhotoLibraryUsageDescription</key>
+    <string>Allow to share photos with others.</string>
   </dict>
 </plist>

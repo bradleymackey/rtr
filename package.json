@@ -11,38 +11,39 @@
   "license": "Apache-2.0",
   "dependencies": {
     "android-versions": "^1.2.2",
-    "cordova-android": "^7.0.0",
+    "cordova-android": "^6.4.0",
     "cordova-ios": "^4.5.4",
+    "cordova-plugin-camera": "^4.0.2",
+    "cordova-plugin-firebase": "^0.1.25",
     "cordova-plugin-geolocation": "^4.0.1",
     "cordova-plugin-googlemaps": "^2.2.2",
     "cordova-plugin-googlemaps-sdk": "git+https://github.com/mapsplugin/cordova-plugin-googlemaps-sdk.git",
-    "cordova-plugin-navigationbar": "^1.0.31",
-    "cordova-plugin-request-location-accuracy": "^2.2.2",
     "cordova-plugin-statusbar": "^2.4.1",
     "cordova-plugin-whitelist": "^1.3.3",
+    "cordova-plugin-wkwebview-engine": "^1.1.4",
     "cordova-support-google-services": "^1.0.0",
-    "firebase-admin": "^5.8.1",
-    "phonegap-plugin-push": "^2.1.2"
+    "firebase-admin": "^5.8.1"
   },
   "cordova": {
     "plugins": {
       "cordova-plugin-whitelist": {},
-      "cordova-plugin-statusbar": {},
-      "cordova-plugin-navigationbar": {},
-      "cordova-plugin-geolocation": {
-        "GEOLOCATION_USAGE_DESCRIPTION": "Allow to see your location on the map."
-      },
-      "phonegap-plugin-push": {
-        "FCM_VERSION": "11.0.1"
-      },
-      "cordova-plugin-request-location-accuracy": {},
       "cordova-plugin-googlemaps": {
         "API_KEY_FOR_ANDROID": "AIzaSyCYGusGkn_i0_wZDCnmg8KmIjJ70p85TD4",
         "API_KEY_FOR_IOS": "AIzaSyC2ef0SnZDNm9dAYYDZ5014rmBqydtQEFQ",
         "PLAY_SERVICES_VERSION": "11.0.1",
         "LOCATION_WHEN_IN_USE_DESCRIPTION": "Allow location to see your location on the map",
         "LOCATION_ALWAYS_USAGE_DESCRIPTION": "Allow location to see your location on the map"
-      }
+      },
+      "cordova-plugin-statusbar": {},
+      "cordova-plugin-geolocation": {
+        "GEOLOCATION_USAGE_DESCRIPTION": "Allow to see your location on the map."
+      },
+      "cordova-plugin-firebase": {},
+      "cordova-plugin-camera": {
+        "CAMERA_USAGE_DESCRIPTION": "Allow to share images in the app.",
+        "PHOTOLIBRARY_USAGE_DESCRIPTION": "Allow to share images in the app."
+      },
+      "cordova-plugin-wkwebview-engine": {}
     },
     "platforms": [
       "ios",
