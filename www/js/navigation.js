@@ -33,7 +33,7 @@ $("#infoToVolunteer").click(displayVolunteer);
 $("#infoToLeaflets").click(displayLeaflets);
 
 //show event detail
-$("#events .content-item").click(displayEventContentItem);
+//$("#events .content-item").click(displayEventContentItem);
 
 //$("#news .content-item").click(displayNewsContentItem);
 
@@ -141,6 +141,9 @@ function displayVolunteer(){
     //changes margin so that there isnt a space between navbar and logo
     $(".info_main").hide();
     $("#volunteer-ops").show();
+    $("#volunteer_main").show();
+    $("#volunteer_detail").empty();
+    $("#volunteer_detail").hide();
     $(".info_images").hide();
     updateTitle("Volunteer Opportunities");
     showBackButton();
