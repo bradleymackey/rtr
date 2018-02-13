@@ -80,25 +80,23 @@ function uploadImage(imageUri) {
     }
     let uuid_string = UUIDjs.create(4).toString();
     let imageRef = storageRef.child(`media/${user.uid}/images/${uuid_string}.jpg`);
-    console.log(imageUri.substring(0,500));
-    let reader = new FileReader();
-    reader.
-    loadXHR(imageUri).then(function(blob) {
-        let file = new File(blob, "image.jpg", {
-            type: "image/jpeg",
-        });
-        imageRef.put(file).then(function(snapshot) {
-            alert("Image uploaded!");
-        }).catch(function(error) {
-            console.error("Error uploading image! BEGIN");
-            console.error(error.message);
-            console.error(error.msg);
-            console.error(error);
-            console.error("Error uploading image! END");
-            alert("Error uploading image!");
-        });
-    }).catch(function(error) {
-        console.error("Error getting images blob! " + error);
-    });
+    // console.log(imageUri.substring(0,500));
+    // let reader = new FileReader();
+    // reader.
+
+    // let file = new File(blob, "image.jpg", {
+    //     type: "image/jpeg",
+    // });
+    // imageRef.put(file).then(function(snapshot) {
+    //     alert("Image uploaded!");
+    // }).catch(function(error) {
+    //     console.error("Error uploading image! BEGIN");
+    //     console.error(error.message);
+    //     console.error(error.msg);
+    //     console.error(error);
+    //     console.error("Error uploading image! END");
+    //     alert("Error uploading image!");
+    // });
+
 }
 
