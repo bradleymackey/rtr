@@ -36,6 +36,10 @@ firebase.auth().signInAnonymously().then(function(user) {
     $('#news_main').html(errorMessage);
 });
 
+// Create a Firebase Storage reference
+// (Firebase storage is where user photos are stored for the photo sharing service)
+var storageRef = firebase.storage().ref();
+
 // once the device is ready, subscribe the the relevant notification topics
 // notifications are sent via FCM - Firebase Cloud Messaging
 document.addEventListener('deviceready', function(event) {

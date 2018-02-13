@@ -7,9 +7,7 @@
     to you under the Apache License, Version 2.0 (the
     "License"); you may not use this file except in compliance
     with the License.  You may obtain a copy of the License at
-
     http://www.apache.org/licenses/LICENSE-2.0
-
     Unless required by applicable law or agreed to in writing,
     software distributed under the License is distributed on an
     "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
@@ -39,10 +37,11 @@
         <link rel="stylesheet" type="text/css" href="css/map-support.css">
         <link rel="stylesheet" type="text/css" href="css/tabbar.css">
 
-        <script src='js/map/mapbox-gl.js'></script>
-        <link href='css/mapbox-gl.css' rel='stylesheet' />
-        <!-- <script src='https://api.mapbox.com/mapbox-gl-js/v0.42.0/mapbox-gl.js'></script>
-        <link href='https://api.mapbox.com/mapbox-gl-js/v0.42.0/mapbox-gl.css' rel='stylesheet' /> -->
+
+        <!-- <script src='js/mapbox-gl.js'></script>
+        <link href='css/mapbox-gl.css' rel='stylesheet' /> -->
+        <script src='https://api.mapbox.com/mapbox-gl-js/v0.42.0/mapbox-gl.js'></script>
+        <link href='https://api.mapbox.com/mapbox-gl-js/v0.42.0/mapbox-gl.css' rel='stylesheet' />
         <title>RTR</title>
     </head>
 
@@ -87,6 +86,7 @@
                         <p>Please wait one second.</p>
                     </div>
                 </div>
+
                 <!-- -->
                 <div id="news-article" class="nice-content-layout" style="display:none">
                 </div>
@@ -141,16 +141,22 @@
                       </ul>
                     </div>
                     <div id="volunteer-ops" class="info-section" style="display:none;">
-                      <div id="volunteer_main">
-                            <div id="error" class="standard-inset" style="text-align:center;">
-                                <h1 style="text-align:center;">Loading...</h1>
-                                <p>Please wait one second.</p>
-                            </div>
+                      <div class="content-item">
+                          <img src="img/demo.jpg" alt="image">
+                          <h2>Key Contacts</h2>
+                          <p class="detail">Fancy doing an archaeological dig? Want to participate in wildlife recording? Find out how to get involved here.</p>
                       </div>
-                      <div id="volunteer_detail" class="nice-content-layout">
+                      <div class="content-item">
+                          <img src="img/demo.jpg" alt="image">
+                          <h2>Volunteer - Wings of the Tees</h2>
+                          <p class="detail">The Wings of the Tees project requires volunteers for a variety of different events. Anyone can help us with this project.</p>
+                      </div>
+                      <div class="content-item">
+                          <img src="img/demo.jpg" alt="image">
+                          <h2>Some Project</h2>
+                          <p class="detail">Opportunity Details</p>
                       </div>
                     </div>
-
                     <div id="volunteer-signup" class="info-section" style="display:none;">
                         <img src="img/demo.jpg" alt="image">
                         <h1>Description</h1>
@@ -255,16 +261,15 @@
         </div>
 
         <script type="text/javascript" src="cordova.js"></script>
-        <script type="text/javascript" src="js/core/jquery-3.2.1.js"></script>
+        <script type="text/javascript" src="js/jquery-3.2.1.js"></script>
         <script type="text/javascript" src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script>
-        <script type="text/javascript" src="js/map/map.js"></script>
-        <script type="text/javascript" src="js/database/firebase-setup.js"></script>
+        <script type="text/javascript" src="js/map.js"></script>
+        <script type="text/javascript" src="js/firebase-setup.js"></script>
         <script type="text/javascript" src="js/navigation.js"></script>
-        <script type="text/javascript" src="js/database/getArticles.js"></script>
-        <script type="text/javascript" src="js/database/getEvents.js"></script>
-        <script type="text/javascript" src="js/database/getProjects.js"></script>
-        <script type="text/javascript" src="js/database/getVolunteerOps.js"></script>
+        <script type="text/javascript" src="js/getArticles.js"></script>
+        <script type="text/javascript" src="js/getEvents.js"></script>
+        <script type="text/javascript" src="js/getProjects.js"></script>
         <script type="text/javascript" src="js/camera.js"></script>
-        <script type="text/javascript" src="js/core/bootstrap.bundle.js"></script>
+        <script type="text/javascript" src="js/bootstrap.bundle.js"></script>
     </body>
 </html>
