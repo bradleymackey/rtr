@@ -41,6 +41,8 @@ $("#volunteer-ops .content-item").click(displayVolunteerSignup);
 
 $("#backbutton").click(backButtonPressed);
 
+$("#topnav-title").on("click", "#backbutton", backButtonPressed);
+
 
 function displayMap() {
     // hide content, because the map requires a different layout
@@ -53,7 +55,7 @@ function displayMap() {
       </div>`
     );
     hideBackButton();
-    updateMapSize();
+    //updateMapSize();
     currentPage = 0;
     return false;
 }
@@ -204,23 +206,25 @@ function hideBackButton(){
 }
 
 function backButtonPressed() {
-    alert("bbp");
+    alert(currentPage);
     console.log("back button pressed");
-    updateMapSize();
+    //updateMapSize();
     switch(currentPage){
         case 0:
         case 1:
         case 2:
             displayMap();
             break;
-        case 4:
+        case 3:
             displayNews();
             break;
-        case 6:
+        case 5:
             displayEvents();
             break;
         case 8:
         case 9:
+            displayVolunteer();
+            break;
         case 10:
         case 11:
             displayInfo();

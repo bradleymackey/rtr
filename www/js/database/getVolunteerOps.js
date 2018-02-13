@@ -30,12 +30,17 @@ function volunteerCallback(snapshot) {
         let eid = $(this).attr("id");
         op = data[eid];
         updateTitle(op.title);
+        //showBackButton();
         //back button
-        $("#topnav-title").prepend('<img id="backbutton" src="img/backbutton.png" alt="back">');
+        //$("#topnav-title").prepend('<img id="backbutton" src="img/backbutton.png" alt="back">');
         let opDetail = '';
-        opDetail+= '<img src='+op.image_1+' alt="image"><div style="padding: 15px;">'
-        opDetail+= '<h1 style="color: #2dccd3; text-align: left;">'+op.title+'</h1>'
-        opDetail+=  '<p class="detail">'+op.content+'</p></div>'
+        opDetail+= '<img src='+op.image_1+' alt="image"><div style="padding: 15px;">';
+        opDetail+= '<h1 style="color: #2dccd3; text-align: left;">'+op.title+'</h1>';
+        opDetail+= '<p class="detail">'+op.content+'</p></div>';
+        opDetail+= '<form><input type="text" name="forename" placeholder="Forename"><br>';
+        opDetail+= '<input type="text" name="surname" placeholder="Surname"><br>';
+        opDetail+= '<input type="text" name="email" placeholder="Email"></form>';
+                        
         $('#volunteer_main').hide();
         $('#volunteer_detail').empty();
         $('#volunteer_detail').html(opDetail);
