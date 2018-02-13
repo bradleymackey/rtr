@@ -80,39 +80,27 @@ function uploadImage(imageUri) {
     }
     let uuid_string = UUIDjs.create(4).toString();
     let imageRef = storageRef.child(`media/${user.uid}/images/${uuid_string}.jpg`);
-    console.log(imageUri.substring(0,500));
-    loadXHR(imageUri).then(function(blob) {
-        let file = new File(blob, "image.jpg", {
-            type: "image/jpeg",
-        });
-        imageRef.put(file).then(function(snapshot) {
-            alert("Image uploaded!");
-        }).catch(function(error) {
-            console.error("Error uploading image! BEGIN");
-            console.error(error.message);
-            console.error(error.msg);
-            console.error(error);
-            console.error("Error uploading image! END");
-            alert("Error uploading image!");
-        });
-    }).catch(function(error) {
-        console.error("Error getting images blob! " + error);
-    });
-}
+    // Simulate a call to Dropbox or other service that can
+    // return an image as an ArrayBuffer.
+    var xhr = new XMLHttpRequest();
 
-function loadXHR(url) {
-    return new Promise(function(resolve, reject) {
-        try {
-            var xhr = new XMLHttpRequest();
-            xhr.open("GET", url);
-            xhr.responseType = "blob";
-            xhr.onerror = function() {reject("Network error.")};
-            xhr.onload = function() {
-                if (xhr.status === 200) {resolve(xhr.response)}
-                else {reject("Loading error:" + xhr.statusText)}
-            };
-            xhr.send();
-        }
-        catch(err) {reject(err.message)}
-    });
+    // Use JSFiddle logo as a sample image to avoid complicating
+    // this example with cross-domain issues.
+    xhr.open( "GET", imageUri, true );
+
+    // Ask for the result as an ArrayBuffer.
+    xhr.responseType = "arraybuffer";
+
+    xhr.onload = function( e ) {
+        // Obtain a blob: URL for the image data.
+        var arrayBufferView = new Uint8Array( this.response );
+        var blob = new Blob( [ arrayBufferView ], { type: "image/jpeg" } );
+        storageRef.put(blob).then(function (snapshot) {
+            console.log("upload success");
+        }).catch(function(error) {
+            console.log("upload error",error);
+        });
+    }
+    xhr.send();
+
 }
