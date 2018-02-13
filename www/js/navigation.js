@@ -148,7 +148,8 @@ function displayVolunteer(){
     $("#volunteer_detail").hide();
     $(".info_images").hide();
     updateTitle("Volunteer Opportunities");
-    showBackButton();
+    $("#topnav-title").prepend('<img id="backbutton" src="img/backbutton.png" alt="back">');    
+    //showBackButton();
     currentPage = 9;
     return false;
 }
@@ -223,9 +224,11 @@ function backButtonPressed() {
             break;
         case 8:
         case 9:
-            displayVolunteer();
+            displayInfo();
             break;
         case 10:
+            displayVolunteer();
+            break;
         case 11:
             displayInfo();
             break;

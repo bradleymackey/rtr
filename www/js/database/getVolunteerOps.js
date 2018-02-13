@@ -27,12 +27,12 @@ function volunteerCallback(snapshot) {
 
       // OPPORTUNITY DETAIL
       $('.vol_item').click(function(){
+        currentPage = 10;
         let eid = $(this).attr("id");
         op = data[eid];
         updateTitle(op.title);
-        //showBackButton();
         //back button
-        //$("#topnav-title").prepend('<img id="backbutton" src="img/backbutton.png" alt="back">');
+        $("#topnav-title").prepend('<img id="backbutton" src="img/backbutton.png" alt="back">');
         let opDetail = '';
         opDetail+= '<img src='+op.image_1+' alt="image"><div style="padding: 15px;">';
         opDetail+= '<h1 style="color: #2dccd3; text-align: left;">'+op.title+'</h1>';
