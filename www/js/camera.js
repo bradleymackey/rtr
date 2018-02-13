@@ -40,7 +40,7 @@ function openCamera() {
   function setOptions(srcType) {
     var options = {
         // Some common settings are 20, 50, and 100
-        quality: 50,
+        quality: 20,
         destinationType: Camera.DestinationType.FILE_URI,
         // In this app, dynamically set the picture source, Camera or photo gallery
         sourceType: srcType,
@@ -61,9 +61,44 @@ function openFilePicker() {
 
         // Do something
         displayImage(imageUri);
+        console.log("uploading...");
+        uploadImage(imageUri);
+        console.log("upload call done");
 
     }, function cameraError(error) {
-        console.debug("Unable to obtain picture: " + error, "app");
-
+        console.log("Unable to obtain picture: " + error, "app");
     }, options);
 }
+
+
+function uploadImage(imageUri) {
+    let user = firebase.auth().currentUser;
+    if (user === undefined || user === null) {
+        // the user is not logged in
+        alert('Could not upload image! Make sure you are connected to the internet.');
+        return;
+    }
+    let uuid_string = UUIDjs.create(4).toString();
+    let imageRef = storageRef.child(`media/${user.uid}/images/${uuid_string}.jpg`);
+    console.log(imageUri.substring(0,500));
+    let reader = new FileReader();
+    reader.
+    loadXHR(imageUri).then(function(blob) {
+        let file = new File(blob, "image.jpg", {
+            type: "image/jpeg",
+        });
+        imageRef.put(file).then(function(snapshot) {
+            alert("Image uploaded!");
+        }).catch(function(error) {
+            console.error("Error uploading image! BEGIN");
+            console.error(error.message);
+            console.error(error.msg);
+            console.error(error);
+            console.error("Error uploading image! END");
+            alert("Error uploading image!");
+        });
+    }).catch(function(error) {
+        console.error("Error getting images blob! " + error);
+    });
+}
+
