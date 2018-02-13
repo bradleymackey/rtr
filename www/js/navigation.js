@@ -134,7 +134,7 @@ function displayVisions(){
     $(".container").hide();
     $("#visions-aims").show();
     updateTitle("Visions and Aims");
-    showBackButton();
+    $("#topnav-title").prepend('<img id="backbutton" src="img/backbutton.png" alt="back">');  
     currentPage = 8;
     return false;
 }
@@ -169,8 +169,8 @@ function displayLeaflets(){
     $("#leaflets").show();
     $(".info_images").hide();
     updateTitle("Leaflets");
-    showBackButton();
-    currentPage = 10;
+    $("#topnav-title").prepend('<img id="backbutton" src="img/backbutton.png" alt="back">');  
+    currentPage = 11;
     return false;
 }
 
@@ -207,7 +207,7 @@ function hideBackButton(){
 }
 
 function backButtonPressed() {
-    alert(currentPage);
+    //alert(currentPage);
     console.log("back button pressed");
     //updateMapSize();
     switch(currentPage){
