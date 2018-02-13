@@ -33,7 +33,7 @@ $("#infoToVolunteer").click(displayVolunteer);
 $("#infoToLeaflets").click(displayLeaflets);
 
 //show event detail
-$("#events .content-item").click(displayEventContentItem);
+//$("#events .content-item").click(displayEventContentItem);
 
 //$("#news .content-item").click(displayNewsContentItem);
 
@@ -80,10 +80,15 @@ function displayNews(){
                 <input type="text" class="form-control" placeholder="Search News" style="height:34px">
             </div>`
     );
+
+    $(".content-item").show();
+
     hideBackButton();
     $("#news_main").show();
     $("#news-article").empty();
+
     $("#news-article").hide();
+    $("#news-article").empty();
     currentPage = 3;
     return false;
 }
@@ -136,6 +141,9 @@ function displayVolunteer(){
     //changes margin so that there isnt a space between navbar and logo
     $(".info_main").hide();
     $("#volunteer-ops").show();
+    $("#volunteer_main").show();
+    $("#volunteer_detail").empty();
+    $("#volunteer_detail").hide();
     $(".info_images").hide();
     updateTitle("Volunteer Opportunities");
     showBackButton();

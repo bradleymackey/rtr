@@ -212,3 +212,9 @@ h1 {
     max-height: 300px;
     text-align: center;
 }
+
+.vol_item:active{
+    background-color: bbc1cc;
+  /* force gpu acceleration to prevent iOS glitch */
+  transform: translate3d(0,0,0);
+}

@@ -41,6 +41,8 @@ $("#volunteer-ops .content-item").click(displayVolunteerSignup);
 
 $("#backbutton").click(backButtonPressed);
 
+$("#topnav-title").on("click", "#backbutton", backButtonPressed);
+
 
 function displayMap() {
     // hide content, because the map requires a different layout
@@ -53,7 +55,7 @@ function displayMap() {
       </div>`
     );
     hideBackButton();
-    updateMapSize();
+    //updateMapSize();
     currentPage = 0;
     return false;
 }
@@ -132,7 +134,7 @@ function displayVisions(){
     $(".container").hide();
     $("#visions-aims").show();
     updateTitle("Visions and Aims");
-    showBackButton();
+    $("#topnav-title").prepend('<img id="backbutton" src="img/backbutton.png" alt="back">');  
     currentPage = 8;
     return false;
 }
@@ -146,7 +148,8 @@ function displayVolunteer(){
     $("#volunteer_detail").hide();
     $(".info_images").hide();
     updateTitle("Volunteer Opportunities");
-    showBackButton();
+    $("#topnav-title").prepend('<img id="backbutton" src="img/backbutton.png" alt="back">');    
+    //showBackButton();
     currentPage = 9;
     return false;
 }
@@ -166,8 +169,8 @@ function displayLeaflets(){
     $("#leaflets").show();
     $(".info_images").hide();
     updateTitle("Leaflets");
-    showBackButton();
-    currentPage = 10;
+    $("#topnav-title").prepend('<img id="backbutton" src="img/backbutton.png" alt="back">');  
+    currentPage = 11;
     return false;
 }
 
@@ -204,24 +207,28 @@ function hideBackButton(){
 }
 
 function backButtonPressed() {
-    alert("bbp");
+    //alert(currentPage);
     console.log("back button pressed");
-    updateMapSize();
+    //updateMapSize();
     switch(currentPage){
         case 0:
         case 1:
         case 2:
             displayMap();
             break;
-        case 4:
+        case 3:
             displayNews();
             break;
-        case 6:
+        case 5:
             displayEvents();
             break;
         case 8:
         case 9:
+            displayInfo();
+            break;
         case 10:
+            displayVolunteer();
+            break;
         case 11:
             displayInfo();
             break;

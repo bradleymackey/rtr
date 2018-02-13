@@ -50,10 +50,8 @@
         <header>
             <!-- NAVIGATION BAR -->
             <div class="topnav">
-                <a id="backbutton" style="display: none;">
-                    <img id="backbutton-image" src="img/backbutton.png" alt="image">
-                </a>
                 <h1 id="topnav-title">
+                    <img id="backbutton" src="img/backbutton.png" alt="image" style="display:none">
                   <div class="input-group">
                     <input type="text" class="form-control" placeholder="Search Map">
                   </div>
@@ -151,19 +149,6 @@
                       </div>
                     </div>
 
-                    <div id="volunteer-signup" class="info-section" style="display:none;">
-                        <img src="img/demo.jpg" alt="image">
-                        <h1>Description</h1>
-                        <p>textextext</p>
-                        <h1>Sign up</h1>
-                        <form id="volunteer-form">
-                            <input type="text" name="firstname" placeholder="First name" class="centre"><br>
-                            <input type="text" name="lastname" placeholder="Last name" class="centre"><br>
-                            <input type="text" name="email" placeholder="Email" class="centre"><br>
-                            <textarea name="comment" form="volunteer-form" rows="5" class="centre"></textarea><br>
-                            <input type="submit" value="Submit">
-                        </form>
-                    </div>
                     <div id="leaflets" class="info-section" style="display:none;">
                           </br>
                             <div class="container-fluid">
@@ -264,6 +249,7 @@
         <script type="text/javascript" src="js/database/getEvents.js"></script>
         <script type="text/javascript" src="js/database/getProjects.js"></script>
         <script type="text/javascript" src="js/database/getVolunteerOps.js"></script>
+        <script type="text/javascript" src="js/core/uuid.js"></script>
         <script type="text/javascript" src="js/camera.js"></script>
         <script type="text/javascript" src="js/core/bootstrap.bundle.js"></script>
     </body>
