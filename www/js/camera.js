@@ -83,9 +83,7 @@ function uploadImage(imageUri) {
     // Simulate a call to Dropbox or other service that can
     // return an image as an ArrayBuffer.
     var xhr = new XMLHttpRequest();
-
-    // Use JSFiddle logo as a sample image to avoid complicating
-    // this example with cross-domain issues.
+    
     xhr.open( "GET", imageUri, true );
 
     // Ask for the result as an ArrayBuffer.
