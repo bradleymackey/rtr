@@ -61,8 +61,10 @@
     right: 0;
     left: 0;
     bottom: 0;
+    /* Regular Padding */
     padding-top: 50px;
     padding-bottom: 3.2em;
+    /* iPhone X padding */
     padding-top: calc(50px + env(safe-area-inset-top));
     padding-bottom: calc(3.2em + env(safe-area-inset-bottom));
 }
@@ -74,8 +76,10 @@
     right: 0;
     left: 0;
     bottom: 0;
+    /* Regular Padding */
     padding-top: 50px;
     padding-bottom: 3.2em;
+    /* iPhone X padding */
     padding-top: calc(50px + env(safe-area-inset-top));
     padding-bottom: calc(3.2em + env(safe-area-inset-bottom));
 }

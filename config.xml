@@ -39,6 +39,7 @@
         <icon density="xxxhdpi" src="res/android/Icon-192.png" />
     </platform>
     <platform name="ios">
+        <preference name="ScrollEnabled" value="true" />
         <allow-intent href="itms:*" />
         <allow-intent href="itms-apps:*" />
         <resource-file src="res/GoogleService-Info.plist" />
@@ -77,7 +78,7 @@
         <variable name="CAMERA_USAGE_DESCRIPTION" value="Allow to share images in the app." />
         <variable name="PHOTOLIBRARY_USAGE_DESCRIPTION" value="Allow to share images in the app." />
     </plugin>
-    <plugin name="cordova-plugin-wkwebview-engine" spec="^1.1.4" />
+    <plugin name="cordova-plugin-ionic-webview" spec="^1.1.16" />
     <engine name="ios" spec="^4.5.4" />
     <engine name="android" spec="^6.4.0" />
 </widget>

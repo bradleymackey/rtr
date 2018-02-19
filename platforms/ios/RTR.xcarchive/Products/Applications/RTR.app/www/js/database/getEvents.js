@@ -1,6 +1,6 @@
 
 // data is returned in a value listener
-  
+
 function eventsCallback(snapshot) {
 
      const events = snapshot.val();
