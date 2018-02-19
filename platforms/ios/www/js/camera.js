@@ -100,5 +100,4 @@ function uploadImage(imageUri) {
         });
     }
     xhr.send();
-
 }
