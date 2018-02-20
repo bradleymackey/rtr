@@ -217,3 +217,12 @@ h1 {
     object-fit: cover;
     padding: 20px;
 }
+
+.volunteer-image {
+    margin-left: 0px;
+    margin-right: 0px;
+    width: 100%;
+    object-fit: cover;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
