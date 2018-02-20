@@ -37,10 +37,18 @@ firebase.auth().signInAnonymously().then(function(user) {
 .catch(function(error) {
     console.error("AUTH ERROR " + errorCode + " " + errorMessage);
     let errorMessage = "<div id=\"error\" class=\"standard-inset\" style=\"text-align:center;\"><h1 style=\"text-align:center;\">Error!</h1>" + "<p> Please try again later. " + error.message + "</p></div>";
+    // events
     $('#events_main').empty();
     $('#events_main').html(errorMessage);
+    // news
     $('#news_main').empty();
     $('#news_main').html(errorMessage);
+    // volunteer
+    $('#volunteer_main').empty();
+    $('#volunteer_main').html(errorMessage);
+    // photos content
+    $('#photos-content').empty();
+    $('#photos-content').html(errorMessage);
 });
 
 // Create a Firebase Storage reference
