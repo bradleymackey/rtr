@@ -18,7 +18,7 @@ firebase.auth().signInAnonymously().then(function(user) {
         firebase.database().ref("/events").orderByChild("title").once('value').then(eventsCallback);
         firebase.database().ref("/projectArticles").orderByChild("title").once('value').then(volunteerCallback);
         firebase.database().ref("/photos").orderByChild("date").once('value').then(gotPhotosCallback);
-    } else {
+    } else { // we could not login, display an error message to the user
         let errorMessage = "<div id=\"error\" class=\"standard-inset\" style=\"text-align:center;\"><h1 style=\"text-align:center;\">Error!</h1>" + "<p>Could not load content, please try again later.</p></div>";
         // events
         $('#events_main').empty();
