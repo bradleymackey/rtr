@@ -203,7 +203,7 @@ h1 {
     text-align: center;
 }
 
-.vol_item:active{
+.vol_item:active {
     background-color: bbc1cc;
   /* force gpu acceleration to prevent iOS glitch */
   transform: translate3d(0,0,0);
@@ -214,6 +214,5 @@ h1 {
     margin-right: 0px;
     width: 100%;
     object-fit: cover;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding: 10px;
 }
