@@ -8,6 +8,7 @@
 var currentPage = 0;
 
 document.addEventListener('deviceready', onDeviceReady, false);
+//document.querySelector("#eventsShowOnMap").addEventListener('click', showOnMap);
 
 function onDeviceReady() {
     // ready to use device APIs
@@ -32,6 +33,9 @@ $("#infoToVolunteer").click(displayVolunteer);
 
 $("#infoToLeaflets").click(displayLeaflets);
 
+$("#eventsShowOnMap").click(showOnMap);
+//$(".event_b").click(console.log("button clicked"));
+//document.getElementById("#eventsShowOnMap").onclick = console.log('button clicked');
 //show event detail
 //$("#events .content-item").click(displayEventContentItem);
 
@@ -58,6 +62,13 @@ function displayMap() {
     //updateMapSize();
     currentPage = 0;
     return false;
+}
+
+function showOnMap() {
+  console.log("button clicked");
+  //$(".content").css("display", "none");
+//  currentPage = 13;
+  return false;
 }
 
 function displayPhotos() {
@@ -134,7 +145,7 @@ function displayVisions(){
     $(".container").hide();
     $("#visions-aims").show();
     updateTitle("Visions and Aims");
-    $("#topnav-title").prepend('<img id="backbutton" src="img/left-arrow.png" alt="back">');  
+    $("#topnav-title").prepend('<img id="backbutton" src="img/left-arrow.png" alt="back">');
     currentPage = 8;
     return false;
 }
@@ -148,7 +159,7 @@ function displayVolunteer(){
     $("#volunteer_detail").hide();
     $(".info_images").hide();
     updateTitle("Volunteer Opportunities");
-    $("#topnav-title").prepend('<img id="backbutton" src="img/left-arrow.png" alt="back">');    
+    $("#topnav-title").prepend('<img id="backbutton" src="img/left-arrow.png" alt="back">');
     //showBackButton();
     currentPage = 9;
     return false;
@@ -169,7 +180,7 @@ function displayLeaflets(){
     $("#leaflets").show();
     $(".info_images").hide();
     updateTitle("Leaflets");
-    $("#topnav-title").prepend('<img id="backbutton" src="img/left-arrow.png" alt="back">');  
+    $("#topnav-title").prepend('<img id="backbutton" src="img/left-arrow.png" alt="back">');
     currentPage = 11;
     return false;
 }

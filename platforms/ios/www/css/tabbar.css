@@ -45,7 +45,7 @@
 
 #backbutton {
     position: relative;
-    padding: 10px 13px 7px;
+    padding: 3px;
     /*transform: translate(0%, -50%);*/
     float: left;
     height: 30px;
@@ -67,6 +67,8 @@
     /* iPhone X padding */
     padding-top: calc(50px + env(safe-area-inset-top));
     padding-bottom: calc(3.2em + env(safe-area-inset-bottom));
+    padding-top: calc(50px + constant(safe-area-inset-top));
+    padding-bottom: calc(3.2em + constant(safe-area-inset-bottom));
 }
 
 .content {
@@ -82,6 +84,8 @@
     /* iPhone X padding */
     padding-top: calc(50px + env(safe-area-inset-top));
     padding-bottom: calc(3.2em + env(safe-area-inset-bottom));
+    padding-top: calc(50px + constant(safe-area-inset-top));
+    padding-bottom: calc(3.2em + constant(safe-area-inset-bottom));
 }
 
 /* pin the tab bar to the bottom and style it */

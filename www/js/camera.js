@@ -16,9 +16,8 @@ function gotPhotosCallback(snapshot) {
      let photosList = '';
      $.each(photosData, function(i){
         photosList += "<div id="+i+" class='photos_item'><img src="+(photosData[i].link||"")+" alt='image'>";
-        photosList += "<h3 class='list standard-inset' id='photoscontent-"+i+"'>"+(photosData[i].by||"")+"</h3>";
         let date = new Date(photosData[i].date).toLocaleDateString('en-GB');
-        photosList += "<p class='standard-inset'><b>" + (date||"") + "</b></p>";
+        photosList += "<p class='standard-inset'><b>" + (photosData[i].by||"") + ", " + (date||"") + "</b></p>";
         photosList += "<p class='standard-inset'>" + (photosData[i].desc||"") + "</p></div>";
      });
      $('#photos-content').empty();
