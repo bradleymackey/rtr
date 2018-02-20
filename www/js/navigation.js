@@ -47,7 +47,6 @@ $("#backbutton").click(backButtonPressed);
 
 $("#topnav-title").on("click", "#backbutton", backButtonPressed);
 
-
 function displayMap() {
     // hide content, because the map requires a different layout
     $(".content").css("display", "none");
@@ -218,8 +217,6 @@ function hideBackButton(){
 }
 
 function backButtonPressed() {
-    //alert(currentPage);
-    console.log("back button pressed");
     //updateMapSize();
     switch(currentPage){
         case 0:

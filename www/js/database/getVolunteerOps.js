@@ -36,15 +36,45 @@ function volunteerCallback(snapshot) {
         opDetail+= '<h1 style="color: #2dccd3; text-align: left;">'+op.title+'</h1>';
         opDetail+= '<p class="detail">'+op.content+'</p></div>';
         opDetail+= '<div id="signup-form"><h2>Signup</h2>';
-        opDetail+= '<form><input type="text" name="forename" placeholder="Forename"><br>';
-        opDetail+= '<input type="text" name="surname" placeholder="Surname"><br>';
-        opDetail+= '<input type="text" name="email" placeholder="Email">'
-        opDetail+= '<button type="button" class="event_b">Submit</button></form></div><br><br>';
+        opDetail+= '<form><input type="text" id="forename" name="forename" placeholder="Forename"><br>';
+        opDetail+= '<input type="text" id="surname" name="surname" placeholder="Surname"><br>';
+        opDetail+= '<input type="text" id="email" name="email" placeholder="Email"></form>';
+        opDetail+= '<button type="button" id="volunteer-button" class="event_b">Submit</button>';
+        opDetail+= '<p id="output"></p></div><br><br>';
 
         $('#volunteer_main').hide();
         $('#volunteer_detail').empty();
         $('#volunteer_detail').html(opDetail);
         $('#volunteer_detail').show();
-    });
+        });
 
+
+      //submit form
+      $(document).on("click", "#volunteer-button", function(){
+        //validation
+        var nameRegex = /[a-zA-Z][a-zA-Z]*/;
+        var emailRegex = /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/;
+        var outputText = "";
+        if(!nameRegex.test($("#forename").val()))
+        {
+          outputText += "Forename invalid";
+        }
+        else if(!nameRegex.test($("#surname").val()))
+        {
+          outputText += "Surname invalid";
+        }
+        else if(!emailRegex.test($("#email").val()))
+        {
+          outputText += "Email invalid";
+        }
+        else
+        {
+          outputText += "Form submitted.";
+          $("#forename").val("");
+          $("#surname").val("");
+          $("#email").val("");
+        }
+        $("#output").html(outputText);
+      });
   }
+
