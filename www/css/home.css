@@ -135,8 +135,8 @@ h1 {
 }
 
 .listed_item {
-    padding-top: 5px;
-    padding-bottom: 5px;
+    padding-top: 3px;
+    padding-bottom: 3px;
 }
 
 .news_item:active{
@@ -151,10 +151,9 @@ h1 {
     margin-right: 0px;
     width: 100%;
     object-fit: cover;
-    max-height: 150px;
+    max-height: 200px;
     text-align: center;
 }
-
 
 
 .event_item img {
