@@ -11,10 +11,10 @@ const admin = require('firebase-admin');
 admin.initializeApp(functions.config().firebase);
 
 exports.notifyVolunteer = functions.database.ref('volunteers/{newVolunteer}').onCreate(event => {
-    const event_snapshot = event.data.val();
-    const first_name = event_snapshot.first_name;
-    const last_name = event_snapshot.last_name;
-    const for_event = event_snapshot.related_to;
+    const volunteer_object = event.data.val();
+    const first_name = volunteer_object.first_name;
+    const last_name = volunteer_object.last_name;
+    const for_event = volunteer_object.related_to;
     const payload = {
         notification: {
           title: 'Volunteer Request',
@@ -28,8 +28,8 @@ exports.notifyVolunteer = functions.database.ref('volunteers/{newVolunteer}').on
 });
 
 exports.notifyEvent = functions.database.ref('events/{newEvent}').onCreate(event => {
-    const event_snapshot = event.data.val();
-    const event_title = event_snapshot.title;
+    const event_object = event.data.val();
+    const event_title = event_object.title;
     const payload = {
         notification: {
             title: 'New Event',
@@ -47,16 +47,20 @@ exports.notifyEvent = functions.database.ref('events/{newEvent}').onCreate(event
 });
 
 exports.notifyNews = functions.database.ref('news/{newArticle}').onCreate(event => {
-    const event_snapshot = event.data.val();
-    const article_title = event_snapshot.title;
+    const article_object = event.data.val();
+    const article_title = article_object.title;
     const payload = {
         notification: {
             title: 'New Article',
             body: `${article_title}`
         }
     };
+    // news article will only live for 1 week
+    const options = {
+        timeToLive: 60 * 60 * 24 * 7
+    };
     // return the promise so that we do not exit the function too early
-    return admin.messaging().sendToTopic('news', payload).catch(error => {
+    return admin.messaging().sendToTopic('news', payload, options).catch(error => {
         console.log(`error sending news notification: ${error}`);
     });
 });
