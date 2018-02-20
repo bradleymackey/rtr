@@ -120,8 +120,9 @@ h1 {
 
 .infOptions{
     background-color: white;
-    height: 120px;
-    border-bottom: 1px solid black;
+    /* Apply padding so each info option is nicely spaced from the others */
+    padding: 20px;
+    border-bottom: 1px solid gray;
     /* force gpu acceleration to prevent iOS glitch */
     transform: translate3d(0,0,0);
 }

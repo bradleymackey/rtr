@@ -118,16 +118,6 @@ h1 {
     -webkit-animation:fade 1000ms infinite;
 }
 
-/*style the rtr logo in info*/
-.jumbotron{
-    min-height: 120px;
-    background-image: url("../img/rtrInfoCover.png");
-    background-repeat: no-repeat;
-    background-position: center;
-    /* force gpu acceleration to prevent iOS glitch */
-    transform: translate3d(0,0,0);
-}
-
 .infOptions{
     background-color: white;
     height: 120px;
@@ -213,8 +203,16 @@ h1 {
     text-align: center;
 }
 
-.vol_item:active{
+.vol_item:active {
     background-color: bbc1cc;
   /* force gpu acceleration to prevent iOS glitch */
   transform: translate3d(0,0,0);
+}
+
+#info-image {
+    margin-left: 0px;
+    margin-right: 0px;
+    width: 100%;
+    object-fit: cover;
+    padding: 20px;
 }
