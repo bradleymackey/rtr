@@ -732,3 +732,7 @@ module.exports = {
     getPluginDomId: getPluginDomId,
     hashCode: hashCode
 };
+
+if (cordova && cordova.platformId === "browser") {
+  require('cordova/exec/proxy').add('common', module.exports);
+}

@@ -3,6 +3,27 @@
 var pictureSource;   // picture source
 var destinationType; // sets the format of returned value
 
+function gotPhotosCallback(snapshot) {
+    const photosData = snapshot.val();
+    // if we cannot get the user photos data from the database for some reason, display an error message to the user
+    if (photosData === undefined || photosData === null) {
+      let errorMessage = "<div id=\"error\" class=\"standard-inset\" style=\"text-align:center;\"><h1 style=\"text-align:center;\">Error!</h1>" + "<p>Could not load content, please try again later.</p></div>";
+      $('#photos-content').empty();
+      $('#photos-content').html(errorMessage);
+      return;
+    }
+     // LIST OF PHOTOTS
+     let photosList = '';
+     $.each(photosData, function(i){
+        photosList += "<div id="+i+" class='photos_item'><img src="+(photosData[i].link||"")+" alt='image'>";
+        let date = new Date(photosData[i].date).toLocaleDateString('en-GB');
+        photosList += "<p class='standard-inset'><b>" + (photosData[i].by||"") + ", " + (date||"") + "</b></p>";
+        photosList += "<p class='standard-inset'>" + (photosData[i].desc||"") + "</p></div>";
+     });
+     $('#photos-content').empty();
+     $('#photos-content').html(photosList);
+}
+
 document.addEventListener("deviceready", function(event) {
     pictureSource = navigator.camera.PictureSourceType;
     destinationType = navigator.camera.DestinationType;
@@ -99,5 +120,6 @@ function uploadImage(imageUri) {
             console.log("upload error",error);
         });
     }
+
     xhr.send();
 }

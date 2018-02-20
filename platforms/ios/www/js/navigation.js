@@ -47,6 +47,15 @@ $("#backbutton").click(backButtonPressed);
 
 $("#topnav-title").on("click", "#backbutton", backButtonPressed);
 
+var count = 0;
+$("#info-image").click(function(){
+    count += 1;
+    if (count === 5){
+        displayAdmin();
+        count = 0;
+    }
+});
+
 
 function displayMap() {
     // hide content, because the map requires a different layout
@@ -132,6 +141,7 @@ function displayInfo(){
     //changes margin so that there isnt a space between navbar and logo
     $(".content").css({"margin-top": "4.3 em"});
     $(".info-section").hide();
+    $("#info-image").show();
     $(".info_main").show();
     tabItemSelected($("#info-icon"),$("#info"));
     updateTitle("Information");
@@ -182,6 +192,18 @@ function displayLeaflets(){
     updateTitle("Leaflets");
     $("#topnav-title").prepend('<img id="backbutton" src="img/left-arrow.png" alt="back">');
     currentPage = 11;
+    return false;
+}
+
+function displayAdmin(){
+    //changes margin so that there isnt a space between navbar and logo
+    //$(".content").css({"margin-top": "3.0 em"});
+    $(".info_main").hide();
+    $("#info-image").hide();
+    $("#admin").show();
+    updateTitle("AdminLogin");
+    $("#topnav-title").prepend('<img id="backbutton" src="img/left-arrow.png" alt="back">');
+    currentPage = 12;
     return false;
 }
 
