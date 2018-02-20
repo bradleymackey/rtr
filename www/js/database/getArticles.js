@@ -40,7 +40,7 @@ function articlesCallback(snapshot) {
       $('#news_main').hide();
       updateTitle(article.title);
       //back button
-      $("#topnav-title").prepend('<img id="backbutton" src="img/backbutton.png" alt="back">');
+      $("#topnav-title").prepend('<img id="backbutton" src="img/left-arrow.png" alt="back">');
       $('#news-article').empty();
       $('#news-article').html(articleDetail);
       $('#news-article').show();

@@ -29,7 +29,7 @@ function eventsCallback(snapshot) {
         ev = events[eid];
         updateTitle(ev.title);
         //back button
-        $("#topnav-title").prepend('<img id="backbutton" src="img/backbutton.png" alt="back">');
+        $("#topnav-title").prepend('<img id="backbutton" src="img/left-arrow.png" alt="back">');
         let eventDetail = '';
         eventDetail+= '<img src='+ev.image+' alt="image"><div style="padding: 15px;">'
         eventDetail+= '<h1 style="color: #2dccd3; text-align: left;">'+ev.title+'</h1>'

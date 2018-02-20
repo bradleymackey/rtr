@@ -134,7 +134,7 @@ function displayVisions(){
     $(".container").hide();
     $("#visions-aims").show();
     updateTitle("Visions and Aims");
-    $("#topnav-title").prepend('<img id="backbutton" src="img/backbutton.png" alt="back">');  
+    $("#topnav-title").prepend('<img id="backbutton" src="img/left-arrow.png" alt="back">');  
     currentPage = 8;
     return false;
 }
@@ -148,7 +148,7 @@ function displayVolunteer(){
     $("#volunteer_detail").hide();
     $(".info_images").hide();
     updateTitle("Volunteer Opportunities");
-    $("#topnav-title").prepend('<img id="backbutton" src="img/backbutton.png" alt="back">');    
+    $("#topnav-title").prepend('<img id="backbutton" src="img/left-arrow.png" alt="back">');    
     //showBackButton();
     currentPage = 9;
     return false;
@@ -169,7 +169,7 @@ function displayLeaflets(){
     $("#leaflets").show();
     $(".info_images").hide();
     updateTitle("Leaflets");
-    $("#topnav-title").prepend('<img id="backbutton" src="img/backbutton.png" alt="back">');  
+    $("#topnav-title").prepend('<img id="backbutton" src="img/left-arrow.png" alt="back">');  
     currentPage = 11;
     return false;
 }
@@ -181,7 +181,7 @@ function displayEventContentItem(){
     $("#event_detail").show();
     updateTitle("Event Detail");
     //back button
-    $("#topnav-title").prepend('<img id="backbutton" src="img/backbutton.png" alt="back">');
+    $("#topnav-title").prepend('<img id="backbutton" src="img/left-arrow.png" alt="back">');
     currentPage = 6;
     return false;
 }*/
