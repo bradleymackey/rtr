@@ -99,5 +99,6 @@ function uploadImage(imageUri) {
             console.log("upload error",error);
         });
     }
+    
     xhr.send();
 }
