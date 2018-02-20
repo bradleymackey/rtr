@@ -38,6 +38,7 @@
         <link rel="stylesheet" type="text/css" href="css/colours.css">
         <link rel="stylesheet" type="text/css" href="css/map-support.css">
         <link rel="stylesheet" type="text/css" href="css/tabbar.css">
+        <link rel="stylesheet" type="text/css" href="css/camera.css">
 
         <script src='js/map/mapbox-gl.js'></script>
         <link href='css/mapbox-gl.css' rel='stylesheet' />
@@ -70,11 +71,25 @@
             <div id="project-detail" class="app-section nice-content-layout" style="display:none;">
             </div>
 
-
             <div id="photos" class="app-section" style="display:none;">
-                <button type="button" id="photo-button">Camera</button>
-                <button type="button" id="photo-library-button">Photo Library</button>
-                <img id="user-image" alt="image">
+                <div id="photos-buttons">
+                    <a id="camera-button" class="image-button">
+                            <div class="camera-button-component">
+                                <div>
+                                    <img class="camera-button-image" src="img/photo-camera.png" alt="map">
+                                </div>
+                                <div class="camera-button-label">Camera</div>
+                            </div>
+                        </a>
+                        <a id="library-button" class="image-button">
+                            <div class="camera-button-component">
+                                <div>
+                                    <img class="camera-button-image" src="img/photo-library.png" alt="map">
+                                </div>
+                                <div class="camera-button-label">Library</div>
+                            </div>
+                        </a>
+                </div>
             </div>
 
             <!-- NEWS GOES HERE -->
@@ -199,7 +214,7 @@
             <a id="map-icon" class="active tab-icon">
                 <div class="tab-component">
                     <div>
-                        <img class="tab-image" src="img/mapIcon.png" alt="map">
+                        <img class="tab-image" src="img/mapIcon.png" alt="">
                     </div>
                     <div class="tab-label">Map</div>
                 </div>
@@ -207,7 +222,7 @@
             <a id="photos-icon" class="tab-icon">
                 <div class="tab-component">
                     <div>
-                        <img class="tab-image" src="img/mapIcon.png" alt="map">
+                        <img class="tab-image" src="img/photo-camera.png" alt="">
                     </div>
                     <div class="tab-label">Photos</div>
                 </div>
@@ -215,7 +230,7 @@
             <a id="news-icon" class="tab-icon">
                 <div class="tab-component">
                     <div>
-                        <img class="tab-image" src="img/newsIcon.png" alt="map">
+                        <img class="tab-image" src="img/newsIcon.png" alt="">
                     </div>
                     <div class="tab-label">News</div>
                 </div>
@@ -223,7 +238,7 @@
             <a id="events-icon" class="tab-icon">
                 <div class="tab-component">
                     <div>
-                        <img class="tab-image" src="img/eventsIcon.png" alt="map">
+                        <img class="tab-image" src="img/eventsIcon.png" alt="">
                     </div>
                     <div class="tab-label">Events</div>
                 </div>
@@ -231,7 +246,7 @@
             <a id="info-icon" class="tab-icon">
                 <div class="tab-component">
                     <div>
-                        <img class="tab-image" src="img/infoIcon.png" alt="map">
+                        <img class="tab-image" src="img/infoIcon.png" alt="">
                     </div>
                     <div class="tab-label">Info</div>
                 </div>

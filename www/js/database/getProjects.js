@@ -1,10 +1,6 @@
 
 
 
-
-
-    
-    
 function projectsCallback(snapshot) {
 
     const data = snapshot.val();
