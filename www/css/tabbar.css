@@ -45,7 +45,7 @@
 
 #backbutton {
     position: relative;
-    padding: 10px 13px 7px;
+    padding: 3px;
     /*transform: translate(0%, -50%);*/
     float: left;
     height: 30px;
