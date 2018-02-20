@@ -2,7 +2,6 @@
 // data is returned in a value listener
 
 function volunteerCallback(snapshot) {
-     console.log('calling volunteer ops js');
      const data = snapshot.val();
 
      // if we cannot get the events from the database for some reason, display an error message to the user
@@ -21,7 +20,6 @@ function volunteerCallback(snapshot) {
             //volInList+= "<p class='detail standard-inset'>"+data[i].content+"</p></br></div>"
             volInList+= "</br></div>"
       });
-      console.log(volInList);
       $('#volunteer_main').empty();
       $('#volunteer_main').html(volInList);
 
@@ -40,7 +38,7 @@ function volunteerCallback(snapshot) {
         opDetail+= '<form><input type="text" name="forename" placeholder="Forename"><br>';
         opDetail+= '<input type="text" name="surname" placeholder="Surname"><br>';
         opDetail+= '<input type="text" name="email" placeholder="Email"></form>';
-                        
+
         $('#volunteer_main').hide();
         $('#volunteer_detail').empty();
         $('#volunteer_detail').html(opDetail);
