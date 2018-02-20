@@ -1,5 +1,4 @@
-h1, .list {
-  color: #2DCCD3;
+.list h1 {
   text-align:left;
   /* force gpu acceleration to prevent iOS glitch */
   transform: translate3d(0,0,0);

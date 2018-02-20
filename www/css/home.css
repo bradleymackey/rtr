@@ -134,6 +134,11 @@ h1 {
     transform: translate3d(0,0,0);
 }
 
+.listed_item {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
 .news_item:active{
     background-color: #bbc1cc;
     /* force gpu acceleration to prevent iOS glitch */

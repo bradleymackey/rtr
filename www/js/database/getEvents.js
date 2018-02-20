@@ -16,8 +16,8 @@ function eventsCallback(snapshot) {
       // MAIN LIST OF EVENTS
       let eventInList = '';
       $.each(events, function(i){
-            eventInList+= "<div id="+i+" class='event_item'><img src="+events[i].image+" alt='image'>"
-            eventInList+= "<h2 class='list standard-inset' id="+i+">"+events[i].title+"</h2>"
+            eventInList+= "<div id="+i+" class='event_item listed_item'><img src="+events[i].image+" alt='image'>"
+            eventInList+= "<h3 class='list standard-inset' id="+i+">"+events[i].title+"</h3>"
             eventInList+= "<p class='detail standard-inset'>"+events[i].content+"</p></br></div>"
       });
       $('#events_main').empty();
