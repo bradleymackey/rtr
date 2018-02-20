@@ -15,8 +15,8 @@ function articlesCallback(snapshot) {
     // MAIN NEWS LIST WITH THE LIST OF ARTICLES
     let articleInList = '';
     $.each(articles, function(i){
-      articleInList += "<div id="+i+" class='news_item'><img src="+articles[i].image_1+" alt='image'>"
-      articleInList += "<h2 class='list standard-inset' id="+i+">"+articles[i].title+"</h2></br></div>"
+      articleInList += "<div id="+i+" class='news_item listed_item'><img src="+articles[i].image_1+" alt='image'>"
+      articleInList += "<h3 class='list standard-inset' id="+i+">"+articles[i].title+"</h3></br></div>"
     });
     $('#news_main').empty();
     $('#news_main').html(articleInList);
@@ -40,7 +40,7 @@ function articlesCallback(snapshot) {
       $('#news_main').hide();
       updateTitle(article.title);
       //back button
-      $("#topnav-title").prepend('<img id="backbutton" src="img/backbutton.png" alt="back">');
+      $("#topnav-title").prepend('<img id="backbutton" src="img/left-arrow.png" alt="back">');
       $('#news-article').empty();
       $('#news-article').html(articleDetail);
       $('#news-article').show();

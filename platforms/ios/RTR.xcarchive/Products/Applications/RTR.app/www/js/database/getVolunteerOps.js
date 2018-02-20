@@ -2,7 +2,6 @@
 // data is returned in a value listener
 
 function volunteerCallback(snapshot) {
-     console.log('calling volunteer ops js');
      const data = snapshot.val();
 
      // if we cannot get the events from the database for some reason, display an error message to the user
@@ -16,12 +15,11 @@ function volunteerCallback(snapshot) {
       // MAIN LIST OF VOLUNTEER OPPORTUNITIES
       let volInList = '';
       $.each(data, function(i){
-            volInList+= "<div id="+i+" class='vol_item'><img src="+data[i].image_1+" alt='image'>"
+            volInList+= "<div id="+i+" class='vol_item'><img class='volunteer-image' src="+data[i].image_1+" alt='image'>"
             volInList+= "<h2 class='list standard-inset' id="+i+">"+data[i].title+"</h2>"
             //volInList+= "<p class='detail standard-inset'>"+data[i].content+"</p></br></div>"
             volInList+= "</br></div>"
       });
-      console.log(volInList);
       $('#volunteer_main').empty();
       $('#volunteer_main').html(volInList);
 
@@ -32,7 +30,7 @@ function volunteerCallback(snapshot) {
         op = data[eid];
         updateTitle(op.title);
         //back button
-        $("#topnav-title").prepend('<img id="backbutton" src="img/backbutton.png" alt="back">');
+        $("#topnav-title").prepend('<img id="backbutton" src="img/left-arrow.png" alt="back">');
         let opDetail = '';
         opDetail+= '<img src='+op.image_1+' alt="image"><div style="padding: 15px;">';
         opDetail+= '<h1 style="color: #2dccd3; text-align: left;">'+op.title+'</h1>';
@@ -40,7 +38,7 @@ function volunteerCallback(snapshot) {
         opDetail+= '<form><input type="text" name="forename" placeholder="Forename"><br>';
         opDetail+= '<input type="text" name="surname" placeholder="Surname"><br>';
         opDetail+= '<input type="text" name="email" placeholder="Email"></form>';
-                        
+
         $('#volunteer_main').hide();
         $('#volunteer_detail').empty();
         $('#volunteer_detail').html(opDetail);

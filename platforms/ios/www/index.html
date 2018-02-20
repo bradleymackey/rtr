@@ -38,6 +38,7 @@
         <link rel="stylesheet" type="text/css" href="css/colours.css">
         <link rel="stylesheet" type="text/css" href="css/map-support.css">
         <link rel="stylesheet" type="text/css" href="css/tabbar.css">
+        <link rel="stylesheet" type="text/css" href="css/camera.css">
 
         <script src='js/map/mapbox-gl.js'></script>
         <link href='css/mapbox-gl.css' rel='stylesheet' />
@@ -51,7 +52,7 @@
             <!-- NAVIGATION BAR -->
             <div class="topnav">
                 <h1 id="topnav-title">
-                    <img id="backbutton" src="img/backbutton.png" alt="image" style="display:none">
+                    <img id="backbutton" src="img/left-arrow.png" alt="image" style="display:none">
                   <div class="input-group">
                     <input type="text" class="form-control" placeholder="Search Map">
                   </div>
@@ -70,11 +71,29 @@
             <div id="project-detail" class="app-section nice-content-layout" style="display:none;">
             </div>
 
-
             <div id="photos" class="app-section" style="display:none;">
-                <button type="button" id="photo-button">Camera</button>
-                <button type="button" id="photo-library-button">Photo Library</button>
-                <img id="user-image" alt="image">
+                <!-- SHARE PHOTO BUTTONS -->
+                <h2 class="photo-title">Share a photo!</h2>
+                <div id="photos-buttons">
+                    <a id="camera-button" class="image-button">
+                            <div class="camera-button-component">
+                                <div>
+                                    <img class="camera-button-image" src="img/photo-camera.png" alt="map">
+                                </div>
+                                <div class="camera-button-label">Take Photo</div>
+                            </div>
+                        </a>
+                        <a id="library-button" class="image-button">
+                            <div class="camera-button-component">
+                                <div>
+                                    <img class="camera-button-image" src="img/photo-library.png" alt="map">
+                                </div>
+                                <div class="camera-button-label">Photo Library</div>
+                            </div>
+                        </a>
+                </div>
+                <!-- WHERE THE USER SUBMITTED PHOTOS APPEAR -->
+                <div id="photos-content"></div>
             </div>
 
             <!-- NEWS GOES HERE -->
@@ -88,11 +107,10 @@
                 <!-- -->
                 <div id="news-article" class="nice-content-layout" style="display:none">
                 </div>
-
             </div>
 
             <!-- EVENTS GO HERE -->
-            <div id="events" class="app-section" style="display:none;">
+            <div id="events" class="app-section content" style="display:none;">
               <div id="events_main">
                     <div id="error" class="standard-inset" style="text-align:center;">
                         <h1 style="text-align:center;">Loading...</h1>
@@ -100,9 +118,9 @@
                     </div>
               </div>
               <div id="event_detail" class="nice-content-layout">
+
               </div>
             </div>
-
             <!-- INFO SECTION GOES HERE -->
             <div id="info" class="app-section" style="display:none;">
                     <img id="info-image" src="img/big_logo.jpg" alt="logo">
@@ -124,8 +142,8 @@
                             </div>
                         </div>
                     </div>
-                    <div id="visions-aims" class="info-section" style="display:none;">
-                      <p><b>Vision and aims</b></p><br>
+                    <div id="visions-aims" class="info-section standard-inset" style="display:none;">
+                      <p><h2>Vision and aims</h2></p><br>
                       <p>Our vision is for the Tees Valley to be renowned for its rich landscape, heritage and culture.<br>
                       We aim to:<br></p>
                       <ul>
@@ -175,7 +193,7 @@
         </div>
 
         <!-- ADMIN -->
-        <div id="admin" class="app-section" style="display:none;">
+        <div id="admin" class="app-section content" style="display:none;">
             <div class="content-item">
                 <img src="img/demo.jpg" alt="image">
                 <h2>Some Event</h2>
@@ -199,7 +217,7 @@
             <a id="map-icon" class="active tab-icon">
                 <div class="tab-component">
                     <div>
-                        <img class="tab-image" src="img/mapIcon.png" alt="map">
+                        <img class="tab-image" src="img/mapIcon.png" alt="">
                     </div>
                     <div class="tab-label">Map</div>
                 </div>
@@ -207,7 +225,7 @@
             <a id="photos-icon" class="tab-icon">
                 <div class="tab-component">
                     <div>
-                        <img class="tab-image" src="img/mapIcon.png" alt="map">
+                        <img class="tab-image" src="img/photo-camera.png" alt="">
                     </div>
                     <div class="tab-label">Photos</div>
                 </div>
@@ -215,7 +233,7 @@
             <a id="news-icon" class="tab-icon">
                 <div class="tab-component">
                     <div>
-                        <img class="tab-image" src="img/newsIcon.png" alt="map">
+                        <img class="tab-image" src="img/newsIcon.png" alt="">
                     </div>
                     <div class="tab-label">News</div>
                 </div>
@@ -223,7 +241,7 @@
             <a id="events-icon" class="tab-icon">
                 <div class="tab-component">
                     <div>
-                        <img class="tab-image" src="img/eventsIcon.png" alt="map">
+                        <img class="tab-image" src="img/eventsIcon.png" alt="">
                     </div>
                     <div class="tab-label">Events</div>
                 </div>
@@ -231,7 +249,7 @@
             <a id="info-icon" class="tab-icon">
                 <div class="tab-component">
                     <div>
-                        <img class="tab-image" src="img/infoIcon.png" alt="map">
+                        <img class="tab-image" src="img/infoIcon.png" alt="">
                     </div>
                     <div class="tab-label">Info</div>
                 </div>

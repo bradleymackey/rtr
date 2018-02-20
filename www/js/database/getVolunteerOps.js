@@ -15,8 +15,8 @@ function volunteerCallback(snapshot) {
       // MAIN LIST OF VOLUNTEER OPPORTUNITIES
       let volInList = '';
       $.each(data, function(i){
-            volInList+= "<div id="+i+" class='vol_item'><img class='volunteer-image' src="+data[i].image_1+" alt='image'>"
-            volInList+= "<h2 class='list standard-inset' id="+i+">"+data[i].title+"</h2>"
+            volInList+= "<div id="+i+" class='vol_item listed_item'><img class='volunteer-image' src="+data[i].image_1+" alt='image'>"
+            volInList+= "<h3 class='list standard-inset' id="+i+">"+data[i].title+"</h3>"
             //volInList+= "<p class='detail standard-inset'>"+data[i].content+"</p></br></div>"
             volInList+= "</br></div>"
       });
@@ -30,7 +30,7 @@ function volunteerCallback(snapshot) {
         op = data[eid];
         updateTitle(op.title);
         //back button
-        $("#topnav-title").prepend('<img id="backbutton" src="img/backbutton.png" alt="back">');
+        $("#topnav-title").prepend('<img id="backbutton" src="img/left-arrow.png" alt="back">');
         let opDetail = '';
         opDetail+= '<img src='+op.image_1+' alt="image"><div style="padding: 15px;">';
         opDetail+= '<h1 style="color: #2dccd3; text-align: left;">'+op.title+'</h1>';

@@ -1,10 +1,6 @@
 
 
 
-
-
-    
-    
 function projectsCallback(snapshot) {
 
     const data = snapshot.val();
@@ -58,11 +54,13 @@ function projectsCallback(snapshot) {
             }
             newHtml += '<h1 class="standard-inset">' + marker.properties.title + '</h1>';
             newHtml += '<p class="standard-inset">' + marker.properties.description + '</p>';
+            console.log(newHtml);
             $(".app-section").hide();
+            $("#map.content").css("display", "block");
+          //  $("#project-detail").empty();
+          //  $("#project-detail").html(newHtml);
             $(".content").css("display", "block");
             $("#project-detail").show();
-            $("#project-detail").empty();
-            $("#project-detail").html(newHtml);
         });
 
         // add marker to map

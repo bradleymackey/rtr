@@ -2,7 +2,6 @@
 
 #photos-buttons {
     overflow: hidden;
-    position: absolute;
     width: 100%;
 }
 
@@ -44,3 +43,21 @@
     padding-bottom: 10px;
 }
 
+.photos_item:active{
+    background-color: #bbc1cc;
+    /* force gpu acceleration to prevent iOS glitch */
+    transform: translate3d(0,0,0);
+}
+
+.photos_item img {
+    /* correct image layout for news articles */
+    margin-left: 0px;
+    margin-right: 0px;
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    overflow: hidden;
+    object-fit: cover;
+    max-height: 450px;
+    text-align: center;
+}
