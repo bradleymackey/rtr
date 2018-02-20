@@ -13,7 +13,7 @@ firebase.initializeApp(config);
 // this is because the database policy now requires users to be logged in to access the data, so they have to be logged in first
 firebase.auth().signInAnonymously().then(function(user) {
     if (user) { // we have a valid login! go ahead and get all the data that we need
-        firebase.database().ref("/projects").orderByChild("title").limitToFirst(15).once('value').then(projectsCallback);
+        firebase.database().ref("/projects").orderByChild("title").once('value').then(projectsCallback);
         firebase.database().ref("/news").orderByChild("title").limitToFirst(15).once('value').then(articlesCallback);
         firebase.database().ref("/events").orderByChild("title").limitToFirst(15).once('value').then(eventsCallback);
         firebase.database().ref("/projectArticles").orderByChild("title").limitToFirst(15).once('value').then(volunteerCallback);
