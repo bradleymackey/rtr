@@ -263,19 +263,11 @@ module.exports = [
     ]
   },
   {
-    "id": "cordova-plugin-wkwebview-engine.ios-wkwebview-exec",
-    "file": "plugins/cordova-plugin-wkwebview-engine/src/www/ios/ios-wkwebview-exec.js",
-    "pluginId": "cordova-plugin-wkwebview-engine",
+    "id": "cordova-plugin-ionic-webview.ios-wkwebview-exec",
+    "file": "plugins/cordova-plugin-ionic-webview/src/www/ios/ios-wkwebview-exec.js",
+    "pluginId": "cordova-plugin-ionic-webview",
     "clobbers": [
       "cordova.exec"
-    ]
-  },
-  {
-    "id": "cordova-plugin-wkwebview-engine.ios-wkwebview",
-    "file": "plugins/cordova-plugin-wkwebview-engine/src/www/ios/ios-wkwebview.js",
-    "pluginId": "cordova-plugin-wkwebview-engine",
-    "clobbers": [
-      "window.WkWebView"
     ]
   }
 ];
@@ -290,7 +282,7 @@ module.exports.metadata =
   "cordova-plugin-geolocation": "4.0.1",
   "cordova-plugin-firebase": "0.1.25",
   "cordova-plugin-camera": "4.0.2",
-  "cordova-plugin-wkwebview-engine": "1.1.4"
+  "cordova-plugin-ionic-webview": "1.1.16"
 };
 // BOTTOM OF METADATA
 });

@@ -74,6 +74,7 @@
     <feature name="Camera">
         <param name="ios-package" value="CDVCamera" />
     </feature>
+    <allow-navigation href="http://localhost:8080/*" />
     <feature name="CDVWKWebViewEngine">
         <param name="ios-package" value="CDVWKWebViewEngine" />
     </feature>
@@ -131,5 +132,6 @@
     <preference name="StatusBarOverlaysWebView" value="true" />
     <preference name="fullscreen" value="false" />
     <preference name="WebViewBounce" value="true" />
+    <preference name="ScrollEnabled" value="true" />
     <preference name="CordovaWebViewEngine" value="CDVWKWebViewEngine" />
 </widget>

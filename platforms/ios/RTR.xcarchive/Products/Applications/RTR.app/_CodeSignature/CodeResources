@@ -102,11 +102,11 @@
 		</data>
 		<key>Assets.car</key>
 		<data>
-		GA6EQIhhZCAq7HRBXpN4gmUYWw0=
+		pGFqvp4UfPQx1AN50dVRT35mHzg=
 		</data>
 		<key>CDVLaunchScreen.storyboardc/01J-lp-oVM-view-Ze5-6b-2t3.nib</key>
 		<data>
-		AwuTGIwGhC8/MZyR84BHlIbGgpk=
+		9VEp8T3FVe0oFpXVgzVtQPZxpMk=
 		</data>
 		<key>CDVLaunchScreen.storyboardc/Info.plist</key>
 		<data>
@@ -114,7 +114,7 @@
 		</data>
 		<key>CDVLaunchScreen.storyboardc/UIViewController-01J-lp-oVM.nib</key>
 		<data>
-		Wbn7v98yaT+NFKQbJO2AhVRBUs4=
+		NbLhPEVbRN8e4M0I0uLp0lt74IE=
 		</data>
 		<key>GoogleMaps.bundle/GMSCacheStorage.momd/Storage.mom</key>
 		<data>
@@ -792,7 +792,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		DSRpTBhfgau/dkEuyRtWqzJD3RU=
+		1O+W9H0jWW0wg0sufLq0MTKkUh0=
 		</data>
 		<key>LaunchImage-568h@2x.png</key>
 		<data>
@@ -860,11 +860,11 @@
 		</data>
 		<key>MainViewController.nib</key>
 		<data>
-		DYrt19rVqZh8n+78exGgUdZ88IU=
+		TXmqdkRYXAX15o335AIZDECHk2o=
 		</data>
 		<key>NewLaunch.storyboardc/2DN-GM-pc6-view-8M3-ZB-k3j.nib</key>
 		<data>
-		+BIZGK/VAQB5yErL8QEkI4P2iuo=
+		Qmvj3houNvRiUbR4BGY5/Yb6y4I=
 		</data>
 		<key>NewLaunch.storyboardc/Info.plist</key>
 		<data>
@@ -872,7 +872,7 @@
 		</data>
 		<key>NewLaunch.storyboardc/UIViewController-2DN-GM-pc6.nib</key>
 		<data>
-		KILX7LCDFRPhoLPESjZzNWFuWMk=
+		cYK8jUDVYYL6zx3oEGYKmEYiN+U=
 		</data>
 		<key>PkgInfo</key>
 		<data>
@@ -884,7 +884,7 @@
 		</data>
 		<key>config.xml</key>
 		<data>
-		Fx7oUeMohSvKyqodtbOh96IH3zc=
+		ReWEKjrAlPCWiL0jdr6DFep2Xzs=
 		</data>
 		<key>embedded.mobileprovision</key>
 		<data>
@@ -912,7 +912,7 @@
 		</data>
 		<key>www/cordova_plugins.js</key>
 		<data>
-		BIl48WtNNjhygrxPlPN1GIsAvBk=
+		gRiewDUZ9cEJAszBNr7GllmkKOE=
 		</data>
 		<key>www/css/bootstrap.css</key>
 		<data>
@@ -924,7 +924,7 @@
 		</data>
 		<key>www/css/home.css</key>
 		<data>
-		mpH10g36YooOHc9A0Tb+DcYeZek=
+		XoidMn1UtiTtD4VnMdgvOclb40c=
 		</data>
 		<key>www/css/map-support.css</key>
 		<data>
@@ -936,7 +936,7 @@
 		</data>
 		<key>www/css/tabbar.css</key>
 		<data>
-		K8Ku/3S+r4buYDc1JTTVVv0Sw3o=
+		an61lhtMaAtd8hhviwdi3/vbcxc=
 		</data>
 		<key>www/img/demo.jpg</key>
 		<data>
@@ -1016,15 +1016,11 @@
 		</data>
 		<key>www/index.html</key>
 		<data>
-		IvvV/2nddzJTgUjysW5rQ8ZIc3g=
-		</data>
-		<key>www/indextest</key>
-		<data>
-		fnCds6utBqIURNIw8darhn+yi74=
+		n6RMkUyQ7PQUHwNqJbxyvdZ6rNA=
 		</data>
 		<key>www/js/camera.js</key>
 		<data>
-		X81tD2xBEiGs75CD6UJB29qs2KA=
+		IiHM7vyxmv8l7e6SL0Kr7wrTu+s=
 		</data>
 		<key>www/js/core/bootstrap.bundle.js</key>
 		<data>
@@ -1048,7 +1044,7 @@
 		</data>
 		<key>www/js/database/getEvents.js</key>
 		<data>
-		ARvHYcf6sEwFmqS8IOynig9BOUg=
+		TVEEAS5LVHfh4ubWyEK/5oluAcs=
 		</data>
 		<key>www/js/database/getProjects.js</key>
 		<data>
@@ -1056,7 +1052,7 @@
 		</data>
 		<key>www/js/database/getVolunteerOps.js</key>
 		<data>
-		AL6dOMKedhY0vaDuUk25D/oomCA=
+		uvK+uhhe+UD/EGuEy2obgQ8jcTg=
 		</data>
 		<key>www/js/map/map.js</key>
 		<data>
@@ -1068,7 +1064,7 @@
 		</data>
 		<key>www/js/navigation.js</key>
 		<data>
-		chlEiSJO4585Mj0a8kSBym8Vjqs=
+		q5F8QZvpY2Is5fLwFkFiXhpFW40=
 		</data>
 		<key>www/plugins/cordova-plugin-camera/www/Camera.js</key>
 		<data>
@@ -1226,17 +1222,17 @@
 		<data>
 		8t14FcX30cUnifhVzGxjLMipc3s=
 		</data>
+		<key>www/plugins/cordova-plugin-ionic-webview/src/www/ios/ios-wkwebview-exec.js</key>
+		<data>
+		FzovBj6X42KHJ4GoEQSPsBKf6Uo=
+		</data>
 		<key>www/plugins/cordova-plugin-statusbar/www/statusbar.js</key>
 		<data>
 		hDT++3ZaOTp3t16AAFAibxtovj0=
 		</data>
-		<key>www/plugins/cordova-plugin-wkwebview-engine/src/www/ios/ios-wkwebview-exec.js</key>
+		<key>www/wk-plugin.js</key>
 		<data>
-		0IHjKGuPam4WmxLuwtLafx8nBh8=
-		</data>
-		<key>www/plugins/cordova-plugin-wkwebview-engine/src/www/ios/ios-wkwebview.js</key>
-		<data>
-		uSpOoBJtw3huMClDN2UUZQOjz/Y=
+		UScKPfDyhhOzQXoa2m2lHaQonBA=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -1509,22 +1505,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			GA6EQIhhZCAq7HRBXpN4gmUYWw0=
+			pGFqvp4UfPQx1AN50dVRT35mHzg=
 			</data>
 			<key>hash2</key>
 			<data>
-			Ns8jUGFU7YWpcWFERXo9gBBd/lrl4XWcgGi8T0EzM7I=
+			jO79Ysxv8PRrVsFXF7JUgtE4edvT5Mqpibl6j5DCD6k=
 			</data>
 		</dict>
 		<key>CDVLaunchScreen.storyboardc/01J-lp-oVM-view-Ze5-6b-2t3.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			AwuTGIwGhC8/MZyR84BHlIbGgpk=
+			9VEp8T3FVe0oFpXVgzVtQPZxpMk=
 			</data>
 			<key>hash2</key>
 			<data>
-			gMJKNXQF14bWTQFwJ+E8LNCTYSSplPuMgSEGx+fHKLo=
+			ywzHhNnOjuqzTJMbT704mvqyXnDseNegkNDRjuyrwYI=
 			</data>
 		</dict>
 		<key>CDVLaunchScreen.storyboardc/Info.plist</key>
@@ -1542,11 +1538,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			Wbn7v98yaT+NFKQbJO2AhVRBUs4=
+			NbLhPEVbRN8e4M0I0uLp0lt74IE=
 			</data>
 			<key>hash2</key>
 			<data>
-			XApbEJuheCilkbGxzMaPg4g2+/j8AEVqbD2y7/7lZnI=
+			GhwdPGOFVskjhLvRDGlwY+mq1zh2enQq8H9FIr3hiyc=
 			</data>
 		</dict>
 		<key>GoogleMaps.bundle/GMSCacheStorage.momd/Storage.mom</key>
@@ -3042,22 +3038,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			DYrt19rVqZh8n+78exGgUdZ88IU=
+			TXmqdkRYXAX15o335AIZDECHk2o=
 			</data>
 			<key>hash2</key>
 			<data>
-			fOm4K9Ookrv92v4kTQlXttNX8Wg3DDjGiggTUgO+O8Y=
+			V92hSDLN/8cLDXZxR2Kl+OuhQy3yY7HH+Zx5m0j9lfo=
 			</data>
 		</dict>
 		<key>NewLaunch.storyboardc/2DN-GM-pc6-view-8M3-ZB-k3j.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			+BIZGK/VAQB5yErL8QEkI4P2iuo=
+			Qmvj3houNvRiUbR4BGY5/Yb6y4I=
 			</data>
 			<key>hash2</key>
 			<data>
-			CDal8Rb2puZnoPwA/rI4dGYNF5ugom+3MJv0g4THMsc=
+			ENdkpT/8IlUy/Nmdob56bxPSpKQd0T36VouPKKZmgVI=
 			</data>
 		</dict>
 		<key>NewLaunch.storyboardc/Info.plist</key>
@@ -3075,11 +3071,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			KILX7LCDFRPhoLPESjZzNWFuWMk=
+			cYK8jUDVYYL6zx3oEGYKmEYiN+U=
 			</data>
 			<key>hash2</key>
 			<data>
-			nfsUuejUJBpz3VXoB1Jg2SVMu8g+c9BHJoGWndLBQI0=
+			oL9aVHaKPPHYMqyFM7PUkjtkh76ZRLpSXFknCMCQHPc=
 			</data>
 		</dict>
 		<key>archived-expanded-entitlements.xcent</key>
@@ -3097,11 +3093,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			Fx7oUeMohSvKyqodtbOh96IH3zc=
+			ReWEKjrAlPCWiL0jdr6DFep2Xzs=
 			</data>
 			<key>hash2</key>
 			<data>
-			wEowSHXe81Uzvltp6Z41NQc6BoD70OQBDhBVk/e7bZs=
+			bFPSuI/n77L8vZ4FGP0RgeYlgz8Dv3qiOswfBYRAolw=
 			</data>
 		</dict>
 		<key>embedded.mobileprovision</key>
@@ -3174,11 +3170,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			BIl48WtNNjhygrxPlPN1GIsAvBk=
+			gRiewDUZ9cEJAszBNr7GllmkKOE=
 			</data>
 			<key>hash2</key>
 			<data>
-			uPV0XncHvJm3wMomUduScgJNlwgBe156BsqmX4SoW64=
+			64VYGHaa/6CwjY0lffYJzsbatxVlOoV7KQdiyIJMscg=
 			</data>
 		</dict>
 		<key>www/css/bootstrap.css</key>
@@ -3207,11 +3203,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			mpH10g36YooOHc9A0Tb+DcYeZek=
+			XoidMn1UtiTtD4VnMdgvOclb40c=
 			</data>
 			<key>hash2</key>
 			<data>
-			1qAO7G28u2+5NF76jtmJ/Z3WRiUVuM2tQhsP3IlWrKE=
+			bBtI55w4rNbNUWyzgWUY16xgBZj8xS6CKGk3pWOHZqc=
 			</data>
 		</dict>
 		<key>www/css/map-support.css</key>
@@ -3240,11 +3236,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			K8Ku/3S+r4buYDc1JTTVVv0Sw3o=
+			an61lhtMaAtd8hhviwdi3/vbcxc=
 			</data>
 			<key>hash2</key>
 			<data>
-			mSc4iPT2VRbGeQF66ZEszc/GErujhqg/99oC7d9zec4=
+			t8aQz1x8TkCeZJrDp8X2SV53Zpp3+2aBy9Ise3zSRFI=
 			</data>
 		</dict>
 		<key>www/img/demo.jpg</key>
@@ -3460,33 +3456,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			IvvV/2nddzJTgUjysW5rQ8ZIc3g=
+			n6RMkUyQ7PQUHwNqJbxyvdZ6rNA=
 			</data>
 			<key>hash2</key>
 			<data>
-			OCEO8Jb+SMrzkIg8S6HwWNxsbl+BCV7/LqLYIw71IxA=
-			</data>
-		</dict>
-		<key>www/indextest</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			fnCds6utBqIURNIw8darhn+yi74=
-			</data>
-			<key>hash2</key>
-			<data>
-			Wi5fbpA4P2yV9qKFG2u3G5M2XRzPp1XY47hTlldEgEc=
+			mYoXpxBWhd+mj4Ob9uSIf/pzcTJlEFYUZ6KuU0j8/Z8=
 			</data>
 		</dict>
 		<key>www/js/camera.js</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			X81tD2xBEiGs75CD6UJB29qs2KA=
+			IiHM7vyxmv8l7e6SL0Kr7wrTu+s=
 			</data>
 			<key>hash2</key>
 			<data>
-			LPYe+a01VHTbrKLH6SNC88kQqXetquWCE0+iMwD/ueI=
+			PzFIOdb9UfJtKH8xkAsVlrHM/b69jxbb7BjGQiaY2qc=
 			</data>
 		</dict>
 		<key>www/js/core/bootstrap.bundle.js</key>
@@ -3548,11 +3533,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			ARvHYcf6sEwFmqS8IOynig9BOUg=
+			TVEEAS5LVHfh4ubWyEK/5oluAcs=
 			</data>
 			<key>hash2</key>
 			<data>
-			gEVBEGLErur7blymXbpAzI4yffIf6ZKNqNxtx7JkK0U=
+			0OlMjG2tM6ni+ELyPml7Tix1eg8iIt0tatpQPfmqirs=
 			</data>
 		</dict>
 		<key>www/js/database/getProjects.js</key>
@@ -3570,11 +3555,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			AL6dOMKedhY0vaDuUk25D/oomCA=
+			uvK+uhhe+UD/EGuEy2obgQ8jcTg=
 			</data>
 			<key>hash2</key>
 			<data>
-			lGBCz5Eh0MxdhQiH6ltzphINGFDI4D4cp2wOFQGoBZo=
+			vblGo3wdbuN6JJeNFil6JY+uP/KEAUHh7v6QKYpdwZM=
 			</data>
 		</dict>
 		<key>www/js/map/map.js</key>
@@ -3603,11 +3588,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			chlEiSJO4585Mj0a8kSBym8Vjqs=
+			q5F8QZvpY2Is5fLwFkFiXhpFW40=
 			</data>
 			<key>hash2</key>
 			<data>
-			STMOAiulQ9K20ybED6yeckLpF0ADbFBSj0GbAkllrhA=
+			0R/EKRzrwArksMgYkeO3lBBn5+Y0C2tNLe2hJ/eRH8c=
 			</data>
 		</dict>
 		<key>www/plugins/cordova-plugin-camera/www/Camera.js</key>
@@ -4039,6 +4024,17 @@
 			VYM2Bq6gHceg9Z/2khxd/kvDt3c0LSCXVEdFD5zfScY=
 			</data>
 		</dict>
+		<key>www/plugins/cordova-plugin-ionic-webview/src/www/ios/ios-wkwebview-exec.js</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			FzovBj6X42KHJ4GoEQSPsBKf6Uo=
+			</data>
+			<key>hash2</key>
+			<data>
+			Qzg9DIlntqplnSe+2I6SHdH4EHOjaQt479rl1X7a+B4=
+			</data>
+		</dict>
 		<key>www/plugins/cordova-plugin-statusbar/www/statusbar.js</key>
 		<dict>
 			<key>hash</key>
@@ -4050,26 +4046,15 @@
 			JVFddhH/G0jM/7U0DOdpW1CvUNswIGcQB9WylyRtCBM=
 			</data>
 		</dict>
-		<key>www/plugins/cordova-plugin-wkwebview-engine/src/www/ios/ios-wkwebview-exec.js</key>
+		<key>www/wk-plugin.js</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			0IHjKGuPam4WmxLuwtLafx8nBh8=
+			UScKPfDyhhOzQXoa2m2lHaQonBA=
 			</data>
 			<key>hash2</key>
 			<data>
-			wHC2R1DSKOObwd+z1cFGg5uyx21jjxpZGbXJI7CAiWU=
-			</data>
-		</dict>
-		<key>www/plugins/cordova-plugin-wkwebview-engine/src/www/ios/ios-wkwebview.js</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			uSpOoBJtw3huMClDN2UUZQOjz/Y=
-			</data>
-			<key>hash2</key>
-			<data>
-			snCU5zVffeqnWk/2NWikUz5/ywm8VWiiKUujPDpj0Yw=
+			A4StD4omj9IEQDeiL5ITG41GJqxI38k0m3I30PwgbIs=
 			</data>
 		</dict>
 	</dict>

@@ -256,7 +256,7 @@ module.exports.metadata =
   "cordova-plugin-whitelist": "1.3.3",
   "cordova-support-google-services": "1.0.0",
   "cordova-plugin-camera": "4.0.2",
-  "cordova-plugin-wkwebview-engine": "1.1.4"
+  "cordova-plugin-ionic-webview": "1.1.16"
 };
 // BOTTOM OF METADATA
 });

@@ -72,10 +72,10 @@
       "PHOTOLIBRARY_USAGE_DESCRIPTION": "Allow to share images in the app."
     }
   },
-  "cordova-plugin-wkwebview-engine": {
+  "cordova-plugin-ionic-webview": {
     "source": {
       "type": "registry",
-      "id": "cordova-plugin-wkwebview-engine"
+      "id": "cordova-plugin-ionic-webview"
     },
     "is_top_level": true,
     "variables": {}
