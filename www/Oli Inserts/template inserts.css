@@ -1,0 +1,12 @@
+.articleTemplate{
+	/*background-color: #2DCCD3;*/
+		margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+.publishPage{
+	background-color: #2DCCD3;
+	text-align: center;
+}

@@ -35,9 +35,11 @@ function volunteerCallback(snapshot) {
         opDetail+= '<img src='+op.image_1+' alt="image"><div style="padding: 15px;">';
         opDetail+= '<h1 style="color: #2dccd3; text-align: left;">'+op.title+'</h1>';
         opDetail+= '<p class="detail">'+op.content+'</p></div>';
+        opDetail+= '<div id="signup-form"><h2>Signup</h2>';
         opDetail+= '<form><input type="text" name="forename" placeholder="Forename"><br>';
         opDetail+= '<input type="text" name="surname" placeholder="Surname"><br>';
-        opDetail+= '<input type="text" name="email" placeholder="Email"></form>';
+        opDetail+= '<input type="text" name="email" placeholder="Email">'
+        opDetail+= '<button type="button" class="event_b">Submit</button></form></div><br><br>';
 
         $('#volunteer_main').hide();
         $('#volunteer_detail').empty();

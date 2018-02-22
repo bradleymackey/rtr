@@ -47,6 +47,16 @@ $("#backbutton").click(backButtonPressed);
 
 $("#topnav-title").on("click", "#backbutton", backButtonPressed);
 
+var count = 0;
+$("#info-image").click(function(){
+    count += 1;
+    if (count === 5){
+        displayAdminLogin();
+        count = 0;
+    }
+});
+
+
 function displayMap() {
     // hide content, because the map requires a different layout
     $(".content").css("display", "none");
@@ -131,6 +141,7 @@ function displayInfo(){
     //changes margin so that there isnt a space between navbar and logo
     $(".content").css({"margin-top": "4.3 em"});
     $(".info-section").hide();
+    $("#info-image").show();
     $(".info_main").show();
     tabItemSelected($("#info-icon"),$("#info"));
     updateTitle("Information");
@@ -141,7 +152,8 @@ function displayInfo(){
 
 function displayVisions(){
     //changes margin so that there isnt a space between navbar and logo
-    $(".container").hide();
+    $(".info_main").hide();
+    $(".fix").show();
     $("#visions-aims").show();
     updateTitle("Visions and Aims");
     $("#topnav-title").prepend('<img id="backbutton" src="img/left-arrow.png" alt="back">');
@@ -184,6 +196,19 @@ function displayLeaflets(){
     return false;
 }
 
+function displayAdminLogin(){
+    //changes margin so that there isnt a space between navbar and logo
+    //$(".body").css({"background-color": "#1c7430"});
+    $(".info_main").hide();
+    $("#info-image").hide();
+    $(".info-section").hide();
+    $("#admin").show();
+    updateTitle("AdminLogin");
+    $("#topnav-title").prepend('<img id="backbutton" src="img/left-arrow.png" alt="back">');
+    currentPage = 14;
+    return false;
+}
+
 /*
 function displayEventContentItem(){
     //changes margin so that there isnt a space between navbar and logo
@@ -217,6 +242,8 @@ function hideBackButton(){
 }
 
 function backButtonPressed() {
+    //alert(currentPage);
+    console.log("back button pressed");
     //updateMapSize();
     switch(currentPage){
         case 0:
@@ -242,6 +269,9 @@ function backButtonPressed() {
             break;
         case 12:
             displayLeaflets();
+            break;
+        case 14:
+            displayInfo();
             break;
         case 99:
             displayPhotos();
