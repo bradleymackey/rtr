@@ -3,4 +3,16 @@ h1, .list {
   text-align:left;
   /* force gpu acceleration to prevent iOS glitch */
   transform: translate3d(0,0,0);
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+
+h3, .list {
+  color: #2DCCD3;
+  text-align:left;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  /* force gpu acceleration to prevent iOS glitch */
+  transform: translate3d(0,0,0);
 }
