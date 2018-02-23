@@ -33,7 +33,7 @@ $("#infoToVolunteer").click(displayVolunteer);
 
 $("#infoToLeaflets").click(displayLeaflets);
 
-$("#eventsShowOnMap").click(showOnMap);
+$("#event_detail").on("click", "#eventsShowOnMap", showOnMap);
 //$(".event_b").click(console.log("button clicked"));
 //document.getElementById("#eventsShowOnMap").onclick = console.log('button clicked');
 //show event detail
@@ -74,7 +74,7 @@ function displayMap() {
 }
 
 function showOnMap() {
-  console.log("button clicked");
+  displayMap();
   //$(".content").css("display", "none");
 //  currentPage = 13;
   return false;
