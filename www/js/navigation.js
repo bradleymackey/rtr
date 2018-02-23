@@ -43,7 +43,7 @@ $("#event_detail").on("click", "#eventsShowOnMap", showOnMap);
 
 $("#volunteer-ops .content-item").click(displayVolunteerSignup);
 
-$("#backbutton").click(backButtonPressed);
+//$("#backbutton").click(backButtonPressed);
 
 $("#topnav-title").on("click", "#backbutton", backButtonPressed);
 
