@@ -237,3 +237,27 @@ h1 {
 #signup-form {
     text-align: center;
 }
+
+.articleTemplate{
+	/*background-color: #2DCCD3;*/
+		margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+.publishPage{
+	background-color: #2DCCD3;
+	text-align: center;
+}
+
+.divider{
+    width: 15px;
+    height:auto;
+    display:inline-block;
+}
+
+h1.a{
+ text-align: center;
+ color: #0C2340;
+}

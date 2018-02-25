@@ -6,6 +6,8 @@
 
 //stores current page for back button.
 var currentPage = 0;
+var admin=true;
+//var admin=false;
 
 document.addEventListener('deviceready', onDeviceReady, false);
 //document.querySelector("#eventsShowOnMap").addEventListener('click', showOnMap);
@@ -46,6 +48,15 @@ $("#volunteer-ops .content-item").click(displayVolunteerSignup);
 //$("#backbutton").click(backButtonPressed);
 
 $("#topnav-title").on("click", "#backbutton", backButtonPressed);
+
+$("#topnav-title").on("click","#addNewNews",newNews);
+
+//$("#newNewsPublish").click(newsPublisher("#new-News"));
+$("#topnav-title").on("click","#addNewEvent",newEvent);
+
+$("#editEventPublish").click(function(){eventPublisher("#edit-Event");});
+$("#editNewsPublish").click(function(){newsPublisher("#edit-News");});
+//$("#newEventPublish").click(eventPublisher("#new-Event"));
 
 var count = 0;
 $("#info-image").click(function(){
@@ -97,18 +108,27 @@ function displayNews(){
     $(".content").css({"margin-top": "3.0 em"});
     tabItemSelected($("#news-icon"),$("#news"));
     updateTitle("");
-    $("#topnav-title").append(`
+    if (admin==true){
+      $("#topnav-title").append(`
+              <div class="input-group">
+                  <input type="text" class="form-control" placeholder="Search News" style="height:34px">
+                  <img  id="addNewNews" src="img/add.png" height="27px" width="27px" hspace="6px" vspace="2px">
+              </div>`
+      );
+    }
+    else {
+      $("#topnav-title").append(`
             <div class="input-group">
                 <input type="text" class="form-control" placeholder="Search News" style="height:34px">
             </div>`
-    );
-
+      );
+    }
     $(".content-item").show();
-
     hideBackButton();
+    $("#new-News").hide();
+    $("#edit-News").hide();
     $("#news_main").show();
     $("#news-article").empty();
-
     $("#news-article").hide();
     $("#news-article").empty();
     currentPage = 3;
@@ -121,13 +141,25 @@ function displayEvents(){
     $(".content").css({"margin-top": "3.0 em"});
     $(".event-section").hide();
     $("#events_main").show();
+    $("#edit-Event").hide();
+    $("#new-Event").hide();
     tabItemSelected($("#events-icon"),$("#events"));
     updateTitle("");
-    $("#topnav-title").append(`
+    if (admin==true){
+      $("#topnav-title").append(`
+              <div class="input-group">
+                  <input type="text" class="form-control" placeholder="Search News" style="height:34px">
+                  <img  id="addNewEvent" src="img/add.png" height="27px" width="27px" hspace="6px" vspace="2px">
+              </div>`
+      );
+    }
+    else{
+      $("#topnav-title").append(`
             <div class="input-group">
               <input type="text" class="form-control" placeholder="Search Events" style="height:34px">
             </div>`
-    );
+      );
+    }
     hideBackButton();
     $("#events_main").show();
     $("#event_detail").hide();
@@ -207,6 +239,201 @@ function displayAdminLogin(){
     $("#topnav-title").prepend('<img id="backbutton" src="img/left-arrow.png" alt="back">');
     currentPage = 14;
     return false;
+}
+
+function newNews(){
+  //first line will have to be adapted for the precursor page
+  $("#news_main").hide();
+  $("#new-Event").hide();
+  $("#new-News").show();
+  updateTitle("New News Article");
+  $("#topnav-title").prepend('<img id="backbutton" src="img/left-arrow.png" alt="back">');
+  $("#newNewsPublish").click(function(){newsPublisher("#new-News");});
+  currentPage = 3;
+  return false;
+}
+
+function newEvent(){
+  //first line will have to be adapted for the precursor page
+  $("#new-News").hide();
+  $("#events_main").hide();
+  $("#new-Event").show();
+  updateTitle("New Event Creator");
+  $("#topnav-title").prepend('<img id="backbutton" src="img/left-arrow.png" alt="back">');
+  $("#newEventPublish").click(function(){eventPublisher("#new-Event");});
+  currentPage = 5;
+  return false;
+}
+
+function editEvent(id){
+  //info-main will change
+  $("#event_detail").hide();
+  $("#edit-Event").show();
+  updateTitle("Edit Event Detail");
+  $("#topnav-title").prepend('<img id="backbutton" src="img/left-arrow.png" alt="back">');
+  currentPage = 5;
+  var ref = firebase.database().ref('events/' + id);
+  ref.once("value")
+  .then(function(snapshot){
+  var title = snapshot.child("title").val();
+  var content = snapshot.child("content").val();
+  var image = snapshot.child("image").val();
+  var contact = snapshot.child("contact").val();
+  var location1 = snapshot.child("location_1").val();
+  var location2 = snapshot.child("location_2").val();
+  var bool = snapshot.child("booking_required").val();
+  if (bool == true){
+    bool = "TRUE";
+  }
+  else{
+    bool = "FALSE";
+  }
+  $("#editEventTitle").val(title);
+  $("#editEventContent").val(content);
+  $("#editEventImage").val(image);
+  $("#editEventContact").val(contact);
+  $("#editEventLoc1").val(location1);
+  $("#editEventLoc2").val(location2);
+  $("#editEventID").val(id);
+  $("#bookreq").val(bool);
+});
+  return false;
+}
+
+function editNews(id){
+  //info-main will change
+  $("#news_main").hide();
+  $("#news-article").hide();
+  $("#new-News").hide();
+  $("#edit-News").show();
+  $("#topnav-title").prepend('<img id="backbutton" src="img/left-arrow.png" alt="back">');
+  currentPage = 3;
+  updateTitle("Edit News Article");
+  var ref = firebase.database().ref('news/' + id);
+  ref.once("value")
+  .then(function(snapshot){
+  var title = snapshot.child("title").val();
+  var text1 = snapshot.child("content").val();
+  var img1 = snapshot.child("image_1").val();
+  var text2 = snapshot.child("content_1").val();
+  var img2 = snapshot.child("image_2").val();
+  var text3 = snapshot.child("content_2").val();
+  var img3 = snapshot.child("image_3").val();
+  $("#editNewsTitle").val(title);
+  $("#editNewsText1").val(text1);
+  $("#editNewsImage1").val(img1);
+  $("#editNewsText2").val(text2);
+  $("#editNewsImage2").val(img2);
+  $("#editNewsText3").val(text3);
+  $("#editNewsImage3").val(img3);
+  $("#editNewsID").val(id);
+  });
+  return false;
+}
+
+
+function newsPublisher(prevPage){
+  if (prevPage=="#edit-News"){
+    var getInfo = document.getElementById("getEditNewsContent");
+  }
+  else{
+    var getInfo = document.getElementById("getNewsContent");
+  }
+  var title = getInfo.elements[0].value;
+  var text1 = getInfo.elements[1].value;
+  var image1 = getInfo.elements[2].value;
+  var text2 = getInfo.elements[3].value;
+  var image2 = getInfo.elements[4].value;
+  var text3 = getInfo.elements[5].value;
+  var image3 = getInfo.elements[6].value;
+  var id = getInfo.elements[7].value;
+  //alert (title+text1 + image1 + text2 +image2 +text3 + image3);
+  newsVerifyPublish(prevPage,id,title,text1,image1,text2,image2,text3,image3);
+  //writeNews(title,title,text1,image1,text2,image2,text3,image3);
+  return false;
+}
+
+function eventPublisher(pageType){
+  //important if statement here
+  if (pageType=="#edit-Event"){
+    var eventInfo = document.getElementById("getEditEventContent");
+  }
+  else{
+    var eventInfo = document.getElementById("getEventContent");
+  }
+  var title = eventInfo.elements[0].value;
+  var content = eventInfo.elements[1].value;
+  var image = eventInfo.elements[2].value;
+  var contact = eventInfo.elements[3].value;
+  var location1 = eventInfo.elements[4].value;
+  var location2 = eventInfo.elements[5].value;
+  var id = eventInfo.elements[6].value;
+  var x=$("#bookreq").is(":checked");
+  //alert(x);
+  eventVerifyPublish(pageType, id, title, content, image, contact,location1, location2,x);
+  //writeEvents(id, title, content, image, contact,location1, location2, book_req);
+  return false;
+}
+
+
+
+function repopulateEvent(id,title,content,image,contact,location1, location2,bookreq){
+$("#editEventTitle").val(title);
+$("#editEventContent").val(content);
+$("#editEventImage").val(image);
+$("#editEventContact").val(contact);
+$("#editEventLoc1").val(location1);
+$("#editEventLoc2").val(location2);
+$("#editEventID").val(id);
+$("#verifyPublish").hide();
+$("#new-News").hide();
+$("#edit-Event").show();
+updateTitle("Event");
+$("#topnav-title").prepend('<img id="backbutton" src="img/left-arrow.png" alt="back">');
+$("#newEventsPublish").click(function(){eventPublisher("#edit-Event");});
+currentPage = 5;
+return false;
+}
+
+function repopulateNews(id,title,text1,image1,text2,image2,text3,image3){
+  $("#newsTitle").val(title);
+  $("#newsText1").val(text1);
+  $("#newsImage1").val(image1);
+  $("#newsText2").val(text2);
+  $("#newsImage2").val(image2);
+  $("#newsText3").val(text3);
+  $("#newsImage3").val(image3);
+  $("#newsID").val(id);
+  $("#verifyPublish").hide();
+  $("#new-Event").hide();
+  $("#new-News").show();
+  updateTitle("News Article");
+  $("#topnav-title").prepend('<img id="backbutton" src="img/left-arrow.png" alt="back">');
+  $("#newNewsPublish").click(function(){newsPublisher("#new-News");});
+  $("#editNewsPublish").click(function(){newsPublisher("#edit-News");});
+  currentPage = 3;
+  return false;
+}
+
+
+function eventVerifyPublish(prevPage, id, title, content, image, contact,location1, location2,book_req){
+  //alert(prevPage);
+  $(prevPage).hide();
+  $("#verifyPublish").show();
+  updateTitle("Verify Publish");
+  $("#confirm").click(function(){writeEvents(id, title, content, image, contact,location1, location2, book_req);});
+  $("#cancel").click(function(){repopulateEvent(id, title, content, image, contact,location1, location2, book_req);});
+  return false;
+}
+
+function newsVerifyPublish(prevPage, id,title,text1,image1,text2,image2,text3,image3){
+  //alert(prevPage);
+  $(prevPage).hide();
+  $("#verifyPublish").show();
+  updateTitle("Verify Publish");
+  $("#confirm").click(function(){writeNews(id,title,text1,image1,text2,image2,text3,image3);});
+  $("#cancel").click(function(){repopulateNews(id,title,text1,image1,text2,image2,text3,image3)});
+  return false;
 }
 
 /*
