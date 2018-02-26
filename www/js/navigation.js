@@ -246,6 +246,7 @@ function newNews(){
   $("#news_main").hide();
   $("#new-Event").hide();
   $("#new-News").show();
+  $("#edit-Event").hide();
   updateTitle("New News Article");
   $("#topnav-title").prepend('<img id="backbutton" src="img/left-arrow.png" alt="back">');
   $("#newNewsPublish").click(function(){newsPublisher("#new-News");});
@@ -258,6 +259,7 @@ function newEvent(){
   $("#new-News").hide();
   $("#events_main").hide();
   $("#new-Event").show();
+  $("#edit-News").hide();
   updateTitle("New Event Creator");
   $("#topnav-title").prepend('<img id="backbutton" src="img/left-arrow.png" alt="back">');
   $("#newEventPublish").click(function(){eventPublisher("#new-Event");});
@@ -269,6 +271,8 @@ function editEvent(id){
   //info-main will change
   $("#event_detail").hide();
   $("#edit-Event").show();
+  $("#edit-News").hide();
+  $("#new-News").hide();
   updateTitle("Edit Event Detail");
   $("#topnav-title").prepend('<img id="backbutton" src="img/left-arrow.png" alt="back">');
   currentPage = 5;
@@ -306,6 +310,8 @@ function editNews(id){
   $("#news-article").hide();
   $("#new-News").hide();
   $("#edit-News").show();
+  $("#edit-Event").hide();
+  $("#new-Event").hide();
   $("#topnav-title").prepend('<img id="backbutton" src="img/left-arrow.png" alt="back">');
   currentPage = 3;
   updateTitle("Edit News Article");
