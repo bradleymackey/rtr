@@ -148,7 +148,7 @@ function displayEvents(){
     if (admin==true){
       $("#topnav-title").append(`
               <div class="input-group">
-                  <input type="text" class="form-control" placeholder="Search News" style="height:34px">
+                  <input type="text" class="form-control" placeholder="Search Events" style="height:34px">
                   <img  id="addNewEvent" src="img/add.png" height="27px" width="27px" hspace="6px" vspace="2px">
               </div>`
       );
