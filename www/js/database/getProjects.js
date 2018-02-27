@@ -126,7 +126,6 @@ function projectsCallback(snapshot) {
         $(".marker").hide();
         // because this is how the ids are formatted
         var valueForMarker = value.replace(/ /g, "-");
-        console.log(valueForMarker)
         // show only values the user has searched for
         $( "div[class*='marker'][id*='" + valueForMarker + "']" ).show();
     });
