@@ -2,7 +2,7 @@
 // data is returned in a value listener
 
 function eventsCallback(snapshot) {
-
+    console.log("eventsCallback called");
      const events = snapshot.val();
 
      // if we cannot get the events from the database for some reason, display an error message to the user

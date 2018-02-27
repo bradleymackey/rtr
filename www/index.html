@@ -52,9 +52,9 @@
             <!-- NAVIGATION BAR -->
             <div class="topnav">
                 <h1 id="topnav-title">
-                    <img id="backbutton" src="img/left-arrow.png" alt="image" style="display:none">
+                <img id="backbutton" src="img/left-arrow.png" alt="image" style="display:none">
                   <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Search Map">
+                    <input type="text" class="form-control" id="search-bar" placeholder="Search Map">
                   </div>
                 </h1>
             </div>
@@ -115,6 +115,7 @@
             </div>
 
             <!-- EVENTS GO HERE -->
+
             <div id="events" class="app-section" style="display:none;">
               <div id="events_main">
                     <div id="error" class="standard-inset" style="text-align:center;">
@@ -202,14 +203,20 @@
         <div id="admin" class="app-section" style="display:none;">
             <br><br><br><br>
             <div class="container">
+                <div id="admin-login-error" class="alert alert-danger" role="alert" style="display:none;">
+                    Could not login! Check your credentials.
+                </div>
+                <div id="admin-login-success" class="alert alert-success" role="alert" style="display:none;">
+                    You have successfully logged in as admin! Additional options will now appear throughout the interface.
+                </div>
                 <form id ="adminLogin">
                     <div class="form-group">
-                        <label for="admin-email">Email:</label>
-                        <input type="text" class="form-control" id="admin-email" placeholder="Username" name="admin-email">
+                        <label for="admin-email">Admin Email:</label>
+                        <input type="text" class="form-control" id="admin-email" placeholder="Email" name="admin-email">
                     </div>
                     <div class="form-group">
                         <label for="admin-password">Password:</label>
-                        <input type="password" class="form-control" id="admin-password" placeholder="Enter password" name="admin-password">
+                        <input type="password" class="form-control" id="admin-password" placeholder="Password" name="admin-password">
                     </div>
                     <div class="form-group text-right">
                     <input type="submit" value="Login" class="btn btn-default">

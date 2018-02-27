@@ -9,13 +9,24 @@ $("#adminLogin").submit((event) => {
     firebase.auth().signInWithEmailAndPassword(adminEmail, adminPassword)
     .then(function(user) {
         if (user) {
+            // login success
             console.log("admin login success!");
+            $("#admin-login-error").hide();
+            $("#adminLogin").hide();
+            $("#admin-login-success").show();
+        } else {
+            // login success, but user object (a weird edge case!)
+            console.log("logged in successfully, but we have no user object");
+            $("#admin-login-error").show();
+            $("#adminLogin").show();
+            $("#admin-login-success").hide();
         }
     })
     .catch(function(error) {
-        // Handle Errors here.
+        // the admin could not be logged in, show the error
         var errorCode = error.code;
         var errorMessage = error.message;
-        console.log(`there was an admin login error: ${errorCode}, ${errorMessage}`)
+        console.log(`there was an admin login error: ${errorCode}, ${errorMessage}`);
+        $("#admin-login-error").show();
       });
 });
