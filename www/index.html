@@ -128,7 +128,7 @@
             </div>
             <!-- INFO SECTION GOES HERE -->
             <div id="info" class="app-section" style="display:none;">
-                    <img id="info-image" src="img/big_logo.jpg" alt="logo">
+                    <img id="info-image" src="img/big_logo.jpg" alt="logo" align="center">
                     <div class="container info_main">
                         <div class="row">
                             <div class="col-sm-12 infOptions" id = "infoToVisions">
@@ -202,22 +202,21 @@
         <div id="admin" class="app-section" style="display:none;">
             <br><br><br><br>
             <div class="container">
-                <form>
+                <form id ="adminLogin">
                     <div class="form-group">
-                        <label for="username">Username:</label>
-                        <input type="text" class="form-control" id="username" placeholder="Username" name="username">
+                        <label for="admin-email">Email:</label>
+                        <input type="text" class="form-control" id="admin-email" placeholder="Username" name="admin-email">
                     </div>
                     <div class="form-group">
-                        <label for="pwd">Password:</label>
-                        <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd">
+                        <label for="admin-password">Password:</label>
+                        <input type="password" class="form-control" id="admin-password" placeholder="Enter password" name="admin-password">
                     </div>
                     <div class="form-group text-right">
-                    <button type="submit" id = "adminLogin" class="btn btn-default">Submit</button>
+                    <input type="submit" value="Login" class="btn btn-default">
                     </div>
                 </form>
             </div>
         </div>
-
 
         <div id="new-News" class = "articleTemplate" style="display:none;">
           <form id="getNewsContent" autocomplete="off">
@@ -379,6 +378,7 @@
         <script type="text/javascript" src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script>
         <script type="text/javascript" src="js/map/map.js"></script>
         <script type="text/javascript" src="js/database/firebase-setup.js"></script>
+        <script type="text/javascript" src="js/database/adminLogin.js"></script>
         <script type="text/javascript" src="js/navigation.js"></script>
         <script type="text/javascript" src="js/database/getArticles.js"></script>
         <script type="text/javascript" src="js/database/getEvents.js"></script>

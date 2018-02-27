@@ -6,8 +6,6 @@
 
 //stores current page for back button.
 var currentPage = 0;
-var admin=true;
-//var admin=false;
 
 document.addEventListener('deviceready', onDeviceReady, false);
 //document.querySelector("#eventsShowOnMap").addEventListener('click', showOnMap);
@@ -91,6 +89,7 @@ function showOnMap() {
   return false;
 }
 
+
 function displayPhotos() {
     $(".content").css("display", "block");
     $(".content").css({"margin-top": "3.0 em"});
@@ -108,6 +107,8 @@ function displayNews(){
     $(".content").css({"margin-top": "3.0 em"});
     tabItemSelected($("#news-icon"),$("#news"));
     updateTitle("");
+    let user = firebase.auth().currentUser;
+    let admin = (user.email !== undefined && user.email !== null);
     if (admin==true){
       $("#topnav-title").append(`
               <div class="input-group">
@@ -145,6 +146,8 @@ function displayEvents(){
     $("#new-Event").hide();
     tabItemSelected($("#events-icon"),$("#events"));
     updateTitle("");
+    let user = firebase.auth().currentUser;
+    let admin = (user.email !== undefined && user.email !== null);
     if (admin==true){
       $("#topnav-title").append(`
               <div class="input-group">
@@ -235,7 +238,7 @@ function displayAdminLogin(){
     $("#info-image").hide();
     $(".info-section").hide();
     $("#admin").show();
-    updateTitle("AdminLogin");
+    updateTitle("Admin Login");
     $("#topnav-title").prepend('<img id="backbutton" src="img/left-arrow.png" alt="back">');
     currentPage = 14;
     return false;

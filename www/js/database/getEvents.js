@@ -33,7 +33,8 @@ function eventsCallback(snapshot) {
         updateTitle(ev.title);
         //back button
         $("#topnav-title").prepend('<img id="backbutton" src="img/left-arrow.png" alt="back">');
-        var admin = true;
+        let user = firebase.auth().currentUser;
+        let admin = (user.email !== undefined && user.email !== null);
         if (admin==true){
           $("#topnav-title").append(`
             <div class="input-group">
