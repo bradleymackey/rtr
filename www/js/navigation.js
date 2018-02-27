@@ -90,8 +90,11 @@ function displayMap() {
 
 function showOnMap() {
   displayMap();
-  //$(".content").css("display", "none");
-//  currentPage = 13;
+  map.flyTo(
+  {
+    centre: [10, 10]
+  });
+  console.log(places);
   return false;
 }
 
@@ -278,7 +281,7 @@ function displayLeaflets(){
     $("#leaflets").show();
     $(".info_images").hide();
     updateTitle("Leaflets");
-    $("#topnav-title").prepend('<img id="backbutton" src="img/left-arrow.png" alt="back">');
+    showBackButton();
     currentPage = 11;
     return false;
 }
@@ -535,8 +538,8 @@ function displayNewsContentItem(){
 }*/
 
 function showBackButton(){
+  $("#topnav-title").prepend('<img id="backbutton" src="img/left-arrow.png" alt="back">');
   $("#backbutton").show();
-  $("#topnav-title").css({"padding-left":"90px"});
 }
 
 function hideBackButton(){
@@ -547,8 +550,6 @@ function hideBackButton(){
 function backButtonPressed() {
     // reset the admin login touch count
     count = 0;
-    //alert(currentPage);
-    console.log("back button pressed");
     //updateMapSize();
     switch(currentPage){
         case 0:
