@@ -33,7 +33,8 @@ function eventsCallback(snapshot) {
         updateTitle(ev.title);
         //back button
         $("#topnav-title").prepend('<img id="backbutton" src="img/left-arrow.png" alt="back">');
-        var admin = true;
+        let user = firebase.auth().currentUser;
+        let admin = (user.email !== undefined && user.email !== null);
         if (admin==true){
           $("#topnav-title").append('<img  id="addNewEditEvent" src="img/edit.png" align="right" height="27px" width="27px" hspace="6px" vspace="2px">');
         }

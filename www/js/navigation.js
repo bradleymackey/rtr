@@ -6,8 +6,6 @@
 
 //stores current page for back button.
 var currentPage = 0;
-var admin=true;
-//var admin=false;
 
 document.addEventListener('deviceready', onDeviceReady, false);
 //document.querySelector("#eventsShowOnMap").addEventListener('click', showOnMap);
@@ -95,6 +93,7 @@ function showOnMap() {
   return false;
 }
 
+
 function displayPhotos() {
 	$("#edit-Event").hide();
 	$("#new-Event").hide();
@@ -120,6 +119,8 @@ function displayNews(){
     $(".content").css({"margin-top": "3.0 em"});
     tabItemSelected($("#news-icon"),$("#news"));
     updateTitle("");
+    let user = firebase.auth().currentUser;
+    let admin = (user.email !== undefined && user.email !== null);
     if (admin==true){
       $("#topnav-title").append(`
               <div class="input-group">
@@ -161,10 +162,12 @@ function displayEvents(){
     $("#new-Event").hide();
     tabItemSelected($("#events-icon"),$("#events"));
     updateTitle("");
+    let user = firebase.auth().currentUser;
+    let admin = (user.email !== undefined && user.email !== null);
     if (admin==true){
       $("#topnav-title").append(`
               <div class="input-group">
-                  <input type="text" class="form-control" placeholder="Search News" style="height:34px">
+                  <input type="text" class="form-control" placeholder="Search Events" style="height:34px">
                   <img  id="addNewEvent" src="img/add.png" height="27px" width="27px" hspace="6px" vspace="2px">
               </div>`
       );
@@ -275,7 +278,7 @@ function displayAdminLogin(){
     $("#info-image").hide();
     $(".info-section").hide();
     $("#admin").show();
-    updateTitle("AdminLogin");
+    updateTitle("Admin Login");
     $("#topnav-title").prepend('<img id="backbutton" src="img/left-arrow.png" alt="back">');
     currentPage = 14;
     return false;
@@ -290,6 +293,7 @@ function newNews(){
   $("#news_main").hide();
   $("#new-Event").hide();
   $("#new-News").show();
+  $("#edit-Event").hide();
   updateTitle("New News Article");
   $("#topnav-title").prepend('<img id="backbutton" src="img/left-arrow.png" alt="back">');
   $("#newNewsPublish").click(function(){newsPublisher("#new-News");});
@@ -302,6 +306,7 @@ function newEvent(){
   $("#new-News").hide();
   $("#events_main").hide();
   $("#new-Event").show();
+  $("#edit-News").hide();
   updateTitle("New Event Creator");
   $("#topnav-title").prepend('<img id="backbutton" src="img/left-arrow.png" alt="back">');
   $("#newEventPublish").click(function(){eventPublisher("#new-Event");});
@@ -313,6 +318,8 @@ function editEvent(id){
   //info-main will change
   $("#event_detail").hide();
   $("#edit-Event").show();
+  $("#edit-News").hide();
+  $("#new-News").hide();
   updateTitle("Edit Event Detail");
   $("#topnav-title").prepend('<img id="backbutton" src="img/left-arrow.png" alt="back">');
   currentPage = 5;
@@ -350,6 +357,8 @@ function editNews(id){
   $("#news-article").hide();
   $("#new-News").hide();
   $("#edit-News").show();
+  $("#edit-Event").hide();
+  $("#new-Event").hide();
   $("#topnav-title").prepend('<img id="backbutton" src="img/left-arrow.png" alt="back">');
   currentPage = 3;
   updateTitle("Edit News Article");

@@ -128,7 +128,7 @@
             </div>
             <!-- INFO SECTION GOES HERE -->
             <div id="info" class="app-section" style="display:none;">
-                    <img id="info-image" src="img/big_logo.jpg" alt="logo">
+                    <img id="info-image" src="img/big_logo.jpg" alt="logo" align="center">
                     <div class="container info_main">
                         <div class="row">
                             <div class="col-sm-12 infOptions" id = "infoToVisions">
@@ -202,22 +202,21 @@
         <div id="admin" class="app-section" style="display:none;">
             <br><br><br><br>
             <div class="container">
-                <form>
+                <form id ="adminLogin">
                     <div class="form-group">
-                        <label for="username">Username:</label>
-                        <input type="text" class="form-control" id="username" placeholder="Username" name="username">
+                        <label for="admin-email">Email:</label>
+                        <input type="text" class="form-control" id="admin-email" placeholder="Username" name="admin-email">
                     </div>
                     <div class="form-group">
-                        <label for="pwd">Password:</label>
-                        <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd">
+                        <label for="admin-password">Password:</label>
+                        <input type="password" class="form-control" id="admin-password" placeholder="Enter password" name="admin-password">
                     </div>
                     <div class="form-group text-right">
-                    <button type="submit" id = "adminLogin" class="btn btn-default">Submit</button>
+                    <input type="submit" value="Login" class="btn btn-default">
                     </div>
                 </form>
             </div>
         </div>
-
 
         <div id="new-News" class = "articleTemplate" style="display:none;">
           <form id="getNewsContent" autocomplete="off">
@@ -225,15 +224,15 @@
           <h6>Title:<h6>
           <input type = "text", class="form-control", placeholder = "Title", id = "newsTitle"><br>
           <h6>Opening text component:</h6>
-          <input type = "text", class="form-control", id = "newsText1", placeholder = "Article Content"><br>
+          <textarea style="width:100%" rows="10" placeholder="Article Content" id="newsText1" class="form-control"></textarea><br>
           <h6>First Image</h6>
           <input type = "text", class="form-control", id = "newsImage1", placeholder = "HTML Link for article image"><br>
           <h6>Middle text component:</h6>
-          <input type = "text", class="form-control", id = "newsText2", placeholder = "Article Content"><br>
+          <textarea style="width:100%" rows="10" placeholder="Article Content" id="newsText2" class="form-control"></textarea><br>
           <h6>Second Image</h6>
           <input type = "text", class="form-control", id = "newsImage2", placeholder = "HTML Link for article image"><br>
           <h6>Final text component:</h6>
-          <input type = "text", class="form-control", id = "newsText3", placeholder = "Article Content"><br>
+          <textarea style="width:100%" rows="10" placeholder="Article Content" id="newsText3" class="form-control"></textarea><br>
           <h6>Bottom Image</h6>
           <input type = "text", class="form-control", id = "newsImage3", placeholder = "HTML Link for article image"><br>
           <h6>Article ID:</h6>
@@ -249,15 +248,15 @@
           <h6>Title:<h6>
           <input type = "text" class="form-control" id = "editNewsTitle" placeholder = "Title"><br>
           <h6>Opening text component:</h6>
-          <input type = "text", class="form-control", id = "editNewsText1", placeholder = "Article Content"><br>
+          <textarea style="width:100%" rows="10" placeholder="Article Content" id="editNewsText1" class="form-control"></textarea><br>
           <h6>First Image</h6>
           <input type = "text", class="form-control", id = "editNewsImage1", placeholder = "HTML Link for article image"><br>
           <h6>Middle text component:</h6>
-          <input type = "text", class="form-control", id = "editNewsText2", placeholder = "Article Content"><br>
+          <textarea style="width:100%" rows="10" placeholder="Article Content" id="editNewsText2" class="form-control"></textarea><br>
           <h6>Second Image</h6>
           <input type = "text", class="form-control", id = "editNewsImage2", placeholder = "HTML Link for article image"><br>
           <h6>Final text component:</h6>
-          <input type = "text", class="form-control", id = "editNewsText3", placeholder = "Article Content"><br>
+          <textarea style="width:100%" rows="10" placeholder="Article Content" id="editNewsText3" class="form-control"></textarea><br>
           <h6>Bottom Image</h6>
           <input type = "text", class="form-control", id = "editNewsImage3", placeholder = "HTML Link for article image"><br>
           <h6>Article ID:</h6>
@@ -274,7 +273,7 @@
               <h6>Title:</h6>
               <input type = "text", class="form-control", placeholder = "Title", id="eventTitle"><br>
               <h6>Content/Text:</h6>
-              <input type = "text", class="form-control", placeholder = "Article Content", id="eventContent"><br>
+              <textarea style="width:100%" rows="10" placeholder="Article Content" id="eventContent" class="form-control"></textarea><br>
               <h6>Image URL:</h6>
               <input type = "text", class="form-control", placeholder = "HTML Link for event image", id="eventImage"><br>
               <h6>Contact Information:</h6>
@@ -299,7 +298,7 @@
               <h6>Title:</h6>
               <input type = "text", class="form-control" id="editEventTitle"><br>
               <h6>Content/Text:</h6>
-              <input type = "text", class="form-control", id="editEventContent"><br>
+              <textarea style="width:100%" rows="10" placeholder="Article Content" id="editEventContent" class="form-control"></textarea><br>
               <h6>Image URL:</h6>
               <input type = "text", class="form-control", id="editEventImage"><br>
               <h6>Contact Information:</h6>
@@ -379,6 +378,7 @@
         <script type="text/javascript" src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script>
         <script type="text/javascript" src="js/map/map.js"></script>
         <script type="text/javascript" src="js/database/firebase-setup.js"></script>
+        <script type="text/javascript" src="js/database/adminLogin.js"></script>
         <script type="text/javascript" src="js/navigation.js"></script>
         <script type="text/javascript" src="js/database/getArticles.js"></script>
         <script type="text/javascript" src="js/database/getEvents.js"></script>
