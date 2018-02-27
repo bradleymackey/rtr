@@ -49,7 +49,9 @@ function openCamera() {
 
     navigator.camera.getPicture(function cameraSuccess(imageUri) {
 
-        displayImage(imageUri);
+        // upload the image
+        uploadImage(imageUri);
+        console.log("upload call done");
 
     }, function cameraError(error) {
         console.debug("Unable to obtain picture: " + error, "app");
@@ -79,9 +81,7 @@ function openFilePicker() {
 
     navigator.camera.getPicture(function cameraSuccess(imageUri) {
 
-        // Do something
-        displayImage(imageUri);
-        console.log("uploading...");
+        // upload the image
         uploadImage(imageUri);
         console.log("upload call done");
 
@@ -92,33 +92,43 @@ function openFilePicker() {
 
 
 function uploadImage(imageUri) {
+
     let user = firebase.auth().currentUser;
     if (user === undefined || user === null) {
         // the user is not logged in
         alert('Could not upload image! Make sure you are connected to the internet.');
         return;
     }
-    let uuid_string = UUIDjs.create(4).toString();
-    let imageRef = storageRef.child(`media/${user.uid}/images/${uuid_string}.jpg`);
-    // Simulate a call to Dropbox or other service that can
-    // return an image as an ArrayBuffer.
-    var xhr = new XMLHttpRequest();
     
-    xhr.open( "GET", imageUri, true );
+    window.resolveLocalFileSystemURL(imageUri, function success(fileEntry) {
+        console.log("got file: " + fileEntry.fullPath);
+        let cordovaURL = fileEntry.toInternalURL();
 
-    // Ask for the result as an ArrayBuffer.
-    xhr.responseType = "arraybuffer";
+        // Simulate a call to Dropbox or other service that can
+        // return an image as an ArrayBuffer.
+        var xhr = new XMLHttpRequest();
+        
+        xhr.open( "GET", cordovaURL, true );
 
-    xhr.onload = function( e ) {
-        // Obtain a blob: URL for the image data.
-        var arrayBufferView = new Uint8Array( this.response );
-        var blob = new Blob( [ arrayBufferView ], { type: "image/jpeg" } );
-        storageRef.put(blob).then(function (snapshot) {
-            console.log("upload success");
-        }).catch(function(error) {
-            console.log("upload error",error);
-        });
-    }
+        // Ask for the result as an ArrayBuffer.
+        xhr.responseType = "arraybuffer";
 
-    xhr.send();
+        xhr.onload = function( e ) {
+            // Obtain a blob: URL for the image data.
+            var arrayBufferView = new Uint8Array( this.response );
+            var blob = new Blob( [ arrayBufferView ], { type: "image/jpeg" } );
+            let uuid_string = UUIDjs.create(4).toString();
+            let imageRef = storageRef.child(`media/${user.uid}/images/${uuid_string}.jpg`);
+            imageRef.put(blob).then(function (snapshot) {
+                console.log("upload success");
+            }).catch(function(error) {
+                console.log("upload error",error);
+            });
+        }
+
+        xhr.send();
+
+
+    });
+    
 }

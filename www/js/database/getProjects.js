@@ -47,13 +47,13 @@ function projectsCallback(snapshot) {
         // create a DOM element for the marker
         var el = document.createElement('div');
         el.className = 'marker';
-        el.style.backgroundImage = 'url(../../img/place.png)';
+        el.style.backgroundImage = 'url(http://via.placeholder.com/30x30)';
         el.style.width = marker.properties.icon_size[0] + 'px';
         el.style.height = marker.properties.icon_size[1] + 'px';
 
         var layerID = marker.properties.title.toLowerCase();
-        // becauses spaces would mess up the id
-        var uniqueName = layerID.replace(" ", "-");
+        // becauses spaces would mess up the id, replace all occurences with a dash
+        var uniqueName = layerID.replace(/ /g, "-");
         el.id = uniqueName;
 
         if (!map.getLayer(layerID)) {
@@ -125,9 +125,10 @@ function projectsCallback(snapshot) {
         // there is a query, so hide everything, then decide which of them to show
         $(".marker").hide();
         // because this is how the ids are formatted
-        var valueForMarker = value.replace(" ", "-");
+        var valueForMarker = value.replace(/ /g, "-");
+        console.log(valueForMarker)
         // show only values the user has searched for
-        $( "div[class*='marker'][id*='" + value + "']" ).show();
+        $( "div[class*='marker'][id*='" + valueForMarker + "']" ).show();
     });
 }
 
