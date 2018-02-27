@@ -46,11 +46,7 @@ function articlesCallback(snapshot) {
       let user = firebase.auth().currentUser;
       let admin = (user.email !== undefined && user.email !== null);
       if (admin==true){
-        $("#topnav-title").append(`
-          <div class="input-group">
-            <img  id="editNews" src="img/edit.png" height="27px" width="27px" hspace="6px" vspace="2px">
-          </div>`
-        );
+        $("#topnav-title").append('<img  id="editNews" src="img/edit.png" align = "right" height="27px" width="27px" hspace="6px" vspace="2px">');
       }
       $("#topnav-title").on("click","#editNews", function(){editNews(eid);});
       $("#new-News").hide();
