@@ -79,7 +79,7 @@ function displayMap() {
     updateTitle("");
     $("#topnav-title").append(`
       <div class="input-group">
-        <input type="text" class="form-control" placeholder="Search Map"style="height:34px">
+        <input type="text" class="form-control" id="search-bar" placeholder="Search Map"style="height:34px">
       </div>`
     );
     hideBackButton();
@@ -130,7 +130,7 @@ function displayNews(){
     if (admin==true){
       $("#topnav-title").append(`
               <div class="input-group">
-                  <input type="text" class="form-control" placeholder="Search News" style="height:34px">
+                  <input type="text" class="form-control" id="search-bar" placeholder="Search News" style="height:34px">
                   <img  id="addNewNews" src="img/add.png" height="27px" width="27px" hspace="6px" vspace="2px">
               </div>`
       );
@@ -138,7 +138,7 @@ function displayNews(){
     else {
       $("#topnav-title").append(`
             <div class="input-group">
-                <input type="text" class="form-control" placeholder="Search News" style="height:34px">
+                <input type="text" class="form-control" id="search-bar"  placeholder="Search News" style="height:34px">
             </div>`
       );
     }
@@ -175,7 +175,7 @@ function displayEvents(){
     if (admin==true){
       $("#topnav-title").append(`
               <div class="input-group">
-                  <input type="text" class="form-control" placeholder="Search Events" style="height:34px">
+                  <input type="text" class="form-control" id="search-bar"  placeholder="Search Events" style="height:34px">
                   <img  id="addNewEvent" src="img/add.png" height="27px" width="27px" hspace="6px" vspace="2px">
               </div>`
       );
@@ -183,7 +183,7 @@ function displayEvents(){
     else{
       $("#topnav-title").append(`
             <div class="input-group">
-              <input type="text" class="form-control" placeholder="Search Events" style="height:34px">
+              <input type="text" class="form-control" id="search-bar"  placeholder="Search Events" style="height:34px">
             </div>`
       );
     }
