@@ -75,6 +75,70 @@ function volunteerCallback(snapshot) {
           $("#email").val("");
         }
         $("#output").html(outputText);
+        handleClientLoad();
+        
+
       });
   }
 
+//email
+var CLIENT_ID = "24690165291-jvo2hkq9df0hlpaflrpjrp6qa387iboa.apps.googleusercontent.com";
+var API_KEY = "AIzaSyCYGusGkn_i0_wZDCnmg8KmIjJ70p85TD4";
+var SCOPES = "https://gooogleapis.com/auth.gmail.send";
+function sendEmail()
+{
+  console.log("sendEmail");
+  return;
+}
+
+function handleClientLoad()
+{
+  console.log("handleClientLoad");
+  gapi.client.setApiKey(API_KEY);
+  window.setTimeout(checkAuth, 1);
+}
+
+function checkAuth()
+{
+  console.log("checkAuth");
+  gapi.auth.authorize(
+  {
+    client_id: CLIENT_ID,
+    scope: SCOPES,
+    immediate: true
+  }, handleAuthResult);
+}
+
+function handleAuthResult(authResult)
+{
+  console.log("handleAuthResult");
+  if(authResult && !authResult.error)
+  {
+    loadGmailApi();
+  }
+  else
+  {
+    console.log("ERROR");
+  }
+}
+
+function loadGmailApi()
+{
+  console.log("loadGmailApi");
+  gapi.client.load("gmail", "v1", sendEmail);
+}
+
+function sendMessage(userId, email, callback)
+{
+  console.log("sendMessage");
+  var base64EncodedEmail = Base64.encodeURI(email);
+  var request = gapi.client.gmail.users.message.send(
+  {
+    "userId": userId,
+    "resource":
+    {
+      "raw": base64EncodedEmail
+    }
+  });
+  request.execute(callback);
+}
