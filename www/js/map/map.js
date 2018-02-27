@@ -21,9 +21,11 @@ document.addEventListener("DOMContentLoaded", function(event) {
     }));
 });
 
+
+
   document.addEventListener("deviceready", function(event) {
     navigator.geolocation.getCurrentPosition(function(position) {
         console.log("getting position")
      });
-    
+
   }, false);

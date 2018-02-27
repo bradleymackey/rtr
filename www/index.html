@@ -52,9 +52,9 @@
             <!-- NAVIGATION BAR -->
             <div class="topnav">
                 <h1 id="topnav-title">
-                    <img id="backbutton" src="img/left-arrow.png" alt="image" style="display:none">
+                <img id="backbutton" src="img/left-arrow.png" alt="image" style="display:none">
                   <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Search Map">
+                    <input type="text" class="form-control" id="search-bar" placeholder="Search Map">
                   </div>
                 </h1>
             </div>
@@ -115,7 +115,8 @@
             </div>
 
             <!-- EVENTS GO HERE -->
-            <div id="events" class="app-section content" style="display:none;">
+
+            <div id="events" class="app-section" style="display:none;">
               <div id="events_main">
                     <div id="error" class="standard-inset" style="text-align:center;">
                         <h1 style="text-align:center;">Loading...</h1>
@@ -128,7 +129,7 @@
             </div>
             <!-- INFO SECTION GOES HERE -->
             <div id="info" class="app-section" style="display:none;">
-                    <img id="info-image" src="img/big_logo.jpg" alt="logo">
+                    <img id="info-image" src="img/big_logo.jpg" alt="logo" align="center">
                     <div class="container info_main">
                         <div class="row">
                             <div class="col-sm-12 infOptions" id = "infoToVisions">
@@ -202,22 +203,27 @@
         <div id="admin" class="app-section" style="display:none;">
             <br><br><br><br>
             <div class="container">
-                <form>
+                <div id="admin-login-error" class="alert alert-danger" role="alert" style="display:none;">
+                    Could not login! Check your credentials.
+                </div>
+                <div id="admin-login-success" class="alert alert-success" role="alert" style="display:none;">
+                    You have successfully logged in as admin! Additional options will now appear throughout the interface.
+                </div>
+                <form id ="adminLogin">
                     <div class="form-group">
-                        <label for="username">Username:</label>
-                        <input type="text" class="form-control" id="username" placeholder="Username" name="username">
+                        <label for="admin-email">Admin Email:</label>
+                        <input type="text" class="form-control" id="admin-email" placeholder="Email" name="admin-email">
                     </div>
                     <div class="form-group">
-                        <label for="pwd">Password:</label>
-                        <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd">
+                        <label for="admin-password">Password:</label>
+                        <input type="password" class="form-control" id="admin-password" placeholder="Password" name="admin-password">
                     </div>
                     <div class="form-group text-right">
-                    <button type="submit" id = "adminLogin" class="btn btn-default">Submit</button>
+                    <input type="submit" value="Login" class="btn btn-default">
                     </div>
                 </form>
             </div>
         </div>
-
 
         <div id="new-News" class = "articleTemplate" style="display:none;">
           <form id="getNewsContent" autocomplete="off">
@@ -380,11 +386,13 @@
         <script src="https://apis.google.com/js/client.js"></script>
         <script type="text/javascript" src="js/map/map.js"></script>
         <script type="text/javascript" src="js/database/firebase-setup.js"></script>
+        <script type="text/javascript" src="js/database/adminLogin.js"></script>
         <script type="text/javascript" src="js/navigation.js"></script>
         <script type="text/javascript" src="js/database/getArticles.js"></script>
         <script type="text/javascript" src="js/database/getEvents.js"></script>
         <script type="text/javascript" src="js/database/getProjects.js"></script>
         <script type="text/javascript" src="js/database/getVolunteerOps.js"></script>
+		<script type="text/javascript" src="js/database/writingTo.js"></script>
         <script type="text/javascript" src="js/core/uuid.js"></script>
         <script type="text/javascript" src="js/camera.js"></script>
         <script type="text/javascript" src="js/core/bootstrap.bundle.js"></script>

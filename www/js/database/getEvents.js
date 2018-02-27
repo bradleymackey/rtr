@@ -2,7 +2,7 @@
 // data is returned in a value listener
 
 function eventsCallback(snapshot) {
-
+    console.log("eventsCallback called");
      const events = snapshot.val();
 
      // if we cannot get the events from the database for some reason, display an error message to the user
@@ -33,13 +33,10 @@ function eventsCallback(snapshot) {
         updateTitle(ev.title);
         //back button
         $("#topnav-title").prepend('<img id="backbutton" src="img/left-arrow.png" alt="back">');
-        var admin = true;
+        let user = firebase.auth().currentUser;
+        let admin = (user.email !== undefined && user.email !== null);
         if (admin==true){
-          $("#topnav-title").append(`
-            <div class="input-group">
-              <img  id="addNewEditEvent" src="img/edit.png" height="27px" width="27px" hspace="6px" vspace="2px">
-            </div>`
-          );
+          $("#topnav-title").append('<img  id="addNewEditEvent" src="img/edit.png" align="right" height="27px" width="27px" hspace="6px" vspace="2px">');
         }
         $("#topnav-title").on("click","#addNewEditEvent", function(){editEvent(eid);});
         let eventDetail = '';
