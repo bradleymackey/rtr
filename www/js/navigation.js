@@ -69,6 +69,14 @@ $("#info-image").click(function(){
 function displayMap() {
     // reset the admin login touch count
     count = 0;
+    // show all map markers that may have been hidden during the last search
+    $(".marker").show();
+    if (layerIDs !== undefined && layerIDs !== null) {
+        // make all the labels for projects visible that may have been hidden during the last search
+        layerIDs.forEach(function(layerID) {
+            map.setLayoutProperty(layerID, 'visibility', 'visible');
+        });
+    }
 	$("#edit-Event").hide();
 	$("#new-Event").hide();
 	$("#edit-News").hide();
@@ -79,7 +87,7 @@ function displayMap() {
     updateTitle("");
     $("#topnav-title").append(`
       <div class="input-group">
-        <input type="text" class="form-control" placeholder="Search Map"style="height:34px">
+        <input type="text" class="form-control" id="search-bar" placeholder="Search Map"style="height:34px">
       </div>`
     );
     hideBackButton();
@@ -130,7 +138,7 @@ function displayNews(){
     if (admin==true){
       $("#topnav-title").append(`
               <div class="input-group">
-                  <input type="text" class="form-control" placeholder="Search News" style="height:34px">
+                  <input type="text" class="form-control" id="search-bar" placeholder="Search News" style="height:34px">
                   <img  id="addNewNews" src="img/add.png" height="27px" width="27px" hspace="6px" vspace="2px">
               </div>`
       );
@@ -138,7 +146,7 @@ function displayNews(){
     else {
       $("#topnav-title").append(`
             <div class="input-group">
-                <input type="text" class="form-control" placeholder="Search News" style="height:34px">
+                <input type="text" class="form-control" id="search-bar"  placeholder="Search News" style="height:34px">
             </div>`
       );
     }
@@ -175,7 +183,7 @@ function displayEvents(){
     if (admin==true){
       $("#topnav-title").append(`
               <div class="input-group">
-                  <input type="text" class="form-control" placeholder="Search Events" style="height:34px">
+                  <input type="text" class="form-control" id="search-bar"  placeholder="Search Events" style="height:34px">
                   <img  id="addNewEvent" src="img/add.png" height="27px" width="27px" hspace="6px" vspace="2px">
               </div>`
       );
@@ -183,7 +191,7 @@ function displayEvents(){
     else{
       $("#topnav-title").append(`
             <div class="input-group">
-              <input type="text" class="form-control" placeholder="Search Events" style="height:34px">
+              <input type="text" class="form-control" id="search-bar"  placeholder="Search Events" style="height:34px">
             </div>`
       );
     }
@@ -497,8 +505,8 @@ function eventVerifyPublish(prevPage, id, title, content, image, contact,locatio
   $(prevPage).hide();
   $("#verifyPublish").show();
   updateTitle("Verify Publish");
-  $("#confirm").click(function(){writeEvents(id, title, content, image, contact,location1, location2, book_req);});
-  $("#cancel").click(function(){repopulateEvent(id, title, content, image, contact,location1, location2, book_req);});
+  $("#confirm").click(function(){writeEvents(id, title, content, image, contact,location1, location2, book_req);$("#verifyPublish").hide();});
+  $("#cancel").click(function(){repopulateEvent(id, title, content, image, contact,location1, location2, book_req);$("#verifyPublish").hide();});
   return false;
 }
 
@@ -507,8 +515,8 @@ function newsVerifyPublish(prevPage, id,title,text1,image1,text2,image2,text3,im
   $(prevPage).hide();
   $("#verifyPublish").show();
   updateTitle("Verify Publish");
-  $("#confirm").click(function(){writeNews(id,title,text1,image1,text2,image2,text3,image3);});
-  $("#cancel").click(function(){repopulateNews(id,title,text1,image1,text2,image2,text3,image3)});
+  $("#confirm").click(function(){writeNews(id,title,text1,image1,text2,image2,text3,image3);$("#verifyPublish").hide();});
+  $("#cancel").click(function(){repopulateNews(id,title,text1,image1,text2,image2,text3,image3);$("#verifyPublish").hide();});
   return false;
 }
 
@@ -607,4 +615,5 @@ function tabItemSelected($tabItem,$section) {
 	$("#new-Event").hide();
 	$("#edit-News").hide();
 	$("#new-News").hide();
+	$("#verifyPublish").hide();
 }
