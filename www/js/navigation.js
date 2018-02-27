@@ -291,8 +291,7 @@ function editEvent(id){
   var bool = snapshot.child("booking_required").val();
   if (bool == true){
     bool = "TRUE";
-  }
-  else{
+  } else {
     bool = "FALSE";
   }
   $("#editEventTitle").val(title);
