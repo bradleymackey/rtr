@@ -24,7 +24,7 @@ function projectsCallback(snapshot) {
                 more_info: data[i].more_info,
                 image: data[i].image,
                 tag: data[i].tag,
-                icon_size: [34,34]
+                icon_size: [30,30]
             },
             geometry: {
                 type: "Point",
@@ -51,7 +51,7 @@ function projectsCallback(snapshot) {
         el.style.width = marker.properties.icon_size[0] + 'px';
         el.style.height = marker.properties.icon_size[1] + 'px';
 
-        var layerID = "poi-" + marker.properties.title;
+        var layerID = marker.properties.title.toLowerCase();
 
         if (!map.getLayer(layerID)) {
             map.addLayer({
@@ -106,7 +106,7 @@ function projectsCallback(snapshot) {
             .addTo(map);
     });
 
-    $("#search-bar").on('keyup', '.topnav', function(e) {
+    $(".topnav").on('keyup', '#search-bar', function(e) {
         console.log("keyup");
         // If the input value matches a layerID set
         // it's visibility to 'visible' or else hide it.
