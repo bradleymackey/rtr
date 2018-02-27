@@ -25,5 +25,5 @@ document.addEventListener("DOMContentLoaded", function(event) {
     navigator.geolocation.getCurrentPosition(function(position) {
         console.log("getting position")
      });
-    
+
   }, false);

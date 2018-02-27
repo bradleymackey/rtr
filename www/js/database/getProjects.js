@@ -57,9 +57,11 @@ function projectsCallback(snapshot) {
             console.log(newHtml);
             $(".app-section").hide();
             $("#map.content").css("display", "block");
-          //  $("#project-detail").empty();
-          //  $("#project-detail").html(newHtml);
+            $("#project-detail").empty();
+            $("#project-detail").html(newHtml);
             $(".content").css("display", "block");
+            $("#events_main").hide();
+            //WHY?
             $("#project-detail").show();
         });
 
