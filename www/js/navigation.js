@@ -67,6 +67,8 @@ $("#info-image").click(function(){
 
 
 function displayMap() {
+    // reset the admin login touch count
+    count = 0;
 	$("#edit-Event").hide();
 	$("#new-Event").hide();
 	$("#edit-News").hide();
@@ -95,6 +97,8 @@ function showOnMap() {
 
 
 function displayPhotos() {
+    // reset the admin login touch count
+    count = 0;
 	$("#edit-Event").hide();
 	$("#new-Event").hide();
 	$("#edit-News").hide();
@@ -110,6 +114,8 @@ function displayPhotos() {
 }
 
 function displayNews(){
+    // reset the admin login touch count
+    count = 0;
     // display content again (because map hides it)
 	$("#edit-Event").hide();
 	$("#new-Event").hide();
@@ -149,6 +155,8 @@ function displayNews(){
 }
 
 function displayEvents(){
+    // reset the admin login touch count
+    count = 0;
 	$("#edit-Event").hide();
 	$("#new-Event").hide();
 	$("#edit-News").hide();
@@ -206,6 +214,8 @@ function displayInfo(){
 }
 
 function displayVisions(){
+    // reset the admin login touch count
+    count = 0;
 	$("#edit-Event").hide();
 	$("#new-Event").hide();
 	$("#edit-News").hide();
@@ -221,6 +231,8 @@ function displayVisions(){
 }
 
 function displayVolunteer(){
+    // reset the admin login touch count
+    count = 0;
 	$("#edit-Event").hide();
 	$("#new-Event").hide();
 	$("#edit-News").hide();
@@ -240,6 +252,8 @@ function displayVolunteer(){
 }
 
 function displayVolunteerSignup(){
+    // reset the admin login touch count
+    count = 0;
 	$("#edit-Event").hide();
 	$("#new-Event").hide();
 	$("#edit-News").hide();
@@ -253,6 +267,8 @@ function displayVolunteerSignup(){
 }
 
 function displayLeaflets(){
+    // reset the admin login touch count
+    count = 0;
 	$("#edit-Event").hide();
 	$("#new-Event").hide();
 	$("#edit-News").hide();
@@ -285,6 +301,8 @@ function displayAdminLogin(){
 }
 
 function newNews(){
+    // reset the admin login touch count
+    count = 0;
   //first line will have to be adapted for the precursor page
   $("#edit-Event").hide();
   $("#new-Event").hide();
@@ -302,6 +320,8 @@ function newNews(){
 }
 
 function newEvent(){
+    // reset the admin login touch count
+    count = 0;
   //first line will have to be adapted for the precursor page
   $("#new-News").hide();
   $("#events_main").hide();
@@ -315,6 +335,8 @@ function newEvent(){
 }
 
 function editEvent(id){
+    // reset the admin login touch count
+    count = 0;
   //info-main will change
   $("#event_detail").hide();
   $("#edit-Event").show();
@@ -332,11 +354,11 @@ function editEvent(id){
   var contact = snapshot.child("contact").val();
   var location1 = snapshot.child("location_1").val();
   var location2 = snapshot.child("location_2").val();
-  var bool = snapshot.child("booking_required").val();
-  if (bool == true){
-    bool = "TRUE";
+  var bookingRequired = snapshot.child("booking_required").val();
+  if (bookingRequired == true){
+    bookingRequired = "TRUE";
   } else {
-    bool = "FALSE";
+    bookingRequired = "FALSE";
   }
   $("#editEventTitle").val(title);
   $("#editEventContent").val(content);
@@ -345,12 +367,14 @@ function editEvent(id){
   $("#editEventLoc1").val(location1);
   $("#editEventLoc2").val(location2);
   $("#editEventID").val(id);
-  $("#bookreq").val(bool);
+  $("#bookreq").bookingRequired(bookingRequired);
 });
   return false;
 }
 
 function editNews(id){
+    // reset the admin login touch count
+    count = 0;
   //info-main will change
   $("#news_main").hide();
   $("#news-article").hide();
@@ -521,6 +545,8 @@ function hideBackButton(){
 }
 
 function backButtonPressed() {
+    // reset the admin login touch count
+    count = 0;
     //alert(currentPage);
     console.log("back button pressed");
     //updateMapSize();
