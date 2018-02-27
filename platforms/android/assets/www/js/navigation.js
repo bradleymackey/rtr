@@ -8,6 +8,7 @@
 var currentPage = 0;
 
 document.addEventListener('deviceready', onDeviceReady, false);
+//document.querySelector("#eventsShowOnMap").addEventListener('click', showOnMap);
 
 function onDeviceReady() {
     // ready to use device APIs
@@ -32,6 +33,9 @@ $("#infoToVolunteer").click(displayVolunteer);
 
 $("#infoToLeaflets").click(displayLeaflets);
 
+$("#eventsShowOnMap").click(showOnMap);
+//$(".event_b").click(console.log("button clicked"));
+//document.getElementById("#eventsShowOnMap").onclick = console.log('button clicked');
 //show event detail
 //$("#events .content-item").click(displayEventContentItem);
 
@@ -42,6 +46,15 @@ $("#volunteer-ops .content-item").click(displayVolunteerSignup);
 $("#backbutton").click(backButtonPressed);
 
 $("#topnav-title").on("click", "#backbutton", backButtonPressed);
+
+var count = 0;
+$("#info-image").click(function(){
+    count += 1;
+    if (count === 5){
+        displayAdmin();
+        count = 0;
+    }
+});
 
 
 function displayMap() {
@@ -58,6 +71,13 @@ function displayMap() {
     //updateMapSize();
     currentPage = 0;
     return false;
+}
+
+function showOnMap() {
+  console.log("button clicked");
+  //$(".content").css("display", "none");
+//  currentPage = 13;
+  return false;
 }
 
 function displayPhotos() {
@@ -121,6 +141,7 @@ function displayInfo(){
     //changes margin so that there isnt a space between navbar and logo
     $(".content").css({"margin-top": "4.3 em"});
     $(".info-section").hide();
+    $("#info-image").show();
     $(".info_main").show();
     tabItemSelected($("#info-icon"),$("#info"));
     updateTitle("Information");
@@ -134,7 +155,7 @@ function displayVisions(){
     $(".container").hide();
     $("#visions-aims").show();
     updateTitle("Visions and Aims");
-    $("#topnav-title").prepend('<img id="backbutton" src="img/backbutton.png" alt="back">');  
+    $("#topnav-title").prepend('<img id="backbutton" src="img/left-arrow.png" alt="back">');
     currentPage = 8;
     return false;
 }
@@ -148,7 +169,7 @@ function displayVolunteer(){
     $("#volunteer_detail").hide();
     $(".info_images").hide();
     updateTitle("Volunteer Opportunities");
-    $("#topnav-title").prepend('<img id="backbutton" src="img/backbutton.png" alt="back">');    
+    $("#topnav-title").prepend('<img id="backbutton" src="img/left-arrow.png" alt="back">');
     //showBackButton();
     currentPage = 9;
     return false;
@@ -169,8 +190,20 @@ function displayLeaflets(){
     $("#leaflets").show();
     $(".info_images").hide();
     updateTitle("Leaflets");
-    $("#topnav-title").prepend('<img id="backbutton" src="img/backbutton.png" alt="back">');  
+    $("#topnav-title").prepend('<img id="backbutton" src="img/left-arrow.png" alt="back">');
     currentPage = 11;
+    return false;
+}
+
+function displayAdmin(){
+    //changes margin so that there isnt a space between navbar and logo
+    //$(".content").css({"margin-top": "3.0 em"});
+    $(".info_main").hide();
+    $("#info-image").hide();
+    $("#admin").show();
+    updateTitle("AdminLogin");
+    $("#topnav-title").prepend('<img id="backbutton" src="img/left-arrow.png" alt="back">');
+    currentPage = 12;
     return false;
 }
 
@@ -181,7 +214,7 @@ function displayEventContentItem(){
     $("#event_detail").show();
     updateTitle("Event Detail");
     //back button
-    $("#topnav-title").prepend('<img id="backbutton" src="img/backbutton.png" alt="back">');
+    $("#topnav-title").prepend('<img id="backbutton" src="img/left-arrow.png" alt="back">');
     currentPage = 6;
     return false;
 }*/

@@ -134,6 +134,11 @@ h1 {
     transform: translate3d(0,0,0);
 }
 
+.listed_item {
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+
 .news_item:active{
     background-color: #bbc1cc;
     /* force gpu acceleration to prevent iOS glitch */
@@ -146,10 +151,9 @@ h1 {
     margin-right: 0px;
     width: 100%;
     object-fit: cover;
-    max-height: 150px;
+    max-height: 200px;
     text-align: center;
 }
-
 
 
 .event_item img {

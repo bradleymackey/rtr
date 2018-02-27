@@ -15,8 +15,8 @@ function volunteerCallback(snapshot) {
       // MAIN LIST OF VOLUNTEER OPPORTUNITIES
       let volInList = '';
       $.each(data, function(i){
-            volInList+= "<div id="+i+" class='vol_item'><img class='volunteer-image' src="+data[i].image_1+" alt='image'>"
-            volInList+= "<h2 class='list standard-inset' id="+i+">"+data[i].title+"</h2>"
+            volInList+= "<div id="+i+" class='vol_item listed_item'><img class='volunteer-image' src="+data[i].image_1+" alt='image'>"
+            volInList+= "<h3 class='list standard-inset' id="+i+">"+data[i].title+"</h3>"
             //volInList+= "<p class='detail standard-inset'>"+data[i].content+"</p></br></div>"
             volInList+= "</br></div>"
       });
@@ -35,9 +35,11 @@ function volunteerCallback(snapshot) {
         opDetail+= '<img src='+op.image_1+' alt="image"><div style="padding: 15px;">';
         opDetail+= '<h1 style="color: #2dccd3; text-align: left;">'+op.title+'</h1>';
         opDetail+= '<p class="detail">'+op.content+'</p></div>';
+        opDetail+= '<div id="signup-form"><h2>Signup</h2>';
         opDetail+= '<form><input type="text" name="forename" placeholder="Forename"><br>';
         opDetail+= '<input type="text" name="surname" placeholder="Surname"><br>';
-        opDetail+= '<input type="text" name="email" placeholder="Email"></form>';
+        opDetail+= '<input type="text" name="email" placeholder="Email">'
+        opDetail+= '<button type="button" class="event_b">Submit</button></form></div><br><br>';
 
         $('#volunteer_main').hide();
         $('#volunteer_detail').empty();

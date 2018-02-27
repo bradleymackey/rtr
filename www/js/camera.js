@@ -29,11 +29,11 @@ document.addEventListener("deviceready", function(event) {
     destinationType = navigator.camera.DestinationType;
 }, false);
 
-$("#photo-button").click(function() {
+$("#camera-button").click(function() {
     openCamera();
 });
 
-$("#photo-library-button").click(function() {
+$("#library-button").click(function() {
     openFilePicker();
 });
 
@@ -43,7 +43,7 @@ function displayImage(imgUri) {
 }
 
 function openCamera() {
-
+    
     var srcType = Camera.PictureSourceType.CAMERA;
     var options = setOptions(srcType);
 
@@ -56,7 +56,6 @@ function openCamera() {
 
     }, options);
 }
-
 
   function setOptions(srcType) {
     var options = {

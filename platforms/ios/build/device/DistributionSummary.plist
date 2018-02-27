@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>RTR.ipa</key>
+	<array>
+		<dict>
+			<key>architectures</key>
+			<array>
+				<string>armv7</string>
+				<string>arm64</string>
+			</array>
+			<key>certificate</key>
+			<dict>
+				<key>SHA1</key>
+				<string>CD7D2A76CDEFFEDC21CF45B40E610DF5B209ABF3</string>
+				<key>dateExpires</key>
+				<string>30/12/2018</string>
+				<key>type</key>
+				<string>iOS Development</string>
+			</dict>
+			<key>entitlements</key>
+			<dict>
+				<key>application-identifier</key>
+				<string>U2GCDMVV7S.com.riverteesredisocovered.rtr</string>
+				<key>aps-environment</key>
+				<string>development</string>
+				<key>com.apple.developer.team-identifier</key>
+				<string>U2GCDMVV7S</string>
+				<key>get-task-allow</key>
+				<true/>
+			</dict>
+			<key>name</key>
+			<string>RTR.app</string>
+			<key>profile</key>
+			<dict>
+				<key>UUID</key>
+				<string>08c1561e-d763-4769-abe6-f59eb6404e47</string>
+				<key>name</key>
+				<string>iOS Team Provisioning Profile: com.riverteesredisocovered.rtr</string>
+			</dict>
+			<key>team</key>
+			<dict>
+				<key>id</key>
+				<string>U2GCDMVV7S</string>
+				<key>name</key>
+				<string>Bradley Mackey</string>
+			</dict>
+		</dict>
+	</array>
+</dict>
+</plist>
