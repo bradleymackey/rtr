@@ -69,6 +69,14 @@ $("#info-image").click(function(){
 function displayMap() {
     // reset the admin login touch count
     count = 0;
+    // show all map markers that may have been hidden during the last search
+    $(".marker").show();
+    if (layerIDs !== undefined && layerIDs !== null) {
+        // make all the labels for projects visible that may have been hidden during the last search
+        layerIDs.forEach(function(layerID) {
+            map.setLayoutProperty(layerID, 'visibility', 'visible');
+        });
+    }
 	$("#edit-Event").hide();
 	$("#new-Event").hide();
 	$("#edit-News").hide();
