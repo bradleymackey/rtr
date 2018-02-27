@@ -202,7 +202,12 @@
         <div id="admin" class="app-section" style="display:none;">
             <br><br><br><br>
             <div class="container">
-                
+                <div id="admin-login-error" class="alert alert-danger" role="alert" style="display:none;">
+                    Could not login! Check your credentials.
+                </div>
+                <div id="admin-login-success" class="alert alert-success" role="alert" style="display:none;">
+                    You have successfully logged in as admin! Additional options will now appear throughout the interface.
+                </div>
                 <form id ="adminLogin">
                     <div class="form-group">
                         <label for="admin-email">Email:</label>

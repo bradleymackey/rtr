@@ -10,12 +10,16 @@ $("#adminLogin").submit((event) => {
     .then(function(user) {
         if (user) {
             console.log("admin login success!");
+            $("#admin-login-error").hide();
+            $("#adminLogin").hide();
+            $("#admin-login-success").show();
         }
     })
     .catch(function(error) {
         // Handle Errors here.
         var errorCode = error.code;
         var errorMessage = error.message;
-        console.log(`there was an admin login error: ${errorCode}, ${errorMessage}`)
+        console.log(`there was an admin login error: ${errorCode}, ${errorMessage}`);
+        $("#admin-login-error").show();
       });
 });
