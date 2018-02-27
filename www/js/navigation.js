@@ -6,8 +6,6 @@
 
 //stores current page for back button.
 var currentPage = 0;
-var admin=true;
-//var admin=false;
 
 document.addEventListener('deviceready', onDeviceReady, false);
 //document.querySelector("#eventsShowOnMap").addEventListener('click', showOnMap);
@@ -69,6 +67,12 @@ $("#info-image").click(function(){
 
 
 function displayMap() {
+    // reset the admin login touch count
+    count = 0;
+	$("#edit-Event").hide();
+	$("#new-Event").hide();
+	$("#edit-News").hide();
+	$("#new-News").hide();
     // hide content, because the map requires a different layout
     $(".content").css("display", "none");
     tabItemSelected($("#map-icon"),$("#map"));
@@ -91,7 +95,14 @@ function showOnMap() {
   return false;
 }
 
+
 function displayPhotos() {
+    // reset the admin login touch count
+    count = 0;
+	$("#edit-Event").hide();
+	$("#new-Event").hide();
+	$("#edit-News").hide();
+	$("#new-News").hide();
     $(".content").css("display", "block");
     $(".content").css({"margin-top": "3.0 em"});
     tabItemSelected($("#photos-icon"),$("#photos"));
@@ -103,11 +114,19 @@ function displayPhotos() {
 }
 
 function displayNews(){
+    // reset the admin login touch count
+    count = 0;
     // display content again (because map hides it)
+	$("#edit-Event").hide();
+	$("#new-Event").hide();
+	$("#edit-News").hide();
+	$("#new-News").hide();
     $(".content").css("display", "block");
     $(".content").css({"margin-top": "3.0 em"});
     tabItemSelected($("#news-icon"),$("#news"));
     updateTitle("");
+    let user = firebase.auth().currentUser;
+    let admin = (user.email !== undefined && user.email !== null);
     if (admin==true){
       $("#topnav-title").append(`
               <div class="input-group">
@@ -136,6 +155,12 @@ function displayNews(){
 }
 
 function displayEvents(){
+    // reset the admin login touch count
+    count = 0;
+	$("#edit-Event").hide();
+	$("#new-Event").hide();
+	$("#edit-News").hide();
+	$("#new-News").hide();
     // display content again (because map hides it)
     $(".content").css("display", "block");
     $(".content").css({"margin-top": "3.0 em"});
@@ -145,6 +170,8 @@ function displayEvents(){
     $("#new-Event").hide();
     tabItemSelected($("#events-icon"),$("#events"));
     updateTitle("");
+    let user = firebase.auth().currentUser;
+    let admin = (user.email !== undefined && user.email !== null);
     if (admin==true){
       $("#topnav-title").append(`
               <div class="input-group">
@@ -168,6 +195,10 @@ function displayEvents(){
 }
 
 function displayInfo(){
+	$("#edit-Event").hide();
+	$("#new-Event").hide();
+	$("#edit-News").hide();
+	$("#new-News").hide();
     // display content again (because map hides it)
     $(".content").css("display", "block");
     //changes margin so that there isnt a space between navbar and logo
@@ -183,6 +214,12 @@ function displayInfo(){
 }
 
 function displayVisions(){
+    // reset the admin login touch count
+    count = 0;
+	$("#edit-Event").hide();
+	$("#new-Event").hide();
+	$("#edit-News").hide();
+	$("#new-News").hide();
     //changes margin so that there isnt a space between navbar and logo
     $(".info_main").hide();
     $(".fix").show();
@@ -194,6 +231,12 @@ function displayVisions(){
 }
 
 function displayVolunteer(){
+    // reset the admin login touch count
+    count = 0;
+	$("#edit-Event").hide();
+	$("#new-Event").hide();
+	$("#edit-News").hide();
+	$("#new-News").hide();
     //changes margin so that there isnt a space between navbar and logo
     $(".info_main").hide();
     $("#volunteer-ops").show();
@@ -209,6 +252,12 @@ function displayVolunteer(){
 }
 
 function displayVolunteerSignup(){
+    // reset the admin login touch count
+    count = 0;
+	$("#edit-Event").hide();
+	$("#new-Event").hide();
+	$("#edit-News").hide();
+	$("#new-News").hide();
     $("#volunteer-ops").hide();
     $("#volunteer-signup").show();
     updateTitle("Volunteer sign up");
@@ -218,6 +267,12 @@ function displayVolunteerSignup(){
 }
 
 function displayLeaflets(){
+    // reset the admin login touch count
+    count = 0;
+	$("#edit-Event").hide();
+	$("#new-Event").hide();
+	$("#edit-News").hide();
+	$("#new-News").hide();
     //changes margin so that there isnt a space between navbar and logo
     $(".info_main").hide();
     $("#leaflets").show();
@@ -231,18 +286,28 @@ function displayLeaflets(){
 function displayAdminLogin(){
     //changes margin so that there isnt a space between navbar and logo
     //$(".body").css({"background-color": "#1c7430"});
+	$("#edit-Event").hide();
+	$("#new-Event").hide();
+	$("#edit-News").hide();
+	$("#new-News").hide();
     $(".info_main").hide();
     $("#info-image").hide();
     $(".info-section").hide();
     $("#admin").show();
-    updateTitle("AdminLogin");
+    updateTitle("Admin Login");
     $("#topnav-title").prepend('<img id="backbutton" src="img/left-arrow.png" alt="back">');
     currentPage = 14;
     return false;
 }
 
 function newNews(){
+    // reset the admin login touch count
+    count = 0;
   //first line will have to be adapted for the precursor page
+  $("#edit-Event").hide();
+  $("#new-Event").hide();
+  $("#edit-News").hide();
+  $("#new-News").hide();
   $("#news_main").hide();
   $("#new-Event").hide();
   $("#new-News").show();
@@ -255,6 +320,8 @@ function newNews(){
 }
 
 function newEvent(){
+    // reset the admin login touch count
+    count = 0;
   //first line will have to be adapted for the precursor page
   $("#new-News").hide();
   $("#events_main").hide();
@@ -268,6 +335,8 @@ function newEvent(){
 }
 
 function editEvent(id){
+    // reset the admin login touch count
+    count = 0;
   //info-main will change
   $("#event_detail").hide();
   $("#edit-Event").show();
@@ -285,12 +354,11 @@ function editEvent(id){
   var contact = snapshot.child("contact").val();
   var location1 = snapshot.child("location_1").val();
   var location2 = snapshot.child("location_2").val();
-  var bool = snapshot.child("booking_required").val();
-  if (bool == true){
-    bool = "TRUE";
-  }
-  else{
-    bool = "FALSE";
+  var bookingRequired = snapshot.child("booking_required").val();
+  if (bookingRequired == true){
+    bookingRequired = "TRUE";
+  } else {
+    bookingRequired = "FALSE";
   }
   $("#editEventTitle").val(title);
   $("#editEventContent").val(content);
@@ -299,12 +367,14 @@ function editEvent(id){
   $("#editEventLoc1").val(location1);
   $("#editEventLoc2").val(location2);
   $("#editEventID").val(id);
-  $("#bookreq").val(bool);
+  $("#bookreq").bookingRequired(bookingRequired);
 });
   return false;
 }
 
 function editNews(id){
+    // reset the admin login touch count
+    count = 0;
   //info-main will change
   $("#news_main").hide();
   $("#news-article").hide();
@@ -475,6 +545,8 @@ function hideBackButton(){
 }
 
 function backButtonPressed() {
+    // reset the admin login touch count
+    count = 0;
     //alert(currentPage);
     console.log("back button pressed");
     //updateMapSize();
@@ -531,4 +603,8 @@ function tabItemSelected($tabItem,$section) {
     $section.show();
     $(".tab-icon").removeClass("active");
     $tabItem.addClass("active");
+	$("#edit-Event").hide();
+	$("#new-Event").hide();
+	$("#edit-News").hide();
+	$("#new-News").hide();
 }
