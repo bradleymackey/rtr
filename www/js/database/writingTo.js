@@ -9,6 +9,7 @@ function writeNews(id,newtitle,text1,image1,text2,image2,text3,image3){
   image_2: image2,
   content_2: text3,
   image_3: image3});
+  location.reload();
   return false;
 }
 
@@ -23,5 +24,6 @@ function writeEvents(id,newtitle,text,img,contactee, location1, location2, bookr
 	location_2: location2,
 	title: newtitle
 	});
+	location.reload();
 	return false;
 }

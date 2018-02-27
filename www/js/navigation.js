@@ -474,8 +474,8 @@ function eventVerifyPublish(prevPage, id, title, content, image, contact,locatio
   $(prevPage).hide();
   $("#verifyPublish").show();
   updateTitle("Verify Publish");
-  $("#confirm").click(function(){writeEvents(id, title, content, image, contact,location1, location2, book_req);});
-  $("#cancel").click(function(){repopulateEvent(id, title, content, image, contact,location1, location2, book_req);});
+  $("#confirm").click(function(){writeEvents(id, title, content, image, contact,location1, location2, book_req);$("#verifyPublish").hide();});
+  $("#cancel").click(function(){repopulateEvent(id, title, content, image, contact,location1, location2, book_req);$("#verifyPublish").hide();});
   return false;
 }
 
@@ -484,8 +484,8 @@ function newsVerifyPublish(prevPage, id,title,text1,image1,text2,image2,text3,im
   $(prevPage).hide();
   $("#verifyPublish").show();
   updateTitle("Verify Publish");
-  $("#confirm").click(function(){writeNews(id,title,text1,image1,text2,image2,text3,image3);});
-  $("#cancel").click(function(){repopulateNews(id,title,text1,image1,text2,image2,text3,image3)});
+  $("#confirm").click(function(){writeNews(id,title,text1,image1,text2,image2,text3,image3);$("#verifyPublish").hide();});
+  $("#cancel").click(function(){repopulateNews(id,title,text1,image1,text2,image2,text3,image3);$("#verifyPublish").hide();});
   return false;
 }
 
@@ -582,4 +582,5 @@ function tabItemSelected($tabItem,$section) {
 	$("#new-Event").hide();
 	$("#edit-News").hide();
 	$("#new-News").hide();
+	$("#verifyPublish").hide();
 }
