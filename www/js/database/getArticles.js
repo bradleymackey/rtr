@@ -45,11 +45,7 @@ function articlesCallback(snapshot) {
       $("#topnav-title").prepend('<img id="backbutton" src="img/left-arrow.png" alt="back">');
       var admin = true;
       if (admin==true){
-        $("#topnav-title").append(`
-          <div class="input-group">
-            <img  id="editNews" src="img/edit.png" height="27px" width="27px" hspace="6px" vspace="2px">
-          </div>`
-        );
+        $("#topnav-title").append('<img  id="editNews" src="img/edit.png" align = "right" height="27px" width="27px" hspace="6px" vspace="2px">');
       }
       $("#topnav-title").on("click","#editNews", function(){editNews(eid);});
       $("#new-News").hide();

@@ -69,6 +69,10 @@ $("#info-image").click(function(){
 
 
 function displayMap() {
+	$("#edit-Event").hide();
+	$("#new-Event").hide();
+	$("#edit-News").hide();
+	$("#new-News").hide();
     // hide content, because the map requires a different layout
     $(".content").css("display", "none");
     tabItemSelected($("#map-icon"),$("#map"));
@@ -92,6 +96,10 @@ function showOnMap() {
 }
 
 function displayPhotos() {
+	$("#edit-Event").hide();
+	$("#new-Event").hide();
+	$("#edit-News").hide();
+	$("#new-News").hide();
     $(".content").css("display", "block");
     $(".content").css({"margin-top": "3.0 em"});
     tabItemSelected($("#photos-icon"),$("#photos"));
@@ -104,6 +112,10 @@ function displayPhotos() {
 
 function displayNews(){
     // display content again (because map hides it)
+	$("#edit-Event").hide();
+	$("#new-Event").hide();
+	$("#edit-News").hide();
+	$("#new-News").hide();
     $(".content").css("display", "block");
     $(".content").css({"margin-top": "3.0 em"});
     tabItemSelected($("#news-icon"),$("#news"));
@@ -136,6 +148,10 @@ function displayNews(){
 }
 
 function displayEvents(){
+	$("#edit-Event").hide();
+	$("#new-Event").hide();
+	$("#edit-News").hide();
+	$("#new-News").hide();
     // display content again (because map hides it)
     $(".content").css("display", "block");
     $(".content").css({"margin-top": "3.0 em"});
@@ -168,6 +184,10 @@ function displayEvents(){
 }
 
 function displayInfo(){
+	$("#edit-Event").hide();
+	$("#new-Event").hide();
+	$("#edit-News").hide();
+	$("#new-News").hide();
     // display content again (because map hides it)
     $(".content").css("display", "block");
     //changes margin so that there isnt a space between navbar and logo
@@ -183,6 +203,10 @@ function displayInfo(){
 }
 
 function displayVisions(){
+	$("#edit-Event").hide();
+	$("#new-Event").hide();
+	$("#edit-News").hide();
+	$("#new-News").hide();
     //changes margin so that there isnt a space between navbar and logo
     $(".info_main").hide();
     $(".fix").show();
@@ -194,6 +218,10 @@ function displayVisions(){
 }
 
 function displayVolunteer(){
+	$("#edit-Event").hide();
+	$("#new-Event").hide();
+	$("#edit-News").hide();
+	$("#new-News").hide();
     //changes margin so that there isnt a space between navbar and logo
     $(".info_main").hide();
     $("#volunteer-ops").show();
@@ -209,6 +237,10 @@ function displayVolunteer(){
 }
 
 function displayVolunteerSignup(){
+	$("#edit-Event").hide();
+	$("#new-Event").hide();
+	$("#edit-News").hide();
+	$("#new-News").hide();
     $("#volunteer-ops").hide();
     $("#volunteer-signup").show();
     updateTitle("Volunteer sign up");
@@ -218,6 +250,10 @@ function displayVolunteerSignup(){
 }
 
 function displayLeaflets(){
+	$("#edit-Event").hide();
+	$("#new-Event").hide();
+	$("#edit-News").hide();
+	$("#new-News").hide();
     //changes margin so that there isnt a space between navbar and logo
     $(".info_main").hide();
     $("#leaflets").show();
@@ -231,6 +267,10 @@ function displayLeaflets(){
 function displayAdminLogin(){
     //changes margin so that there isnt a space between navbar and logo
     //$(".body").css({"background-color": "#1c7430"});
+	$("#edit-Event").hide();
+	$("#new-Event").hide();
+	$("#edit-News").hide();
+	$("#new-News").hide();
     $(".info_main").hide();
     $("#info-image").hide();
     $(".info-section").hide();
@@ -243,6 +283,10 @@ function displayAdminLogin(){
 
 function newNews(){
   //first line will have to be adapted for the precursor page
+  $("#edit-Event").hide();
+  $("#new-Event").hide();
+  $("#edit-News").hide();
+  $("#new-News").hide();
   $("#news_main").hide();
   $("#new-Event").hide();
   $("#new-News").show();
@@ -525,4 +569,8 @@ function tabItemSelected($tabItem,$section) {
     $section.show();
     $(".tab-icon").removeClass("active");
     $tabItem.addClass("active");
+	$("#edit-Event").hide();
+	$("#new-Event").hide();
+	$("#edit-News").hide();
+	$("#new-News").hide();
 }

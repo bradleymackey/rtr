@@ -35,11 +35,7 @@ function eventsCallback(snapshot) {
         $("#topnav-title").prepend('<img id="backbutton" src="img/left-arrow.png" alt="back">');
         var admin = true;
         if (admin==true){
-          $("#topnav-title").append(`
-            <div class="input-group">
-              <img  id="addNewEditEvent" src="img/edit.png" height="27px" width="27px" hspace="6px" vspace="2px">
-            </div>`
-          );
+          $("#topnav-title").append('<img  id="addNewEditEvent" src="img/edit.png" align="right" height="27px" width="27px" hspace="6px" vspace="2px">');
         }
         $("#topnav-title").on("click","#addNewEditEvent", function(){editEvent(eid);});
         let eventDetail = '';
