@@ -52,6 +52,8 @@ $("#topnav-title").on("click","#addNewNews",newNews);
 //$("#newNewsPublish").click(newsPublisher("#new-News"));
 $("#topnav-title").on("click","#addNewEvent",newEvent);
 
+$("#topnav-title").on("click","#addNewProject",newProject);
+
 $("#editEventPublish").click(function(){eventPublisher("#edit-Event");});
 $("#editNewsPublish").click(function(){newsPublisher("#edit-News");});
 //$("#newEventPublish").click(eventPublisher("#new-Event"));
@@ -71,6 +73,7 @@ function displayMap() {
     count = 0;
     // show all map markers that may have been hidden during the last search
     $(".marker").show();
+
     if (layerIDs !== undefined && layerIDs !== null) {
         // make all the labels for projects visible that may have been hidden during the last search
         layerIDs.forEach(function(layerID) {
@@ -81,15 +84,29 @@ function displayMap() {
 	$("#new-Event").hide();
 	$("#edit-News").hide();
 	$("#new-News").hide();
+  $("#new-Project").hide();
     // hide content, because the map requires a different layout
     $(".content").css("display", "none");
     tabItemSelected($("#map-icon"),$("#map"));
     updateTitle("");
+    let user = firebase.auth().currentUser;
+    let admin = (user.email !== undefined && user.email !== null);
+    admin =true;
+    if (admin==true){
+      $("#topnav-title").append(`
+              <div class="input-group">
+                  <input type="text" class="form-control" id="search-bar" placeholder="Search Map"style="height:34px">
+                  <img  id="addNewProject" src="img/add.png" height="27px" width="27px" hspace="6px" vspace="2px">
+              </div>`
+      );
+    }
+    else{
     $("#topnav-title").append(`
       <div class="input-group">
         <input type="text" class="form-control" id="search-bar" placeholder="Search Map"style="height:34px">
       </div>`
     );
+  }
     hideBackButton();
     //updateMapSize();
     currentPage = 0;
@@ -114,6 +131,7 @@ function displayPhotos() {
 	$("#new-Event").hide();
 	$("#edit-News").hide();
 	$("#new-News").hide();
+  $("#new-Project").hide();
     $(".content").css("display", "block");
     $(".content").css({"margin-top": "3.0 em"});
     tabItemSelected($("#photos-icon"),$("#photos"));
@@ -132,6 +150,7 @@ function displayNews(){
 	$("#new-Event").hide();
 	$("#edit-News").hide();
 	$("#new-News").hide();
+  $("#new-Project").hide();
     $(".content").css("display", "block");
     $(".content").css({"margin-top": "3.0 em"});
     tabItemSelected($("#news-icon"),$("#news"));
@@ -172,6 +191,7 @@ function displayEvents(){
 	$("#new-Event").hide();
 	$("#edit-News").hide();
 	$("#new-News").hide();
+  $("#new-Project").hide();
     // display content again (because map hides it)
     $(".content").css("display", "block");
     $(".content").css({"margin-top": "3.0 em"});
@@ -210,6 +230,7 @@ function displayInfo(){
 	$("#new-Event").hide();
 	$("#edit-News").hide();
 	$("#new-News").hide();
+  $("#new-Project").hide();
     // display content again (because map hides it)
     $(".content").css("display", "block");
     //changes margin so that there isnt a space between navbar and logo
@@ -269,6 +290,7 @@ function displayVolunteerSignup(){
 	$("#new-Event").hide();
 	$("#edit-News").hide();
 	$("#new-News").hide();
+  $("#new-Project").hide();
     $("#volunteer-ops").hide();
     $("#volunteer-signup").show();
     updateTitle("Volunteer sign up");
@@ -284,6 +306,7 @@ function displayLeaflets(){
 	$("#new-Event").hide();
 	$("#edit-News").hide();
 	$("#new-News").hide();
+  $("#new-Project").hide();
     //changes margin so that there isnt a space between navbar and logo
     $(".info_main").hide();
     $("#leaflets").show();
@@ -301,6 +324,7 @@ function displayAdminLogin(){
 	$("#new-Event").hide();
 	$("#edit-News").hide();
 	$("#new-News").hide();
+  $("#new-Project").hide();
     $(".info_main").hide();
     $("#info-image").hide();
     $(".info-section").hide();
@@ -323,6 +347,7 @@ function newNews(){
   $("#new-Event").hide();
   $("#new-News").show();
   $("#edit-Event").hide();
+  $("#new-Project").hide();
   updateTitle("New News Article");
   $("#topnav-title").prepend('<img id="backbutton" src="img/left-arrow.png" alt="back">');
   $("#newNewsPublish").click(function(){newsPublisher("#new-News");});
@@ -338,10 +363,44 @@ function newEvent(){
   $("#events_main").hide();
   $("#new-Event").show();
   $("#edit-News").hide();
+  $("#new-Project").hide();
   updateTitle("New Event Creator");
   $("#topnav-title").prepend('<img id="backbutton" src="img/left-arrow.png" alt="back">');
   $("#newEventPublish").click(function(){eventPublisher("#new-Event");});
   currentPage = 5;
+  return false;
+}
+
+function newProject(){
+  $("#map").hide();
+  $("#new-Project").show();
+  updateTitle("New Project");
+  $("#projectPublish").click(function(){projectPublisher("#new-Project");});
+  $("#topnav-title").prepend('<img id="backbutton" src="img/left-arrow.png" alt="back">');
+  currentPage = 0;
+  return false;
+}
+
+function projectPublisher(prevPage){
+  alert("project publisher");
+  if (prevPage == "#new-Project" ){
+  var getInfo = document.getElementById("getNewProjectContent");
+  }
+  else{
+
+  }
+  var title = getInfo.elements[0].value;
+  var description = getInfo.elements[1].value;
+  var image = getInfo.elements[2].value;
+  var moreInfo = getInfo.elements[3].value;
+  var tag = getInfo.elements[4].value;
+  var lat = getInfo.elements[5].value;
+  var long = getInfo.elements[6].value;
+  var id = getInfo.elements[7].value;
+  if (id==""){
+    alert( "Please enter a unique ID");
+  }
+  projectVerifyPublish(prevPage, id, title, image, lat, long, tag, moreInfo, description);
   return false;
 }
 
@@ -502,6 +561,9 @@ function repopulateNews(id,title,text1,image1,text2,image2,text3,image3){
   return false;
 }
 
+function repopulateProjects(id, title, image, lat, long, tag, moreInfo, description){
+ return false;
+}
 
 function eventVerifyPublish(prevPage, id, title, content, image, contact,location1, location2,book_req){
   //alert(prevPage);
@@ -523,10 +585,18 @@ function newsVerifyPublish(prevPage, id,title,text1,image1,text2,image2,text3,im
   return false;
 }
 
+function projectsVerifyPublish (prevPage, id, title, image, lat, long, tag, moreInfo, description){
+  $(prevPage).hide();
+  $("#verifyPublish").show();
+  updateTitle("Verify Publish");
+  $("#confirm").click(function(){writeProjects( id, title, image, lat, long, tag, moreInfo, description);$("#verifyPublish").hide();});
+  $("#cancel").click(function(){repopulateProjects( id, title, image, lat, long, tag, moreInfo, description);$("#verifyPublish").hide();});
+}
+
 /*
 function displayEventContentItem(){
     //changes margin so that there isnt a space between navbar and logo
-    $(".events_main").hide();
+    $(".events_main").hide(); id, title, image, lat, long, tag, moreInfo, description
     $("#event_detail").show();
     updateTitle("Event Detail");
     //back button
@@ -616,5 +686,6 @@ function tabItemSelected($tabItem,$section) {
 	$("#new-Event").hide();
 	$("#edit-News").hide();
 	$("#new-News").hide();
+  $("#new-Project").hide();
 	$("#verifyPublish").hide();
 }
