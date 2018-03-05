@@ -37,6 +37,6 @@ function writeProjects(id, thisTitle, thisImage, latitude, longtitude, thisTag, 
     image: thisImage,
     title: thisTitle
   })
-  //location.reload();
+  location.reload();
   return false;
 }

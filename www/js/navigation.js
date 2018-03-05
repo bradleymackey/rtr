@@ -91,7 +91,7 @@ function displayMap() {
     updateTitle("");
     let user = firebase.auth().currentUser;
     let admin = (user.email !== undefined && user.email !== null);
-    admin =true;
+    //admin =true;
     if (admin==true){
       $("#topnav-title").append(`
               <div class="input-group">
@@ -381,28 +381,6 @@ function newProject(){
   return false;
 }
 
-function projectPublisher(prevPage){
-  alert("project publisher");
-  if (prevPage == "#new-Project" ){
-  var getInfo = document.getElementById("getNewProjectContent");
-  }
-  else{
-
-  }
-  var title = getInfo.elements[0].value;
-  var description = getInfo.elements[1].value;
-  var image = getInfo.elements[2].value;
-  var moreInfo = getInfo.elements[3].value;
-  var tag = getInfo.elements[4].value;
-  var lat = getInfo.elements[5].value;
-  var long = getInfo.elements[6].value;
-  var id = getInfo.elements[7].value;
-  if (id==""){
-    alert( "Please enter a unique ID");
-  }
-  projectVerifyPublish(prevPage, id, title, image, lat, long, tag, moreInfo, description);
-  return false;
-}
 
 function editEvent(id){
     // reset the admin login touch count
@@ -521,7 +499,27 @@ function eventPublisher(pageType){
   return false;
 }
 
+function projectPublisher(prevPage){
+  if (prevPage == "#new-Project" ){
+  var getInfo = document.getElementById("getNewProjectContent");
+  }
+  else{
 
+  }
+  var title = getInfo.elements[0].value;
+  var description = getInfo.elements[1].value;
+  var image = getInfo.elements[2].value;
+  var moreInfo = getInfo.elements[3].value;
+  var tag = getInfo.elements[4].value;
+  var lat = getInfo.elements[5].value;
+  var long = getInfo.elements[6].value;
+  var id = getInfo.elements[7].value;
+  if (id==""){
+    alert( "Please enter a unique ID");
+  }
+  projectsVerifyPublish(prevPage, id, title, image, lat, long, tag, moreInfo, description);
+  return false;
+}
 
 function repopulateEvent(id,title,content,image,contact,location1, location2,bookreq){
 $("#editEventTitle").val(title);
@@ -562,6 +560,20 @@ function repopulateNews(id,title,text1,image1,text2,image2,text3,image3){
 }
 
 function repopulateProjects(id, title, image, lat, long, tag, moreInfo, description){
+ $("#newProjectTitle").val(title);
+ $("#newProjectID").val(id);
+ $("#newProjectImage").val(image);
+ $("#newProjectLat").val(lat);
+ $("#newProjectLong").val(long);
+ $("#newProjectMoreInfo").val(moreInfo);
+ $("#newProjectTag").val(tag);
+ $("#newProjectDescription").val(description);
+ $("#new-Project").show();
+ $("#verifyPublish").hide();
+ updateTitle("Project");
+ $("#topnav-title").prepend('<img id="backbutton" src="img/left-arrow.png" alt="back">');
+ $("#projectPublish").click(function(){projectPublisher("#new-Project");});
+ currentPage=0;
  return false;
 }
 
@@ -591,6 +603,7 @@ function projectsVerifyPublish (prevPage, id, title, image, lat, long, tag, more
   updateTitle("Verify Publish");
   $("#confirm").click(function(){writeProjects( id, title, image, lat, long, tag, moreInfo, description);$("#verifyPublish").hide();});
   $("#cancel").click(function(){repopulateProjects( id, title, image, lat, long, tag, moreInfo, description);$("#verifyPublish").hide();});
+  return false;
 }
 
 /*

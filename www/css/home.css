@@ -246,6 +246,7 @@ h1 {
 }
 
 .publishPage{
+  height: 100%;
 	background-color: #2DCCD3;
 	text-align: center;
 }
@@ -260,5 +261,3 @@ h1.a{
  text-align: center;
  color: #0C2340;
 }
-
-
