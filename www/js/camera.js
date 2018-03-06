@@ -100,9 +100,10 @@ function uploadImage(imageUri) {
         return;
     }
     
-    window.resolveLocalFileSystemURL(imageUri, function success(fileEntry) {
+    resolveLocalFileSystemURL(imageUri, function success(fileEntry) {
         console.log("got file: " + fileEntry.fullPath);
         let cordovaURL = fileEntry.toInternalURL();
+        console.log("cordova: " + cordovaURL);
 
         // Simulate a call to Dropbox or other service that can
         // return an image as an ArrayBuffer.

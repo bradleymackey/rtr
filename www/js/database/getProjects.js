@@ -102,6 +102,7 @@ function projectsCallback(snapshot) {
             //WHY?
             $("#project-detail").show();
             showBackButton();
+
         });
 
         // add marker to map
