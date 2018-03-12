@@ -54,8 +54,10 @@ $("#topnav-title").on("click","#addNewEvent",newEvent);
 
 $("#topnav-title").on("click","#addNewProject",newProject);
 
-$("#editEventPublish").click(function(){eventPublisher("#edit-Event");});
-$("#editNewsPublish").click(function(){newsPublisher("#edit-News");});
+$("#editEventPublish").click(function(){eventPublisher("#edit-Event", "publish");});
+$("#editNewsPublish").click(function(){newsPublisher("#edit-News", "publish");});
+$("#deleteNews").click(function(){newsPublisher("#edit-News", "delete")});
+$("#deleteEvent").click(function(){eventPublisher("#edit-Event", "delete")});
 //$("#newEventPublish").click(eventPublisher("#new-Event"));
 
 var count = 0;
@@ -347,7 +349,7 @@ function newNews(){
   $("#new-Project").hide();
   updateTitle("New News Article");
   $("#topnav-title").prepend('<img id="backbutton" src="img/left-arrow.png" alt="back">');
-  $("#newNewsPublish").click(function(){newsPublisher("#new-News");});
+  $("#newNewsPublish").click(function(){newsPublisher("#new-News", "publish");});
   currentPage = 3;
   return false;
 }
@@ -363,7 +365,7 @@ function newEvent(){
   $("#new-Project").hide();
   updateTitle("New Event Creator");
   $("#topnav-title").prepend('<img id="backbutton" src="img/left-arrow.png" alt="back">');
-  $("#newEventPublish").click(function(){eventPublisher("#new-Event");});
+  $("#newEventPublish").click(function(){eventPublisher("#new-Event", "publish");});
   currentPage = 5;
   return false;
 }
@@ -453,7 +455,7 @@ function editNews(id){
 }
 
 
-function newsPublisher(prevPage){
+function newsPublisher(prevPage, operation){
   if (prevPage=="#edit-News"){
     var getInfo = document.getElementById("getEditNewsContent");
   }
@@ -469,12 +471,12 @@ function newsPublisher(prevPage){
   var image3 = getInfo.elements[6].value;
   var id = getInfo.elements[7].value;
   //alert (title+text1 + image1 + text2 +image2 +text3 + image3);
-  newsVerifyPublish(prevPage,id,title,text1,image1,text2,image2,text3,image3);
+  newsVerifyPublish(prevPage,id,title,text1,image1,text2,image2,text3,image3, operation);
   //writeNews(title,title,text1,image1,text2,image2,text3,image3);
   return false;
 }
 
-function eventPublisher(pageType){
+function eventPublisher(pageType, operation){
   //important if statement here
   if (pageType=="#edit-Event"){
     var eventInfo = document.getElementById("getEditEventContent");
@@ -491,7 +493,7 @@ function eventPublisher(pageType){
   var id = eventInfo.elements[6].value;
   var x=$("#bookreq").is(":checked");
   //alert(x);
-  eventVerifyPublish(pageType, id, title, content, image, contact,location1, location2,x);
+  eventVerifyPublish(pageType, id, title, content, image, contact,location1, location2,x, operation);
   //writeEvents(id, title, content, image, contact,location1, location2, book_req);
   return false;
 }
@@ -532,6 +534,8 @@ $("#edit-Event").show();
 updateTitle("Event");
 $("#topnav-title").prepend('<img id="backbutton" src="img/left-arrow.png" alt="back">');
 $("#newEventsPublish").click(function(){eventPublisher("#edit-Event");});
+$("#editEventPublish").click(function(){eventPublisher("#edit-Event");})
+$("#deleteEvent").click(function(){deleteVerify("#edit-Event", "delete");});
 currentPage = 5;
 return false;
 }
@@ -552,6 +556,7 @@ function repopulateNews(id,title,text1,image1,text2,image2,text3,image3){
   $("#topnav-title").prepend('<img id="backbutton" src="img/left-arrow.png" alt="back">');
   $("#newNewsPublish").click(function(){newsPublisher("#new-News");});
   $("#editNewsPublish").click(function(){newsPublisher("#edit-News");});
+  $("#deleteNews").click(function(){deleteVerify("#edit-News", "delete")});
   currentPage = 3;
   return false;
 }
@@ -574,23 +579,35 @@ function repopulateProjects(id, title, image, lat, long, tag, moreInfo, descript
  return false;
 }
 
-function eventVerifyPublish(prevPage, id, title, content, image, contact,location1, location2,book_req){
+function eventVerifyPublish(prevPage, id, title, content, image, contact,location1, location2,book_req, operation){
   //alert(prevPage);
   $(prevPage).hide();
   $("#verifyPublish").show();
   updateTitle("Verify Publish");
+  if (operation == "delete"){
+    $("#confirm").click(function(){deleteEvent(id);$("#verifyPublish").hide();});
+    $("#cancel").click(function(){repopulateEvent(id,title,text1,image1,text2,image2,text3,image3);$("#verifyPublish").hide();});
+  }
+  else{
   $("#confirm").click(function(){writeEvents(id, title, content, image, contact,location1, location2, book_req);$("#verifyPublish").hide();});
   $("#cancel").click(function(){repopulateEvent(id, title, content, image, contact,location1, location2, book_req);$("#verifyPublish").hide();});
+  }
   return false;
 }
 
-function newsVerifyPublish(prevPage, id,title,text1,image1,text2,image2,text3,image3){
+function newsVerifyPublish(prevPage, id,title,text1,image1,text2,image2,text3,image3,operation){
   //alert(prevPage);
   $(prevPage).hide();
   $("#verifyPublish").show();
   updateTitle("Verify Publish");
+  if (operation == "delete"){
+    $("#confirm").click(function(){deleteNews(id);$("#verifyPublish").hide();});
+    $("#cancel").click(function(){repopulateNews(id,title,text1,image1,text2,image2,text3,image3);$("#verifyPublish").hide();});
+  }
+  else{
   $("#confirm").click(function(){writeNews(id,title,text1,image1,text2,image2,text3,image3);$("#verifyPublish").hide();});
   $("#cancel").click(function(){repopulateNews(id,title,text1,image1,text2,image2,text3,image3);$("#verifyPublish").hide();});
+  }
   return false;
 }
 

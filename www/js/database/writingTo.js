@@ -40,3 +40,15 @@ function writeProjects(id, thisTitle, thisImage, latitude, longtitude, thisTag, 
   location.reload();
   return false;
 }
+
+function deleteNews(id){
+  firebase.database().ref('news/'+id).set(null);
+  location.reload();
+  return false;
+}
+
+function deleteEvent(id){
+  firebase.database().ref('events/'+id).set(null);
+  location.reload();
+  return false;
+}

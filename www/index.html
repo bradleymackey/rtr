@@ -268,7 +268,10 @@
           <input type = "text", class="form-control", id = "editNewsImage3", placeholder = "HTML Link for article image"><br>
           <h6>Article ID:</h6>
           <input type = "text", class="form-control", id = "editNewsID", placeholder = "A unique ID"><br>
-          <button type = "button" id="editNewsPublish" class="btn btn-default">Publish</button><br><br><br><br>
+          <button type = "button" id="editNewsPublish" class="btn btn-default">Publish</button>
+          <div class="divider"></div>
+          <button type = "button" id="deleteNews" class="btn btn-default">Delete</button>
+          <br><br><br><br>
           </div>
           </form>
         </div>
@@ -319,7 +322,10 @@
               <div class="checkbox">
                 <label><input type="checkbox" id="bookreq"> Booking required?</label>
               </div>
-              <button type = "button" id="editEventPublish" class="btn btn-default">Publish</button><br><br><br><br>
+              <button type = "button" id="editEventPublish" class="btn btn-default">Publish</button>
+              <div class="divider"></div>
+              <button type = "button" id="deleteEvent" class="btn btn-default">Delete</button>
+              <br><br><br><br>
             </div>
           </form>
         </div>
@@ -351,7 +357,7 @@
         <div id="verifyPublish" class ="publishPage" style="display:none;">
           <br><br><br><br>
           <h1 class="a">Are you sure you want to</h1>
-          <h1 class="a">publish?</h1><br>
+          <h1 class="a">publish these changes?</h1><br>
           <button type="button" id = "confirm"> Yes</button>
           <div class="divider"></div>
           <button type="button" id = "cancel" > No</button>
