@@ -14,7 +14,6 @@ function writeNews(id,newtitle,text1,image1,text2,image2,text3,image3){
 }
 
 function writeEvents(id,newtitle,text,img,contactee, location1, location2, bookreq){
-	alert("been called");
 	firebase.database().ref('events/'+id).set({
 	booking_required: bookreq,
 	contact: contactee,
@@ -26,4 +25,18 @@ function writeEvents(id,newtitle,text,img,contactee, location1, location2, bookr
 	});
 	location.reload();
 	return false;
+}
+
+function writeProjects(id, thisTitle, thisImage, latitude, longtitude, thisTag, moreInfo, thisDescription ){
+  firebase.database().ref('projects/'+id).set({
+    description: thisDescription,
+    lat: latitude,
+    long: longtitude,
+    more_info: moreInfo,
+    tag: thisTag,
+    image: thisImage,
+    title: thisTitle
+  })
+  location.reload();
+  return false;
 }

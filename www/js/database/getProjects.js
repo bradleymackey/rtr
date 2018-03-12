@@ -101,7 +101,7 @@ function projectsCallback(snapshot) {
         el.addEventListener('click', function() {
             // set the current page for the android back button
             currentPage = 1;
-            $("#topnav-title").text("Project");
+            updateTitle("Project");
             // just an alert for now
             let newHtml = '';
             if (marker.properties.image !== null && marker.properties.image !== undefined) {
@@ -109,7 +109,7 @@ function projectsCallback(snapshot) {
             }
             newHtml += '<h1 class="standard-inset">' + marker.properties.title + '</h1>';
             newHtml += '<p class="standard-inset">' + marker.properties.description + '</p>';
-            console.log(newHtml);
+            //console.log(newHtml);
             $(".app-section").hide();
             $("#map.content").css("display", "block");
             $("#project-detail").empty();
@@ -118,6 +118,8 @@ function projectsCallback(snapshot) {
             $("#events_main").hide();
             //WHY?
             $("#project-detail").show();
+            showBackButton();
+
         });
 
         // add marker to map
@@ -143,7 +145,6 @@ function projectsCallback(snapshot) {
         $(".marker").hide();
         // because this is how the ids are formatted
         var valueForMarker = value.replace(/ /g, "-");
-        console.log(valueForMarker)
         // show only values the user has searched for
         $( "div[class*='marker'][id*='" + valueForMarker + "']" ).show();
     });
