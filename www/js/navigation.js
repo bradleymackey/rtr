@@ -116,12 +116,8 @@ function displayMap() {
 }
 
 function showOnMap() {
-  displayMap();
-  map.flyTo(
-  {
-    centre: [10, 10]
-  });
-  console.log(places);
+  window.open("geo:38.897096,-77.036545");
+  console.log(device.platform);
   return false;
 }
 
@@ -646,6 +642,10 @@ function displayNewsContentItem(){
 }*/
 
 function showBackButton(){
+  if (device.platform.toUpperCase() == "ANDROID")
+  {
+    return;
+  }
   $("#topnav-title").prepend('<img id="backbutton" src="img/left-arrow.png" alt="back">');
   $("#backbutton").show();
 }

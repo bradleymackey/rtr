@@ -47,7 +47,29 @@ function projectsCallback(snapshot) {
         // create a DOM element for the marker
         var el = document.createElement('div');
         el.className = 'marker';
-        el.style.backgroundImage = 'url(http://via.placeholder.com/30x30)';
+        console.log(marker.properties.tag);
+        //el.style.backgroundImage = '../../img/heritageIcon.png';
+        if (marker.properties.tag == 'heritage'){
+        //  console.log('yes its heritage');
+          el.style.backgroundImage = 'img/heritageIcon.png';
+          el.style.backgroundColor = '#C04C36';
+        }
+        else if (marker.properties.tag == 'communities'){
+          el.style.backgroundImage = '../../img/communityIcon.png';
+            el.style.backgroundColor = '#7BA7BC';
+        }
+        else if (marker.properties.tag == 'natural&environmental'){
+          el.style.backgroundImage = '../../img/natureIcon.png';
+          el.style.backgroundColor = '#7A9A01';
+        }
+        else if (marker.properties.tag == 'access'){
+          el.style.backgroundImage = '../../img/accessIcon.png';
+          el.style.backgroundColor = '#B6ADA5';
+        }
+        else{
+          //el.style.backgroundImage = 'url(http://via.placeholder.com/30x30)';
+          el.style.backgroundColor = '#0C2340';
+        }
         el.style.width = marker.properties.icon_size[0] + 'px';
         el.style.height = marker.properties.icon_size[1] + 'px';
 
@@ -132,6 +154,3 @@ function projectsCallback(snapshot) {
         $( "div[class*='marker'][id*='" + valueForMarker + "']" ).show();
     });
 }
-
-
-
