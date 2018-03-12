@@ -80,6 +80,7 @@ function displayMap() {
             map.setLayoutProperty(layerID, 'visibility', 'visible');
         });
     }
+  $('.topnav').css('background-color', '#0c2340');
 	$("#edit-Event").hide();
 	$("#new-Event").hide();
 	$("#edit-News").hide();

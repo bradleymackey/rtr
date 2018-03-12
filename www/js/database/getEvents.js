@@ -55,7 +55,6 @@ function eventsCallback(snapshot) {
         $('#event_detail').html(eventDetail);
         $('#event_detail').show();
 
-      //  document.getElementById("#eventsShowOnMap").onclick = console.log('button clickedDDDD');
     });
 
   }
