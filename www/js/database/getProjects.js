@@ -47,7 +47,24 @@ function projectsCallback(snapshot) {
         // create a DOM element for the marker
         var el = document.createElement('div');
         el.className = 'marker';
-        el.style.backgroundImage = 'url(http://via.placeholder.com/30x30)';
+        console.log(marker.properties.tag);
+        if (marker.properties.tag == 'heritage'){
+        //  console.log('yes its heritage');
+          el.style.backgroundImage = '../../img/heritageIcon.png';
+        }
+        else if (marker.properties.tag == 'communities'){
+          el.style.backgroundImage = '../../img/communityIcon.png';
+        }
+        else if (marker.properties.tag == 'natural&environmental'){
+          el.style.backgroundImage = '../../img/natureIcon.png';
+        }
+        else if (marker.properties.tag == 'access'){
+          el.style.backgroundImage = '../../img/accessIcon.png';
+        }
+        else{
+          el.style.backgroundImage = 'url(http://via.placeholder.com/30x30)';
+        }
+        //el.style.backgroundImage = '../../img/place.png';
         el.style.width = marker.properties.icon_size[0] + 'px';
         el.style.height = marker.properties.icon_size[1] + 'px';
 
@@ -131,6 +148,3 @@ function projectsCallback(snapshot) {
         $( "div[class*='marker'][id*='" + valueForMarker + "']" ).show();
     });
 }
-
-
-
