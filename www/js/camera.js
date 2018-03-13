@@ -187,7 +187,8 @@ function uploadImage(imageUri, postingUser, postingCaption) {
                         link: snapshot.downloadURL,
                         desc: postingCaption,
                         by: postingUser,
-                        date: firebase.database.ServerValue.TIMESTAMP
+                        date: firebase.database.ServerValue.TIMESTAMP,
+                        ref: `media/${user.uid}/images/${uuid_string}.jpg`
                     };
                     firebase.database().ref("/photosRequest").push(newImage).then(function() {
                         $("#photo-upload-error").hide();

@@ -11,6 +11,7 @@ const admin = require('firebase-admin');
 admin.initializeApp(functions.config().firebase);
 
 const vision = require('@google-cloud/vision');
+const Storage = require('@google-cloud/storage');
 
 /**
  * When an image is uploaded we check if it is flagged as Adult or Violence by the Cloud Vision
@@ -35,18 +36,29 @@ exports.removeOffensiveImages = functions.database.ref('photosRequest/{newPhoto}
         if (detections === null || detections === undefined) {
             // remove the request
             console.log("could not test image, removing");
-            return admin.database().ref('photosRequest/'+databaseKey).set(null);
+            return admin.database().ref('photosRequest/'+databaseKey).set(null, (error) => {
+                // delete the image from firebase storage
+                const storage = new Storage();
+                return storage.bucket('river-tees-rediscovered.appspot.com')
+                .file(photoObject.ref)
+                .delete();
+            });
         }
 
-        for (var property in detections) {
-            if (detections.hasOwnProperty(property)) {
-                if (detections.property === "POSSIBLE" || 
-                    detections.property === "LIKELY" || 
-                    detections.property === "VERY_LIKELY") {
-                    // remove the request
-                    console.log("inappropriate image removed");
-                    return admin.database().ref('photosRequest/'+databaseKey).set(null);
-                }
+        for (var key in detections) {
+            console.log(detections[key]);
+            if (detections[key] === "POSSIBLE" || 
+                detections[key]  === "LIKELY" || 
+                detections[key]  === "VERY_LIKELY") {
+                // remove the request
+                console.log("inappropriate image removed");
+                return admin.database().ref('photosRequest/'+databaseKey).set(null, (error) => {
+                    // delete the image from firebase storage
+                    const storage = new Storage();
+                    return storage.bucket('river-tees-rediscovered.appspot.com')
+                    .file(photoObject.ref)
+                    .delete();
+                });
             }
         }
         // the image is fine, post it
