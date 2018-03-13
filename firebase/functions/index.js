@@ -10,9 +10,7 @@ const functions = require('firebase-functions');
 const admin = require('firebase-admin');
 admin.initializeApp(functions.config().firebase);
 
-const gcs = require('@google-cloud/storage');
 const vision = require('@google-cloud/vision');
-const spawn = require('child-process-promise').spawn;
 
 /**
  * When an image is uploaded we check if it is flagged as Adult or Violence by the Cloud Vision
