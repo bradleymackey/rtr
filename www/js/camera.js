@@ -14,14 +14,13 @@ function gotPhotosCallback(snapshot) {
     }
      // LIST OF PHOTOTS
      let photosList = '';
-     $.each(photosData, function(i){
-        photosList += "<div id="+i+" class='photos_item'><img src="+(photosData[i].link||"")+" alt='image'>";
-        let date = new Date(photosData[i].date).toLocaleDateString('en-GB');
-        photosList += "<p class='standard-inset'><b>" + (photosData[i].by||"") + ", " + (date||"") + "</b></p>";
-        photosList += "<p class='standard-inset'>" + (photosData[i].desc||"") + "</p></div>";
-     });
-     $('#photos-content').empty();
-     $('#photos-content').html(photosList);
+    photosList += "<div class='photos_item'><img src="+(photosData.link||"")+" alt='image'>";
+    let date = new Date(photosData.date).toLocaleDateString('en-GB');
+    photosList += "<p class='standard-inset'><b>" + (photosData.by||"") + ", " + (date||"") + "</b></p>";
+    photosList += "<p class='standard-inset'>" + (photosData.desc||"") + "</p></div>";
+     //$('#photos-content').empty();
+     $("#error").hide();
+     $('#photos-content').append(photosList);
 }
 
 document.addEventListener("deviceready", function(event) {

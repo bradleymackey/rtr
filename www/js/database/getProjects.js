@@ -7,8 +7,6 @@ function projectsCallback(snapshot) {
 
     const data = snapshot.val();
 
-    console.log(data);
-
     // early exit if there is no data
     if (data === null || data === undefined) { return; }
 
