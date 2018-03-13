@@ -19,6 +19,7 @@ function projectsCallback(snapshot) {
         let project = {
             type: "Feature",
             properties: {
+                id: i,
                 title: data[i].title,
                 description: data[i].description,
                 more_info: data[i].more_info,
@@ -76,7 +77,9 @@ function projectsCallback(snapshot) {
         var layerID = marker.properties.title.toLowerCase();
         // becauses spaces would mess up the id, replace all occurences with a dash
         var uniqueName = layerID.replace(/ /g, "-");
+
         el.id = uniqueName;
+        el.dataID = marker.properties.id;
 
         if (!map.getLayer(layerID)) {
             map.addLayer({
@@ -107,6 +110,12 @@ function projectsCallback(snapshot) {
             // set the current page for the android back button
             currentPage = 1;
             updateTitle("Project");
+            let user = firebase.auth().currentUser;
+            let admin = (user.email !== undefined && user.email !== null);
+            if (admin==true){
+            $("#topnav-title").append(`<img  id="editProject" src="img/edit.png" align="right" height="27px" width="27px" hspace="6px" vspace="2px">`);
+            $("#topnav-title").on("click","#editProject", function(){editProject(el.dataID);});
+          }
             // just an alert for now
             let newHtml = '';
             if (marker.properties.image !== null && marker.properties.image !== undefined) {

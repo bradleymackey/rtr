@@ -14,7 +14,7 @@ firebase.initializeApp(config);
 firebase.auth().signInAnonymously().then(function(user) {
     if (user) { // we have a valid login! go ahead and get all the data that we need
         firebase.database().ref("/projects").orderByChild("title").once('value').then(projectsCallback);
-        firebase.database().ref("/news").orderByChild("title").limitToFirst(15).once('value').then(articlesCallback);
+        firebase.database().ref("/news").orderByChild("title").limitToFirst(25).once('value').then(articlesCallback);
         firebase.database().ref("/events").orderByChild("title").limitToFirst(15).once('value').then(eventsCallback);
         firebase.database().ref("/projectArticles").orderByChild("title").limitToFirst(15).once('value').then(volunteerCallback);
         firebase.database().ref("/photos").orderByChild("date").limitToFirst(25).once('value').then(gotPhotosCallback);
