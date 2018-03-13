@@ -21,6 +21,7 @@ function gotPhotosCallback(snapshot) {
     photosList += "<p class='standard-inset'>" + (photosData.desc||"") + "</p></div>";
     // hide the loading/error message when we fetch each image
      $("#error").hide();
+     // prepend new photos so that they come in to the top of the photos list
      $('#photos-content').prepend(photosList);
 }
 
@@ -97,9 +98,11 @@ function promptForName(imageURI) {
             switch(results.buttonIndex) {
                 case 1:
                     promptForMessage(imageURI, results.input1);
+                    break;
                 case 2:
                     // post anonymously
                     promptForMessage(imageURI, "Anonymous");
+                    break;
                 case 3:
                     // cancel upload, just return
                     return;
@@ -122,6 +125,7 @@ function promptForMessage(imageURI, name) {
                 case 1:
                     // start the upload
                     uploadImage(imageURI, name, results.input1);
+                    break;
                 case 2:
                     // cancel upload
                     return;
