@@ -30,6 +30,8 @@ exports.removeOffensiveImages = functions.database.ref('photosRequest/{newPhoto}
         // the detections returned by the cloud vision API
         const detections = results[0].safeSearchAnnotation;
 
+        console.log(detections);
+
         if (detections === null || detections === undefined) {
             // remove the request
             console.log("could not test image, removing");
@@ -38,7 +40,9 @@ exports.removeOffensiveImages = functions.database.ref('photosRequest/{newPhoto}
 
         for (var property in detections) {
             if (detections.hasOwnProperty(property)) {
-                if (detections.property === "LIKELY" || detections.property === "VERY_LIKELY") {
+                if (detections.property === "POSSIBLE" || 
+                    detections.property === "LIKELY" || 
+                    detections.property === "VERY_LIKELY") {
                     // remove the request
                     console.log("inappropriate image removed");
                     return admin.database().ref('photosRequest/'+databaseKey).set(null);
