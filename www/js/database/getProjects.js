@@ -51,20 +51,20 @@ function projectsCallback(snapshot) {
         console.log(marker.properties.tag);
         //el.style.backgroundImage = '../../img/heritageIcon.png';
         if (marker.properties.tag == 'heritage'){
-        //  console.log('yes its heritage');
-          el.style.backgroundImage = 'img/heritageIcon.png';
+          el.style.backgroundImage = 'url(img/heritageIcon.png)';
           el.style.backgroundColor = '#C04C36';
+
         }
         else if (marker.properties.tag == 'communities'){
-          el.style.backgroundImage = '../../img/communityIcon.png';
-            el.style.backgroundColor = '#7BA7BC';
+          el.style.backgroundImage = 'url(img/communityIcon.png)';
+          el.style.backgroundColor = '#7BA7BC';
         }
         else if (marker.properties.tag == 'natural&environmental'){
-          el.style.backgroundImage = '../../img/natureIcon.png';
+          el.style.backgroundImage = 'url(img/natureIcon.png)';
           el.style.backgroundColor = '#7A9A01';
         }
         else if (marker.properties.tag == 'access'){
-          el.style.backgroundImage = '../../img/accessIcon.png';
+          el.style.backgroundImage = 'url(img/accessIcon.png)';
           el.style.backgroundColor = '#B6ADA5';
         }
         else{
@@ -123,14 +123,25 @@ function projectsCallback(snapshot) {
             }
             newHtml += '<h1 class="standard-inset">' + marker.properties.title + '</h1>';
             newHtml += '<p class="standard-inset">' + marker.properties.description + '</p>';
-            //console.log(newHtml);
+            if (marker.properties.tag == 'heritage'){
+              $('.topnav').css('background-color','#C04C36');
+            }
+            else if (marker.properties.tag == 'communities'){
+              $('.topnav').css('background-color','#7BA7BC');
+            }
+            else if (marker.properties.tag == 'natural&environmental'){
+              $('.topnav').css('background-color','#7A9A01');
+            }
+            else if (marker.properties.tag == 'access'){
+              $('.topnav').css('background-color','#B6ADA5');
+            }
             $(".app-section").hide();
             $("#map.content").css("display", "block");
             $("#project-detail").empty();
             $("#project-detail").html(newHtml);
             $(".content").css("display", "block");
             $("#events_main").hide();
-            //WHY?
+            //because events-callback is called for some reason on opening of index.html. clumsy fix but it works...
             $("#project-detail").show();
             showBackButton();
 

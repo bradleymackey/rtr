@@ -84,6 +84,7 @@ function displayMap() {
             map.setLayoutProperty(layerID, 'visibility', 'visible');
         });
     }
+  $('.topnav').css('background-color', '#0c2340');
 	$("#edit-Event").hide();
 	$("#new-Event").hide();
 	$("#edit-News").hide();
@@ -128,6 +129,11 @@ function showOnMap() {
 function displayPhotos() {
     // reset the admin login touch count
     count = 0;
+    // hide both of the messages
+    $("#photo-upload-error").hide();
+    $("#photo-upload-success").hide();
+    $("#photo-upload-loading").hide();
+    // hide the other content panels
 	$("#edit-Event").hide();
 	$("#new-Event").hide();
 	$("#edit-News").hide();

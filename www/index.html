@@ -73,6 +73,15 @@
 
             <div id="photos" class="app-section" style="display:none;">
                 <!-- SHARE PHOTO BUTTONS -->
+                <div id="photo-upload-success" class="alert alert-success" role="alert" style="display:none;">
+                    Photo upload success!
+                </div>
+                <div id="photo-upload-error" class="alert alert-danger" role="alert" style="display:none;">
+                    Photo upload error. Do not make your name and description too long. Make sure you have internet connection. Please try again.
+                </div>
+                <div id="photo-upload-loading" class="alert alert-primary" role="alert" style="display:none;">
+                    Photo uploading...
+                </div>
                 <h2 class="photo-title">Share a photo!</h2>
                 <div id="photos-buttons">
                     <a id="camera-button" class="image-button">
@@ -92,6 +101,8 @@
                             </div>
                         </a>
                 </div>
+                <!-- THE DISCLAIMER MESSAGE -->
+                <p style="color:darkgray;text-align:center;padding:10px;">Please only share photos of the River Tees and surrounding areas. Other images will be automatically removed.</p>
                 <!-- WHERE THE USER SUBMITTED PHOTOS APPEAR -->
                 <div id="photos-content">
                     <div id="error" class="standard-inset" style="text-align:center;">
@@ -451,7 +462,7 @@
         <script type="text/javascript" src="js/database/adminLogin.js"></script>
         <script type="text/javascript" src="js/navigation.js"></script>
         <script type="text/javascript" src="js/database/getVolunteerOps.js"></script>
-		<script type="text/javascript" src="js/database/writingTo.js"></script>
+		    <script type="text/javascript" src="js/database/writingTo.js"></script>
         <script type="text/javascript" src="js/core/uuid.js"></script>
         <script type="text/javascript" src="js/camera.js"></script>
         <script type="text/javascript" src="js/core/bootstrap.bundle.js"></script>
