@@ -69,7 +69,9 @@ function openCamera() {
         sourceType: srcType,
         encodingType: Camera.EncodingType.JPEG,
         mediaType: Camera.MediaType.PICTURE,
-        allowEdit: true,
+        targetWidth: 1024,
+        targetHeight: 1024,
+        allowEdit: false,
         correctOrientation: true  //Corrects Android orientation quirks
     }
     return options;
@@ -133,7 +135,7 @@ function promptForMessage(imageURI, name) {
                 return;
             }
         },                  
-        'Image Caption',            // title
+        'Image Caption',  // title
         ['OK', 'Cancel Upload'], // buttonLabels
         ''  // defaultText
     );
@@ -155,10 +157,8 @@ function uploadImage(imageUri, postingUser, postingCaption) {
         $("#photo-upload-success").hide();
         $("#photo-upload-loading").show();
 
-        // Simulate a call to Dropbox or other service that can
-        // return an image as an ArrayBuffer.
+        // create a request to get the image from the disk
         var xhr = new XMLHttpRequest();
-        
         xhr.open( "GET", imageUri, true );
 
         // Ask for the result as an ArrayBuffer.
@@ -168,7 +168,9 @@ function uploadImage(imageUri, postingUser, postingCaption) {
             // Obtain a blob: URL for the image data.
             var arrayBufferView = new Uint8Array( this.response );
             var blob = new Blob( [ arrayBufferView ], { type: "image/jpeg" } );
+            // create a random name for the image to be called
             let uuid_string = UUIDjs.create(4).toString();
+            // reference to where the image will be saved in Firebase Storage
             let imageRef = storageRef.child(`media/${user.uid}/images/${uuid_string}.jpg`);
             imageRef.put(blob).then(function (snapshot) {
                 if (snapshot.downloadURL !== undefined && snapshot.downloadURL !== null) {
@@ -204,6 +206,7 @@ function uploadImage(imageUri, postingUser, postingCaption) {
             });
         }
 
+        // send the request to get the image from the disk
         xhr.send();
     });
     
