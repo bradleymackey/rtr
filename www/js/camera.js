@@ -3,6 +3,9 @@
 var pictureSource;   // picture source
 var destinationType; // sets the format of returned value
 
+var totalPhotosLoaded = 0;
+const MAX_PHOTOS_TO_LOAD = 50;
+
 function gotPhotosCallback(snapshot) {
     const photosData = snapshot.val();
     console.log(photosData);
@@ -12,6 +15,14 @@ function gotPhotosCallback(snapshot) {
       $('#photos-content').empty();
       $('#photos-content').html(errorMessage);
       return;
+    }
+    // increment the total number of photos loaded
+    totalPhotosLoaded++;
+    // only load a max of 50 photos, and then stop
+    if (totalPhotosLoaded > MAX_PHOTOS_TO_LOAD) {
+        // remove the listener so that we stop recieving new photos 
+        firebase.database().ref("/photos").off();
+        return;
     }
      // LIST OF PHOTOTS
      let photosList = '';
@@ -28,7 +39,6 @@ function gotPhotosCallback(snapshot) {
 document.addEventListener("deviceready", function(event) {
     pictureSource = navigator.camera.PictureSourceType;
     destinationType = navigator.camera.DestinationType;
-    
 }, false);
 
 $("#camera-button").click(function() {
@@ -72,7 +82,7 @@ function openCamera() {
         targetWidth: 1024,
         targetHeight: 1024,
         allowEdit: false,
-        correctOrientation: true  //Corrects Android orientation quirks
+        correctOrientation: true  // Corrects Android orientation quirks
     }
     return options;
 }
@@ -184,6 +194,19 @@ function uploadImage(imageUri, postingUser, postingCaption) {
                         $("#photo-upload-error").hide();
                         $("#photo-upload-success").show();
                         $("#photo-upload-loading").hide();
+
+                        if (totalPhotosLoaded > MAX_PHOTOS_TO_LOAD) {
+                            // if we have stopped recieving photos (because we have received too many, add the image manually so that it looks like the image is being loaded from the database, even though this is just an illusion)
+                            let photosList = '';
+                            photosList += "<div class='photos_item'><img src="+(imageUri||"")+" alt='image'>";
+                            let date = new Date().toLocaleDateString('en-GB');
+                            photosList += "<p class='standard-inset'><b>" + (postingUser + ", "||"") + (date||"") + "</b></p>";
+                            photosList += "<p class='standard-inset'>" + (postingCaption||"") + "</p></div>";
+                            // hide the loading/error message when we fetch each image
+                            $("#error").hide();
+                            // prepend new photos so that they come in to the top of the photos list
+                            $('#photos-content').prepend(photosList);
+                        }
                     })
                     .catch(function(error) {
                         console.error("set photo data in database error:",error);
