@@ -5,6 +5,7 @@ var destinationType; // sets the format of returned value
 
 function gotPhotosCallback(snapshot) {
     const photosData = snapshot.val();
+    console.log(photosData);
     // if we cannot get the user photos data from the database for some reason, display an error message to the user
     if (photosData === undefined || photosData === null) {
       let errorMessage = "<div id=\"error\" class=\"standard-inset\" style=\"text-align:center;\"><h1 style=\"text-align:center;\">Error!</h1>" + "<p>Could not load content, please try again later.</p></div>";
@@ -16,16 +17,17 @@ function gotPhotosCallback(snapshot) {
      let photosList = '';
     photosList += "<div class='photos_item'><img src="+(photosData.link||"")+" alt='image'>";
     let date = new Date(photosData.date).toLocaleDateString('en-GB');
-    photosList += "<p class='standard-inset'><b>" + (photosData.by||"") + ", " + (date||"") + "</b></p>";
+    photosList += "<p class='standard-inset'><b>" + (photosData.by + ", "||"") + (date||"") + "</b></p>";
     photosList += "<p class='standard-inset'>" + (photosData.desc||"") + "</p></div>";
-     //$('#photos-content').empty();
+    // hide the loading/error message when we fetch each image
      $("#error").hide();
-     $('#photos-content').append(photosList);
+     $('#photos-content').prepend(photosList);
 }
 
 document.addEventListener("deviceready", function(event) {
     pictureSource = navigator.camera.PictureSourceType;
     destinationType = navigator.camera.DestinationType;
+    
 }, false);
 
 $("#camera-button").click(function() {
@@ -48,9 +50,8 @@ function openCamera() {
 
     navigator.camera.getPicture(function cameraSuccess(imageUri) {
 
-        // upload the image
-        uploadImage(imageUri);
-        console.log("upload call done");
+        // get the metadata about the image, then this function will proceed to upload the image
+        promptForName(imageUri);
 
     }, function cameraError(error) {
         console.debug("Unable to obtain picture: " + error, "app");
@@ -80,17 +81,61 @@ function openFilePicker() {
 
     navigator.camera.getPicture(function cameraSuccess(imageUri) {
 
-        // upload the image
-        uploadImage(imageUri);
-        console.log("upload call done");
+        // get the metadata about the image, then this function will proceed to upload the image
+        promptForName(imageUri);
 
     }, function cameraError(error) {
         console.log("Unable to obtain picture: " + error, "app");
     }, options);
 }
 
+function promptForName(imageURI) {
 
-function uploadImage(imageUri) {
+    navigator.notification.prompt(
+        'Please enter your name',  // message
+        function(results) {        // callback to invoke
+            switch(results.buttonIndex) {
+                case 1:
+                    promptForMessage(imageURI, results.input1);
+                case 2:
+                    // post anonymously
+                    promptForMessage(imageURI, "Anonymous");
+                case 3:
+                    // cancel upload, just return
+                    return;
+                default:
+                return;
+            }
+        },                  
+        'Name',            // title
+        ['OK','Post Anonymously', 'Cancel Upload'], // buttonLabels
+        ''  // defaultText
+    );
+
+}
+
+function promptForMessage(imageURI, name) {
+    navigator.notification.prompt(
+        'Describe your image!',  // message
+        function(results) {        // callback to invoke
+            switch(results.buttonIndex) {
+                case 1:
+                    // start the upload
+                    uploadImage(imageURI, name, results.input1);
+                case 2:
+                    // cancel upload
+                    return;
+                default:
+                return;
+            }
+        },                  
+        'Image Caption',            // title
+        ['OK', 'Cancel Upload'], // buttonLabels
+        ''  // defaultText
+    );
+}
+
+function uploadImage(imageUri, postingUser, postingCaption) {
 
     let user = firebase.auth().currentUser;
     if (user === undefined || user === null) {
@@ -98,7 +143,7 @@ function uploadImage(imageUri) {
         alert('Could not upload image! Make sure you are connected to the internet.');
         return;
     }
-    
+
     resolveLocalFileSystemURL(imageUri, function success(fileEntry) {
 
         // hide both of the messages
@@ -125,7 +170,9 @@ function uploadImage(imageUri) {
                 if (snapshot.downloadURL !== undefined && snapshot.downloadURL !== null) {
                     var newImage = {
                         link: snapshot.downloadURL,
-                        desc: "testing"
+                        desc: postingCaption,
+                        by: postingUser,
+                        date: firebase.database.ServerValue.TIMESTAMP
                     };
                     firebase.database().ref("/photos").push(newImage).then(function() {
                         $("#photo-upload-error").hide();
