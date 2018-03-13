@@ -33,7 +33,6 @@ $("#infoToVolunteer").click(displayVolunteer);
 
 $("#infoToLeaflets").click(displayLeaflets);
 
-$("#event_detail").on("click", "#eventsShowOnMap", showOnMap);
 //$(".event_b").click(console.log("button clicked"));
 //document.getElementById("#eventsShowOnMap").onclick = console.log('button clicked');
 //show event detail
@@ -56,8 +55,10 @@ $("#topnav-title").on("click","#addNewProject",newProject);
 
 $("#editEventPublish").click(function(){eventPublisher("#edit-Event", "publish");});
 $("#editNewsPublish").click(function(){newsPublisher("#edit-News", "publish");});
-$("#deleteNews").click(function(){newsPublisher("#edit-News", "delete")});
-$("#deleteEvent").click(function(){eventPublisher("#edit-Event", "delete")});
+$("#editProjectPublish").click(function(){projectPublisher("#edit-Project", "publish");});
+$("#deleteNews").click(function(){newsPublisher("#edit-News", "delete");});
+$("#deleteEvent").click(function(){eventPublisher("#edit-Event", "delete");});
+$("#deleteProject").click(function(){projectPublisher("#edit-Project","delete");});
 //$("#newEventPublish").click(eventPublisher("#new-Event"));
 
 var count = 0;
@@ -88,6 +89,7 @@ function displayMap() {
 	$("#edit-News").hide();
 	$("#new-News").hide();
   $("#new-Project").hide();
+  $("#edit-Project").hide();
     // hide content, because the map requires a different layout
     $(".content").css("display", "none");
     tabItemSelected($("#map-icon"),$("#map"));
@@ -116,13 +118,6 @@ function displayMap() {
     return false;
 }
 
-function showOnMap() {
-  window.open("geo:38.897096,-77.036545");
-  console.log(device.platform);
-  return false;
-}
-
-
 function displayPhotos() {
     // reset the admin login touch count
     count = 0;
@@ -136,6 +131,7 @@ function displayPhotos() {
 	$("#edit-News").hide();
 	$("#new-News").hide();
   $("#new-Project").hide();
+  $("#edit-Project").hide();
     $(".content").css("display", "block");
     $(".content").css({"margin-top": "3.0 em"});
     tabItemSelected($("#photos-icon"),$("#photos"));
@@ -155,6 +151,7 @@ function displayNews(){
 	$("#edit-News").hide();
 	$("#new-News").hide();
   $("#new-Project").hide();
+  $("#edit-Project").hide();
     $(".content").css("display", "block");
     $(".content").css({"margin-top": "3.0 em"});
     tabItemSelected($("#news-icon"),$("#news"));
@@ -196,6 +193,7 @@ function displayEvents(){
 	$("#edit-News").hide();
 	$("#new-News").hide();
   $("#new-Project").hide();
+  $("#edit-Project").hide();
     // display content again (because map hides it)
     $(".content").css("display", "block");
     $(".content").css({"margin-top": "3.0 em"});
@@ -235,6 +233,7 @@ function displayInfo(){
 	$("#edit-News").hide();
 	$("#new-News").hide();
   $("#new-Project").hide();
+  $("#edit-Project").hide();
     // display content again (because map hides it)
     $(".content").css("display", "block");
     //changes margin so that there isnt a space between navbar and logo
@@ -256,6 +255,7 @@ function displayVisions(){
 	$("#new-Event").hide();
 	$("#edit-News").hide();
 	$("#new-News").hide();
+  $("#edit-Project").hide();
     //changes margin so that there isnt a space between navbar and logo
     $(".info_main").hide();
     $(".fix").show();
@@ -273,6 +273,7 @@ function displayVolunteer(){
 	$("#new-Event").hide();
 	$("#edit-News").hide();
 	$("#new-News").hide();
+  $("#edit-Project").hide();
     //changes margin so that there isnt a space between navbar and logo
     $(".info_main").hide();
     $("#volunteer-ops").show();
@@ -294,6 +295,7 @@ function displayVolunteerSignup(){
 	$("#new-Event").hide();
 	$("#edit-News").hide();
 	$("#new-News").hide();
+  $("#edit-Project").hide();
   $("#new-Project").hide();
     $("#volunteer-ops").hide();
     $("#volunteer-signup").show();
@@ -311,6 +313,7 @@ function displayLeaflets(){
 	$("#edit-News").hide();
 	$("#new-News").hide();
   $("#new-Project").hide();
+  $("#edit-Project").hide();
     //changes margin so that there isnt a space between navbar and logo
     $(".info_main").hide();
     $("#leaflets").show();
@@ -328,6 +331,7 @@ function displayAdminLogin(){
 	$("#new-Event").hide();
 	$("#edit-News").hide();
 	$("#new-News").hide();
+  $("#edit-Project").hide();
   $("#new-Project").hide();
     $(".info_main").hide();
     $("#info-image").hide();
@@ -379,8 +383,42 @@ function newProject(){
   $("#map").hide();
   $("#new-Project").show();
   updateTitle("New Project");
-  $("#projectPublish").click(function(){projectPublisher("#new-Project");});
+  $("#projectPublish").click(function(){projectPublisher("#new-Project", "publish");});
   $("#topnav-title").prepend('<img id="backbutton" src="img/left-arrow.png" alt="back">');
+  currentPage = 0;
+  return false;
+}
+
+function editProject(id){
+  $("#map").hide();
+  $("#event_detail").hide();
+  $("#project-detail").hide();
+  $("#edit-Event").hide();
+  $("#edit-News").hide();
+  $("#new-News").hide();
+  $("#edit-Project").show();
+  updateTitle("Edit Project");
+  $("#editProjectPublish").click(function(){projectPublisher("#new-Project", "publish");});
+  $("#topnav-title").prepend('<img id="backbutton" src="img/left-arrow.png" alt="back">');
+  var ref = firebase.database().ref('projects/' + id);
+  ref.once("value")
+  .then(function(snapshot){
+    var title = snapshot.child("title").val();
+    var description = snapshot.child("description").val();
+    var image = snapshot.child("image").val();
+    var moreInfo = snapshot.child("more_info").val();
+    var tag = snapshot.child("tag").val();
+    var lat = snapshot.child("lat").val();
+    var long = snapshot.child("long").val();
+    $("#editProjectID").val(id);
+    $("#editProjectTitle").val(title);
+    $("#editProjectDescription").val(description);
+    $("#editProjectImage").val(image);
+    $("#editProjectMoreInfo").val(moreInfo);
+    $("#editProjectTag").val(tag);
+    $("#editProjectLat").val(lat);
+    $("#editProjectLong").val(long);
+  });
   currentPage = 0;
   return false;
 }
@@ -394,6 +432,7 @@ function editEvent(id){
   $("#edit-Event").show();
   $("#edit-News").hide();
   $("#new-News").hide();
+  $("#edit-Project").hide();
   updateTitle("Edit Event Detail");
   $("#topnav-title").prepend('<img id="backbutton" src="img/left-arrow.png" alt="back">');
   currentPage = 5;
@@ -433,6 +472,7 @@ function editNews(id){
   $("#new-News").hide();
   $("#edit-News").show();
   $("#edit-Event").hide();
+  $("#edit-Project").hide();
   $("#new-Event").hide();
   $("#topnav-title").prepend('<img id="backbutton" src="img/left-arrow.png" alt="back">');
   currentPage = 3;
@@ -475,8 +515,13 @@ function newsPublisher(prevPage, operation){
   var text3 = getInfo.elements[5].value;
   var image3 = getInfo.elements[6].value;
   var id = getInfo.elements[7].value;
+  if (id==""){
+    alert( "Please enter a unique ID");
+  }
+  else{
   //alert (title+text1 + image1 + text2 +image2 +text3 + image3);
   newsVerifyPublish(prevPage,id,title,text1,image1,text2,image2,text3,image3, operation);
+}
   //writeNews(title,title,text1,image1,text2,image2,text3,image3);
   return false;
 }
@@ -498,17 +543,22 @@ function eventPublisher(pageType, operation){
   var id = eventInfo.elements[6].value;
   var x=$("#bookreq").is(":checked");
   //alert(x);
+  if (id==""){
+    alert( "Please enter a unique ID");
+  }
+  else{
   eventVerifyPublish(pageType, id, title, content, image, contact,location1, location2,x, operation);
   //writeEvents(id, title, content, image, contact,location1, location2, book_req);
+}
   return false;
 }
 
-function projectPublisher(prevPage){
+function projectPublisher(prevPage, operation){
   if (prevPage == "#new-Project" ){
   var getInfo = document.getElementById("getNewProjectContent");
   }
   else{
-
+    var getInfo = document.getElementById("getEditProjectContent");
   }
   var title = getInfo.elements[0].value;
   var description = getInfo.elements[1].value;
@@ -521,7 +571,9 @@ function projectPublisher(prevPage){
   if (id==""){
     alert( "Please enter a unique ID");
   }
-  projectsVerifyPublish(prevPage, id, title, image, lat, long, tag, moreInfo, description);
+  else{
+  projectsVerifyPublish(prevPage, id, title, image, lat, long, tag, moreInfo, description, operation);
+  }
   return false;
 }
 
@@ -546,40 +598,42 @@ return false;
 }
 
 function repopulateNews(id,title,text1,image1,text2,image2,text3,image3){
-  $("#newsTitle").val(title);
-  $("#newsText1").val(text1);
-  $("#newsImage1").val(image1);
-  $("#newsText2").val(text2);
-  $("#newsImage2").val(image2);
-  $("#newsText3").val(text3);
-  $("#newsImage3").val(image3);
-  $("#newsID").val(id);
+  $("#editNewsTitle").val(title);
+  $("#editNewsText1").val(text1);
+  $("#editNewsImage1").val(image1);
+  $("#editNewsText2").val(text2);
+  $("#editNewsImage2").val(image2);
+  $("#editNewsText3").val(text3);
+  $("#editNewsImage3").val(image3);
+  $("#editNewsID").val(id);
   $("#verifyPublish").hide();
   $("#new-Event").hide();
-  $("#new-News").show();
+  $("#new-News").hide();
+  $("#edit-News").show();
   updateTitle("News Article");
   $("#topnav-title").prepend('<img id="backbutton" src="img/left-arrow.png" alt="back">');
-  $("#newNewsPublish").click(function(){newsPublisher("#new-News");});
-  $("#editNewsPublish").click(function(){newsPublisher("#edit-News");});
+    $("#editNewsPublish").click(function(){newsPublisher("#edit-News", "publish");});
   $("#deleteNews").click(function(){deleteVerify("#edit-News", "delete")});
   currentPage = 3;
   return false;
 }
 
 function repopulateProjects(id, title, image, lat, long, tag, moreInfo, description){
- $("#newProjectTitle").val(title);
- $("#newProjectID").val(id);
- $("#newProjectImage").val(image);
- $("#newProjectLat").val(lat);
- $("#newProjectLong").val(long);
- $("#newProjectMoreInfo").val(moreInfo);
- $("#newProjectTag").val(tag);
- $("#newProjectDescription").val(description);
- $("#new-Project").show();
+ $("#editProjectTitle").val(title);
+ $("#editProjectID").val(id);
+ $("#editProjectImage").val(image);
+ $("#editProjectLat").val(lat);
+ $("#editProjectLong").val(long);
+ $("#editProjectMoreInfo").val(moreInfo);
+ $("#editProjectTag").val(tag);
+ $("#editProjectDescription").val(description);
+ $("#edit-Project").show();
  $("#verifyPublish").hide();
+ $("#new-Project").hide();
  updateTitle("Project");
  $("#topnav-title").prepend('<img id="backbutton" src="img/left-arrow.png" alt="back">');
- $("#projectPublish").click(function(){projectPublisher("#new-Project");});
+ $("#editProjectPublish").click(function(){projectPublisher("#edit-Project", "publish");});
+ $("#deleteProject").click(function(){projectPublisher("#edit-Project", "delete");});
  currentPage=0;
  return false;
 }
@@ -591,7 +645,7 @@ function eventVerifyPublish(prevPage, id, title, content, image, contact,locatio
   updateTitle("Verify Publish");
   if (operation == "delete"){
     $("#confirm").click(function(){deleteEvent(id);$("#verifyPublish").hide();});
-    $("#cancel").click(function(){repopulateEvent(id,title,text1,image1,text2,image2,text3,image3);$("#verifyPublish").hide();});
+    $("#cancel").click(function(){repopulateEvent(id, title, content, image, contact,location1, location2,book_req);$("#verifyPublish").hide();});
   }
   else{
   $("#confirm").click(function(){writeEvents(id, title, content, image, contact,location1, location2, book_req);$("#verifyPublish").hide();});
@@ -616,12 +670,18 @@ function newsVerifyPublish(prevPage, id,title,text1,image1,text2,image2,text3,im
   return false;
 }
 
-function projectsVerifyPublish (prevPage, id, title, image, lat, long, tag, moreInfo, description){
+function projectsVerifyPublish (prevPage, id, title, image, lat, long, tag, moreInfo, description, operation){
   $(prevPage).hide();
   $("#verifyPublish").show();
   updateTitle("Verify Publish");
-  $("#confirm").click(function(){writeProjects( id, title, image, lat, long, tag, moreInfo, description);$("#verifyPublish").hide();});
-  $("#cancel").click(function(){repopulateProjects( id, title, image, lat, long, tag, moreInfo, description);$("#verifyPublish").hide();});
+  if (operation == "publish"){
+    $("#confirm").click(function(){writeProjects( id, title, image, lat, long, tag, moreInfo, description);$("#verifyPublish").hide();});
+    $("#cancel").click(function(){repopulateProjects( id, title, image, lat, long, tag, moreInfo, description);$("#verifyPublish").hide();});
+  }
+  else{
+    $("#confirm").click(function(){deleteProject(id);$("#verifyPublish").hide();});
+    $("#cancel").click(function(){repopulateProjects( id, title, image, lat, long, tag, moreInfo, description);$("#verifyPublish").hide();});
+  }
   return false;
 }
 
@@ -724,4 +784,5 @@ function tabItemSelected($tabItem,$section) {
 	$("#new-News").hide();
   $("#new-Project").hide();
 	$("#verifyPublish").hide();
+  $("#edit-Project").hide();
 }

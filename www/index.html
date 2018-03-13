@@ -360,7 +360,35 @@
               <input type="text", class="form-control",  placeholder = "Longtitude", id= "newProjectLong"><br>
               <h6>Project ID:</h6>
               <input type = "text", class="form-control", placeholder = "A unique ID" id="newProjectID"><br>
-              <button type = "button" id="projectPublish" class="btn btn-default">Publish</button><br><br><br><br>
+              <button type = "button" id="projectPublish" class="btn btn-default">Publish</button>
+              <br><br><br><br>
+            </div>
+          </form>
+        </div>
+
+        <div id="edit-Project" class="articleTemplate" style="display:none;">
+          <form id="getEditProjectContent" autocomplete="off">
+            <div class="form-group">
+              <br><br><br><h6>Title:</h6>
+              <input type="text", class="form-control", placeholder="Title of the project" id= "editProjectTitle"><br>
+              <h6>Description:</h6>
+              <textarea style="width:100%" rows="10" placeholder="Description of the project " id="editProjectDescription" class="form-control"></textarea><br>
+              <h6>Image URL:</h6>
+              <input type = "text", class="form-control", placeholder="Icon image" id="editProjectImage"><br>
+              <h6>More information:</h6>
+              <textarea style="width:100%" rows="10" placeholder="More info about the project " id="editProjectMoreInfo" class="form-control"></textarea><br>
+              <h6>Tag:</h6>
+              <input type = "text", class="form-control", placeholder="Project tag" id="editProjectTag"><br>
+              <h6>Latitiude:</h6>
+              <input type="text", class="form-control", placeholder = "Latitude", id= "editProjectLat"><br>
+              <h6>Longtitude:</h6>
+              <input type="text", class="form-control",  placeholder = "Longtitude", id= "editProjectLong"><br>
+              <h6>Project ID:</h6>
+              <input type = "text", class="form-control", placeholder = "A unique ID" id="editProjectID"><br>
+              <button type = "button" id="editProjectPublish" class="btn btn-default">Publish</button>
+              <div class="divider"></div>
+              <button type = "button" id="deleteProject" class="btn btn-default">Delete</button>
+              <br><br><br><br>
             </div>
           </form>
         </div>
