@@ -53,7 +53,7 @@ exports.removeOffensiveImages = functions.database.ref('photosRequest/{newPhoto}
             by: photoObject.by,
             date: photoObject.date
         };
-        return admin.database().ref('photos').push(toPost).finally(() => {
+        return admin.database().ref('photos').push(toPost, (error) => {
             return admin.database().ref('photosRequest/'+databaseKey).set(null);
         });
     });
