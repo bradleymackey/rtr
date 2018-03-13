@@ -182,8 +182,6 @@ function uploadImage(imageUri, postingUser, postingCaption) {
                         $("#photo-upload-error").hide();
                         $("#photo-upload-success").show();
                         $("#photo-upload-loading").hide();
-                        // RELOAD THE RECENT IMAGES
-                        firebase.database().ref("/photos").orderByChild("date").limitToFirst(15).once('value').then(gotPhotosCallback);
                     })
                     .catch(function(error) {
                         console.error("set photo data in database error:",error);
