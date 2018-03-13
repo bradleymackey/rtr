@@ -4,11 +4,10 @@ var pictureSource;   // picture source
 var destinationType; // sets the format of returned value
 
 var totalPhotosLoaded = 0;
-const MAX_PHOTOS_TO_LOAD = 50;
+const MAX_PHOTOS_TO_LOAD = 40;
 
 function gotPhotosCallback(snapshot) {
     const photosData = snapshot.val();
-    console.log(photosData);
     // if we cannot get the user photos data from the database for some reason, display an error message to the user
     if (photosData === undefined || photosData === null) {
       let errorMessage = "<div id=\"error\" class=\"standard-inset\" style=\"text-align:center;\"><h1 style=\"text-align:center;\">Error!</h1>" + "<p>Could not load content, please try again later.</p></div>";
