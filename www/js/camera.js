@@ -189,7 +189,7 @@ function uploadImage(imageUri, postingUser, postingCaption) {
                         by: postingUser,
                         date: firebase.database.ServerValue.TIMESTAMP
                     };
-                    firebase.database().ref("/photos").push(newImage).then(function() {
+                    firebase.database().ref("/photosRequest").push(newImage).then(function() {
                         $("#photo-upload-error").hide();
                         $("#photo-upload-success").show();
                         $("#photo-upload-loading").hide();
