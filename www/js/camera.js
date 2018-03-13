@@ -101,15 +101,17 @@ function uploadImage(imageUri) {
     }
     
     resolveLocalFileSystemURL(imageUri, function success(fileEntry) {
-        console.log("got file: " + fileEntry.fullPath);
-        let cordovaURL = fileEntry.toInternalURL();
-        console.log("cordova: " + cordovaURL);
+
+        // hide both of the messages
+        $("#photo-upload-error").hide();
+        $("#photo-upload-success").hide();
+        $("#photo-upload-loading").show();
 
         // Simulate a call to Dropbox or other service that can
         // return an image as an ArrayBuffer.
         var xhr = new XMLHttpRequest();
         
-        xhr.open( "GET", cordovaURL, true );
+        xhr.open( "GET", imageUri, true );
 
         // Ask for the result as an ArrayBuffer.
         xhr.responseType = "arraybuffer";
@@ -121,15 +123,40 @@ function uploadImage(imageUri) {
             let uuid_string = UUIDjs.create(4).toString();
             let imageRef = storageRef.child(`media/${user.uid}/images/${uuid_string}.jpg`);
             imageRef.put(blob).then(function (snapshot) {
-                console.log("upload success");
+                if (snapshot.downloadURL !== undefined && snapshot.downloadURL !== null) {
+                    var newImage = {
+                        link: snapshot.downloadURL,
+                        desc: "testing"
+                    };
+                    firebase.database().ref("/photos").push(newImage).then(function() {
+                        $("#photo-upload-error").hide();
+                        $("#photo-upload-success").show();
+                        $("#photo-upload-loading").hide();
+                        // RELOAD THE RECENT IMAGES
+                        firebase.database().ref("/photos").orderByChild("date").limitToFirst(15).once('value').then(gotPhotosCallback);
+                    })
+                    .catch(function(error) {
+                        console.error("set photo data in database error:",error);
+                        $("#photo-upload-error").show();
+                        $("#photo-upload-success").hide();
+                        $("#photo-upload-loading").hide();
+                    });
+                } else {
+                    console.error("no download url for image");
+                    $("#photo-upload-error").show();
+                    $("#photo-upload-success").hide();
+                    $("#photo-upload-loading").hide();
+                }
+                
             }).catch(function(error) {
                 console.log("upload error",error);
+                $("#photo-upload-error").show();
+                $("#photo-upload-success").hide();
+                $("#photo-upload-loading").hide();
             });
         }
 
         xhr.send();
-
-
     });
     
 }
