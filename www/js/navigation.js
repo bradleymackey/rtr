@@ -33,7 +33,6 @@ $("#infoToVolunteer").click(displayVolunteer);
 
 $("#infoToLeaflets").click(displayLeaflets);
 
-$("#event_detail").on("click", "#eventsShowOnMap", showOnMap);
 //$(".event_b").click(console.log("button clicked"));
 //document.getElementById("#eventsShowOnMap").onclick = console.log('button clicked');
 //show event detail
@@ -118,13 +117,6 @@ function displayMap() {
     currentPage = 0;
     return false;
 }
-
-function showOnMap() {
-  window.open("geo:38.897096,-77.036545");
-  console.log(device.platform);
-  return false;
-}
-
 
 function displayPhotos() {
     // reset the admin login touch count
