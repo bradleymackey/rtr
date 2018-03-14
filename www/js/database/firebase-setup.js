@@ -35,7 +35,7 @@ firebase.auth().signInAnonymously().then(function(user) {
     }
 })
 .catch(function(error) {
-    console.error("AUTH ERROR " + errorCode + " " + errorMessage);
+    console.error("AUTH ERROR: " + error);
     let errorMessage = "<div id=\"error\" class=\"standard-inset\" style=\"text-align:center;\"><h1 style=\"text-align:center;\">Error!</h1>" + "<p> Please try again later. " + error.message + "</p></div>";
     // events
     $('#events_main').empty();
