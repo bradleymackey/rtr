@@ -46,7 +46,6 @@ exports.removeOffensiveImages = functions.database.ref('photosRequest/{newPhoto}
         }
 
         for (var key in detections) {
-            console.log(detections[key]);
             if (detections[key] === "POSSIBLE" || 
                 detections[key]  === "LIKELY" || 
                 detections[key]  === "VERY_LIKELY") {
@@ -74,23 +73,6 @@ exports.removeOffensiveImages = functions.database.ref('photosRequest/{newPhoto}
         });
     });
   });
-
-exports.notifyVolunteer = functions.database.ref('volunteers/{newVolunteer}').onCreate(event => {
-    const volunteer_object = event.data.val();
-    const first_name = volunteer_object.first_name;
-    const last_name = volunteer_object.last_name;
-    const for_event = volunteer_object.related_to;
-    const payload = {
-        notification: {
-          title: 'Volunteer Request',
-          body: `${first_name} ${last_name} volunteered for ${for_event}`,
-        }
-      };
-      // return the promise so that we do not exit the function too early
-    return admin.messaging().sendToTopic('admin', payload).catch(error => {
-        console.log(`error sending volunteer notification: ${error}`);
-    });
-});
 
 exports.notifyEvent = functions.database.ref('events/{newEvent}').onCreate(event => {
     const event_object = event.data.val();
