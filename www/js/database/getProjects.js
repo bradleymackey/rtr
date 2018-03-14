@@ -172,5 +172,13 @@ function projectsCallback(snapshot) {
         var valueForMarker = value.replace(/ /g, "-");
         // show only values the user has searched for
         $( "div[class*='marker'][id*='" + valueForMarker + "']" ).show();
+
+        // every time a key is pressed, go back to viewing the correct area
+        map.flyTo({
+            center: [
+                -1.60,
+                54.3197364],
+            zoom: 8
+        });
     });
 }
