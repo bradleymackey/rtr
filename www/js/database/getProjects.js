@@ -139,6 +139,7 @@ function projectsCallback(snapshot) {
             $("#map.content").css("display", "block");
             $("#project-detail").empty();
             $("#project-detail").html(newHtml);
+            $("#topnav-title").prepend('<img id="backbutton" src="img/left-arrow.png" alt="back">');
             $(".content").css("display", "block");
             $("#events_main").hide();
             //because events-callback is called for some reason on opening of index.html. clumsy fix but it works...
