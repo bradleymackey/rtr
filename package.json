@@ -5,7 +5,7 @@
   "description": "The official app for River Tees Rediscovered.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jasmine"
   },
   "author": "DU Team 2",
   "license": "Apache-2.0",
@@ -50,5 +50,8 @@
       "ios",
       "android"
     ]
+  },
+  "devDependencies": {
+    "jasmine": "^3.1.0"
   }
 }
