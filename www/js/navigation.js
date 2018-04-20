@@ -515,8 +515,8 @@ function newsPublisher(prevPage, operation){
   var text3 = getInfo.elements[5].value;
   var image3 = getInfo.elements[6].value;
   var id = getInfo.elements[7].value;
-  if (id==""){
-    alert( "Please enter a unique ID");
+  if (id==="" && operation !== "publish"){
+    alert("Unique ID incorrect or invalid!");
   }
   else{
   //alert (title+text1 + image1 + text2 +image2 +text3 + image3);
@@ -543,8 +543,8 @@ function eventPublisher(pageType, operation){
   var id = eventInfo.elements[6].value;
   var x=$("#bookreq").is(":checked");
   //alert(x);
-  if (id==""){
-    alert( "Please enter a unique ID");
+  if (id==="" && operation !== "publish"){
+    alert("Unique ID incorrect or invalid!");
   }
   else{
   eventVerifyPublish(pageType, id, title, content, image, contact,location1, location2,x, operation);
@@ -568,8 +568,8 @@ function projectPublisher(prevPage, operation){
   var lat = getInfo.elements[5].value;
   var long = getInfo.elements[6].value;
   var id = getInfo.elements[7].value;
-  if (id==""){
-    alert( "Please enter a unique ID");
+  if (id === "" && operation !== "publish"){
+    alert("Unique ID incorrect or invalid!");
   }
   else{
   projectsVerifyPublish(prevPage, id, title, image, lat, long, tag, moreInfo, description, operation);
@@ -648,7 +648,7 @@ function eventVerifyPublish(prevPage, id, title, content, image, contact,locatio
     $("#cancel").click(function(){repopulateEvent(id, title, content, image, contact,location1, location2,book_req);$("#verifyPublish").hide();});
   }
   else{
-  $("#confirm").click(function(){writeEvents(id, title, content, image, contact,location1, location2, book_req);$("#verifyPublish").hide();});
+  $("#confirm").click(function(){writeEvents(title, content, image, contact,location1, location2, book_req);$("#verifyPublish").hide();});
   $("#cancel").click(function(){repopulateEvent(id, title, content, image, contact,location1, location2, book_req);$("#verifyPublish").hide();});
   }
   return false;
@@ -664,7 +664,7 @@ function newsVerifyPublish(prevPage, id,title,text1,image1,text2,image2,text3,im
     $("#cancel").click(function(){repopulateNews(id,title,text1,image1,text2,image2,text3,image3);$("#verifyPublish").hide();});
   }
   else{
-  $("#confirm").click(function(){writeNews(id,title,text1,image1,text2,image2,text3,image3);$("#verifyPublish").hide();});
+  $("#confirm").click(function(){writeNews(title,text1,image1,text2,image2,text3,image3);$("#verifyPublish").hide();});
   $("#cancel").click(function(){repopulateNews(id,title,text1,image1,text2,image2,text3,image3);$("#verifyPublish").hide();});
   }
   return false;
@@ -675,7 +675,7 @@ function projectsVerifyPublish (prevPage, id, title, image, lat, long, tag, more
   $("#verifyPublish").show();
   updateTitle("Verify Publish");
   if (operation == "publish"){
-    $("#confirm").click(function(){writeProjects( id, title, image, lat, long, tag, moreInfo, description);$("#verifyPublish").hide();});
+    $("#confirm").click(function(){writeProjects(title, image, lat, long, tag, moreInfo, description);$("#verifyPublish").hide();});
     $("#cancel").click(function(){repopulateProjects( id, title, image, lat, long, tag, moreInfo, description);$("#verifyPublish").hide();});
   }
   else{

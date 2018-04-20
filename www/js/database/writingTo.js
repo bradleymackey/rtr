@@ -1,7 +1,8 @@
 //this should overwrite as well as save new as long the correct id is passed
-function writeNews(id,newtitle,text1,image1,text2,image2,text3,image3){
+function writeNews(newtitle,text1,image1,text2,image2,text3,image3){
   //alert(title + " " + text1);
-  firebase.database().ref('news/' + id).set(
+  // WE USE .PUSH, which automatically generates an ID, so the user doesn't need to bother
+  firebase.database().ref('news').push(
   {title: newtitle,
   content: text1,
   image_1: image1,
@@ -13,8 +14,9 @@ function writeNews(id,newtitle,text1,image1,text2,image2,text3,image3){
   return false;
 }
 
-function writeEvents(id,newtitle,text,img,contactee, location1, location2, bookreq){
-	firebase.database().ref('events/'+id).set({
+function writeEvents(newtitle,text,img,contactee, location1, location2, bookreq){
+  // WE USE .PUSH, which automatically generates an ID, so the user doesn't need to bother
+	firebase.database().ref('events').push({
 	booking_required: bookreq,
 	contact: contactee,
 	content: text,
@@ -27,8 +29,9 @@ function writeEvents(id,newtitle,text,img,contactee, location1, location2, bookr
 	return false;
 }
 
-function writeProjects(id, thisTitle, thisImage, latitude, longtitude, thisTag, moreInfo, thisDescription ){
-  firebase.database().ref('projects/'+id).set({
+function writeProjects(thisTitle, thisImage, latitude, longtitude, thisTag, moreInfo, thisDescription ){
+  // WE USE .PUSH, which automatically generates an ID, so the user doesn't need to bother
+  firebase.database().ref('projects').push({
     description: thisDescription,
     lat: latitude,
     long: longtitude,
