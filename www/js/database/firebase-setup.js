@@ -63,4 +63,6 @@ document.addEventListener('deviceready', function(event) {
     // subscribe to the news and events channels to get notifications about them
     window.FirebasePlugin.subscribe("news");
     window.FirebasePlugin.subscribe("events");
+    window.FirebasePlugin.subscribe("all");
+    window.FirebasePlugin.subscribe("projects");
 }, false);

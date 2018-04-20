@@ -111,3 +111,22 @@ exports.notifyNews = functions.database.ref('news/{newArticle}').onCreate(event 
         console.log(`error sending news notification: ${error}`);
     });
 });
+
+exports.notifyProject = functions.database.ref('projects/{newProject}').onCreate(event => {
+    const project_object = event.data.val();
+    const project_title = project_object.title;
+    const payload = {
+        notification: {
+            title: 'New Project',
+            body: `"${project_title}" has just been created!`
+        }
+    };
+    // notification will only live for 1 week
+    const options = {
+        timeToLive: 60 * 60 * 24 * 7
+    };
+    // return promise
+    return admin.messaging().sendToTopic('projects', payload, options).catch(error => {
+        console.log(`error sending project notification: ${error}`)
+    });
+});
