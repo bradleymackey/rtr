@@ -54,11 +54,3 @@ describe("State Consistency", function() {
         expect(currentPage).toEqual(10);
     });
 });
-
-describe("Platform dependent back button", function() {
-
-});
-
-describe("Tab selection", function() {
-
-});
