@@ -1,6 +1,7 @@
 
 // data is returned in a value listener
 
+
 function articlesCallback(snapshot) {
     const articles = snapshot.val();
 
@@ -54,6 +55,26 @@ function articlesCallback(snapshot) {
       $('#news-article').empty();
       $('#news-article').html(articleDetail);
       $('#news-article').show();
+  });
+
+  //News search
+  $(".topnav").on('keyup', '#search-bar', function(e) {
+      var value = e.target.value.trim().toLowerCase();
+      if(value==="") {
+          $(".news_item").show();
+          return;
+      }
+      $.each(articles, function(i) {
+          if(articles[i].title.toLowerCase().indexOf(value) > -1) {
+              i = i.replace("&", "\\&");
+              $("#"+i).show();
+          }
+          else {
+              i = i.replace("&", "\\&");
+              $("#"+i).hide();
+          }
+      });
+      return;
   });
 
 }
