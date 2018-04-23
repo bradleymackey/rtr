@@ -1,7 +1,6 @@
 
 // data is returned in a value listener
 
-
 function articlesCallback(snapshot) {
     const articles = snapshot.val();
 

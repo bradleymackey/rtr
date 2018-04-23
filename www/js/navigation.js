@@ -181,6 +181,7 @@ function displayNews(){
     $("#news-article").empty();
     $("#news-article").hide();
     $("#news-article").empty();
+    $("#search-bar").trigger("keyup");
     currentPage = 3;
     return false;
 }
@@ -223,6 +224,7 @@ function displayEvents(){
     hideBackButton();
     $("#events_main").show();
     $("#event_detail").hide();
+    $("#search-bar").trigger("keyup");
     currentPage = 5;
     return false;
 }
