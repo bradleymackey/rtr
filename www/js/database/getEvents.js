@@ -56,4 +56,24 @@ function eventsCallback(snapshot) {
 
     });
 
+    //Events search
+    $(".topnav").on('keyup', '#search-bar', function(e) {
+        var value = e.target.value.trim().toLowerCase();
+        if(value==="") {
+            $(".event_item").show();
+            return;
+        }
+        $.each(events, function(i) {
+            if(events[i].title.toLowerCase().indexOf(value) > -1) {
+                i = i.replace("&", "\\&");
+                $("#"+i).show();
+            }
+            else {
+                i = i.replace("&", "\\&");
+                $("#"+i).hide();
+            }
+        });
+        return;
+    });
+
   }
