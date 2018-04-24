@@ -130,3 +130,13 @@ exports.notifyProject = functions.database.ref('projects/{newProject}').onCreate
         console.log(`error sending project notification: ${error}`)
     });
 });
+
+
+
+exports.sendVolunteerEmail = functions.https.onRequest((req, res) => {
+    const forename = req.body.forename;
+    const surname = req.body.surname;
+    const email = req.body.email;
+    const comments = req.body.comments;
+
+});
