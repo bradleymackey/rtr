@@ -70,6 +70,9 @@ $("#info-image").click(function(){
     }
 });
 
+function resetHeaderColour(){
+  $('.topnav').css('background-color', '#0c2340');
+}
 
 function displayMap() {
     // reset the admin login touch count
@@ -83,7 +86,7 @@ function displayMap() {
             map.setLayoutProperty(layerID, 'visibility', 'visible');
         });
     }
-  $('.topnav').css('background-color', '#0c2340');
+  resetHeaderColour();
 	$("#edit-Event").hide();
 	$("#new-Event").hide();
 	$("#edit-News").hide();
@@ -137,6 +140,8 @@ function displayPhotos() {
     tabItemSelected($("#photos-icon"),$("#photos"));
     updateTitle("Photos");
     hideBackButton();
+    resetHeaderColour();
+
     $(".content-item").show();
     currentPage = 99;
     return false;
@@ -175,6 +180,7 @@ function displayNews(){
     }
     $(".content-item").show();
     hideBackButton();
+    resetHeaderColour();
     $("#new-News").hide();
     $("#edit-News").hide();
     $("#news_main").show();
@@ -203,6 +209,7 @@ function displayEvents(){
     $("#new-Event").hide();
     tabItemSelected($("#events-icon"),$("#events"));
     updateTitle("");
+    resetHeaderColour();
     let user = firebase.auth().currentUser;
     let admin = (user.email !== undefined && user.email !== null);
     if (admin==true){
@@ -244,6 +251,7 @@ function displayInfo(){
     tabItemSelected($("#info-icon"),$("#info"));
     updateTitle("Information");
     hideBackButton();
+    resetHeaderColour();
     currentPage = 7;
     return false;
 }
