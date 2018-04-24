@@ -38,7 +38,8 @@ function volunteerCallback(snapshot) {
         opDetail+= '<div id="signup-form"><h2>Signup</h2>';
         opDetail+= '<form><input type="text" id="forename" name="forename" placeholder="Forename"><br>';
         opDetail+= '<input type="text" id="surname" name="surname" placeholder="Surname"><br>';
-        opDetail+= '<input type="text" id="email" name="email" placeholder="Email"></form>';
+        opDetail+= '<input type="text" id="email" name="email" placeholder="Email"><br>';
+        opDetail+= '<textarea rows="5" cols="23" placeholder="Comment" id="comment"></textarea></form>';
         opDetail+= '<button type="button" id="volunteer-button" class="event_b">Submit</button>';
         opDetail+= '<p id="output"></p></div><br><br>';
 
@@ -70,22 +71,51 @@ function volunteerCallback(snapshot) {
         else
         {
           outputText += "Form submitted.";
+          emailRequest();
           $("#forename").val("");
           $("#surname").val("");
           $("#email").val("");
+          $("#comment").val("");
         }
         $("#output").html(outputText);
-        
-
       });
   }
 
-$("#email").click(handleClientLoad);
+var url = "";
+
+function emailRequest()
+{
+  $.post(url, {
+    email: $("#email").val(),
+    forename: $("#forename").val(),
+    surname: $("#surname").val(),
+    comment: $("#comment").val()
+  }, function(data, status)
+    {
+      if (status == "success")
+      {
+        $("#output").html("Submission recieved.");
+      }
+      else
+      {
+        $("#output").html("Error submitting - please try again.");
+      }
+    });
+}
+
+
+
+
+
+
+
+
 
 //email
 var CLIENT_ID = "24690165291-jvo2hkq9df0hlpaflrpjrp6qa387iboa.apps.googleusercontent.com";
 var API_KEY = "AIzaSyCYGusGkn_i0_wZDCnmg8KmIjJ70p85TD4";
-var SCOPES = "https://www.googleapis.com/auth/gmail.readonly " + "https://gooogleapis.com/auth.gmail.send";
+var SCOPES = "https://www.googleapis.com/auth/gmail.readonly";
+
 function sendEmail()
 {
   console.log("sendEmail");
@@ -126,11 +156,17 @@ function handleAuthResult(authResult)
   console.log("handleAuthResult");
   if(authResult && !authResult.error)
   {
+    console.log("SUCCESS");
     loadGmailApi();
+    $("#email").remove();
   }
   else
   {
     console.log("ERROR");
+    $("#email").on("click", function()
+    {
+      handleAuthClick();
+    });
   }
 }
 
@@ -149,6 +185,9 @@ function displayInbox()
     'maxResults': 10
   });
 
+  $("#emailtest").append("<p>TEST</p>");
+  console.log(request);
+
   request.execute(function(response) {
     $.each(response.messages, function() {
       var messageRequest = gapi.client.gmail.users.messages.get({
@@ -163,5 +202,5 @@ function displayInbox()
 
 function appendMessageRow(message)
 {
-  $("#emailtest").append("TEST");
+  $("#emailtest").append("<p>TEST</p>");
 }
