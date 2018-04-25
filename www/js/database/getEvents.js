@@ -46,8 +46,9 @@ function eventsCallback(snapshot) {
         if (ev.location_1 !== undefined) {
           eventDetail+= '<p><img class="icon" style="width:25px;" src="img/where-icon.png"><b> WHERE</b></br>'+ev.location_1+'</br>'+(ev.location_2 || "")+'</p>'
         }
-        eventDetail += '<p><img class="icon" style="width:25px;" src="img/when-icon.png"><b> WHEN</b></br>DATE</br> End: 31st January, 2018 at 3:00pm</p>'
-        eventDetail += '<button type="button" class="event_b" id="addToCalendar">ADD TO CALENDAR</button></div>'
+        eventDetail += '<p><img class="icon" style="width:25px;" src="img/when-icon.png"><b> WHEN</b></br>DATE</br> End: 31st January, 2018 at 3:00pm</p></div>'
+        //eventDetail += '<button type="button" class="event_b" id="addToCalendar">ADD TO CALENDAR</button></div>'
+        //^ code for an 'Add To Calendar' button - decided not to implement this release.
         $('#events_main').hide();
         $("#edit-Event").hide();
         $('#event_detail').empty();
