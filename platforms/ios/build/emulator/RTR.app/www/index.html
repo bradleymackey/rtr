@@ -52,9 +52,9 @@
             <!-- NAVIGATION BAR -->
             <div class="topnav">
                 <h1 id="topnav-title">
-                    <img id="backbutton" src="img/left-arrow.png" alt="image" style="display:none">
+                <img id="backbutton" src="img/left-arrow.png" alt="image" style="display:none">
                   <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Search Map">
+                    <input type="text" class="form-control" id="search-bar" placeholder="Search Map">
                   </div>
                 </h1>
             </div>
@@ -116,7 +116,7 @@
 
             <!-- EVENTS GO HERE -->
             <div id="events" class="app-section content" style="display:none;">
-              <div id="events_main">
+              <div id="events_main" style="display:none">
                     <div id="error" class="standard-inset" style="text-align:center;">
                         <h1 style="text-align:center;">Loading...</h1>
                         <p>Please wait one second.</p>
@@ -128,7 +128,7 @@
             </div>
             <!-- INFO SECTION GOES HERE -->
             <div id="info" class="app-section" style="display:none;">
-                    <img id="info-image" src="img/big_logo.jpg" alt="logo">
+                    <img id="info-image" src="img/big_logo.jpg" alt="logo" align="center">
                     <div class="container info_main">
                         <div class="row">
                             <div class="col-sm-12 infOptions" id = "infoToVisions">
@@ -198,23 +198,141 @@
         </div>
 
         <!-- ADMIN -->
-        <div id="admin" class="app-section content" style="display:none;">
-            <div class="content-item">
-                <img src="img/demo.jpg" alt="image">
-                <h2>Some Event</h2>
-                <p class="detail">Some Event Description</p>
-            </div>
-            <div class="content-item">
-                <img src="img/demo.jpg" alt="image">
-                <h2>Some Event</h2>
-                <p class="detail">Some Event Description</p>
-            </div>
-            <div class="content-item">
-                <img src="img/demo.jpg" alt="image">
-                <h2>Some Event</h2>
-                <p class="detail">Some Event Description</p>
+
+        <div id="admin" class="app-section" style="display:none;">
+            <br><br><br><br>
+            <div class="container">
+                <div id="admin-login-error" class="alert alert-danger" role="alert" style="display:none;">
+                    Could not login! Check your credentials.
+                </div>
+                <div id="admin-login-success" class="alert alert-success" role="alert" style="display:none;">
+                    You have successfully logged in as admin! Additional options will now appear throughout the interface.
+                </div>
+                <form id ="adminLogin">
+                    <div class="form-group">
+                        <label for="admin-email">Admin Email:</label>
+                        <input type="text" class="form-control" id="admin-email" placeholder="Email" name="admin-email">
+                    </div>
+                    <div class="form-group">
+                        <label for="admin-password">Password:</label>
+                        <input type="password" class="form-control" id="admin-password" placeholder="Password" name="admin-password">
+                    </div>
+                    <div class="form-group text-right">
+                    <input type="submit" value="Login" class="btn btn-default">
+                    </div>
+                </form>
             </div>
         </div>
+
+        <div id="new-News" class = "articleTemplate" style="display:none;">
+          <form id="getNewsContent" autocomplete="off">
+          <div class="form-group">
+          <h6>Title:<h6>
+          <input type = "text", class="form-control", placeholder = "Title", id = "newsTitle"><br>
+          <h6>Opening text component:</h6>
+          <textarea style="width:100%" rows="10" placeholder="Article Content" id="newsText1" class="form-control"></textarea><br>
+          <h6>First Image</h6>
+          <input type = "text", class="form-control", id = "newsImage1", placeholder = "HTML Link for article image"><br>
+          <h6>Middle text component:</h6>
+          <textarea style="width:100%" rows="10" placeholder="Article Content" id="newsText2" class="form-control"></textarea><br>
+          <h6>Second Image</h6>
+          <input type = "text", class="form-control", id = "newsImage2", placeholder = "HTML Link for article image"><br>
+          <h6>Final text component:</h6>
+          <textarea style="width:100%" rows="10" placeholder="Article Content" id="newsText3" class="form-control"></textarea><br>
+          <h6>Bottom Image</h6>
+          <input type = "text", class="form-control", id = "newsImage3", placeholder = "HTML Link for article image"><br>
+          <h6>Article ID:</h6>
+          <input type = "text", class="form-control", id = "newsID", placeholder = "A unique ID"><br>
+          <button type = "button" id="newNewsPublish" class="btn btn-default">Publish</button><br><br><br><br>
+          </div>
+          </form>
+        </div>
+
+        <div id="edit-News" class = "articleTemplate" style="display:none;">
+          <form id="getEditNewsContent" autocomplete="off">
+          <div class="form-group">
+          <h6>Title:<h6>
+          <input type = "text" class="form-control" id = "editNewsTitle" placeholder = "Title"><br>
+          <h6>Opening text component:</h6>
+          <textarea style="width:100%" rows="10" placeholder="Article Content" id="editNewsText1" class="form-control"></textarea><br>
+          <h6>First Image</h6>
+          <input type = "text", class="form-control", id = "editNewsImage1", placeholder = "HTML Link for article image"><br>
+          <h6>Middle text component:</h6>
+          <textarea style="width:100%" rows="10" placeholder="Article Content" id="editNewsText2" class="form-control"></textarea><br>
+          <h6>Second Image</h6>
+          <input type = "text", class="form-control", id = "editNewsImage2", placeholder = "HTML Link for article image"><br>
+          <h6>Final text component:</h6>
+          <textarea style="width:100%" rows="10" placeholder="Article Content" id="editNewsText3" class="form-control"></textarea><br>
+          <h6>Bottom Image</h6>
+          <input type = "text", class="form-control", id = "editNewsImage3", placeholder = "HTML Link for article image"><br>
+          <h6>Article ID:</h6>
+          <input type = "text", class="form-control", id = "editNewsID", placeholder = "A unique ID"><br>
+          <button type = "button" id="editNewsPublish" class="btn btn-default">Publish</button><br><br><br><br>
+          </div>
+          </form>
+        </div>
+
+
+        <div id="new-Event" class="articleTemplate" style="display:none;">
+          <form id="getEventContent" autocomplete="off">
+            <div class="form-group">
+              <h6>Title:</h6>
+              <input type = "text", class="form-control", placeholder = "Title", id="eventTitle"><br>
+              <h6>Content/Text:</h6>
+              <textarea style="width:100%" rows="10" placeholder="Article Content" id="eventContent" class="form-control"></textarea><br>
+              <h6>Image URL:</h6>
+              <input type = "text", class="form-control", placeholder = "HTML Link for event image", id="eventImage"><br>
+              <h6>Contact Information:</h6>
+              <input type = "text", class="form-control", placeholder = "Contact details go here" id="eventContact"><br>
+              <h6>Location 1 (immediate location e.g. Preston Park):</h6>
+              <input type = "text", class="form-control", placeholder = "Primary location", id="eventLoc1"><br>
+              <h6>Location 2 (Wider region e.g. Yarm):</h6>
+              <input type = "text", class="form-control", placeholder = "Secondary location", id="eventLoc2"><br>
+              <h6>Event ID:</h6>
+              <input type = "text", class="form-control", placeholder = "A unique ID" id="eventID"><br>
+              <div class="checkbox">
+                <label><input type="checkbox" id="bookreq"> Booking required?</label>
+              </div>
+              <button type = "button" id="newEventPublish" class="btn btn-default">Publish</button><br><br><br>
+            </div>
+          </form>
+        </div>
+
+        <div id="edit-Event" class="articleTemplate" style="display:none;">
+          <form id="getEditEventContent" autocomplete="off">
+            <div class="form-group">
+              <h6>Title:</h6>
+              <input type = "text", class="form-control" id="editEventTitle"><br>
+              <h6>Content/Text:</h6>
+              <textarea style="width:100%" rows="10" placeholder="Article Content" id="editEventContent" class="form-control"></textarea><br>
+              <h6>Image URL:</h6>
+              <input type = "text", class="form-control", id="editEventImage"><br>
+              <h6>Contact Information:</h6>
+              <input type = "text", class="form-control", id="editEventContact"><br>
+              <h6>Location 1 (immediate location e.g. Preston Park):</h6>
+              <input type = "text", class="form-control", id= "editEventLoc1"><br>
+              <h6>Location 2 (Wider region e.g. Yarm):</h6>
+              <input type = "text", class="form-control", id="editEventLoc2" ><br>
+              <h6>Event ID:</h6>
+              <input type = "text", class="form-control", placeholder = "A unique ID" id="editEventID"><br>
+              <div class="checkbox">
+                <label><input type="checkbox" id="bookreq"> Booking required?</label>
+              </div>
+              <button type = "button" id="editEventPublish" class="btn btn-default">Publish</button><br><br><br><br>
+            </div>
+          </form>
+        </div>
+
+        <div id="verifyPublish" class ="publishPage" style="display:none;">
+          <h1 class="a">Are you sure you want to</h1>
+          <h1 class="a">publish?</h1><br>
+          <button type="button" id = "confirm"> Yes</button>
+          <div class="divider"></div>
+          <button type="button" id = "cancel" > No</button>
+          <br><br>
+        </div>
+
+
 
 
         <!-- TAB BAR -->
@@ -266,6 +384,7 @@
         <script type="text/javascript" src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script>
         <script type="text/javascript" src="js/map/map.js"></script>
         <script type="text/javascript" src="js/database/firebase-setup.js"></script>
+        <script type="text/javascript" src="js/database/adminLogin.js"></script>
         <script type="text/javascript" src="js/navigation.js"></script>
         <script type="text/javascript" src="js/database/getArticles.js"></script>
         <script type="text/javascript" src="js/database/getEvents.js"></script>

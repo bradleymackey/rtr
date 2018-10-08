@@ -10,8 +10,9 @@ const functions = require('firebase-functions');
 const admin = require('firebase-admin');
 admin.initializeApp(functions.config().firebase);
 
+const gcs = require('@google-cloud/storage');
 const vision = require('@google-cloud/vision');
-const Storage = require('@google-cloud/storage');
+const spawn = require('child-process-promise').spawn;
 
 /**
  * When an image is uploaded we check if it is flagged as Adult or Violence by the Cloud Vision
@@ -23,56 +24,48 @@ exports.removeOffensiveImages = functions.database.ref('photosRequest/{newPhoto}
     const photoLink = photoObject.link;
     const databaseKey = event.data.key;
 
-    // Creates a client
-    const client = new vision.ImageAnnotatorClient();
-
     // Check the image content using the Cloud Vision API.
-    return client.safeSearchDetection(photoLink).then((results) => {
-        // the detections returned by the cloud vision API
-        const detections = results[0].safeSearchAnnotation;
-
-        console.log(detections);
-
-        if (detections === null || detections === undefined) {
-            // remove the request
-            console.log("could not test image, removing");
-            return admin.database().ref('photosRequest/'+databaseKey).set(null, (error) => {
-                // delete the image from firebase storage
-                const storage = new Storage();
-                return storage.bucket('river-tees-rediscovered.appspot.com')
-                .file(photoObject.ref)
-                .delete();
-            });
-        }
-
-        for (var key in detections) {
-            if (detections[key] === "POSSIBLE" || 
-                detections[key]  === "LIKELY" || 
-                detections[key]  === "VERY_LIKELY") {
-                // remove the request
-                console.log("inappropriate image removed");
-                return admin.database().ref('photosRequest/'+databaseKey).set(null, (error) => {
-                    // delete the image from firebase storage
-                    const storage = new Storage();
-                    return storage.bucket('river-tees-rediscovered.appspot.com')
-                    .file(photoObject.ref)
-                    .delete();
-                });
-            }
-        }
-        // the image is fine, post it
-        console.log("image not inappropriate");
-        let toPost = {
-            link: photoObject.link,
-            desc: photoObject.desc,
-            by: photoObject.by,
-            date: photoObject.date
-        };
-        return admin.database().ref('photos').push(toPost, (error) => {
-            return admin.database().ref('photosRequest/'+databaseKey).set(null);
-        });
+    return vision.detectSafeSearch(photoLink).then((data) => {
+      const safeSearch = data[0];
+      console.log('SafeSearch results on image', safeSearch);
+  
+      if (safeSearch.adult || safeSearch.violence) {
+          // remove the request
+        return admin.database().ref(databaseKey).set(null);
+      } else {
+          // the image is fine, post it
+          return admin.database().ref('photos').push({
+              link: photoObject.link,
+              desc: photoObject.desc,
+              by: photoObject.by,
+              date: photoObject.date
+          }, (error) => {
+              if (error !== null || error !== undefined) {
+                  console.error("error testing image:",error);
+              } else {
+                admin.database.ref(databaseKey).set(null);
+              }
+          });
+      }
     });
   });
+
+exports.notifyVolunteer = functions.database.ref('volunteers/{newVolunteer}').onCreate(event => {
+    const volunteer_object = event.data.val();
+    const first_name = volunteer_object.first_name;
+    const last_name = volunteer_object.last_name;
+    const for_event = volunteer_object.related_to;
+    const payload = {
+        notification: {
+          title: 'Volunteer Request',
+          body: `${first_name} ${last_name} volunteered for ${for_event}`,
+        }
+      };
+      // return the promise so that we do not exit the function too early
+    return admin.messaging().sendToTopic('admin', payload).catch(error => {
+        console.log(`error sending volunteer notification: ${error}`);
+    });
+});
 
 exports.notifyEvent = functions.database.ref('events/{newEvent}').onCreate(event => {
     const event_object = event.data.val();
@@ -110,33 +103,4 @@ exports.notifyNews = functions.database.ref('news/{newArticle}').onCreate(event 
     return admin.messaging().sendToTopic('news', payload, options).catch(error => {
         console.log(`error sending news notification: ${error}`);
     });
-});
-
-exports.notifyProject = functions.database.ref('projects/{newProject}').onCreate(event => {
-    const project_object = event.data.val();
-    const project_title = project_object.title;
-    const payload = {
-        notification: {
-            title: 'New Project',
-            body: `"${project_title}" has just been created!`
-        }
-    };
-    // notification will only live for 1 week
-    const options = {
-        timeToLive: 60 * 60 * 24 * 7
-    };
-    // return promise
-    return admin.messaging().sendToTopic('projects', payload, options).catch(error => {
-        console.log(`error sending project notification: ${error}`)
-    });
-});
-
-
-
-exports.sendVolunteerEmail = functions.https.onRequest((req, res) => {
-    const forename = req.body.forename;
-    const surname = req.body.surname;
-    const email = req.body.email;
-    const comments = req.body.comments;
-
 });

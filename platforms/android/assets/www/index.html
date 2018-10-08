@@ -28,7 +28,7 @@
             * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
                 * Enable inline JS: add 'unsafe-inline' to default-src
         -->
-        <meta http-equiv="Content-Security-Policy" content="default-src 'self' * ws: wss: gap://* file://*; img-src * 'self' data: blob: ; script-src * 'self' 'unsafe-eval'; child-src * 'self' blob: gap://*; connect-src * 'unsafe-eval'; object-src 'self'; style-src * 'unsafe-inline';">
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self' * ws: wss: gap://* file://*; img-src * 'self' data: blob: ; script-src * 'self' 'unsafe-eval'; child-src * 'self' blob: gap://*; connect-src * 'unsafe-eval' cdvfile://*; object-src 'self'; style-src * 'unsafe-inline';">
         <meta name="format-detection" content="telephone=no">
         <meta name="msapplication-tap-highlight" content="no">
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, viewport-fit=cover">
@@ -52,9 +52,9 @@
             <!-- NAVIGATION BAR -->
             <div class="topnav">
                 <h1 id="topnav-title">
-                    <img id="backbutton" src="img/left-arrow.png" alt="image" style="display:none">
+                <img id="backbutton" src="img/left-arrow.png" alt="image" style="display:none">
                   <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Search Map">
+                    <input type="text" class="form-control" id="search-bar" placeholder="Search Map">
                   </div>
                 </h1>
             </div>
@@ -73,6 +73,12 @@
 
             <div id="photos" class="app-section" style="display:none;">
                 <!-- SHARE PHOTO BUTTONS -->
+                <div id="photo-upload-success" class="alert alert-success" role="alert" style="display:none;">
+                    Photo upload success!
+                </div>
+                <div id="photo-upload-error" class="alert alert-danger" role="alert" style="display:none;">
+                    Photo upload error. Please try again.
+                </div>
                 <h2 class="photo-title">Share a photo!</h2>
                 <div id="photos-buttons">
                     <a id="camera-button" class="image-button">
@@ -115,7 +121,8 @@
             </div>
 
             <!-- EVENTS GO HERE -->
-            <div id="events" class="app-section content" style="display:none;">
+
+            <div id="events" class="app-section" style="display:none;">
               <div id="events_main">
                     <div id="error" class="standard-inset" style="text-align:center;">
                         <h1 style="text-align:center;">Loading...</h1>
@@ -128,7 +135,7 @@
             </div>
             <!-- INFO SECTION GOES HERE -->
             <div id="info" class="app-section" style="display:none;">
-                    <img id="info-image" src="img/big_logo.jpg" alt="logo">
+                    <img id="info-image" src="img/big_logo.jpg" alt="logo" align="center">
                     <div class="container info_main">
                         <div class="row">
                             <div class="col-sm-12 infOptions" id = "infoToVisions">
@@ -198,16 +205,172 @@
         </div>
 
         <!-- ADMIN -->
-        <div id="admin" class="app-section content" style="display:none;">
-            <div class="content-item admin_main">
-                <form class="admin-Login">
-                    <label for="fname">username</label>
-                    <input type="text" id="fname" name="fname">
-                    <label for="lname">password</label>
-                    <input type="password" id="lname" name="lname">
+
+        <div id="admin" class="app-section" style="display:none;">
+            <br><br><br><br>
+            <div class="container">
+                <div id="admin-login-error" class="alert alert-danger" role="alert" style="display:none;">
+                    Could not login! Check your credentials.
+                </div>
+                <div id="admin-login-success" class="alert alert-success" role="alert" style="display:none;">
+                    You have successfully logged in as admin! Additional options will now appear throughout the interface.
+                </div>
+                <form id ="adminLogin">
+                    <div class="form-group">
+                        <label for="admin-email">Admin Email:</label>
+                        <input type="text" class="form-control" id="admin-email" placeholder="Email" name="admin-email">
+                    </div>
+                    <div class="form-group">
+                        <label for="admin-password">Password:</label>
+                        <input type="password" class="form-control" id="admin-password" placeholder="Password" name="admin-password">
+                    </div>
+                    <div class="form-group text-right">
+                    <input type="submit" value="Login" class="btn btn-default">
+                    </div>
                 </form>
             </div>
         </div>
+
+        <div id="new-News" class = "articleTemplate" style="display:none;">
+          <form id="getNewsContent" autocomplete="off">
+          <div class="form-group">
+          <h6>Title:<h6>
+          <input type = "text", class="form-control", placeholder = "Title", id = "newsTitle"><br>
+          <h6>Opening text component:</h6>
+          <textarea style="width:100%" rows="10" placeholder="Article Content" id="newsText1" class="form-control"></textarea><br>
+          <h6>First Image</h6>
+          <input type = "text", class="form-control", id = "newsImage1", placeholder = "HTML Link for article image"><br>
+          <h6>Middle text component:</h6>
+          <textarea style="width:100%" rows="10" placeholder="Article Content" id="newsText2" class="form-control"></textarea><br>
+          <h6>Second Image</h6>
+          <input type = "text", class="form-control", id = "newsImage2", placeholder = "HTML Link for article image"><br>
+          <h6>Final text component:</h6>
+          <textarea style="width:100%" rows="10" placeholder="Article Content" id="newsText3" class="form-control"></textarea><br>
+          <h6>Bottom Image</h6>
+          <input type = "text", class="form-control", id = "newsImage3", placeholder = "HTML Link for article image"><br>
+          <h6>Article ID:</h6>
+          <input type = "text", class="form-control", id = "newsID", placeholder = "A unique ID"><br>
+          <button type = "button" id="newNewsPublish" class="btn btn-default">Publish</button><br><br><br><br>
+          </div>
+          </form>
+        </div>
+
+        <div id="edit-News" class = "articleTemplate" style="display:none;">
+          <form id="getEditNewsContent" autocomplete="off">
+          <div class="form-group">
+          <h6>Title:<h6>
+          <input type = "text" class="form-control" id = "editNewsTitle" placeholder = "Title"><br>
+          <h6>Opening text component:</h6>
+          <textarea style="width:100%" rows="10" placeholder="Article Content" id="editNewsText1" class="form-control"></textarea><br>
+          <h6>First Image</h6>
+          <input type = "text", class="form-control", id = "editNewsImage1", placeholder = "HTML Link for article image"><br>
+          <h6>Middle text component:</h6>
+          <textarea style="width:100%" rows="10" placeholder="Article Content" id="editNewsText2" class="form-control"></textarea><br>
+          <h6>Second Image</h6>
+          <input type = "text", class="form-control", id = "editNewsImage2", placeholder = "HTML Link for article image"><br>
+          <h6>Final text component:</h6>
+          <textarea style="width:100%" rows="10" placeholder="Article Content" id="editNewsText3" class="form-control"></textarea><br>
+          <h6>Bottom Image</h6>
+          <input type = "text", class="form-control", id = "editNewsImage3", placeholder = "HTML Link for article image"><br>
+          <h6>Article ID:</h6>
+          <input type = "text", class="form-control", id = "editNewsID", placeholder = "A unique ID"><br>
+          <button type = "button" id="editNewsPublish" class="btn btn-default">Publish</button>
+          <div class="divider"></div>
+          <button type = "button" id="deleteNews" class="btn btn-default">Delete</button>
+          <br><br><br><br>
+          </div>
+          </form>
+        </div>
+
+
+        <div id="new-Event" class="articleTemplate" style="display:none;">
+          <form id="getEventContent" autocomplete="off">
+            <div class="form-group">
+              <h6>Title:</h6>
+              <input type = "text", class="form-control", placeholder = "Title", id="eventTitle"><br>
+              <h6>Content/Text:</h6>
+              <textarea style="width:100%" rows="10" placeholder="Article Content" id="eventContent" class="form-control"></textarea><br>
+              <h6>Image URL:</h6>
+              <input type = "text", class="form-control", placeholder = "HTML Link for event image", id="eventImage"><br>
+              <h6>Contact Information:</h6>
+              <input type = "text", class="form-control", placeholder = "Contact details go here" id="eventContact"><br>
+              <h6>Location 1 (immediate location e.g. Preston Park):</h6>
+              <input type = "text", class="form-control", placeholder = "Primary location", id="eventLoc1"><br>
+              <h6>Location 2 (Wider region e.g. Yarm):</h6>
+              <input type = "text", class="form-control", placeholder = "Secondary location", id="eventLoc2"><br>
+              <h6>Event ID:</h6>
+              <input type = "text", class="form-control", placeholder = "A unique ID" id="eventID"><br>
+              <div class="checkbox">
+                <label><input type="checkbox" id="bookreq"> Booking required?</label>
+              </div>
+              <button type = "button" id="newEventPublish" class="btn btn-default">Publish</button><br><br><br>
+            </div>
+          </form>
+        </div>
+
+        <div id="edit-Event" class="articleTemplate" style="display:none;">
+          <form id="getEditEventContent" autocomplete="off">
+            <div class="form-group">
+              <h6>Title:</h6>
+              <input type = "text", class="form-control" id="editEventTitle"><br>
+              <h6>Content/Text:</h6>
+              <textarea style="width:100%" rows="10" placeholder="Article Content" id="editEventContent" class="form-control"></textarea><br>
+              <h6>Image URL:</h6>
+              <input type = "text", class="form-control", id="editEventImage"><br>
+              <h6>Contact Information:</h6>
+              <input type = "text", class="form-control", id="editEventContact"><br>
+              <h6>Location 1 (immediate location e.g. Preston Park):</h6>
+              <input type = "text", class="form-control", id= "editEventLoc1"><br>
+              <h6>Location 2 (Wider region e.g. Yarm):</h6>
+              <input type = "text", class="form-control", id="editEventLoc2" ><br>
+              <h6>Event ID:</h6>
+              <input type = "text", class="form-control", placeholder = "A unique ID" id="editEventID"><br>
+              <div class="checkbox">
+                <label><input type="checkbox" id="bookreq"> Booking required?</label>
+              </div>
+              <button type = "button" id="editEventPublish" class="btn btn-default">Publish</button>
+              <div class="divider"></div>
+              <button type = "button" id="deleteEvent" class="btn btn-default">Delete</button>
+              <br><br><br><br>
+            </div>
+          </form>
+        </div>
+
+        <div id="new-Project" class="articleTemplate" style="display:none;">
+          <form id="getNewProjectContent" autocomplete="off">
+            <div class="form-group">
+              <br><br><br><h6>Title:</h6>
+              <input type="text", class="form-control", placeholder="Title of the project" id= "newProjectTitle"><br>
+              <h6>Description:</h6>
+              <textarea style="width:100%" rows="10" placeholder="Description of the project " id="newProjectDescription" class="form-control"></textarea><br>
+              <h6>Image URL:</h6>
+              <input type = "text", class="form-control", placeholder="Icon image" id="newProjectImage"><br>
+              <h6>More information:</h6>
+              <textarea style="width:100%" rows="10" placeholder="More info about the project " id="newProjectMoreInfo" class="form-control"></textarea><br>
+              <h6>Tag:</h6>
+              <input type = "text", class="form-control", placeholder="Project tag" id="newProjectTag"><br>
+              <h6>Latitiude:</h6>
+              <input type="text", class="form-control", placeholder = "Latitude", id= "newProjectLat"><br>
+              <h6>Longtitude:</h6>
+              <input type="text", class="form-control",  placeholder = "Longtitude", id= "newProjectLong"><br>
+              <h6>Project ID:</h6>
+              <input type = "text", class="form-control", placeholder = "A unique ID" id="newProjectID"><br>
+              <button type = "button" id="projectPublish" class="btn btn-default">Publish</button><br><br><br><br>
+            </div>
+          </form>
+        </div>
+
+        <div id="verifyPublish" class ="publishPage" style="display:none;">
+          <br><br><br><br>
+          <h1 class="a">Are you sure you want to</h1>
+          <h1 class="a">publish these changes?</h1><br>
+          <button type="button" id = "confirm"> Yes</button>
+          <div class="divider"></div>
+          <button type="button" id = "cancel" > No</button>
+          <br><br>
+        </div>
+
+
 
 
         <!-- TAB BAR -->
@@ -257,13 +420,16 @@
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/core/jquery-3.2.1.js"></script>
         <script type="text/javascript" src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script>
+        <script src="https://apis.google.com/js/client.js"></script>
         <script type="text/javascript" src="js/map/map.js"></script>
         <script type="text/javascript" src="js/database/firebase-setup.js"></script>
-        <script type="text/javascript" src="js/navigation.js"></script>
         <script type="text/javascript" src="js/database/getArticles.js"></script>
         <script type="text/javascript" src="js/database/getEvents.js"></script>
         <script type="text/javascript" src="js/database/getProjects.js"></script>
+        <script type="text/javascript" src="js/database/adminLogin.js"></script>
+        <script type="text/javascript" src="js/navigation.js"></script>
         <script type="text/javascript" src="js/database/getVolunteerOps.js"></script>
+		    <script type="text/javascript" src="js/database/writingTo.js"></script>
         <script type="text/javascript" src="js/core/uuid.js"></script>
         <script type="text/javascript" src="js/camera.js"></script>
         <script type="text/javascript" src="js/core/bootstrap.bundle.js"></script>

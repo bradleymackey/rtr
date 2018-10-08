@@ -1,41 +1,19 @@
 {
-  "_args": [
-    [
-      {
-        "raw": "cordova-plugin-dialogs",
-        "scope": null,
-        "escapedName": "cordova-plugin-dialogs",
-        "name": "cordova-plugin-dialogs",
-        "rawSpec": "",
-        "spec": "latest",
-        "type": "tag"
-      },
-      "/Users/bradleymackey/Development/projects/rtr"
-    ]
-  ],
-  "_from": "cordova-plugin-dialogs@latest",
+  "_from": "cordova-plugin-dialogs",
   "_id": "cordova-plugin-dialogs@2.0.1",
-  "_inCache": true,
+  "_inBundle": false,
+  "_integrity": "sha1-N/7xUSWWyNXflUP7eHJFkPdn3PM=",
   "_location": "/cordova-plugin-dialogs",
-  "_nodeVersion": "8.2.1",
-  "_npmOperationalInternal": {
-    "host": "s3://npm-registry-packages",
-    "tmp": "tmp/cordova-plugin-dialogs-2.0.1.tgz_1514690799796_0.7159167067147791"
-  },
-  "_npmUser": {
-    "name": "macdonst",
-    "email": "simon.macdonald@gmail.com"
-  },
-  "_npmVersion": "4.6.1",
   "_phantomChildren": {},
   "_requested": {
+    "type": "tag",
+    "registry": true,
     "raw": "cordova-plugin-dialogs",
-    "scope": null,
-    "escapedName": "cordova-plugin-dialogs",
     "name": "cordova-plugin-dialogs",
+    "escapedName": "cordova-plugin-dialogs",
     "rawSpec": "",
-    "spec": "latest",
-    "type": "tag"
+    "saveSpec": null,
+    "fetchSpec": "latest"
   },
   "_requiredBy": [
     "#USER",
@@ -43,15 +21,15 @@
   ],
   "_resolved": "https://registry.npmjs.org/cordova-plugin-dialogs/-/cordova-plugin-dialogs-2.0.1.tgz",
   "_shasum": "37fef1512596c8d5df9543fb78724590f767dcf3",
-  "_shrinkwrap": null,
   "_spec": "cordova-plugin-dialogs",
-  "_where": "/Users/bradleymackey/Development/projects/rtr",
+  "_where": "/Users/bradleymackey/Library/Mobile Documents/com~apple~CloudDocs/UNI/Year_2/working_internal",
   "author": {
     "name": "Apache Software Foundation"
   },
   "bugs": {
     "url": "https://issues.apache.org/jira/browse/CB"
   },
+  "bundleDependencies": false,
   "cordova": {
     "id": "cordova-plugin-dialogs",
     "platforms": [
@@ -61,7 +39,7 @@
       "windows"
     ]
   },
-  "dependencies": {},
+  "deprecated": false,
   "description": "Cordova Notification Plugin",
   "devDependencies": {
     "eslint": "^3.19.0",
@@ -71,11 +49,6 @@
     "eslint-plugin-node": "^5.0.0",
     "eslint-plugin-promise": "^3.5.0",
     "eslint-plugin-standard": "^3.0.1"
-  },
-  "directories": {},
-  "dist": {
-    "shasum": "37fef1512596c8d5df9543fb78724590f767dcf3",
-    "tarball": "https://registry.npmjs.org/cordova-plugin-dialogs/-/cordova-plugin-dialogs-2.0.1.tgz"
   },
   "engines": {
     "cordovaDependencies": {
@@ -95,39 +68,7 @@
     "cordova-windows"
   ],
   "license": "Apache-2.0",
-  "maintainers": [
-    {
-      "name": "macdonst",
-      "email": "simon.macdonald@gmail.com"
-    },
-    {
-      "name": "bowserj",
-      "email": "bowserj@apache.org"
-    },
-    {
-      "name": "purplecabbage",
-      "email": "purplecabbage@gmail.com"
-    },
-    {
-      "name": "filmaj",
-      "email": "maj.fil@gmail.com"
-    },
-    {
-      "name": "shazron",
-      "email": "shazron@gmail.com"
-    },
-    {
-      "name": "csantanapr",
-      "email": "csantana23@gmail.com"
-    },
-    {
-      "name": "stevegill",
-      "email": "stevengill97@gmail.com"
-    }
-  ],
   "name": "cordova-plugin-dialogs",
-  "optionalDependencies": {},
-  "readme": "ERROR: No README data found!",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/apache/cordova-plugin-dialogs.git"

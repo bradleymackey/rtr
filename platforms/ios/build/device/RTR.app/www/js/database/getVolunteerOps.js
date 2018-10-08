@@ -35,14 +35,133 @@ function volunteerCallback(snapshot) {
         opDetail+= '<img src='+op.image_1+' alt="image"><div style="padding: 15px;">';
         opDetail+= '<h1 style="color: #2dccd3; text-align: left;">'+op.title+'</h1>';
         opDetail+= '<p class="detail">'+op.content+'</p></div>';
-        opDetail+= '<form><input type="text" name="forename" placeholder="Forename"><br>';
-        opDetail+= '<input type="text" name="surname" placeholder="Surname"><br>';
-        opDetail+= '<input type="text" name="email" placeholder="Email"></form>';
+        opDetail+= '<div id="signup-form"><h2>Signup</h2>';
+        opDetail+= '<form><input type="text" id="forename" name="forename" placeholder="Forename"><br>';
+        opDetail+= '<input type="text" id="surname" name="surname" placeholder="Surname"><br>';
+        opDetail+= '<input type="text" id="email" name="email" placeholder="Email"></form>';
+        opDetail+= '<button type="button" id="volunteer-button" class="event_b">Submit</button>';
+        opDetail+= '<p id="output"></p></div><br><br>';
 
         $('#volunteer_main').hide();
         $('#volunteer_detail').empty();
         $('#volunteer_detail').html(opDetail);
         $('#volunteer_detail').show();
-    });
+        });
 
+
+      //submit form
+      $(document).on("click", "#volunteer-button", function(){
+        //validation
+        var nameRegex = /[a-zA-Z][a-zA-Z]*/;
+        var emailRegex = /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/;
+        var outputText = "";
+        if(!nameRegex.test($("#forename").val()))
+        {
+          outputText += "Forename invalid";
+        }
+        else if(!nameRegex.test($("#surname").val()))
+        {
+          outputText += "Surname invalid";
+        }
+        else if(!emailRegex.test($("#email").val()))
+        {
+          outputText += "Email invalid";
+        }
+        else
+        {
+          outputText += "Form submitted.";
+          $("#forename").val("");
+          $("#surname").val("");
+          $("#email").val("");
+        }
+        $("#output").html(outputText);
+        
+
+      });
   }
+
+$("#email").click(handleClientLoad);
+
+//email
+var CLIENT_ID = "24690165291-jvo2hkq9df0hlpaflrpjrp6qa387iboa.apps.googleusercontent.com";
+var API_KEY = "AIzaSyCYGusGkn_i0_wZDCnmg8KmIjJ70p85TD4";
+var SCOPES = "https://www.googleapis.com/auth/gmail.readonly " + "https://gooogleapis.com/auth.gmail.send";
+function sendEmail()
+{
+  console.log("sendEmail");
+  return;
+}
+
+function handleClientLoad()
+{
+  console.log("handleClientLoad");
+  gapi.client.setApiKey(API_KEY);
+  window.setTimeout(checkAuth, 1);
+}
+
+function checkAuth()
+{
+  console.log("checkAuth");
+  gapi.auth.authorize(
+  {
+    client_id: CLIENT_ID,
+    scope: SCOPES,
+    immediate: true
+  }, handleAuthResult);
+}
+
+function handleAuthClick()
+{
+  gapi.auth.authorize(
+  {
+    client_id: CLIENT_ID,
+    scope: SCOPES,
+    immediate: false
+  }, handleAuthResult);
+  return false;
+}
+
+function handleAuthResult(authResult)
+{
+  console.log("handleAuthResult");
+  if(authResult && !authResult.error)
+  {
+    loadGmailApi();
+  }
+  else
+  {
+    console.log("ERROR");
+  }
+}
+
+function loadGmailApi()
+{
+  console.log("loadGmailApi");
+  gapi.client.load("gmail", "v1", displayInbox);
+}
+
+function displayInbox()
+{
+  var request = gapi.client.gmail.users.messages.list(
+  {
+    'userId': 'me',
+    'labelIds': 'INBOX',
+    'maxResults': 10
+  });
+
+  request.execute(function(response) {
+    $.each(response.messages, function() {
+      var messageRequest = gapi.client.gmail.users.messages.get({
+        'userId': 'me',
+        'id': this.id
+      });
+
+      messageRequest.execute(appendMessageRow);
+    });
+  });
+}
+
+function appendMessageRow(message)
+{
+  $("#emailtest").append("TEST");
+}

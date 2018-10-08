@@ -1,6 +1,6 @@
 
 // data is returned in a value listener
-  
+
 function articlesCallback(snapshot) {
     const articles = snapshot.val();
 
@@ -18,6 +18,8 @@ function articlesCallback(snapshot) {
       articleInList += "<div id="+i+" class='news_item listed_item'><img src="+articles[i].image_1+" alt='image'>"
       articleInList += "<h3 class='list standard-inset' id="+i+">"+articles[i].title+"</h3></br></div>"
     });
+    $("#new-News").hide();
+    $("#edit-News").hide();
     $('#news_main').empty();
     $('#news_main').html(articleInList);
 
@@ -41,9 +43,37 @@ function articlesCallback(snapshot) {
       updateTitle(article.title);
       //back button
       $("#topnav-title").prepend('<img id="backbutton" src="img/left-arrow.png" alt="back">');
+      let user = firebase.auth().currentUser;
+      let admin = (user.email !== undefined && user.email !== null);
+      if (admin==true){
+        $("#topnav-title").append('<img  id="editNews" src="img/edit.png" align = "right" height="27px" width="27px" hspace="6px" vspace="2px">');
+      }
+      $("#topnav-title").on("click","#editNews", function(){editNews(eid);});
+      $("#new-News").hide();
+      $("#edit-News").hide();
       $('#news-article').empty();
       $('#news-article').html(articleDetail);
       $('#news-article').show();
   });
-  
+
+  //News search
+  $(".topnav").on('keyup', '#search-bar', function(e) {
+      var value = e.target.value.trim().toLowerCase();
+      if(value==="") {
+          $(".news_item").show();
+          return;
+      }
+      $.each(articles, function(i) {
+          if(articles[i].title.toLowerCase().indexOf(value) > -1) {
+              i = i.replace("&", "\\&");
+              $("#"+i).show();
+          }
+          else {
+              i = i.replace("&", "\\&");
+              $("#"+i).hide();
+          }
+      });
+      return;
+  });
+
 }

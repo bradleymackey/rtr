@@ -218,11 +218,10 @@ h1 {
 }
 
 #info-image {
-    margin-left: 0px;
-    margin-right: 0px;
+    margin: auto;
     width: 100%;
     object-fit: cover;
-    padding: 20px;
+    padding: 40px;
 }
 
 .volunteer-image {
@@ -234,19 +233,31 @@ h1 {
     padding-bottom: 5px;
 }
 
-#signup-form{
+#signup-form {
     text-align: center;
 }
 
-.admin-Login{
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    box-sizing: border-box;
+.articleTemplate{
+	/*background-color: #2DCCD3;*/
+		margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 8px;
+    margin-bottom: 8px;
 }
 
-form{
-    width: 50%;
-    margin-left: auto;
-    margin-right: auto;
+.publishPage{
+  height: 100%;
+	background-color: #2DCCD3;
+	text-align: center;
+}
+
+.divider{
+    width: 15px;
+    height:auto;
+    display:inline-block;
+}
+
+h1.a{
+ text-align: center;
+ color: #0C2340;
 }

@@ -29,11 +29,11 @@ document.addEventListener("deviceready", function(event) {
     destinationType = navigator.camera.DestinationType;
 }, false);
 
-$("#photo-button").click(function() {
+$("#camera-button").click(function() {
     openCamera();
 });
 
-$("#photo-library-button").click(function() {
+$("#library-button").click(function() {
     openFilePicker();
 });
 
@@ -43,20 +43,21 @@ function displayImage(imgUri) {
 }
 
 function openCamera() {
-
+    
     var srcType = Camera.PictureSourceType.CAMERA;
     var options = setOptions(srcType);
 
     navigator.camera.getPicture(function cameraSuccess(imageUri) {
 
-        displayImage(imageUri);
+        // upload the image
+        uploadImage(imageUri);
+        console.log("upload call done");
 
     }, function cameraError(error) {
         console.debug("Unable to obtain picture: " + error, "app");
 
     }, options);
 }
-
 
   function setOptions(srcType) {
     var options = {
@@ -80,9 +81,7 @@ function openFilePicker() {
 
     navigator.camera.getPicture(function cameraSuccess(imageUri) {
 
-        // Do something
-        displayImage(imageUri);
-        console.log("uploading...");
+        // upload the image
         uploadImage(imageUri);
         console.log("upload call done");
 
@@ -93,33 +92,52 @@ function openFilePicker() {
 
 
 function uploadImage(imageUri) {
+
     let user = firebase.auth().currentUser;
     if (user === undefined || user === null) {
         // the user is not logged in
         alert('Could not upload image! Make sure you are connected to the internet.');
         return;
     }
-    let uuid_string = UUIDjs.create(4).toString();
-    let imageRef = storageRef.child(`media/${user.uid}/images/${uuid_string}.jpg`);
-    // Simulate a call to Dropbox or other service that can
-    // return an image as an ArrayBuffer.
-    var xhr = new XMLHttpRequest();
     
-    xhr.open( "GET", imageUri, true );
+    resolveLocalFileSystemURL(imageUri, function success(fileEntry) {
+        console.log("got file: " + fileEntry.fullPath);
+        let cordovaURL = fileEntry.toInternalURL();
+        console.log("cordova: " + cordovaURL);
 
-    // Ask for the result as an ArrayBuffer.
-    xhr.responseType = "arraybuffer";
+        // hide both of the messages
+        $("#photo-upload-error").hide();
+        $("#photo-upload-success").hide();
 
-    xhr.onload = function( e ) {
-        // Obtain a blob: URL for the image data.
-        var arrayBufferView = new Uint8Array( this.response );
-        var blob = new Blob( [ arrayBufferView ], { type: "image/jpeg" } );
-        storageRef.put(blob).then(function (snapshot) {
-            console.log("upload success");
-        }).catch(function(error) {
-            console.log("upload error",error);
-        });
-    }
+        // Simulate a call to Dropbox or other service that can
+        // return an image as an ArrayBuffer.
+        var xhr = new XMLHttpRequest();
+        
+        xhr.open( "GET", imageUri, true );
 
-    xhr.send();
+        // Ask for the result as an ArrayBuffer.
+        xhr.responseType = "arraybuffer";
+
+        xhr.onload = function( e ) {
+            // Obtain a blob: URL for the image data.
+            var arrayBufferView = new Uint8Array( this.response );
+            var blob = new Blob( [ arrayBufferView ], { type: "image/jpeg" } );
+            let uuid_string = UUIDjs.create(4).toString();
+            let imageRef = storageRef.child(`media/${user.uid}/images/${uuid_string}.jpg`);
+            imageRef.put(blob).then(function (snapshot) {
+                console.log("upload success");
+                $("#photo-upload-error").hide();
+                $("#photo-upload-success").show();
+            }).catch(function(error) {
+                console.log("upload error",error);
+                $("#photo-upload-error").show();
+                $("#photo-upload-success").hide();
+            });
+        }
+
+        xhr.send();
+
+
+    });
+    
 }

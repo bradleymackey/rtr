@@ -44,6 +44,7 @@ $("#camera-button").click(function() {
     openCamera();
 });
 
+
 $("#library-button").click(function() {
     openFilePicker();
 });

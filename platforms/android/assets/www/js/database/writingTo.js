@@ -52,9 +52,3 @@ function deleteEvent(id){
   location.reload();
   return false;
 }
-
-function deleteProject(id){
-  firebase.database().ref('projects/'+id).set(null);
-  location.reload();
-  return false;
-}
